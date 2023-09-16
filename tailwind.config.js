@@ -10,6 +10,10 @@ module.exports = {
         darkGrey: '#555555',
         lightGrey: '#CCCCCC'
       },
+      fontFamily:{
+        dm: 'DM-Sans'
+      },
+
       backgroundImage: {}
     }
   },
