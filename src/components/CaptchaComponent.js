@@ -1,45 +1,28 @@
-"use client"
+// This is the demo secret key. In production, we recommend
+// you store your secret key(s) safely.
+const SECRET_KEY = '0x4AAAAAAAKTDSyhuU031Yiu_t6ul2yiZEQ';
 
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+async function handlePost(request) {
+  const body = await request.formData();
+  // Turnstile injects a token in "cf-turnstile-response".
+  const token = body.get('cf-turnstile-response');
+  const ip = request.headers.get('CF-Connecting-IP');
 
-const CaptchaComponent = () => {
-  const [captcha, setCaptcha] = useState(null);
+  // Validate the token by calling the
+  // "/siteverify" API endpoint.
+  let formData = new FormData();
+  formData.append('secret', SECRET_KEY);
+  formData.append('response', token);
+  formData.append('remoteip', ip);
 
-  useEffect(() => {
-    // Replace 'YOUR_API_TOKEN' with your actual Cloudflare API token.
-    const apiToken = 'YOUR_API_TOKEN';
+  const url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+  const result = await fetch(url, {
+    body: formData,
+    method: 'POST'
+  });
 
-    // Make a POST request to create a CAPTCHA challenge.
-    axios.post('https://api.cloudflare.com/client/v4/captcha',
-      {
-        zone_id: 'YOUR_ZONE_ID', // Replace with your Cloudflare zone ID.
-        // You can customize the CAPTCHA settings here.
-        // For example, setting 'captcha_type' to 'hCaptcha' or 'reCaptcha'.
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${apiToken}`,
-        },
-      }
-    )
-    .then((response) => {
-      setCaptcha(response.data.result);
-    })
-    .catch((error) => {
-      console.error('Error creating CAPTCHA challenge:', error);
-    });
-  }, []);
-
-  return (
-    <div>
-      {captcha ? (
-        <div dangerouslySetInnerHTML={{ __html: captcha.script }} />
-      ) : (
-        <p>Loading CAPTCHA...</p>
-      )}
-    </div>
-  );
-};
-
-export default CaptchaComponent;
+  const outcome = await result.json();
+  if (outcome.success) {
+    console.log(outcome);
+  }
+}

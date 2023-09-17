@@ -3,6 +3,11 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&family=JetBrains+Mono:wght@400;500;800&display=swap');
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
@@ -15,7 +20,12 @@ h3,
 h4 {
   font-weight: 700;
 }
-button {
+input,
+button,
+select {
   font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+}
+button {
   font-weight: 800;
 }
