@@ -4,8 +4,8 @@ import Link from 'next/link';
 import SocialIcons from './SocialIcons';
 const NavBar = () => {
   return (
-    <header className="bg-white max-w-[1440px] mx-auto p-[35px] md:px-[60px] md:py-[17px] ">
-      <nav className="flex items-center w-full">
+    <header className="bg-white  p-[35px] md:px-[60px] md:py-[17px] border-t-[5px] border-blue">
+      <nav className="flex items-center w-full max-w-[1440px] mx-auto">
         <Link href={`/`}>
           <Image className="w-full max-w-[196px]" src={Logo} alt="Logo" />
         </Link>

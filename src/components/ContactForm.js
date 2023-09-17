@@ -7,7 +7,7 @@ const ContactForm = () => {
   return (
     <>
       <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></Script>
-      <div className="bg-gradient-to-b from-blue-10 from-0% to-blue-0 via-10% bg-opacity-10 px-[15px]">
+      <div className="bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-10% to-white to-90% px-[15px] ">
         <div className="flex items-center flex-col">
           <Image className="mt-14" src={icon} style={{ width: '128px', height: '128px' }} alt="email" />
           <h2 className="text-4xl text-dark mt-[30px] font-bold mb-7">Contact Us</h2>
