@@ -6,12 +6,14 @@ module.exports = {
       colors: {
         dark: '#363C4F',
         blue: '#494AF8',
+        'blue-10': 'rgba(73,74,248,.1)',
         'blue-0': 'rgba(73,74,248,0)',
         darkGrey: '#555555',
         lightGrey: '#CCCCCC'
       },
-      fontFamily:{
-        dm: 'DM-Sans'
+      fontFamily: {
+        dm: 'DM-Sans',
+        jetBrain: "'JetBrains Mono', monospace"
       },
 
       backgroundImage: {}
