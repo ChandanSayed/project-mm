@@ -11,7 +11,7 @@ module.exports = {
         lightGrey: '#CCCCCC'
       },
       fontFamily:{
-        dm: 'DM-Sans'
+        dm: 'DM Sans'
       },
 
       backgroundImage: {}

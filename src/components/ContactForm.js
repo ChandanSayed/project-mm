@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import icon from '../../public/icons/email.png'
-import CaptchaComponent from './CaptchaComponent';
+import CaptchaComponent from '@/components/CaptchaComponent';
 const ContactForm = () => {
     return (
         <div className="bg-gradient-to-b from-blue to-blue-0">

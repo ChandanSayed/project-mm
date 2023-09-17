@@ -36,7 +36,7 @@ const CaptchaComponent = () => {
       {captcha ? (
         <div dangerouslySetInnerHTML={{ __html: captcha.script }} />
       ) : (
-        <p>Loading CAPTCHA challenge...</p>
+        <p>Loading CAPTCHA...</p>
       )}
     </div>
   );
