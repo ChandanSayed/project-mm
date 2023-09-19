@@ -4,6 +4,7 @@ import { FaAngleUp } from 'react-icons/fa6';
 import Logo from 'public/images/logo.png';
 import SocialIcons from './SocialIcons';
 import devIcon from 'public/images/icon.png';
+import SiteLogo from './SiteLogo';
 
 const Footer = () => {
   function ToTOp() {
@@ -13,7 +14,7 @@ const Footer = () => {
   return (
     <footer className="mt-20 bg-gradient-to-b from-blue-10 from-0% to-blue-0 via-20%">
       <div className="container max-w-[1440px] mx-auto px-4 text-center flex flex-col gap-[50px] items-center justify-center pt-10 pb-[50px] relative">
-        <Image src={Logo} className="w-full max-w-[196px]" alt="logo" />
+        <SiteLogo />
         <ul className="flex gap-[30px] justify-center">
           <li>
             <a href="#">About</a>

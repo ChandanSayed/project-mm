@@ -1,14 +1,10 @@
-import Image from 'next/image';
-import Logo from 'public/images/logo.png';
-import Link from 'next/link';
+import SiteLogo from './SiteLogo';
 import SocialIcons from './SocialIcons';
 const NavBar = () => {
   return (
     <header className="bg-white  p-[35px] md:px-[60px] md:py-[17px] border-t-[5px] border-blue">
       <nav className="flex items-center w-full max-w-[1440px] mx-auto">
-        <Link href={`/`}>
-          <Image className="w-full max-w-[196px]" src={Logo} alt="Logo" />
-        </Link>
+        <SiteLogo />
         <div className="flex items-center justify-between w-full">
           <div className="left flex items-center pl-[50px]">
             <ul className="flex gap-[30px]">

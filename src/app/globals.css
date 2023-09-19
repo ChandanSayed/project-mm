@@ -21,6 +21,9 @@ h4 {
   font-weight: 700;
 }
 input,
+input::placeholder,
+input::-moz-placeholder,
+input::-webkit-input-placeholder,
 button,
 select {
   font-family: 'JetBrains Mono', monospace;
