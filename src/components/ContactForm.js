@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import React, { useState } from 'react';
-import { BsChevronDown } from 'react-icons/bs';
+import { BiSolidChevronDown } from 'react-icons/bi';
 import icon from '../../public/icons/email.png';
 import CloudflareTurnstile from './CloudflareTurnstile';
 
@@ -63,7 +63,7 @@ const ContactForm = () => {
             <div className="w-full ">
               <label className="block text-[17px] font-medium mb-[10px]">Select a topic*</label>
               <div className="relative">
-                <select className="block w-full font-jetBrain border appearance-none border-black border-opacity-10 h-[60px] rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 required" name="option" onChange={handleChange}>
+                <select className={`block w-full font-jetBrain border appearance-none border-black border-opacity-10 h-[60px] rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 required text-dark ${userInputs.option ? '' : 'text-opacity-30'}`} name="option" onChange={handleChange}>
                   <option defaultChecked className="text-dark text-opacity-30" value="">
                     Select
                   </option>
@@ -76,7 +76,7 @@ const ContactForm = () => {
                   <option value="7">Seven</option>
                   <option value="8">Eight</option>
                 </select>
-                <BsChevronDown className="absolute fill-dark top-[27px] right-[22px] text-[10px]" />
+                <BiSolidChevronDown className="absolute fill-dark top-6 right-[22px] text-[12px]" />
               </div>
             </div>
           </div>
