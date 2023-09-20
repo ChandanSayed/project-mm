@@ -9,7 +9,8 @@ module.exports = {
         'blue-10': 'rgba(73,74,248,.1)',
         'blue-0': 'rgba(73,74,248,0)',
         darkGrey: '#555555',
-        lightGrey: '#CCCCCC'
+        lightGrey: '#CCCCCC',
+        errorColor: '#EB5757'
       },
       fontFamily: {
         dm: 'DM Sans',
