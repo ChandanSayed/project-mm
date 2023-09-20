@@ -1,15 +1,15 @@
 import Image from 'next/image';
-import Logo from 'public/images/logo.png';
+import Logo from 'public/images/logo-white.png';
 import Link from 'next/link';
 import { useAppContext } from '@/context/AppContext';
 
-const SiteLogo = () => {
+const SiteLogoWhite = () => {
   const { mobileNav } = useAppContext();
   return (
-    <Link href={`/`} className={`lg:block ${mobileNav ? 'hidden' : 'block'}`}>
+    <Link href={`/`} className={`lg:hidden ${mobileNav ? 'block' : 'hidden'}`}>
       <Image className="w-full max-w-[196px]" src={Logo} alt="Logo" />
     </Link>
   );
 };
 
-export default SiteLogo;
+export default SiteLogoWhite;

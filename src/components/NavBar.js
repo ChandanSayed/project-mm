@@ -1,27 +1,38 @@
+'use client';
+import { FaBars } from 'react-icons/fa6';
+import { FaTimes } from 'react-icons/fa';
 import SiteLogo from './SiteLogo';
+import NavItems from './NavItems';
+import { useAppContext } from '@/context/AppContext';
+import SiteLogoWhite from './SiteLogoWhite';
+import FooterBottom from './FooterBottom';
 import SocialIcons from './SocialIcons';
+import HeaderButton from './HeaderButton';
+
 const NavBar = () => {
+  const { mobileNav, setMobileNav } = useAppContext();
   return (
-    <header className="bg-white  p-[35px] md:px-[60px] md:py-[17px] border-t-[5px] border-blue">
-      <nav className="flex items-center w-full max-w-[1440px] mx-auto">
-        <SiteLogo />
-        <div className="flex items-center justify-between w-full">
-          <div className="left flex items-center pl-[50px]">
-            <ul className="flex gap-[30px]">
-              <li>
-                <a href="#">About</a>
-              </li>
-              <li>
-                <a href="#">Help & Support</a>
-              </li>
-            </ul>
-          </div>
-          <div className="right flex items-center">
+    <header className={`lg:static lg:h-auto lg:bg-white border-t-[5px] border-t-blue ${mobileNav ? 'bg-blue border-b border-b-white h-screen fixed z-50 w-full' : 'bg-white'}`}>
+      <nav className={`flex items-center w-full max-w-[1440px] mx-auto px-[17px] py-[20px] md:px-[60px] md:py-[17px] ${mobileNav ? 'pb-[19px] border-b border-b-white border-opacity-10' : ''}`}>
+        <SiteLogoWhite /> <SiteLogo />
+        <div className="hidden lg:flex items-center justify-between w-full">
+          <NavItems classes={` text-black`} />
+          <div className="right lg:flex items-center">
             <SocialIcons />
-            <button className="rounded-md h-[46px] w-[150px] bg-blue text-white px-5 hover:bg-opacity-80">Start</button>
+            <HeaderButton classes={`bg-blue text-white`} />
           </div>
         </div>
+        <button className="mobile-menu lg:hidden ml-auto mr-[7px] bg-blue rounded-md h-[46px] w-[46px] text-center" onClick={() => setMobileNav(!mobileNav)}>
+          {mobileNav ? <FaTimes fill="white" className="mx-auto" /> : <FaBars fill="white" className="mx-auto" />}
+        </button>
       </nav>
+      <div className={`lg:hidden ${mobileNav ? 'flex flex-col items-center justify-between p-5 pt-0' : 'hidden'}`} style={{ height: 'calc(100% - 100px)' }}>
+        <NavItems classes={`text-white text-center py-[50px] pl-[0px] w-full border-b border-b-white border-opacity-10`} />
+        <div className="grow w-full">
+          <HeaderButton classes="text-blue bg-white w-full mt-10" />
+        </div>
+        <FooterBottom classes="pt-[30px] border-t border-t-white border-opacity-10 text-white" textColor="text-white" />
+      </div>
     </header>
   );
 };

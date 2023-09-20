@@ -1,10 +1,8 @@
 'use client';
-import Image from 'next/image';
+
 import { FaAngleUp } from 'react-icons/fa6';
-import Logo from 'public/images/logo.png';
-import SocialIcons from './SocialIcons';
-import devIcon from 'public/images/icon.png';
 import SiteLogo from './SiteLogo';
+import FooterBottom from './FooterBottom';
 
 const Footer = () => {
   function ToTOp() {
@@ -12,10 +10,10 @@ const Footer = () => {
     document.documentElement.scrollTop = 0;
   }
   return (
-    <footer className="mt-20 bg-gradient-to-b from-blue-10 from-0% to-blue-0 via-20%">
-      <div className="container max-w-[1440px] mx-auto px-4 text-center flex flex-col gap-[50px] items-center justify-center pt-10 pb-[50px] relative">
+    <footer className="mt-20 bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-70% to-white">
+      <div className="container max-w-[1440px] mx-auto px-4 text-center flex flex-col gap-[30px] md:gap-[50px] items-center justify-center pt-10 pb-9 lg:pb-[50px] relative">
         <SiteLogo />
-        <ul className="flex gap-[30px] justify-center">
+        <ul className="flex flex-col md:flex-row gap-[11px] md:gap-[30px] justify-center">
           <li>
             <a href="#">About</a>
           </li>
@@ -29,18 +27,15 @@ const Footer = () => {
             <a href="#">Terms of Use</a>
           </li>
         </ul>
-        <button className="top border-[3px] border-white rounded-full bg-blue absolute -top-10 right-0 h-20 w-20 flex items-center justify-center p-4" onClick={ToTOp}>
+        <div className="block lg:hidden pt-[30px] border-t border-black border-opacity-10 w-full">
+          <FooterBottom textColor="text-lightGrey" />
+        </div>
+        <button className="top border-[3px] border-white rounded-full bg-blue absolute -top-[25px] lg:-top-10 right-2 lg:right-0 h-[50px] w-[50px] lg:h-20 lg:w-20 flex items-center justify-center p-4" onClick={ToTOp}>
           <FaAngleUp className="text-white text-xl" />
         </button>
       </div>
-      <div className="footer-bottom border-t border-black border-opacity-10 pt-[30px] pb-[35px] bg-gradient-to-b from-blue-10 from-0% to-blue-0 via-20% ">
-        <div className="flex items-center justify-between w-full max-w-[1440px] mx-auto px-4">
-          <p className="text-darkGrey font-medium text-[13px]">Copyright © 2023 MessageMoment. All rights reserved.</p>
-          <SocialIcons />
-          <p className="text-darkGrey font-medium text-[13px] w-[318px] text-right flex justify-end items-center gap-[10px]">
-            Designed By <Image src={devIcon} alt="Dev Icon" />
-          </p>
-        </div>
+      <div className="footer-bottom border-t border-black border-opacity-10 pt-[30px] pb-[35px] bg-gradient-to-b from-blue-10 from-0% to-blue-0 via-20% hidden lg:block">
+        <FooterBottom textColor="text-lightGrey" />
       </div>
     </footer>
   );
