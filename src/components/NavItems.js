@@ -1,9 +1,9 @@
 'use client';
 
-const NavItems = ({ classes }) => {
+const NavItems = ({ classes = 'pl-[50px]' }) => {
   return (
     <>
-      <ul className={`lg:flex gap-[30px] items-center pl-[50px] ${classes}`}>
+      <ul className={`lg:flex gap-[30px] lg:pl-[50px] items-center ${classes}`}>
         <li>
           <a href="#">About</a>
         </li>

@@ -28,14 +28,14 @@ const Footer = () => {
           </li>
         </ul>
         <div className="block lg:hidden pt-[30px] border-t border-black border-opacity-10 w-full">
-          <FooterBottom textColor="text-lightGrey" />
+          <FooterBottom textColor="text-darkGrey" />
         </div>
         <button className="top border-[3px] border-white rounded-full bg-blue absolute -top-[25px] lg:-top-10 right-2 lg:right-0 h-[50px] w-[50px] lg:h-20 lg:w-20 flex items-center justify-center p-4" onClick={ToTOp}>
           <FaAngleUp className="text-white text-xl" />
         </button>
       </div>
       <div className="footer-bottom border-t border-black border-opacity-10 pt-[30px] pb-[35px] bg-gradient-to-b from-blue-10 from-0% to-blue-0 via-20% hidden lg:block">
-        <FooterBottom textColor="text-lightGrey" />
+        <FooterBottom textColor="text-darkGrey" />
       </div>
     </footer>
   );

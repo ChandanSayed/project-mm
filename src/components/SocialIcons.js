@@ -1,9 +1,9 @@
 'use client';
 import { FaTwitter, FaSquareInstagram, FaFacebook, FaYoutube } from 'react-icons/fa6';
 
-const SocialIcons = ({ textColor = 'text-lightGrey' }) => {
+const SocialIcons = ({ iconColor = 'text-lightGrey' }) => {
   return (
-    <ul className={`flex ${textColor} pr-[30px] gap-[15px]`}>
+    <ul className={`flex ${iconColor} pr-[30px] gap-[15px]`}>
       <li>
         <a href="#">
           <FaTwitter className={`text-xl hover:text-darkGrey`} />
