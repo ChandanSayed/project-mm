@@ -14,7 +14,7 @@ const NavBar = () => {
   return (
     <header className={`lg:static lg:h-auto lg:bg-white border-t-[5px] border-t-blue ${mobileNav ? 'bg-blue border-b border-b-white h-screen fixed z-50 w-full' : 'bg-white'}`}>
       <nav className={`flex items-center w-full max-w-[1440px] mx-auto px-[17px] py-[20px] md:px-[60px] md:py-[17px] ${mobileNav ? 'pb-[19px] border-b border-b-white border-opacity-10' : ''}`}>
-        <SiteLogoWhite /> <SiteLogo />
+        <SiteLogoWhite /> <SiteLogo width="w-[169px]" />
         <div className="hidden lg:flex items-center justify-between w-full">
           <NavItems classes={` text-black`} />
           <div className="right lg:flex items-center">
@@ -26,7 +26,7 @@ const NavBar = () => {
           {mobileNav ? <FaTimes fill="white" className="mx-auto" /> : <FaBars fill="white" className="mx-auto" />}
         </button>
       </nav>
-      <div className={`lg:hidden ${mobileNav ? 'flex flex-col items-center justify-between p-5 pt-0' : 'hidden'}`} style={{ height: 'calc(100vh - 140px)' }}>
+      <div className={`lg:hidden ${mobileNav ? 'flex flex-col items-center justify-between p-5 pt-0' : 'hidden'}`} style={{ height: 'calc(100vh - 200px)' }}>
         <NavItems color="text-white" classes={`text-white text-center py-[50px] pl-[0px] w-full border-b border-b-white border-opacity-10`} />
         <div className="grow w-full">
           <HeaderButton classes="text-blue bg-white w-full mt-10" />
