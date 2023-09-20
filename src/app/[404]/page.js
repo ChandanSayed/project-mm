@@ -1,4 +1,3 @@
-import React from 'react';
 import error from '../../../public/icons/error-404.png';
 import Image from 'next/image';
 import SiteLogo from '@/components/SiteLogo';

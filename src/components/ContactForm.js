@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { BiSolidChevronDown } from 'react-icons/bi';
 import icon from '../../public/icons/email.png';
 import CloudflareTurnstile from './CloudflareTurnstile';
+import Link from 'next/link';
 
 const ContactForm = () => {
   const [userInputs, setUserInputs] = useState({
@@ -47,9 +48,9 @@ const ContactForm = () => {
           <h2 className="text-4xl text-dark mt-[30px] font-bold mb-7">Contact Us</h2>
           <p className="text-[17px] text-center text-dark">
             Need answers or help? We might have answered your question in our{' '}
-            <a href="#" className="text-blue">
+            <Link href="/faqs" className="text-blue">
               FAQs
-            </a>
+            </Link>
             .{' '}
           </p>
           <p className="mb-[30px] text-[17px] text-center mt-2 text-dark">Otherwise complete this form on the topic relevant to your query.</p>
