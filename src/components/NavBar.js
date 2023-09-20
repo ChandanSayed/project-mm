@@ -27,7 +27,7 @@ const NavBar = () => {
         </button>
       </nav>
       <div className={`lg:hidden ${mobileNav ? 'flex flex-col items-center justify-between p-5 pt-0' : 'hidden'}`} style={{ height: 'calc(100% - 100px)' }}>
-        <NavItems classes={`text-white text-center py-[50px] pl-[0px] w-full border-b border-b-white border-opacity-10`} />
+        <NavItems color="text-white" classes={`text-white text-center py-[50px] pl-[0px] w-full border-b border-b-white border-opacity-10`} />
         <div className="grow w-full">
           <HeaderButton classes="text-blue bg-white w-full mt-10" />
         </div>

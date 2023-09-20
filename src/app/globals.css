@@ -32,7 +32,3 @@ select {
 button {
   font-weight: 800;
 }
-
-select:invalid {
-  color: red !important;
-}
