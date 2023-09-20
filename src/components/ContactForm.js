@@ -99,7 +99,7 @@ const ContactForm = () => {
           <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row items-center justify-between">
             <CloudflareTurnstile />
             <div className="w-full lg:w-auto">
-              <button disabled className={`bg-lightGrey shadow lg:w-[236px] h-[46px] focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded-md w-full`} type="button">
+              <button disabled className={`bg-lightGrey shadow lg:w-[236px] h-[46px] focus:shadow-outline focus:outline-none text-white font-bold font-jetBrain text-[15px] py-2 px-4 rounded-md w-full`} type="button">
                 Send
               </button>
             </div>

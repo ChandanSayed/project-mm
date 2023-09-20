@@ -5,10 +5,14 @@ const NavItems = ({ classes = 'pl-[50px]' }) => {
     <>
       <ul className={`lg:flex gap-[30px] lg:pl-[50px] items-center ${classes}`}>
         <li>
-          <a href="#">About</a>
+          <a href="#" className="font-medium text-base text-black">
+            About
+          </a>
         </li>
         <li>
-          <a href="#">Help & Support</a>
+          <a href="#" className="font-medium text-base text-black">
+            Help & Support
+          </a>
         </li>
       </ul>
     </>
