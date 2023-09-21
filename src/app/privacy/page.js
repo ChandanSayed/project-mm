@@ -38,7 +38,11 @@ const page = () => {
     {
       id: 6,
       question: '6. Contact Us',
-      answere: 'If you have any questions regarding this Privacy Policy, please <a href="#" style="color: blue;">contact us</a>'
+      answere: `If you have any questions regarding this Privacy Policy, please ${(
+        <a href="#" style="color: blue;">
+          contact us
+        </a>
+      )}`
     }
   ];
 

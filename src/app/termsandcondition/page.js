@@ -86,11 +86,11 @@ const page = () => {
           <div className="px-[5%] lg:px-[8%] pb-2">
             <h3 className="text-[26px] max-md:text-[15px] font-bold text-blue my-[30px] max-md:mb-[15px]">Credit</h3>
             <div className="mb-[18px]">
-              <p className="text-[15px] max-md:text-[13px] font-normal leading-normal max-h-min font-jetBrain">https://www.flaticon.com/authors/basic-sheer/flat/8?author_id=1&type=standard</p>
+              <p className="text-[15px] max-md:text-[13px] font-normal leading-normal max-h-min font-jetBrain break-all">https://www.flaticon.com/authors/basic-sheer/flat/8?author_id=1&type=standard</p>
               <p className="text-[15px] max-md:text-[13px] font-normal leading-normal max-h-min font-jetBrain text-lightGrey">Under Flaticon License</p>
             </div>
             <div className="mb-8">
-              <p className="text-[15px] max-md:text-[13px] font-normal leading-normal max-h-min font-jetBrain">https://www.freepik.com/free-vector/digital-device-mockup_4168605.htm#query=multi%20device%20mockup&position=23&from_view=search&track=ais"</p>
+              <p className="text-[15px] max-md:text-[13px] font-normal leading-normal max-h-min font-jetBrain break-all">https://www.freepik.com/free-vector/digital-device-mockup_4168605.htm#query=multi%20device%20mockup&position=23&from_view=search&track=ais"</p>
               <p className="text-[15px] max-md:text-[13px] font-normal leading-normal max-h-min font-jetBrain text-lightGrey">Image by rawpixel.com on Freepik</p>
             </div>
           </div>
