@@ -1,7 +1,6 @@
 import { Transition } from '@headlessui/react';
 import { useState } from 'react';
 import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io';
-import ReactHtmlParser from 'react-html-parser';
 function Accordion({ items }) {
   const [openIndices, setOpenIndices] = useState([]);
 
@@ -26,7 +25,7 @@ function Accordion({ items }) {
               </h3>
             </div>
             <Transition show={isOpen} enter="transition ease-out duration-100 transform" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="transition ease-in duration-75 transform" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">
-              <p className={isOpen ? 'text-[15px] max-md:text-[13px] font-normal leading-normal pb-2 pl-8 max-h-min font-jetBrain' : 'max-h-0 overflow-hidden'}>{ReactHtmlParser(currentE.answer)}</p>
+              <p className={isOpen ? 'text-[15px] max-md:text-[13px] font-normal leading-normal pb-2 pl-8 max-h-min font-jetBrain' : 'max-h-0 overflow-hidden'}>{currentE.answer}</p>
             </Transition>
           </div>
         );
