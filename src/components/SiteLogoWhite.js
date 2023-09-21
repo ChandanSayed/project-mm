@@ -8,7 +8,7 @@ const SiteLogoWhite = () => {
   const { mobileNav } = useAppContext();
   return (
     <Link href={`/`} className={`lg:hidden ${mobileNav ? 'block' : 'hidden'}`}>
-      <Image className="w-[169px]" src={Logo} alt="Logo" />
+      <Image className="w-[150px]" src={Logo} alt="Logo" />
     </Link>
   );
 };

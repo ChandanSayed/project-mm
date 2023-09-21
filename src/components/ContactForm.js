@@ -1,10 +1,11 @@
 'use client';
+
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
-import { BiSolidChevronDown } from 'react-icons/bi';
-import icon from '../../public/icons/email.png';
-import CloudflareTurnstile from './CloudflareTurnstile';
 import Link from 'next/link';
+import CloudflareTurnstile from './CloudflareTurnstile';
+import icon from '/public/icons/email.png';
+import DownArrow from '/public/images/down-arrow.png';
 
 const ContactForm = () => {
   const [userInputs, setUserInputs] = useState({
@@ -16,6 +17,7 @@ const ContactForm = () => {
   });
   const [character, setCharacter] = useState(1500);
   const [activeBtn, setActiveBtn] = useState(false);
+  const select = useRef();
 
   const { fName, lName, email, option, message } = userInputs;
 
@@ -83,20 +85,36 @@ const ContactForm = () => {
             <div className="w-full ">
               <label className="block text-[17px] font-medium mb-[10px]">Select a topic*</label>
               <div className="relative">
-                <select className={`block w-full font-jetBrain border appearance-none border-black border-opacity-10 h-[46px] lg:h-[60px] rounded-md py-3 px-4 leading-tight text-[15px] focus:outline-none focus:bg-white focus:border-gray-500 required text-dark ${userInputs.option ? '' : 'text-opacity-30'}`} name="option" onChange={handleChange}>
-                  <option defaultChecked className="text-dark text-opacity-30" value="">
+                <select ref={select} className={`block w-full font-jetBrain border appearance-none border-black border-opacity-10 h-[46px] lg:h-[60px] rounded-md py-3 px-4 leading-tight text-[15px] focus:outline-none focus:bg-white focus:border-gray-500 required text-dark bg-white ${userInputs.option ? '' : 'text-opacity-30'}`} name="option" onChange={handleChange}>
+                  <option defaultChecked className="text-dark text-opacity-30 text-[15px]" value="">
                     Select
                   </option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                  <option value="4">Four</option>
-                  <option value="5">Five</option>
-                  <option value="6">Six</option>
-                  <option value="7">Seven</option>
-                  <option value="8">Eight</option>
+                  <option value="1" className="text-[15px]">
+                    One
+                  </option>
+                  <option value="2" className="text-[15px]">
+                    Two
+                  </option>
+                  <option value="3" className="text-[15px]">
+                    Three
+                  </option>
+                  <option value="4" className="text-[15px]">
+                    Four
+                  </option>
+                  <option value="5" className="text-[15px]">
+                    Five
+                  </option>
+                  <option value="6" className="text-[15px]">
+                    Six
+                  </option>
+                  <option value="7" className="text-[15px]">
+                    Seven
+                  </option>
+                  <option value="8" className="text-[15px]">
+                    Eight
+                  </option>
                 </select>
-                <BiSolidChevronDown className="absolute fill-dark top-[18px] lg:top-6 right-[22px] text-[12px]" />
+                <Image src={DownArrow} alt="Down Arrow" className="absolute  top-[21px] lg:top-7 right-[22px]" onClick={() => select.current} />
               </div>
             </div>
           </div>
