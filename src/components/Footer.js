@@ -3,6 +3,7 @@
 import { FaAngleUp } from 'react-icons/fa6';
 import SiteLogo from './SiteLogo';
 import FooterBottom from './FooterBottom';
+import FooterNavItems from './FooterNavItems';
 
 const Footer = () => {
   function ToTOp() {
@@ -13,20 +14,7 @@ const Footer = () => {
     <footer className="mt-20 bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-70% to-white">
       <div className="container max-w-[1440px] mx-auto px-4 text-center flex flex-col gap-[30px] md:gap-[50px] items-center justify-center pt-10 pb-9 lg:pb-[50px] relative">
         <SiteLogo width="w-[196px]" />
-        <ul className="flex flex-col md:flex-row gap-[11px] md:gap-[30px] justify-center">
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Help & Support</a>
-          </li>
-          <li>
-            <a href="#">Privacy Policy</a>
-          </li>
-          <li>
-            <a href="#">Terms of Use</a>
-          </li>
-        </ul>
+        <FooterNavItems />
         <div className="block lg:hidden pt-[30px] border-t border-black border-opacity-10 w-full">
           <FooterBottom textColor="text-darkGrey" />
         </div>
