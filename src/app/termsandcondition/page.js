@@ -1,6 +1,5 @@
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
-import ReactHtmlParser from 'react-html-parser';
 
 const page = () => {
   const currentDate = new Date();
@@ -78,7 +77,7 @@ const page = () => {
               return (
                 <div className="" key={list.id}>
                   <h3 className="text-[26px] max-md:text-[15px] font-bold text-blue mb-6 max-md:mb-[15px]">{list.question}</h3>
-                  <p className="text-[15px] max-md:text-[13px] font-normal leading-normal max-h-min font-jetBrain mb-[40px] max-md:mb-[15px]">{ReactHtmlParser(list.answere)}</p>
+                  <p className="text-[15px] max-md:text-[13px] font-normal leading-normal max-h-min font-jetBrain mb-[40px] max-md:mb-[15px]">{list.answere}</p>
                 </div>
               );
             })}
