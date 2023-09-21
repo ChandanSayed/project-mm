@@ -14,7 +14,7 @@ import { useAppContext } from '@/context/AppContext';
 const SocialIcons = ({ iconColor = 'text-lightGrey' }) => {
   const { mobileNav } = useAppContext();
   return (
-    <ul className={`flex ${iconColor} pr-[30px] gap-[15px]`}>
+    <ul className={`flex ${iconColor} lg:pr-[30px] gap-[15px]`}>
       <li>
         <a href="#">
           <Image src={mobileNav ? XWhite : X} alt="X" />

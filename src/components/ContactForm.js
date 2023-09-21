@@ -34,6 +34,11 @@ const ContactForm = () => {
     setCharacter(remainingCount);
   }
 
+  function checkEmail() {
+    const validateEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email);
+    console.log(validateEmail);
+  }
+
   useEffect(() => {
     if (fName && lName && email && option && message) {
       setActiveBtn(true);
@@ -61,31 +66,33 @@ const ContactForm = () => {
         <form className="border rounded-[10px] max-w-[1096px] pt-[50px] pb-[39px] px-5 sm:px-12 lg:px-28 mx-auto border-black border-opacity-10 bg-white flex flex-col gap-[15px] lg:gap-5 w-full" onSubmit={handleForm}>
           <div className="flex flex-wrap md:flex-nowrap gap-[15px] md:gap-5">
             <div className="w-full">
-              <label className="block text-[17px] font-medium mb-[10px]" htmlFor="grid-first-name">
+              <label className="block text-[17px] font-medium mb-[10px]" htmlFor="firstName">
                 First Name*
               </label>
-              <input className="appearance-none block w-full font-jetBrain text-dark placeholder:text-dark placeholder:text-opacity-30 border border-black border-opacity-10 text-[15px] h-[46px] lg:h-[60px] rounded-md py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" name="fName" required placeholder="Enter your first name" onChange={handleChange} />
+              <input className="appearance-none block w-full font-jetBrain text-dark placeholder:text-dark placeholder:text-opacity-30 border border-black border-opacity-10 text-[15px] h-[46px] lg:h-[60px] rounded-md py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="firstName" type="text" name="fName" required placeholder="Enter your first name" onChange={handleChange} />
             </div>
             <div className="w-full">
-              <label className="block text-[17px] font-medium mb-[10px]" htmlFor="grid-last-name">
+              <label className="block text-[17px] font-medium mb-[10px]" htmlFor="lastName">
                 Last Name*
               </label>
-              <input className="appearance-none block w-full font-jetBrain text-dark placeholder:text-dark placeholder:text-opacity-30 border border-black border-opacity-10 text-[15px] h-[46px] lg:h-[60px] rounded-md py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 required" name="lName" id="grid-last-name" type="text" required placeholder="Enter your last name" onChange={handleChange} />
+              <input className="appearance-none block w-full font-jetBrain text-dark placeholder:text-dark placeholder:text-opacity-30 border border-black border-opacity-10 text-[15px] h-[46px] lg:h-[60px] rounded-md py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 required" name="lName" id="lastName" type="text" required placeholder="Enter your last name" onChange={handleChange} />
             </div>
           </div>
           <div className="flex flex-wrap ">
             <div className="w-full ">
-              <label className="block text-[17px] font-medium mb-[10px]" htmlFor="grid-password">
+              <label className="block text-[17px] font-medium mb-[10px]" htmlFor="email">
                 Email Address*
               </label>
-              <input className="appearance-none block w-full font-jetBrain text-dark placeholder:text-dark placeholder:text-opacity-30 border border-black border-opacity-10 text-[15px] h-[46px] lg:h-[60px] rounded-md py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="email" type="email" placeholder="Enter your email address" name="email" onChange={handleChange} />
+              <input className="appearance-none block w-full font-jetBrain text-dark placeholder:text-dark placeholder:text-opacity-30 border border-black border-opacity-10 text-[15px] h-[46px] lg:h-[60px] rounded-md py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" placeholder="Enter your email address" name="email" onChange={handleChange} onBlur={checkEmail} />
             </div>
           </div>
           <div className="flex flex-wrap ">
             <div className="w-full ">
-              <label className="block text-[17px] font-medium mb-[10px]">Select a topic*</label>
+              <label htmlFor="option" className="block text-[17px] font-medium mb-[10px]">
+                Select a topic*
+              </label>
               <div className="relative">
-                <select ref={select} className={`block w-full font-jetBrain border appearance-none border-black border-opacity-10 h-[46px] lg:h-[60px] rounded-md py-3 px-4 leading-tight text-[15px] focus:outline-none focus:bg-white focus:border-gray-500 required text-dark bg-white ${userInputs.option ? '' : 'text-opacity-30'}`} name="option" onChange={handleChange}>
+                <select ref={select} className={`block w-full font-jetBrain border appearance-none border-black border-opacity-10 h-[46px] lg:h-[60px] rounded-md py-3 px-4 leading-tight text-[15px] focus:outline-none focus:bg-white focus:border-gray-500 required text-dark bg-white ${userInputs.option ? '' : 'text-opacity-30'}`} name="option" onChange={handleChange} id="option">
                   <option defaultChecked className="text-dark text-opacity-30 text-[15px]" value="">
                     Select
                   </option>
@@ -114,14 +121,14 @@ const ContactForm = () => {
                     Eight
                   </option>
                 </select>
-                <Image src={DownArrow} alt="Down Arrow" className="absolute  top-[21px] lg:top-7 right-[22px]" onClick={() => select.current} />
+                <Image src={DownArrow} alt="Down Arrow" className="absolute  top-[21px] lg:top-7 right-[22px]" />
               </div>
             </div>
           </div>
           <div className="flex flex-wrap ">
             <div className="w-full ">
               <div className="flex justify-between items-center">
-                <label className="block text-[17px] font-medium mb-[10px]" htmlFor="grid-password">
+                <label className="block text-[17px] font-medium mb-[10px]" htmlFor="message">
                   Query*
                 </label>
                 <span className={`font-jetBrain text-[13px] font-medium ${character === 0 ? 'text-errorColor' : 'text-dark text-opacity-30'}`}>{character.toLocaleString()} characters left</span>

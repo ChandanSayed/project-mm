@@ -9,7 +9,7 @@ const FooterBottom = ({ classes = '', textColor = 'text-darkGrey', iconColor = '
   const { mobileNav } = useAppContext();
   return (
     <div className={`flex flex-col lg:flex-row items-center justify-between w-full max-w-[1440px] mx-auto px-4 ${classes}`}>
-      <p className={`${textColor} font-medium text-[10px] lg:text-[13px] order-1 lg:order-none mt-[30px] mb-[10px]`}>Copyright © 2023 MessageMoment. All rights reserved.</p>
+      <p className={`${textColor} font-medium text-[10px] lg:text-[13px] order-1 lg:order-none mt-[30px] lg:mt-0 lg:mb-[10px] lg:mb-0`}>Copyright © 2023 MessageMoment. All rights reserved.</p>
       <SocialIcons textColor={textColor} iconColor={iconColor} />
       <p className={`${textColor} font-medium text-[10px] lg:text-[13px] w-[318px] text-right flex justify-center order-1 lg:order-none lg:justify-end items-center gap-[10px]`}>
         Designed By <Image className={`w-[12px] lg:w-[16px] lg:block ${mobileNav ? 'hidden' : ''}`} src={devIcon} alt="Dev Icon" />
