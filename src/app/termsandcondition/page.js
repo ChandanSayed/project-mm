@@ -7,7 +7,7 @@ const page = () => {
   const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const monthIndex = currentDate.getMonth();
   const currentMonthName = monthNames[monthIndex];
-  const day = currentDate.getDay();
+  const day = currentDate.getDate();
   const currentYear = currentDate.getFullYear();
 
   const data = [
