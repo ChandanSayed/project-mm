@@ -14,8 +14,9 @@ const NavBar = () => {
   return (
     <header className={`lg:static lg:h-auto lg:bg-white border-t-[5px] border-t-blue ${mobileNav ? 'bg-blue border-b border-b-white h-screen fixed z-50 w-full' : 'bg-white'}`}>
       <nav className={`flex items-center w-full max-w-[1440px] mx-auto px-[17px] py-[20px] md:px-[60px] md:py-[17px] ${mobileNav ? 'pb-[19px] border-b border-b-white border-opacity-10' : ''}`}>
-        <SiteLogoWhite /> <SiteLogo width="w-[169px]" />
-        <div className="hidden lg:flex items-center justify-between w-full">
+        <SiteLogo width="w-[169px]" />
+        <SiteLogoWhite />
+        <div className="hidden lg:flex items-center justify-between grow">
           <NavItems classes={` text-black`} />
           <div className="right lg:flex items-center">
             <SocialIcons />
