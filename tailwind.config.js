@@ -16,7 +16,6 @@ module.exports = {
         dm: 'DM Sans',
         jetBrain: "'JetBrains Mono', monospace"
       },
-
       backgroundImage: {}
     }
   },
