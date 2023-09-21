@@ -11,10 +11,10 @@ import InstagramWhite from '/public/images/white-instagram.png';
 import YoutubeWhite from '/public/images/white-youtube.png';
 import { useAppContext } from '@/context/AppContext';
 
-const SocialIcons = ({ iconColor = 'text-lightGrey' }) => {
+const SocialIcons = ({ pR = 'lg:pr-[30px]' }) => {
   const { mobileNav } = useAppContext();
   return (
-    <ul className={`flex ${iconColor} lg:pr-[30px] gap-[15px]`}>
+    <ul className={`flex ${pR}  gap-[15px]`}>
       <li>
         <a href="#">
           <Image src={mobileNav ? XWhite : X} alt="X" />

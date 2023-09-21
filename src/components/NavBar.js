@@ -35,7 +35,7 @@ const NavBar = () => {
         <div className="grow w-full">
           <HeaderButton classes="text-blue bg-white w-full mt-10" />
         </div>
-        <FooterBottom classes="pt-[30px] border-t border-t-white border-opacity-10 text-white" textColor="text-white" iconColor="text-white" />
+        <FooterBottom classes="pt-[30px] border-t border-t-white border-opacity-10 text-white" textColor="text-white" />
       </div>
     </header>
   );
