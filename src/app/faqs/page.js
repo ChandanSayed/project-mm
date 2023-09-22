@@ -7,7 +7,7 @@ import NavBar from '@/components/NavBar';
 import faqs from '../../../public/icons/faqs.png';
 import Accordion from '@/components/Accordion';
 import { accordionList } from '../../components/AccordionList';
-import email2 from '../../../public/icons/email2.png';
+import email2 from '../../../public/icons/email.png';
 import ReturnToHomepage from '@/components/ReturnToHomepage';
 const page = () => {
   const [accordions, setAccordions] = useState(accordionList);
