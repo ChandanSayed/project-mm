@@ -49,7 +49,7 @@ const page = () => {
       const href = node.attribs.href;
       return (
         <Link href="/" key={href} className="text-blue">
-          Contact Us
+          {parse(node.children[0].data)}
         </Link>
       );
     }
