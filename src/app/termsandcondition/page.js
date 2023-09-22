@@ -66,7 +66,7 @@ const page = () => {
 
   const replaceAnchorTagsWithLinks = (node, index) => {
     if (typeof node === 'string') {
-      return node; // Return strings as is
+      return node;
     } else if (node.type === 'tag' && node.name === 'a' && node.attribs.href) {
       const href = node.attribs.href;
       console.log(node.children[0].data);
