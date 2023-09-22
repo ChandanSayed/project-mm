@@ -1,3 +1,5 @@
+// 'use client';
+
 import AppContextProvider from '@/context/AppContext';
 import './globals.css';
 // import Favicon from '/public/favicons/favicon.ico';
@@ -6,10 +8,12 @@ export const metadata = {
   title: 'MessageMoment - The real meaning to personal!',
   description: 'MessageMoment - The real meaning to personal!',
   creator: 'Chandan Sayed',
+  short_name: 'MessageMoment',
+  applicationName: 'MessageMoment',
   icons: {
-    icon: ['./favicons/favicon.ico'],
-    apple: ['./favicons/apple-touch-icon.png'],
-    shortcut: ['./favicons/android-chrome-192x192.png']
+    icon: ['/public/favicons/favicon.ico'],
+    apple: ['/public/favicons/apple-touch-icon.png'],
+    shortcut: ['/public/favicons/android-chrome-192x192.png']
   },
   manifest: '/site.webmanifest'
 };
