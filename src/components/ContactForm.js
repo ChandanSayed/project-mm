@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import CloudflareTurnstile from './CloudflareTurnstile';
@@ -15,6 +15,7 @@ const ContactForm = () => {
     option: '',
     message: ''
   });
+
   const [userValidation, setUserValidation] = useState({
     fName: false,
     lName: false,
@@ -22,6 +23,7 @@ const ContactForm = () => {
     option: false,
     message: false
   });
+
   const [character, setCharacter] = useState(1500);
   const [activeBtn, setActiveBtn] = useState(false);
   const [validate, setValidate] = useState(false);
