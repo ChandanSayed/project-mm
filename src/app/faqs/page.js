@@ -9,6 +9,7 @@ import Accordion from '@/components/Accordion';
 import { accordionList } from '../../components/AccordionList';
 import email2 from '../../../public/icons/email.png';
 import ReturnToHomepage from '@/components/ReturnToHomepage';
+
 const page = () => {
   const [accordions, setAccordions] = useState(accordionList);
   function getValue(e) {

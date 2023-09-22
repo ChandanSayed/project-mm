@@ -1,5 +1,7 @@
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
+import Link from 'next/link';
+import parse from 'html-react-parser';
 
 const page = () => {
   const currentDate = new Date();
@@ -53,14 +55,29 @@ const page = () => {
     {
       id: 9,
       question: '9. Entire Agreement',
-      answere: 'These T&Cs, together with the <a href="#" style="color: blue";>Privacy Policy</a>, constitute the entire agreement between you and MessageMoment relating to the use of the platform. If any provision of these T&Cs is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.'
+      answere: 'These T&Cs, together with the <a href="/privacy" style="color: blue";>Privacy Policy</a>, constitute the entire agreement between you and MessageMoment relating to the use of the platform. If any provision of these T&Cs is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.'
     },
     {
       id: 10,
       question: '10. Contact Us',
-      answere: 'If you have any questions regarding these Terms and Conditions of Use, please <a href="#" style="color: blue">Contact Us.</a>'
+      answere: 'If you have any questions regarding these Terms and Conditions of Use, please <a href="/" style="color: blue">Contact Us.</a>'
     }
   ];
+
+  const replaceAnchorTagsWithLinks = (node, index) => {
+    if (typeof node === 'string') {
+      return node; // Return strings as is
+    } else if (node.type === 'tag' && node.name === 'a' && node.attribs.href) {
+      const href = node.attribs.href;
+      console.log(node.children[0].data);
+      return (
+        <Link href={href} key={index} className="text-blue">
+          {parse(node.children[0].data)}
+        </Link>
+      );
+    }
+    return undefined;
+  };
 
   return (
     <div>
@@ -77,7 +94,7 @@ const page = () => {
               return (
                 <div className="" key={list.id}>
                   <h3 className="text-[26px] max-md:text-[15px] font-bold text-blue mb-6 max-md:mb-[15px]">{list.question}</h3>
-                  <p className="text-[15px] max-md:text-[13px] font-normal leading-normal max-h-min font-jetBrain mb-[40px] max-md:mb-[15px]">{list.answere}</p>
+                  <p className="text-[15px] max-md:text-[13px] font-normal leading-normal max-h-min font-jetBrain mb-[40px] max-md:mb-[15px]">{parse(list.answere, { replace: replaceAnchorTagsWithLinks })}</p>
                 </div>
               );
             })}

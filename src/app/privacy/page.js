@@ -1,5 +1,7 @@
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
+import parse from 'html-react-parser';
+import Link from 'next/link';
 
 const page = () => {
   const currentDate = new Date();
@@ -38,13 +40,20 @@ const page = () => {
     {
       id: 6,
       question: '6. Contact Us',
-      answere: `If you have any questions regarding this Privacy Policy, please ${(
-        <a href="#" style="color: blue;">
-          contact us
-        </a>
-      )}`
+      answere: 'If you have any questions regarding this Privacy Policy, please <a href="#" style="color: blue;">Contact Us.</a>'
     }
   ];
+
+  const replaceAnchorTagsWithLinks = node => {
+    if (node.type === 'tag' && node.name === 'a' && node.attribs.href) {
+      const href = node.attribs.href;
+      return (
+        <Link href="/" key={href} className="text-blue">
+          Contact Us
+        </Link>
+      );
+    }
+  };
 
   return (
     <div>
@@ -61,7 +70,7 @@ const page = () => {
               return (
                 <div className="" key={list.id}>
                   <h3 className="text-[26px] max-md:text-[15px] font-bold text-blue mb-6 max-md:mb-[15px]">{list.question}</h3>
-                  <p className="text-[15px] max-md:text-[13px] font-normal leading-normal max-h-min font-jetBrain mb-[40px] max-md:mb-[15px]">{list.answere}</p>
+                  <p className="text-[15px] max-md:text-[13px] font-normal leading-normal max-h-min font-jetBrain mb-[40px] max-md:mb-[15px]">{parse(list.answere, { replace: replaceAnchorTagsWithLinks })}</p>
                 </div>
               );
             })}

@@ -1,6 +1,9 @@
 import { Transition } from '@headlessui/react';
 import { useState } from 'react';
 import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io';
+import parse from 'html-react-parser';
+import Link from 'next/link';
+
 function Accordion({ items }) {
   const [openIndices, setOpenIndices] = useState([]);
 
@@ -11,6 +14,17 @@ function Accordion({ items }) {
       setOpenIndices([...openIndices, index]);
     }
   }
+
+  const replaceAnchorTagsWithLinks = node => {
+    if (node.type === 'tag' && node.name === 'a' && node.attribs.href) {
+      const href = node.attribs.href;
+      return (
+        <Link href="/" key={href} className="text-blue">
+          Contact Us
+        </Link>
+      );
+    }
+  };
 
   return (
     <>
@@ -25,7 +39,7 @@ function Accordion({ items }) {
               </h3>
             </div>
             <Transition show={isOpen} enter="transition ease-out duration-100 transform" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="transition ease-in duration-75 transform" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">
-              <p className={isOpen ? 'text-[15px] max-md:text-[13px] font-normal leading-normal pb-2 pl-8 max-h-min font-jetBrain' : 'max-h-0 overflow-hidden'}>{currentE.answer}</p>
+              <p className={isOpen ? 'text-[15px] max-md:text-[13px] font-normal leading-normal pb-2 pl-8 max-h-min font-jetBrain' : 'max-h-0 overflow-hidden'}>{parse(currentE.answer, { replace: replaceAnchorTagsWithLinks })}</p>
             </Transition>
           </div>
         );
