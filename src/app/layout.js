@@ -3,8 +3,8 @@ import './globals.css';
 // import Favicon from '/public/favicons/favicon.ico';
 
 export const metadata = {
-  title: 'MM',
-  description: 'MM',
+  title: 'MessageMoment - The real meaning to personal!',
+  description: 'MessageMoment - The real meaning to personal!',
   creator: 'Chandan Sayed',
   icons: {
     icon: ['./favicons/favicon.ico'],

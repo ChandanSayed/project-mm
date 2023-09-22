@@ -123,7 +123,7 @@ const ContactForm = () => {
                 Select a topic*
               </label>
               <div className="relative">
-                <select className={`block w-full font-jetBrain border appearance-none h-[46px] lg:h-[60px] rounded-md py-3 px-4 leading-tight text-[15px] focus:outline-none focus:bg-white focus:border-gray-500 focus:border focus:rounded-md required text-dark bg-white ${userInputs.option ? '' : 'text-opacity-30'} ${userValidation.option ? 'text-errorColor border-b-2 border-b-errorColor rounded-es-none rounded-ee-none text-opacity-100' : 'border-black border-opacity-10 text-dark'}`} name="option" onChange={handleChange} onBlur={checkValidate} required id="option">
+                <select className={`block w-full font-jetBrain border appearance-none h-[46px] lg:h-[60px] rounded-md py-3 px-4 leading-tight text-[15px] focus:outline-none focus:bg-white focus:border-gray-500 focus:border focus:rounded-md required text-dark bg-white ${userInputs.option ? '' : 'text-opacity-30'} ${userValidation.option ? 'text-errorColor border-b-2 border-b-errorColor rounded-es-none rounded-ee-none vvs:text-opacity-100' : 'border-black border-opacity-10 text-dark'}`} name="option" onChange={handleChange} onBlur={checkValidate} required id="option">
                   <option defaultChecked className="text-dark text-opacity-30 text-[15px]" value="">
                     Select
                   </option>
