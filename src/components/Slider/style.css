@@ -13,7 +13,7 @@
 .swiper-slide:nth-child(2n) {
   width: 70%;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
 }
 

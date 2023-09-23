@@ -23,7 +23,7 @@ const SwiperComponent = () => {
           },
           1024: {
             slidesPerView: 3,
-            spaceBetween: 50
+            spaceBetween: 30
           }
         }}
         spaceBetween={30}
