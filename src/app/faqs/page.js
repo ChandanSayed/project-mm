@@ -12,9 +12,6 @@ import ReturnToHomepage from '@/components/ReturnToHomepage';
 
 const page = () => {
   const [accordions, setAccordions] = useState(accordionList);
-  function getValue(e) {
-    setValue(e.target.value);
-  }
 
   return (
     <div>

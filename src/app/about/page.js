@@ -20,7 +20,7 @@ const page = () => {
       <div className="border-t bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-60% to-white to-90% px-[15px]">
         <div>
           <div className="flex items-center justify-center flex-col">
-            <h1 className="text-[60px] max-md:text-[34px] max-md:px-5 font-bold leading-[70px] text-center  text-dark mt-[51px] mb-[30px]">Welcome to MessageMoment</h1>
+            <h1 className="text-[60px] max-md:text-[34px] max-md:px-5 font-bold leading-[70px] max-md:leading-[34px] text-center  text-dark mt-[51px] mb-[30px] tracking-[-0.5px]">Welcome to MessageMoment</h1>
             <p className="text-blue  text-center text-[17px] leading-6 font-medium px-6 max-w-[586px]">The untraceable live chat service that allows you to have a private, discreet and secure conversation with anyone, anywhere.</p>
           </div>
           <div className="flex justify-center items-center">
