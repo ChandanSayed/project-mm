@@ -80,7 +80,7 @@ const ContactForm = () => {
 
   return (
     <>
-      <div className="bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-60% to-white to-90% px-[15px] ">
+      <div className="bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-60% to-white to-90% px-[15px] pb-[50px] lg:pb-[100px] ">
         <div className="flex items-center flex-col">
           <Image src={icon} className="mt-[50px] w-[80px] h-[80px] lg:w-[128px] lg:h-[128px]" alt="email" />
           <h2 className="text-4xl text-dark mt-[30px] font-bold mb-7">Contact Us</h2>

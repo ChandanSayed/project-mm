@@ -3,8 +3,15 @@
 import { useState } from 'react';
 import cookies from '../../public/icons/cookies.png';
 import Image from 'next/image';
+import { useAppContext } from '@/context/AppContext';
+
 const CookiesPopup = () => {
+  const { showCookies, setShowCookies } = useAppContext();
   const [showModal, setShowModal] = useState(true);
+
+  function handleCookiesPopup() {
+    setShowCookies(true);
+  }
   return (
     <>
       {showModal ? (
@@ -27,7 +34,13 @@ const CookiesPopup = () => {
                 </div>
                 {/*body*/}
                 <div>
-                  <p className="text-[15px] font-jetBrain leading-[23px] font-normal text-justify px-8">Hi, this website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only after consent. Let me choose.</p>
+                  <p className="text-[15px] font-jetBrain leading-[23px] font-normal text-justify px-8">
+                    Hi, this website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only after consent.{' '}
+                    <u className="cursor-pointer" onClick={handleCookiesPopup}>
+                      Let me choose
+                    </u>
+                    .
+                  </p>
                 </div>
                 {/*footer*/}
                 <div className="flex items-center justify-between p-6  border-slate-200 rounded-b">
