@@ -1,38 +1,40 @@
-import ReturnToHomepage from '@/components/ReturnToHomepage'
-import SiteLogo from '@/components/SiteLogo'
-import Image from 'next/image'
-import React from 'react'
-import maintetance from '../../../public/icons/maintenance.png'
+import ReturnToHomepage from '@/components/ReturnToHomepage';
+import SiteLogo from '@/components/SiteLogo';
+import Image from 'next/image';
+import React from 'react';
+import maintetance from '../../../public/icons/maintenance.png';
 const page = () => {
   return (
     <div>
-    <header className="bg-white  p-[35px] md:px-[60px] md:py-[17px] border-t-[5px] border-blue">
-  <nav className="flex items-center justify-center w-full max-w-[1440px] mx-auto">
-    <SiteLogo/>
-  </nav>
-</header>
-    <div className='bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-60% to-white to-90% px-[15px] '>
-        <div className='flex justify-center flex-col items-center h-[100vh]'>
-            <div className='max-w-[500px] h-[550px] max-lg:w-[100%] md:w-[100%] rounded-full opacity-[0.2]  bg-blue bg-gradient-to-b from-blue-10  blur-xl absolute z-10'>
-            </div>
-            <div
-                className=' bg-white border flex justify-center flex-col items-center max-w-[720px] max-lg:w-[100%] md:w-[100%] h-[400px] max-md:h-[370px] z-20'>
-                <Image
-                    src={maintetance}
-                    className='w-[128px] h-[128px] relative bottom-20 max-lg:bottom-24 max-md:bottom-22 max-sm:bottom-20 max-md:tracking-tighter max-md:w-[100px] max-md:h-[100px] '/>
-                <div className='flex justify-center lg:gap-8 md:gap-6 flex-col items-center relative bottom-10'>
-                    <h1 className='text-blue text-[26px] font-bold leading-normal text-center max-md:text-[17px] max-md:px-8 max-sm:mb-[20px]'>
-                    We’ll be back soon! <br/> We’re under maintenance
-                    </h1>
-                    <p className='text-base text-dark font-jetBrain max-md:text-[13px] text-center px-16 max-md:text-center max-md:px-6 leading-[26px] font-normal'>Sorry for the inconvenience. We’re performing some maintenance at the moment. We'll be back up shortly! <br/> <br/>
-                     - The MessageMoment Team</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <p className="text-darkGrey font-medium text-[13px] text-center mb-10">Copyright © 2023 MessageMoment. All rights reserved.</p>
-</div>
-  )
-}
+      <header className="bg-white  p-[35px] md:px-[60px] md:py-[17px] border-t-[5px] border-blue">
+        <nav className="flex items-center justify-center w-full max-w-[1440px] mx-auto">
+          <SiteLogo />
+        </nav>
+      </header>
 
-export default page
+      <div className="bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-60% to-white to-90% px-[15px] ">
+        <div className="max-w-[720px] mx-auto">
+          <div className="mt-[35px] lg:mt-[25px] border-t border-black border-opacity-10 pt-[126px] pb-[84px] lg:pt-[121px] lg:pb-[100px] ">
+            <div className="flex justify-center flex-col items-center">
+              <div className="max-w-[410px] h-[410px] w-full rounded-full bg-opacity-50 bg-blue bg-gradient-to-b from-blue-10  blur-[50px] absolute z-10"></div>
+              <div className=" relative bg-white border border-black border-opacity-10 flex justify-center flex-col items-center max-w-[720px] z-20 rounded-[10px] min-w-full">
+                <Image src={maintetance} className="w-[128px] relative bottom-16 max-lg:bottom-14 max-sm:bottom-12 max-lg:tracking-tighter max-lg:w-[100px]  " />
+                <div className="flex justify-center flex-col items-center relative bottom-10">
+                  <h1 className="text-blue text-[26px] font-bold leading-normal text-center max-lg:text-[17px] mt-[20px] max-lg:mt-[20px] max-lg:mx-[51px] mx-[125px] mb-[30px]">
+                    We’ll be back soon! <br /> We’re under maintenance
+                  </h1>
+                  <p className="text-base text-dark font-jetBrain max-md:text-[13px] text-center px-16 max-md:text-center max-md:px-6 leading-[26px] font-normal">
+                    Sorry for the inconvenience. We’re performing some maintenance at the moment. We'll be back up shortly! <br /> <br />- The MessageMoment Team
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p className="text-darkGrey font-medium text-[13px] text-center mb-10">Copyright © 2023 MessageMoment. All rights reserved.</p>
+    </div>
+  );
+};
+
+export default page;
