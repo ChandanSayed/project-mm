@@ -6,7 +6,8 @@ export const AppContext = createContext(Boolean);
 export default function AppContextProvider({ children }) {
   const [mobileNav, setMobileNav] = useState(false);
   const [showCookies, setShowCookies] = useState(false);
-  return <AppContext.Provider value={{ mobileNav, setMobileNav, showCookies, setShowCookies }}>{children}</AppContext.Provider>;
+  const [showCookiesModal, setShowCookiesModal] = useState(false);
+  return <AppContext.Provider value={{ mobileNav, setMobileNav, showCookies, setShowCookies, showCookiesModal, setShowCookiesModal }}>{children}</AppContext.Provider>;
 }
 
 export function useAppContext() {

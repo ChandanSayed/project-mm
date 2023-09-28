@@ -12,6 +12,7 @@ const CookiesPopup = () => {
   function handleCookiesPopup() {
     setShowCookies(true);
   }
+
   return (
     <>
       {showModal ? (
