@@ -9,7 +9,7 @@ const ToggleButton = () => {
   };
 
   return (
-    <div className={`relative inline-block w-14 h-8 rounded-full p-1 ${isActive ? 'bg-dark' : 'bg-lightGrey'}`} onClick={toggleButton}>
+    <div className={`cursor-pointer relative inline-block w-14 h-8 rounded-full p-1 ${isActive ? 'bg-dark' : 'bg-lightGrey'}`} onClick={toggleButton}>
       <div className="flex justify-between items-center p-[5px] text-white">
         <div>
           <FiCheck size={14} />

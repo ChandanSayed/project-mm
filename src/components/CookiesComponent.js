@@ -10,6 +10,8 @@ import CookiesAccordion from './CookiesAccordion';
 const CookiesComponent = () => {
   const [showModal, setShowModal] = useState(true);
   const [accordions, setAccordions] = useState(accordionCookiesList);
+  const [showCookies, setShowCookies] = useState(true);
+
   return (
     <>
       {showModal ? (
@@ -31,13 +33,14 @@ const CookiesComponent = () => {
                   </button>
                 </div>
                 {/*body*/}
-                <div className="relative p-5 flex-auto">
+                <div className="relative p-5 flex-auto px-[18px]">
                   <h5 className="text-blue text-[17px] leading-6 font-medium py-[10px]">Cookie Usage</h5>
-                  <p className="text-[15px] font-jetBrain leading-[23px] font-normal text-justify ">
+                  <p className="text-[15px]  max-lg:text-[13px]  font-jetBrain leading-[23px] font-normal text-justify ">
                     We use cookies to ensure the basic functionalities of this website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full{' '}
                     <Link href="/privacy" className="underline">
-                      Privacy Policy.
+                      Privacy Policy
                     </Link>
+                    .
                   </p>
 
                   <div className="accordion-lists">
@@ -52,7 +55,13 @@ const CookiesComponent = () => {
 
                   <div className="border border-light-gray border-solid pb-2 px-4 rounded-md my-4 ">
                     <h5 className="text-blue text-[17px] leading-6 font-medium py-[10px]">More Information</h5>
-                    <p className="text-[15px] font-jetBrain leading-[23px] font-normal text-justify ">For any queries in relation to our policy on cookies and your choices, please Contact Us.</p>
+                    <p className="text-[15px] max-lg:text-[13px] pr-8 font-jetBrain leading-[23px] font-normal text-justify ">
+                      For any queries in relation to our policy on cookies and your choices, please{' '}
+                      <Link href="/contact" className="underline">
+                        Contact Us
+                      </Link>
+                      .
+                    </p>
                   </div>
                 </div>
                 {/*footer*/}
