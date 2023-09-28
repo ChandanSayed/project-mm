@@ -80,28 +80,28 @@ const page = () => {
   };
 
   return (
-    <div>
+    <>
       <NavBar />
 
-      <div className="bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-60% to-white to-90% px-[15px] ">
-        <div className="container ">
-          <h3 className="text-[40px] max-md:text-[24px] font-bold leading-normal px-[5%] lg:px-[8%] pt-[40px] text-dark">Terms and Conditions of Use</h3>
-          <h3 className="bg-white w-[200px] h-[50px] border p-3 text-center rounded-md relative left-[8%] max-md:left-[5%] max-lg:left-[5%] mt-[48px] mb-[30px]">
+      <div className="bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-60% to-white to-90% px-[15px] border-t border-black border-opacity-5 pb-[10px] lg:pb-[35px]">
+        <div className="max-w-[1096px] mx-auto">
+          <h3 className="text-2xl lg:text-[40px] font-bold pt-[50px] text-dark">Terms and Conditions of Use</h3>
+          <button className="bg-white w-[200px] h-[50px] border p-3 text-center rounded-md mt-[25px] lg:mt-[48px] mb-[30px]">
             {currentMonthName} {day}, {currentYear}
-          </h3>
-          <div className="privacy-lists px-[5%] lg:px-[8%] pb-2">
+          </button>
+          <div className="privacy-lists pb-2">
             {data.map(list => {
               return (
                 <div className="" key={list.id}>
-                  <h3 className="text-[26px] max-md:text-[15px] font-bold text-blue mb-6 max-md:mb-[15px]">{list.question}</h3>
-                  <p className="text-[15px] max-md:text-[13px] font-normal leading-normal max-h-min font-jetBrain mb-[40px] max-md:mb-[15px]">{parse(list.answere, { replace: replaceAnchorTagsWithLinks })}</p>
+                  <h3 className="text-[17px] lg:text-[26px] font-bold text-blue mb-[15px] lg:mb-6">{list.question}</h3>
+                  <p className="lg:text-[15px] text-[13px] font-medium max-h-min font-jetBrain lg:mb-9 mb-[15px]">{parse(list.answere, { replace: replaceAnchorTagsWithLinks })}</p>
                 </div>
               );
             })}
             <hr />
           </div>
-          <div className="px-[5%] lg:px-[8%] pb-2">
-            <h3 className="text-[26px] max-md:text-[15px] font-bold text-blue my-[30px] max-md:mb-[15px]">Credit</h3>
+          <div className="pb-2">
+            <h3 className="text-[17px] lg:text-[26px] font-bold text-blue mb-[15px] lg:mb-6">Credit</h3>
             <div className="mb-[18px]">
               <p className="text-[15px] max-md:text-[13px] font-normal leading-normal max-h-min font-jetBrain break-all">https://www.flaticon.com/authors/basic-sheer/flat/8?author_id=1&type=standard</p>
               <p className="text-[15px] max-md:text-[13px] font-normal leading-normal max-h-min font-jetBrain text-lightGrey">Under Flaticon License</p>
@@ -114,7 +114,7 @@ const page = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

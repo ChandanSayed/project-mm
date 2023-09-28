@@ -2,10 +2,10 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
 import Image from 'next/image';
-import about1 from '../../../public/about/about1.jpg';
-import about2 from '../../../public/about/about2.jpg';
-import about3 from '../../../public/about/about3.jpg';
-import about4 from '../../../public/about/about4.jpg';
+import about1 from '../../../public/about/about1.png';
+import about2 from '../../../public/about/about2.png';
+import about3 from '../../../public/about/about3.png';
+import about4 from '../../../public/about/about4.png';
 import chat from '../../../public/icons/chat-hash.png';
 import light from '../../../public/icons/light.png';
 import bg1 from '../../../public/about/Background.png';
@@ -13,6 +13,7 @@ import bg2 from '../../../public/about/Background2.png';
 import bg3 from '../../../public/about/bg3.jpg';
 import bg4 from '../../../public/about/bg4.jpg';
 import Swiper from '@/components/Slider/Slider';
+
 const page = () => {
   return (
     <div>
@@ -25,10 +26,10 @@ const page = () => {
           </div>
           <div className="flex justify-center items-center">
             <div className="my-[51px] grid grid-cols-4 gap-5 max-lg:grid-cols-2 ">
-              <Image src={about1} className="w-[260px] h-[242px] max-md:w-[180px] max-md:h-[150px] rounded-xl" alt="" />
-              <Image src={about2} className="w-[260px] h-[242px] max-md:w-[180px] max-md:h-[150px] rounded-xl" alt="" />
-              <Image src={about3} className="w-[260px] h-[242px] max-md:w-[180px] max-md:h-[150px] rounded-xl" alt="" />
-              <Image src={about4} className="w-[260px] h-[242px] max-md:w-[180px] max-md:h-[150px] rounded-xl" alt="" />
+              <Image src={about1} className="lg:w-[260px] lg:h-[242px] object-cover w-[180px] h-[150px] rounded-[20px]" alt="" />
+              <Image src={about2} className="lg:w-[260px] lg:h-[242px] object-cover w-[180px] h-[150px] rounded-[20px]" alt="" />
+              <Image src={about3} className="lg:w-[260px] lg:h-[242px] object-cover w-[180px] h-[150px] rounded-[20px]" alt="" />
+              <Image src={about4} className="lg:w-[260px] lg:h-[242px] object-cover w-[180px] h-[150px] rounded-[20px]" alt="" />
             </div>
           </div>
           <div className=" flex justify-center items-center">

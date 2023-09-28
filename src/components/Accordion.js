@@ -53,8 +53,15 @@ function Accordion({ items, setAccordions, accordions }) {
         return (
           <div className="accordion-item border-b border-b-black border-opacity-10 py-[15px] last-of-type:border-none" key={index}>
             <div className="flex items-start lg:items-center">
-              {isOpen ? <Image className="mt-2 lg:mt-1 w-[10px]" src={angleDownActive} alt="Right Icon Active" /> : <Image className="mt-2 lg:mt-1 w-[6px]" src={currentE.hover ? angleRightActive : angleRight} alt="Right Icon" />}
-              <h3 className={`lg:text-[18px] text-[15px] font-medium cursor-pointer font-jetBrain ml-2 hover:text-blue ${isOpen ? 'text-blue' : 'text-dark'}`} onClick={() => toggleClick(index)} onMouseLeave={() => handleMouseLeave(currentE.id, index)} onMouseEnter={() => handleMouseEnter(currentE.id, index)}>
+              {isOpen ? (
+                <Image className="mt-2 lg:mt-1 w-[9.5px] h-[5.5px] " src={angleDownActive} alt="Right Icon Active" />
+              ) : (
+                <>
+                  <Image className="mt-2 lg:mt-1 w-[6px] hidden md:block" src={currentE.hover ? angleRightActive : angleRight} alt="Right Icon" />
+                  <Image className="mt-2 lg:mt-1 w-[6px] block md:hidden" src={angleRight} alt="Right Icon" />
+                </>
+              )}
+              <h3 className={`lg:text-[18px] text-[15px] font-medium cursor-pointer font-jetBrain ml-2 md:hover:text-blue ${isOpen ? 'text-blue' : 'text-dark'}`} onClick={() => toggleClick(index)} onMouseLeave={() => handleMouseLeave(currentE.id, index)} onMouseEnter={() => handleMouseEnter(currentE.id, index)}>
                 {currentE.question}
               </h3>
             </div>

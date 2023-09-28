@@ -17,7 +17,7 @@ const page = () => {
   return (
     <>
       <NavBar />
-      <div className="bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-60% to-white to-90% px-[19px] ">
+      <div className="bg-gradient-to-b from-blue-10 from-0%  to-blue-0 to-[130%] px-[19px] ">
         <div className="flex flex-col justify-center items-center gap-[30px] pt-[51px]">
           <Image src={faqs} className="lg:w-[128px] lg:h-[128px] w-[80px] h-[80px]" alt="logo" />
           <h3 className="lg:text-[40px] font-bold leading-normal text-[24px] px-6 text-center">How can we help you?</h3>
@@ -25,14 +25,14 @@ const page = () => {
         <div className="text-center lg:mt-[49px] mt-[35px] mb-[29px]">
           <form>
             <label className="relative">
-              <input className="appearance-none w-full max-w-[1096px] font-jetBrain text-dark placeholder:text-dark placeholder:text-opacity-30 border  border-opacity-10 text-[15px] h-[60px] rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white " type="text" placeholder="Type keywords to find answers" />
+              <input className="appearance-none w-full max-w-[1096px] font-jetBrain text-dark placeholder:text-dark placeholder:text-opacity-30 border  border-opacity-10 text-[15px] h-[60px] rounded-md py-3 px-4 leading-tight focus:outline-none focus:bg-white " type="text" placeholder="Type keywords to find answers" />
               <button className="absolute inset-y-0 right-0 flex items-center pr-3">
                 <Image src={searchIcon} alt="Search Icon" />
               </button>
             </label>
           </form>
         </div>
-        <p className="text-[17px] font-medium leading-6 text-blue text-center px-5 mb-[50px] lg:mb-[40px]">You can also browse the topics below to find what you are looking for:</p>
+        <p className="text-[17px] font-medium leading-6 text-blue text-center px-5 pb-[50px] lg:pb-[40px]">You can also browse the topics below to find what you are looking for:</p>
       </div>
       <div className="bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-60% to-white to-90% px-[15px] ">
         <div className="max-w-[1096px] mx-auto">

@@ -1,36 +1,20 @@
 import React from 'react';
 import error from '../../../public/icons/error-404.png';
-import ReturnToHomepage from '@/components/ReturnToHomepage';
-import SiteLogo from '@/components/SiteLogo';
-import Image from 'next/image';
+import LogoHeader from '@/components/LogoHeader';
+import NavLessPageFooter from '@/components/NavLessPageFooter';
+import BlurSection from '@/components/BlurSection';
+
 const page = () => {
   return (
-    <div>
-      <header className="bg-white  p-[35px] md:px-[60px] md:py-[17px] border-t-[5px] border-blue">
-        <nav className="flex items-center justify-center w-full max-w-[1440px] mx-auto">
-          <SiteLogo />
-        </nav>
-      </header>
-      <div className="bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-60% to-white to-90% px-[15px] ">
+    <>
+      <LogoHeader />
+      <div className="lg:bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-60% to-white to-90% border-t border-black border-opacity-10">
         <div className="max-w-[720px] mx-auto">
-          <div className="mt-[35px] lg:mt-[25px] border-t border-black border-opacity-10 pt-[126px] pb-[84px] lg:pt-[121px] lg:pb-[100px] ">
-            <div className="flex justify-center flex-col items-center">
-              <div className="max-w-[410px] h-[410px] w-full rounded-full bg-opacity-50 bg-blue bg-gradient-to-b from-blue-10  blur-[50px] absolute z-10"></div>
-              <div className=" relative bg-white border border-black border-opacity-10 flex justify-center flex-col items-center max-w-[720px] z-20 rounded-[10px] min-w-full">
-                <Image src={error} className="w-[128px] relative bottom-16 max-lg:bottom-14 max-sm:bottom-12 max-lg:tracking-tighter max-lg:w-[100px]  " />
-                <div className="flex justify-center lg:gap-8 md:gap-6 flex-col items-center relative bottom-10">
-                  <h1 className="text-blue text-[26px] font-bold leading-normal text-center max-lg:text-[17px] mt-[20px] max-lg:mt-[20px] max-lg:mx-[51px] mx-[125px]">The chat session you were invited to with this link is no longer available</h1>
-                  <p className="text-[15px] font-jetBrain max-md:text-[13px] max-md:text-center max-md:px-7 max-md:mt-[20px] max-md:mb-[15px] ">https://messagemoment.com/5qjjc37f9sn</p>
-                  <p className="text-[15px] text-dark font-jetBrain max-md:text-[13px] max-md:text-center max-md:px-6 max-md:mb-[32px] ">Return to the homepage to generate a new chat session.</p>
-                  <ReturnToHomepage />
-                </div>
-              </div>
-            </div>
-          </div>
+          <BlurSection img={error} pt="pt-[85px] lg:pt-[108px]" heading={`The chat session you were invited to with this link is no longer available`} description={`Return to the homepage to generate a new chat session.`} padding={'pt-[239px] pb-[218px] lg:pt-[258px] lg:pb-[224px]'} sessionLink={true} />
         </div>
       </div>
-      <p className="text-darkGrey font-medium text-[13px] text-center mb-10">Copyright © 2023 MessageMoment. All rights reserved.</p>
-    </div>
+      <NavLessPageFooter />
+    </>
   );
 };
 

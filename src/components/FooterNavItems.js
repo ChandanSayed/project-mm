@@ -1,10 +1,12 @@
+import Link from 'next/link';
+
 const FooterNavItems = ({ classes = '', color = 'text-dark' }) => {
   return (
     <ul className={`flex flex-col lg:flex-row gap-[11px] lg:gap-[30px] justify-center ${classes}`}>
       <li>
-        <a href="#" className={`font-medium text-sm lg:text-[17px] ${color}`}>
+        <Link href="/about" className={`font-medium text-sm lg:text-[17px] ${color}`}>
           About
-        </a>
+        </Link>
       </li>
       <li>
         <a href="#" className={`font-medium text-sm lg:text-[17px] ${color}`}>
@@ -12,14 +14,14 @@ const FooterNavItems = ({ classes = '', color = 'text-dark' }) => {
         </a>
       </li>
       <li>
-        <a href="#" className={`font-medium text-sm lg:text-[17px] ${color}`}>
+        <Link href="/privacy" className={`font-medium text-sm lg:text-[17px] ${color}`}>
           Privacy Policy
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="#" className={`font-medium text-sm lg:text-[17px] ${color}`}>
+        <Link href="/termsandcondition" className={`font-medium text-sm lg:text-[17px] ${color}`}>
           Terms of Use
-        </a>
+        </Link>
       </li>
     </ul>
   );
