@@ -9,9 +9,9 @@ const FooterNavItems = ({ classes = '', color = 'text-dark' }) => {
         </Link>
       </li>
       <li>
-        <a href="#" className={`font-medium text-sm lg:text-[17px] ${color}`}>
+        <Link href="/help" className={`font-medium text-sm lg:text-[17px] ${color}`}>
           Help & Support
-        </a>
+        </Link>
       </li>
       <li>
         <Link href="/privacy" className={`font-medium text-sm lg:text-[17px] ${color}`}>
@@ -19,7 +19,7 @@ const FooterNavItems = ({ classes = '', color = 'text-dark' }) => {
         </Link>
       </li>
       <li>
-        <Link href="/termsandcondition" className={`font-medium text-sm lg:text-[17px] ${color}`}>
+        <Link href="/terms" className={`font-medium text-sm lg:text-[17px] ${color}`}>
           Terms of Use
         </Link>
       </li>

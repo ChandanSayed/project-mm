@@ -1,16 +1,10 @@
+import DateButton from '@/components/DateButton';
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
 import parse from 'html-react-parser';
 import Link from 'next/link';
 
 const page = () => {
-  const currentDate = new Date();
-  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  const monthIndex = currentDate.getMonth();
-  const currentMonthName = monthNames[monthIndex];
-  const day = currentDate.getDate();
-  const currentYear = currentDate.getFullYear();
-
   const data = [
     {
       id: 1,
@@ -61,9 +55,7 @@ const page = () => {
       <div className="bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-60% to-white to-90% px-[15px] border-t border-black border-opacity-5 pb-[10px] lg:pb-[35px]">
         <div className="max-w-[1096px] mx-auto">
           <h3 className="text-2xl lg:text-[40px] font-bold pt-[50px] text-dark">Privacy Policy</h3>
-          <button className="bg-white w-[200px] h-[50px] border p-3 text-center rounded-md mt-[25px] lg:mt-[48px] mb-[30px]">
-            {currentMonthName} {day}, {currentYear}
-          </button>
+          <DateButton />
           <div className="privacy-lists pb-2">
             {data.map(list => {
               return (
