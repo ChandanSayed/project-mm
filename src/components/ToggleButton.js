@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { RxCross2 } from 'react-icons/rx';
 import { FiCheck } from 'react-icons/fi';
+
 const ToggleButton = () => {
   const [isActive, setIsActive] = useState(false);
 

@@ -14,6 +14,10 @@ import ReturnToHomepage from '@/components/ReturnToHomepage';
 const page = () => {
   const [accordions, setAccordions] = useState(accordionList);
 
+  function handleForm(e) {
+    e.preventDefault();
+  }
+
   return (
     <>
       <NavBar />
@@ -23,7 +27,7 @@ const page = () => {
           <h3 className="lg:text-[40px] font-bold leading-normal text-[24px] px-6 text-center">How can we help you?</h3>
         </div>
         <div className="text-center lg:mt-[49px] mt-[35px] mb-[29px]">
-          <form>
+          <form onSubmit={handleForm}>
             <label className="relative">
               <input className="appearance-none w-full max-w-[1096px] font-jetBrain text-dark placeholder:text-dark placeholder:text-opacity-30 border  border-opacity-10 text-[15px] h-[60px] rounded-md py-3 px-4 leading-tight focus:outline-none focus:bg-white " type="text" placeholder="Type keywords to find answers" />
               <button className="absolute inset-y-0 right-0 flex items-center pr-3">
