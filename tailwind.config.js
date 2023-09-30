@@ -10,11 +10,19 @@ module.exports = {
         'blue-0': 'rgba(73,74,248,0)',
         darkGrey: '#555555',
         lightGrey: '#CCCCCC',
-        errorColor: '#EB5757'
+        errorColor: '#EB5757',
+        midGray: '#F7F7F7',
+        black: '#151515'
       },
       fontFamily: {
         dm: 'DM Sans',
         jetBrain: "'JetBrains Mono', monospace"
+      },
+      gridTemplateColumns: {
+        sidebar: '300px auto' // 👈 for sidebar layout. adds grid-cols-sidebar class
+      },
+      gridTemplateRows: {
+        header: '64px auto' // 👈 for the navbar layout. adds grid-rows-header class
       }
     },
     screens: {

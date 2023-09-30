@@ -16,7 +16,7 @@ const CookiesComponent = () => {
     <>
       {showModal ? (
         <>
-          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+          <div className="mt-5 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
             <div className="relative w-auto my-6 mx-auto max-w-3xl">
               {/*content*/}
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
@@ -33,7 +33,7 @@ const CookiesComponent = () => {
                   </button>
                 </div>
                 {/*body*/}
-                <div className="relative p-5 flex-auto px-[18px]">
+                <div className="relative p-5 flex-auto px-[18px] overflow-y-auto max-h-[calc(100vh-200px)]">
                   <h5 className="text-blue text-[17px] leading-6 font-medium py-[10px]">Cookie Usage</h5>
                   <p className="text-[15px]  max-lg:text-[13px]  font-jetBrain leading-[23px] font-normal text-justify ">
                     We use cookies to ensure the basic functionalities of this website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full{' '}
@@ -81,7 +81,6 @@ const CookiesComponent = () => {
               </div>
             </div>
           </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
         </>
       ) : null}
     </>
