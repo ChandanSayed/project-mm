@@ -15,7 +15,8 @@ import bg4 from '../../../public/about/bg4.png';
 import dedicated1 from '/public/about/dedicated1.png';
 import dedicated2 from '/public/about/dedicated2.png';
 import dedicated3 from '/public/about/dedicated3.png';
-import AboutTwoColumnSection from '@/components/Slider/AboutTwoColumnSection';
+import AboutTwoColumnSection from '@/components/AboutTwoColumnSection';
+import Slider from '@/components/Slider/Slider';
 
 const page = () => {
   return (
@@ -36,21 +37,21 @@ const page = () => {
             </div>
           </div>
           <div className=" flex justify-center items-center">
-            <p className="text-dark text-[13px] lg:text-[17px] font-medium leading-normal font-jetBrain mb-[100px] lg:mb-[130px] text-center px-6 max-w-[908px]">It is said that words cannot be unspoken, but they can be unwritten with MessageMoment’s in-the-moment chat service that guarantees your conversation is history. Start chatting now and experience the privacy and security of MessageMoment.</p>
+            <p className="text-dark text-[13px] lg:text-[17px] font-medium leading-normal font-jetBrain mb-[100px] lg:mb-[130px] text-center px-4 max-w-[908px]">It is said that words cannot be unspoken, but they can be unwritten with MessageMoment’s in-the-moment chat service that guarantees your conversation is history. Start chatting now and experience the privacy and security of MessageMoment.</p>
           </div>
         </div>
         <div className="relative">
           <div className="flex flex-col items-center justify-center">
             <div className="max-w-[1320px] w-full max-lg:w-full max-md:w-full bg-blue rounded-xl flex items-center flex-col pb-[90px] lg:pb-28 relative">
               <Image src={chat} alt="Chat" className="w-[100px] h-[100px] lg:w-[128px] lg:h-[128px] absolute -top-[50px] lg:-top-[61px] " />
-              <h3 className="text-[40px] font-bold pt-[79px] lg:pt-[117px] text-white text-center max-w-[1096px] px-[6px] max-lg:text-[24px]">We believe that words can be a powerful tool for connection and communication, but it's also true that words cannot be unspoken.</h3>
+              <h3 className="text-[40px] font-bold pt-[79px] lg:pt-[117px] text-white text-center max-w-[1096px] px-4 max-lg:text-[24px]">We believe that words can be a powerful tool for connection and communication, but it's also true that words cannot be unspoken.</h3>
               <p className="text-white text-center text-[13px] lg:text-[17px] leading-6 font-medium mt-5 mb-[30px] lg:mb-[50px] max-w-[950px] px-36 max-md:px-4">That's why we created a live chat service that lets you unwrite those words, with a unique chat link and a secure, in-the-moment chat experience.</p>
             </div>
           </div>
           <div className="flex flex-col justify-center items-center pb-[50px] lg:pb-[70px] relative z-10 -mt-[90px] lg:-mt-[113px] ">
             <Image src={bg1} className="rounded-[20px] max-w-[90%] max-lg:hidden" alt="Bg" />
             <Image src={bg2} className="lg:hidden rounded-[20px] h-[180px] object-cover max-w-[90%] max-lg:visible" alt="Bg" />
-            <p className="text-center font-jetBrain text-[13px] lg:text-[17px] font-medium my-10 lg:mt-[70px] lg:mb-[30px] px-8 max-w-[950px]">Our team has developed a platform that is not only simple and easy to use, but also guarantees your conversation will be history. With no account registration necessary and a mobile- responsive design, you can chat on the go, without leaving a trace. It never happened! Our unique security features include the option to "Make Secure," by sharing a token password, ensuring that only those you invite can enter the chat.</p>
+            <p className="text-center font-jetBrain text-[13px] lg:text-[17px] font-medium my-10 lg:mt-[70px] lg:mb-[30px] px-4 max-w-[950px]">Our team has developed a platform that is not only simple and easy to use, but also guarantees your conversation will be history. With no account registration necessary and a mobile- responsive design, you can chat on the go, without leaving a trace. It never happened! Our unique security features include the option to "Make Secure," by sharing a token password, ensuring that only those you invite can enter the chat.</p>
             <button className={`flex justify-center text-sm lg:text-[15px] items-center rounded-md h-[46px] w-[300px] px-5 bg-blue hover:bg-opacity-80 text-white font-jetBrain font-bold`}>Try MessageMoment</button>
           </div>
         </div>
@@ -63,7 +64,7 @@ const page = () => {
         <div className="px-[15px] flex flex-col items-center justify-center ">
           <div className="max-w-[1320px] w-full max-lg:w-full max-md:w-full bg-dark rounded-xl flex items-center flex-col pb-[89px] lg:pb-[110px]">
             <Image src={light} alt="Light" className="w-20 h-20 -top-10  lg:w-[128px] lg:h-[128px] absolute  lg:-top-[60px]" />
-            <h3 className="text-[40px] font-bold  text-white text-center max-w-[1096px] px-1 mt-[70px] lg:mt-[140px] max-lg:text-[24px]">We are dedicated to delivering an unparalleled user experience and are always looking for ways to improve our services.</h3>
+            <h3 className="text-[40px] font-bold  text-white text-center max-w-[1096px] px-4 mt-[70px] lg:mt-[140px] max-lg:text-[24px]">We are dedicated to delivering an unparalleled user experience and are always looking for ways to improve our services.</h3>
             <p className="text-white text-center text-[13px] lg:text-[17px] leading-6 font-medium mt-5 mb-10 lg:mb-20 max-w-[950px] px-36 max-md:px-4">
               If you have any questions, concerns, feedback or would like to advertise with MessageMoment, please do not hesitate to{' '}
               <Link href="/contact" className="font-medium lg:underline">
@@ -74,10 +75,11 @@ const page = () => {
           </div>
         </div>
         <div className="flex flex-col justify-center items-center -mt-[89px] lg:-mt-[110px]">
-          <div className="w-full flex justify-center gap-5 items-center overflow-x-scroll">
-            <Image src={dedicated1} className="h-[200px] w-[50%] lg:w-[240px] lg:h-[242px]  rounded-[20px] " alt="Dedicated" />
-            <Image src={dedicated2} className="h-[200px] w-[76%] lg:w-[540px] lg:h-[242px]  rounded-[20px] " alt="Dedicated2" />
-            <Image src={dedicated3} className="h-[200px] w-[50%] lg:w-[240px] lg:h-[242px]  rounded-[20px] " alt="Dedicated3" />
+          <div className="w-full flex justify-center gap-3 lg:gap-5 items-center overflow-x-auto">
+            <Image src={dedicated1} className="h-[200px]  lg:w-[240px] lg:h-[242px]  rounded-[20px] object-cover lg:block " alt="Dedicated" />
+            <Image src={dedicated2} className="h-[200px] w-4/5 lg:w-[540px] lg:h-[242px]  rounded-[20px] object-cover lg:block" alt="Dedicated2" />
+            <Image src={dedicated3} className="h-[200px]  lg:w-[240px] lg:h-[242px]  rounded-[20px] object-cover lg:block" alt="Dedicated3" />
+            {/* <Slider /> */}
           </div>
           <p className="text-center font-jetBrain text-[13px] lg:text-[17px] font-medium mt-10 lg:mt-[50px] mb-[50px] px-4 max-w-[950px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis nibh id nunc commodo scelerisque. Donec neque justo, hendrerit quis laoreet sed, consectetur vitae enim. Vestibulum elementum urna eu lectus feugiat laoreet. Donec tincidunt libero et urna laoreet accumsan. Curabitur at porta lectus, eget maximus neque. Nulla pellentesque nunc turpis, id interdum lacus consequat non. Donec nec placerat augue, nec vehicula metus.</p>
         </div>
