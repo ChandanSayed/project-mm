@@ -17,10 +17,13 @@ import dedicated2 from '/public/about/dedicated2.png';
 import dedicated3 from '/public/about/dedicated3.png';
 import AboutTwoColumnSection from '@/components/AboutTwoColumnSection';
 import Slider from '@/components/Slider/Slider';
+import { useAppContext } from '@/context/AppContext';
 
 const page = () => {
+  const { setMobileNav } = useAppContext();
+  setMobileNav(false);
   return (
-    <div>
+    <>
       <NavBar />
       <div className="border-t bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-60% to-white to-90% px-[15px]">
         <div>
@@ -85,7 +88,7 @@ const page = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
