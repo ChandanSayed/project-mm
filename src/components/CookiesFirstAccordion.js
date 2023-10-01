@@ -1,5 +1,4 @@
 import { Transition } from '@headlessui/react';
-import React from 'react';
 import { FiCheck } from 'react-icons/fi';
 
 const CookiesFirstAccordion = ({ isOpen }) => {
