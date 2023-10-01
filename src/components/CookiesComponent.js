@@ -35,7 +35,7 @@ const CookiesComponent = ({ showCookiesPopup, showPop, setShowPop }) => {
       {showPop ? (
         <div className={`justify-center items-end lg:items-center flex h-screen w-screen overflow-x-hidden overflow-y-auto fixed lg:inset-0 z-50 outline-none focus:outline-none bottom-0 ${showCookiesPopup ? 'lg:flex' : 'lg:hidden'}`}>
           {/*content*/}
-          <div className="border border-black border-opacity-10 rounded-lg shadow-lg relative flex flex-col w-[calc(100%-30px)] h-[calc(100vh-100px)] mt-12 lg:pt-0 lg:max-h-[570px] xl:max-h-[650px] max-w-[670px] bg-white outline-none focus:outline-none">
+          <div className="border border-black border-opacity-10 rounded-lg shadow-lg relative flex flex-col w-[calc(100%-30px)] h-[calc(100vh-220px)] mt-12 lg:pt-0 lg:max-h-[570px] xl:max-h-[650px] max-w-[670px] bg-white outline-none focus:outline-none">
             {/*header*/}
             <div className="px-5 border-b border-solid border-black border-opacity-10 rounded-t gap-5 relative">
               <Image src={cookies} alt="Cookies" className="w-[60px] lg:w-[80px] absolute -top-4 lg:-top-6 " />
@@ -47,7 +47,7 @@ const CookiesComponent = ({ showCookiesPopup, showPop, setShowPop }) => {
               </button>
             </div>
             {/*body*/}
-            <div className="relative p-5 flex-auto px-[18px] overflow-y-auto max-h-[calc(100vh-200px)]">
+            <div className="relative p-5 flex-auto px-[18px] overflow-y-auto max-h-[calc(100vh-300px)] custom-scrollbar">
               <h5 className="text-blue text-[17px] leading-6 font-medium pb-[10px]">Cookie Usage</h5>
               <p className="text-[15px] pb-[10px] max-lg:text-[13px]  font-jetBrain leading-[23px] font-normal text-justify ">
                 We use cookies to ensure the basic functionalities of this website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full{' '}
