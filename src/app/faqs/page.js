@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
@@ -10,6 +10,7 @@ import Accordion from '@/components/Accordion';
 import { accordionList } from '../../components/AccordionList';
 import email2 from '../../../public/icons/email.png';
 import ReturnToHomepage from '@/components/ReturnToHomepage';
+import { useAppContext } from '@/context/AppContext';
 
 const page = () => {
   const [accordions, setAccordions] = useState(accordionList);
@@ -17,6 +18,11 @@ const page = () => {
   function handleForm(e) {
     e.preventDefault();
   }
+
+  const { setMobileNav } = useAppContext();
+  useEffect(() => {
+    setMobileNav(false);
+  }, []);
 
   return (
     <>

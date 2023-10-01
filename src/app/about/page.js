@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
@@ -18,10 +19,13 @@ import dedicated3 from '/public/about/dedicated3.png';
 import AboutTwoColumnSection from '@/components/AboutTwoColumnSection';
 import Slider from '@/components/Slider/Slider';
 import { useAppContext } from '@/context/AppContext';
+import { useEffect } from 'react';
 
 const page = () => {
   const { setMobileNav } = useAppContext();
-  setMobileNav(false);
+  useEffect(() => {
+    setMobileNav(false);
+  }, []);
   return (
     <>
       <NavBar />
