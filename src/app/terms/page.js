@@ -70,7 +70,6 @@ const page = () => {
       return node;
     } else if (node.type === 'tag' && node.name === 'a' && node.attribs.href) {
       const href = node.attribs.href;
-      console.log(node.children[0].data);
       return (
         <Link href={href} key={index} className="text-blue">
           {parse(node.children[0].data)}

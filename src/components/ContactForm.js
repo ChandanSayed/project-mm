@@ -35,7 +35,6 @@ const ContactForm = () => {
     if (e.target.name === 'email') {
       valid = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(e.target.value);
       setValidate(valid);
-      console.log(valid, validate);
       if (valid) {
         setUserValidation(prev => ({ ...prev, [e.target.name]: false }));
         return;

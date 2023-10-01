@@ -10,11 +10,11 @@ const ToggleButton = () => {
   };
 
   return (
-    <div className={`cursor-pointer relative inline-block w-14 h-8 rounded-full p-1 ${isActive ? 'bg-dark' : 'bg-lightGrey'}`} onClick={toggleButton}>
+    <button className={`cursor-pointer relative inline-block min-w-[56px] h-8 rounded-full p-1 first-of-type:disabled ${isActive ? 'bg-darkGrey' : 'bg-blue'}`} onClick={toggleButton}>
       <div className="flex justify-between items-center p-[5px] text-white">
         <div>
           <FiCheck size={14} />
-        </div>{' '}
+        </div>
         <div>
           <RxCross2 size={14} />
         </div>
@@ -23,7 +23,7 @@ const ToggleButton = () => {
         <div className={`absolute inset-0 flex items-center justify-center text-gray-600 ${isActive ? 'opacity-0' : 'opacity-100'}`}></div>
         <div className={`absolute inset-0 flex items-center justify-center text-dark-600 ${isActive ? 'opacity-100' : 'opacity-0'}`}></div>
       </div>
-    </div>
+    </button>
   );
 };
 

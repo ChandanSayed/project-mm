@@ -12,7 +12,7 @@ const NavItems = ({ classes = 'pl-[50px]', color = 'text-black' }) => {
           </Link>
         </li>
         <li>
-          <Link href="help" className={`font-medium text-base ${color}`}>
+          <Link href="/contact" className={`font-medium text-base ${color}`}>
             Help & Support
           </Link>
         </li>
