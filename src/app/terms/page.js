@@ -22,7 +22,7 @@ const page = () => {
     {
       id: 2,
       question: '2. Information Collection and Use',
-      answer: `By using MessageMoment, you agree to the following conditions of use: <br/><br/> <ul className="list-disc pl-5">
+      answer: `By using MessageMoment, you agree to the following conditions of use: <br/><br/><ul className="list-disc pl-5">
       <li> You will not use the platform for any illegal or unauthorized purpose. </li>
       <li>You will not violate any laws in your jurisdiction.</li>
       <li>You will not infringe upon the rights of others, including but not limited to, the right to privacy and intellectual property rights.</li>
@@ -69,7 +69,7 @@ const page = () => {
     {
       id: 10,
       question: '10. Contact Us',
-      answer: 'If you have any questions regarding these Terms and Conditions of Use, please <a href="/" style="color: blue">Contact Us.</a>'
+      answer: 'If you have any questions regarding these Terms and Conditions of Use, please <a href="/contact" style="color: blue">Contact Us.</a>'
     }
   ];
 
@@ -99,7 +99,7 @@ const page = () => {
               return (
                 <div className="" key={list.id}>
                   <h3 className="text-[17px] lg:text-[26px] font-bold text-blue mb-[15px] lg:mb-6">{list.question}</h3>
-                  <p className="lg:text-[15px] text-[13px] font-medium max-h-min font-jetBrain lg:mb-9 mb-[15px]">{parse(list.answer, { replace: replaceAnchorTagsWithLinks })}</p>
+                  <div className="lg:text-[15px] text-[13px] font-medium max-h-min font-jetBrain lg:mb-9 mb-[15px]">{parse(list.answer, { replace: replaceAnchorTagsWithLinks })}</div>
                 </div>
               );
             })}

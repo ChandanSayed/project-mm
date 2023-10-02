@@ -41,7 +41,7 @@ const page = () => {
     {
       id: 6,
       question: '6. Contact Us',
-      answere: 'If you have any questions regarding this Privacy Policy, please <a href="#" style="color: blue;">Contact Us.</a>'
+      answere: 'If you have any questions regarding this Privacy Policy, please <a href="/contact" style="color: blue;">Contact Us.</a>'
     }
   ];
 
@@ -49,7 +49,7 @@ const page = () => {
     if (node.type === 'tag' && node.name === 'a' && node.attribs.href) {
       const href = node.attribs.href;
       return (
-        <Link href="/" key={href} className="text-blue">
+        <Link href={href} key={href} className="text-blue">
           {parse(node.children[0].data)}
         </Link>
       );
