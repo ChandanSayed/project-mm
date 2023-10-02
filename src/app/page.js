@@ -10,7 +10,6 @@ export default function Home() {
     <>
       <NavBar />
       <main>
-        <ContactForm />
         <CookiesContainer />
       </main>
       <Footer />

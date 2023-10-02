@@ -9,7 +9,7 @@ const FooterNavItems = ({ classes = '', color = 'text-dark' }) => {
         </Link>
       </li>
       <li>
-        <Link href="/contact" className={`font-medium text-sm lg:text-[17px] ${color}`}>
+        <Link href="/faqs" className={`font-medium text-sm lg:text-[17px] ${color}`}>
           Help & Support
         </Link>
       </li>

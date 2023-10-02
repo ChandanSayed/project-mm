@@ -5,11 +5,11 @@ const CookiesFooterButtons = ({ cookiesAccepted, cookiesRejected, cookiesSaved }
         <button className="bg-blue font-jetBrain text-[15px] w-full lg:w-[180px] h-[46px] rounded-md text-white ease-linear transition-all duration-150 hover:bg-opacity-80" type="button" onClick={cookiesAccepted}>
           Accept All
         </button>
-        <button className="bg-lightGrey font-jetBrain text-[15px] w-full lg:w-[180px] h-[46px] rounded-md text-dark ease-linear transition-all duration-150" type="button" onClick={cookiesRejected}>
+        <button className="bg-lightGrey font-jetBrain text-[15px] w-full lg:w-[180px] h-[46px] rounded-md text-dark ease-linear transition-all duration-150 hover:bg-opacity-80" type="button" onClick={cookiesRejected}>
           Reject All
         </button>
       </div>
-      <button className="bg-lightGrey font-jetBrain text-[15px] lg:w-[180px] h-[46px] rounded-md text-dark ease-linear transition-all duration-150 grow" type="button" onClick={cookiesSaved}>
+      <button className="bg-lightGrey font-jetBrain text-[15px] lg:w-[180px] h-[46px] rounded-md text-dark ease-linear transition-all duration-150 grow hover:bg-opacity-80" type="button" onClick={cookiesSaved}>
         Save Setting
       </button>
     </div>

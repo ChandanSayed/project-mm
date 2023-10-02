@@ -1,10 +1,18 @@
+'use client';
 import Link from 'next/link';
 import parse from 'html-react-parser';
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
 import DateButton from '@/components/DateButton';
+import { useAppContext } from '@/context/AppContext';
+import { useEffect } from 'react';
 
 const page = () => {
+  const { setMobileNav } = useAppContext();
+  useEffect(() => {
+    setMobileNav(false);
+  }, []);
+
   const data = [
     {
       id: 1,

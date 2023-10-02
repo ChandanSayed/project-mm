@@ -3,23 +3,23 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
 import Image from 'next/image';
-import about1 from '../../../public/about/about1.png';
-import about2 from '../../../public/about/about2.png';
-import about3 from '../../../public/about/about3.png';
-import about4 from '../../../public/about/about4.png';
-import chat from '../../../public/icons/chat-hash.png';
-import light from '../../../public/icons/light.png';
-import bg1 from '../../../public/about/Background.png';
-import bg2 from '../../../public/about/Background2.png';
-import bg3 from '../../../public/about/bg3.png';
-import bg4 from '../../../public/about/bg4.png';
+import about1 from '/public/about/about1.png';
+import about2 from '/public/about/about2.png';
+import about3 from '/public/about/about3.png';
+import about4 from '/public/about/about4.png';
+import chat from '/public/icons/chat-hash.png';
+import light from '/public/icons/light.png';
+import bg1 from '/public/about/Background.png';
+import bg2 from '/public/about/Background2.png';
+import bg3 from '/public/about/bg3.png';
+import bg4 from '/public/about/bg4.png';
 import dedicated1 from '/public/about/dedicated1.png';
 import dedicated2 from '/public/about/dedicated2.png';
 import dedicated3 from '/public/about/dedicated3.png';
 import AboutTwoColumnSection from '@/components/AboutTwoColumnSection';
-import Slider from '@/components/Slider/Slider';
 import { useAppContext } from '@/context/AppContext';
 import { useEffect } from 'react';
+import Slider from '@/components/Slider/Slider';
 
 const page = () => {
   const { setMobileNav } = useAppContext();
@@ -83,10 +83,10 @@ const page = () => {
         </div>
         <div className="flex flex-col justify-center items-center -mt-[89px] lg:-mt-[110px]">
           <div className="w-full flex justify-center gap-3 lg:gap-5 items-center overflow-x-auto">
-            <Image src={dedicated1} className="h-[200px]  lg:w-[240px] lg:h-[242px]  rounded-[20px] object-cover lg:block " alt="Dedicated" />
-            <Image src={dedicated2} className="h-[200px] w-4/5 lg:w-[540px] lg:h-[242px]  rounded-[20px] object-cover lg:block" alt="Dedicated2" />
-            <Image src={dedicated3} className="h-[200px]  lg:w-[240px] lg:h-[242px]  rounded-[20px] object-cover lg:block" alt="Dedicated3" />
-            {/* <Slider /> */}
+            <Image src={dedicated1} className="h-[200px]  lg:w-[240px] lg:h-[242px]  rounded-[20px] object-cover hidden lg:block " alt="Dedicated" />
+            <Image src={dedicated2} className="h-[200px] w-4/5 lg:w-[540px] lg:h-[242px]  rounded-[20px] object-cover hidden lg:block" alt="Dedicated2" />
+            <Image src={dedicated3} className="h-[200px]  lg:w-[240px] lg:h-[242px]  rounded-[20px] object-cover hidden lg:block" alt="Dedicated3" />
+            <Slider />
           </div>
           <p className="text-center font-jetBrain text-[13px] lg:text-[17px] font-medium mt-10 lg:mt-[50px] mb-[50px] px-4 max-w-[950px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis nibh id nunc commodo scelerisque. Donec neque justo, hendrerit quis laoreet sed, consectetur vitae enim. Vestibulum elementum urna eu lectus feugiat laoreet. Donec tincidunt libero et urna laoreet accumsan. Curabitur at porta lectus, eget maximus neque. Nulla pellentesque nunc turpis, id interdum lacus consequat non. Donec nec placerat augue, nec vehicula metus.</p>
         </div>

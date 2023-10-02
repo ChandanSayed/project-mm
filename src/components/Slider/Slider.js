@@ -2,44 +2,59 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import bg1 from '/public/about/slider1.png';
-import bg2 from '/public/about/slider2.png';
+import bg2 from '/public/about/dedicated2.png';
 import bg3 from '/public/about/slider3.png';
 import Image from 'next/image';
 import { Pagination } from 'swiper/modules';
 
 import 'swiper/css';
-import 'swiper/css/free-mode';
+// import 'swiper/css/free-mode';
 
-// import './style.css';
+import './style.css';
 
 const Slider = () => {
   return (
     <>
+      {/* <Swiper initialSlide={1} loop={true} className="mySwiper flex items-center">
+        <SwiperSlide className="flex justify-start items-start text-center">
+          <Image src={bg1} className="h-[200px] object-cover w-full rounded-[20px] " alt="" />
+        </SwiperSlide>
+        <SwiperSlide className="flex justify-center items-center text-center">
+          <Image src={bg2} className="object-cover w-[300px] max-w-none h-[200px]  rounded-[20px] " alt="" />
+        </SwiperSlide>
+        <SwiperSlide className="flex justify-end items-end text-center">
+          <Image src={bg3} className="object-cover w-full h-[200px]  rounded-[20px] " alt="" />
+        </SwiperSlide>
+      </Swiper> */}
       <Swiper
+        slidesPerView={3}
         breakpoints={{
           375: {
             slidesPerView: 2,
-            spaceBetween: 10
+            spaceBetween: 20
           },
           1024: {
             slidesPerView: 3,
-            spaceBetween: 30
+            spaceBetween: 50
           }
         }}
-        slidesPerView={2}
-        spaceBetween={10}
+        spaceBetween={30}
         centeredSlides={true}
         initialSlide={1}
-        className="mySwiper w-full flex items-center"
+        pagination={{
+          clickable: true
+        }}
+        modules={[Pagination]}
+        className="mySwiper w-full flex justify-between items-center lg:hidden"
       >
-        <SwiperSlide className="flex justify-end items-end text-center">
-          <Image src={bg1} className="h-[200px] object-contain rounded-[20px] " alt="" />
+        <SwiperSlide className="flex justify-end items-end text-center fst">
+          <Image src={bg1} className="object-cover w-[240px] h-[200px]  rounded-[20px] " alt="Image" />
         </SwiperSlide>
-        <SwiperSlide className="flex justify-center items-center text-center">
-          <Image src={bg2} className="object-contain h-[200px]  rounded-[20px] " alt="" />
+        <SwiperSlide className="flex justify-center items-center text-center snd">
+          <Image src={bg2} className="object-cover w-[540px] h-[200px]  rounded-[20px] " alt="Image" />
         </SwiperSlide>
-        <SwiperSlide className="flex justify-center items-center text-center">
-          <Image src={bg3} className="object-contain h-[200px]  rounded-[20px] " alt="" />
+        <SwiperSlide className="flex justify-center items-center text-center trd">
+          <Image src={bg3} className="object-cover w-[240px] h-[200px]  rounded-[20px] " alt="Image" />
         </SwiperSlide>
       </Swiper>
     </>

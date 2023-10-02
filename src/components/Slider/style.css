@@ -4,22 +4,28 @@
 }
 
 .swiper-slide:nth-child(1n) {
-  width: 40%;
+  width: 40% !important;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
 }
 
 .swiper-slide:nth-child(2n) {
-  width: 70%;
+  width: 70% !important;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .swiper-slide:nth-child(3n) {
-  width: 40%;
+  width: 40% !important;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .mySwiper {
+    display: none;
+  }
 }

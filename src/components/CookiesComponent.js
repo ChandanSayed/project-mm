@@ -33,7 +33,7 @@ const CookiesComponent = ({ showCookiesPopup, showPop, setShowPop }) => {
   return (
     <>
       {showPop ? (
-        <div className={`justify-center items-end lg:items-center flex h-screen w-screen overflow-x-hidden overflow-y-auto fixed lg:inset-0 z-50 outline-none focus:outline-none bottom-0 ${showCookiesPopup ? 'lg:flex' : 'lg:hidden'}`}>
+        <div className={`justify-center items-end lg:items-center flex h-screen w-screen overflow-x-hidden overflow-y-auto fixed lg:inset-0 z-50 outline-none focus:outline-none bottom-0 ${showCookiesPopup ? 'lg:flex' : 'hidden'}`}>
           {/*content*/}
           <div className="border border-black border-opacity-10 rounded-lg shadow-lg relative flex flex-col w-[calc(100%-30px)] h-[calc(100vh-220px)] mt-12 lg:pt-0 lg:max-h-[570px] xl:max-h-[650px] max-w-[670px] bg-white outline-none focus:outline-none">
             {/*header*/}
