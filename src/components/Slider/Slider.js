@@ -2,13 +2,13 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import bg1 from '/public/about/slider1.png';
-import bg2 from '/public/about/dedicated2.png';
+import bg2 from '/public/about/slider2.png';
 import bg3 from '/public/about/slider3.png';
 import Image from 'next/image';
 import { Pagination } from 'swiper/modules';
 
 import 'swiper/css';
-// import 'swiper/css/free-mode';
+import 'swiper/css/free-mode';
 
 import './style.css';
 
@@ -27,19 +27,17 @@ const Slider = () => {
         </SwiperSlide>
       </Swiper> */}
       <Swiper
-        slidesPerView={3}
+        slidesPerView={2}
+        centeredSlides={true}
         breakpoints={{
           375: {
-            slidesPerView: 2,
-            spaceBetween: 20
+            slidesPerView: 2
           },
           1024: {
-            slidesPerView: 3,
-            spaceBetween: 50
+            slidesPerView: 2
           }
         }}
-        spaceBetween={30}
-        centeredSlides={true}
+        spaceBetween={10}
         initialSlide={1}
         pagination={{
           clickable: true
@@ -47,10 +45,10 @@ const Slider = () => {
         modules={[Pagination]}
         className="mySwiper w-full flex justify-between items-center lg:hidden"
       >
-        <SwiperSlide className="flex justify-end items-end text-center fst">
+        <SwiperSlide className="flex justify-end items-end text-center -ml-[26px] fst">
           <Image src={bg1} className="object-cover w-[240px] h-[200px]  rounded-[20px] " alt="Image" />
         </SwiperSlide>
-        <SwiperSlide className="flex justify-center items-center text-center snd">
+        <SwiperSlide className="flex justify-center items-center text-center min-w-[80%] snd">
           <Image src={bg2} className="object-cover w-[540px] h-[200px]  rounded-[20px] " alt="Image" />
         </SwiperSlide>
         <SwiperSlide className="flex justify-center items-center text-center trd">

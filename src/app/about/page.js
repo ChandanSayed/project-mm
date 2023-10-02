@@ -74,7 +74,7 @@ const page = () => {
             <h3 className="text-[40px] font-bold  text-white text-center max-w-[1096px] px-4 mt-[70px] lg:mt-[140px] max-lg:text-[24px]">We are dedicated to delivering an unparalleled user experience and are always looking for ways to improve our services.</h3>
             <p className="text-white text-center text-[13px] lg:text-[17px] leading-6 font-medium mt-5 mb-10 lg:mb-20 max-w-[950px] px-36 max-md:px-4">
               If you have any questions, concerns, feedback or would like to advertise with MessageMoment, please do not hesitate to{' '}
-              <Link href="/contact" className="font-medium lg:underline">
+              <Link href="/contact" className="font-medium underline">
                 {' '}
                 Contact Us.
               </Link>
