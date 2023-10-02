@@ -28,7 +28,7 @@ const CookiesPopup = ({ handleCookiesPopup, showCookiesPopup, showPop, setShowPo
                 <div className="max-w-[326px] h-[326px] w-full rounded-full bg-opacity-20 lg:bg-opacity-50 bg-blue  blur-[50px] absolute -z-10 left-1/2 transform -translate-x-1/2 -top-10 lg:-top-7 "></div>
                 {/*header*/}
                 <div className="px-5 border-black border-opacity-10 rounded-t relative">
-                  <Image src={cookies} alt="Cookies" className="w-[80px] absolute left-1/2 transform -translate-x-1/2 -top-[51px] z-50 lg:-top-8 lg:-left-5" />
+                  <Image src={cookies} alt="Cookies" className="w-[80px] absolute left-1/2 transform -translate-x-1/2 -top-[51px] z-50 lg:-top-8 lg:-left-5 lg:transform-none" />
                   <h3 className="text-[17px] lg:text-[26px] mt-[52px] text-blue lg:mt-[25px] mb-[15px] lg:mb-[17px] font-bold text-center">We use cookies!</h3>
                   <button className="bg-transparent border-0 text-black absolute top-[27px] right-[30px] focus:outline-none hidden lg:block" onClick={() => setShowModal(false)}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="#ccc">
