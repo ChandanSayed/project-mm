@@ -30,24 +30,24 @@ const page = () => {
     <>
       <NavBar />
       <div className="border-t bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-60% to-white to-90% px-[15px]">
-        <div>
-          <div className="flex items-center justify-center flex-col">
-            <h1 className="lg:text-[60px] text-[34px] max-md:px-5 font-bold leading-[70px] max-md:leading-[34px] text-center  text-dark mt-[50px] mb-7 lg:mb-[30px] tracking-[-0.5px]">Welcome to MessageMoment</h1>
-            <p className="text-blue text-center text-sm mb-[30px] lg:mb-[50px] lg:text-[17px] leading-6 font-medium px-6 max-w-[586px]">The untraceable live chat service that allows you to have a private, discreet and secure conversation with anyone, anywhere.</p>
-          </div>
-          <div className="flex justify-center items-center">
-            <div className="mb-[30px] lg:mb-[50px] grid grid-cols-4 gap-5 max-lg:grid-cols-2 ">
-              <Image src={about1} className="lg:w-[260px] lg:h-[242px] object-cover w-[180px] h-[150px] rounded-[20px]" alt="About" />
-              <Image src={about2} className="lg:w-[260px] lg:h-[242px] object-cover w-[180px] h-[150px] rounded-[20px]" alt="About" />
-              <Image src={about3} className="lg:w-[260px] lg:h-[242px] object-cover w-[180px] h-[150px] rounded-[20px]" alt="About" />
-              <Image src={about4} className="lg:w-[260px] lg:h-[242px] object-cover w-[180px] h-[150px] rounded-[20px]" alt="About" />
-            </div>
-          </div>
-          <div className=" flex justify-center items-center">
-            <p className="text-dark text-[13px] lg:text-[17px] font-medium leading-normal font-jetBrain mb-[100px] lg:mb-[130px] text-center px-4 max-w-[908px]">It is said that words cannot be unspoken, but they can be unwritten with MessageMoment’s in-the-moment chat service that guarantees your conversation is history. Start chatting now and experience the privacy and security of MessageMoment.</p>
+        {/* <div> */}
+        <div className="flex items-center justify-center flex-col">
+          <h1 className="lg:text-[60px] text-[34px] max-md:px-5 font-bold leading-[70px] max-md:leading-[34px] text-center  text-dark mt-[50px] mb-7 lg:mb-[30px] tracking-[-0.5px]">Welcome to MessageMoment</h1>
+          <p className="text-blue text-center text-sm mb-[30px] lg:mb-[50px] lg:text-[17px] leading-6 font-medium px-6 max-w-[586px]">The untraceable live chat service that allows you to have a private, discreet and secure conversation with anyone, anywhere.</p>
+        </div>
+        <div className="flex justify-center items-center">
+          <div className="mb-[30px] lg:mb-[50px] grid grid-cols-4 gap-5 max-lg:grid-cols-2 ">
+            <Image src={about1} className="lg:w-[260px] lg:h-[242px] object-cover w-[180px] h-[150px] rounded-[20px]" alt="About" />
+            <Image src={about2} className="lg:w-[260px] lg:h-[242px] object-cover w-[180px] h-[150px] rounded-[20px]" alt="About" />
+            <Image src={about3} className="lg:w-[260px] lg:h-[242px] object-cover w-[180px] h-[150px] rounded-[20px]" alt="About" />
+            <Image src={about4} className="lg:w-[260px] lg:h-[242px] object-cover w-[180px] h-[150px] rounded-[20px]" alt="About" />
           </div>
         </div>
-        <div className="relative">
+        <div className=" flex justify-center items-center">
+          <p className="text-dark text-[13px] lg:text-[17px] font-medium leading-normal font-jetBrain mb-[100px] lg:mb-[130px] text-center px-4 max-w-[908px]">It is said that words cannot be unspoken, but they can be unwritten with MessageMoment’s in-the-moment chat service that guarantees your conversation is history. Start chatting now and experience the privacy and security of MessageMoment.</p>
+        </div>
+        {/* </div> */}
+        <div className="relative max-w-[1320px] mx-auto">
           <div className="flex flex-col items-center justify-center">
             <div className="max-w-[1320px] w-full max-lg:w-full max-md:w-full bg-blue rounded-xl flex items-center flex-col pb-[90px] lg:pb-28 relative">
               <Image src={chat} alt="Chat" className="w-[100px] h-[100px] lg:w-[128px] lg:h-[128px] absolute -top-[50px] lg:-top-[61px] " />
