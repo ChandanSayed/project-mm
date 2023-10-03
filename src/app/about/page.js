@@ -57,15 +57,15 @@ const page = () => {
           </div>
           <div className="flex flex-col justify-center items-center pb-[50px] lg:pb-[70px] relative z-10 -mt-[90px] lg:-mt-[113px] ">
             <Image src={bg1} className="rounded-[20px] max-w-[90%] h-[242px] object-cover max-lg:hidden" alt="Bg" />
-            <Image src={bg1} className="lg:hidden rounded-[20px] h-[180px] object-cover max-w-[90%] max-lg:visible" alt="Bg" />
+            <Image src={bg2} className="lg:hidden rounded-[20px] h-[180px] object-cover max-w-[90%] max-lg:visible" alt="Bg" />
             <p className="text-center font-jetBrain text-[13px] lg:text-[17px] font-medium my-10 lg:mt-[70px] lg:mb-[30px] px-4 max-w-[950px]">Our team has developed a platform that is not only simple and easy to use, but also guarantees your conversation will be history. With no account registration necessary and a mobile- responsive design, you can chat on the go, without leaving a trace. It never happened! Our unique security features include the option to "Make Secure," by sharing a token password, ensuring that only those you invite can enter the chat.</p>
             <button className={`flex justify-center text-sm lg:text-[15px] items-center rounded-md h-[46px] w-[300px] px-5 bg-blue hover:bg-opacity-80 text-white font-jetBrain font-bold`}>Try MessageMoment</button>
           </div>
         </div>
       </div>
 
-      <AboutTwoColumnSection bg={bg3} classes="lg:py-[120px] py-24" pr="pr-16" imgClass="h-[200px] md:h-[500px] min-w-full object-cover lg:w-[500px] lg:h-[300px] rounded-[20px] max-md:w-full" title="We take the privacy of our users seriously" des="We have implemented the appropriate security measures to protect your data. We understand the importance of having a safe and secure space to communicate, and MessageMoment provides just that." />
-      <AboutTwoColumnSection bg={bg4} classes="flex-row-reverse lg:py-[120px] py-24" imgClass="h-[200px] min-w-full md:h-[500px] object-cover lg:w-[500px] lg:h-[300px] rounded-[20px] max-md:w-full" pr="pr-16" title={`The solution you've been searching for`} des={`Our mission is to provide a reliable and trustworthy platform for discreet conversations between known parties. Whether you're looking to keep a conversation private or just need a secure space to communicate, MessageMoment is the solution you've been searching for.`} />
+      <AboutTwoColumnSection bg={bg3} classes="lg:py-[120px] py-24" pr="pr-16" imgClass="h-[200px] w-full max-w-[368px] lg:max-w-none object-cover lg:w-[500px] lg:h-[300px] rounded-[20px] max-md:w-full" title="We take the privacy of our users seriously" des="We have implemented the appropriate security measures to protect your data. We understand the importance of having a safe and secure space to communicate, and MessageMoment provides just that." />
+      <AboutTwoColumnSection bg={bg4} classes="flex-row-reverse lg:py-[120px] py-24" imgClass="h-[200px] w-full max-w-[368px] lg:max-w-none object-cover lg:w-[500px] lg:h-[300px] rounded-[20px] max-md:w-full" pr="pr-16" title={`The solution you've been searching for`} des={`Our mission is to provide a reliable and trustworthy platform for discreet conversations between known parties. Whether you're looking to keep a conversation private or just need a secure space to communicate, MessageMoment is the solution you've been searching for.`} />
 
       <div className="relative mt-10 lg:mt-[60px]">
         <div className="px-[15px] flex flex-col items-center justify-center ">
