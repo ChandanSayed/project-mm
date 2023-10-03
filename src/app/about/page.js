@@ -64,8 +64,8 @@ const page = () => {
         </div>
       </div>
 
-      <AboutTwoColumnSection bg={bg3} classes="lg:py-[120px] py-24" pr="pr-16" imgClass="h-[200px] w-full max-w-[368px] lg:max-w-none object-cover lg:w-[500px] lg:h-[300px] rounded-[20px] max-md:w-full" title="We take the privacy of our users seriously" des="We have implemented the appropriate security measures to protect your data. We understand the importance of having a safe and secure space to communicate, and MessageMoment provides just that." />
-      <AboutTwoColumnSection bg={bg4} classes="flex-row-reverse lg:py-[120px] py-24" imgClass="h-[200px] w-full max-w-[368px] lg:max-w-none object-cover lg:w-[500px] lg:h-[300px] rounded-[20px] max-md:w-full" pr="pr-16" title={`The solution you've been searching for`} des={`Our mission is to provide a reliable and trustworthy platform for discreet conversations between known parties. Whether you're looking to keep a conversation private or just need a secure space to communicate, MessageMoment is the solution you've been searching for.`} />
+      <AboutTwoColumnSection bg={bg3} classes="lg:py-[120px] py-24" pr="pr-16" imgClass="h-[200px] md:h-[500px] min-w-full object-cover lg:w-[500px] lg:h-[300px] rounded-[20px] max-md:w-full" title="We take the privacy of our users seriously" des="We have implemented the appropriate security measures to protect your data. We understand the importance of having a safe and secure space to communicate, and MessageMoment provides just that." />
+      <AboutTwoColumnSection bg={bg4} classes="flex-row-reverse lg:py-[120px] py-24" imgClass="h-[200px] min-w-full md:h-[500px] object-cover lg:w-[500px] lg:h-[300px] rounded-[20px] max-md:w-full" pr="pr-16" title={`The solution you've been searching for`} des={`Our mission is to provide a reliable and trustworthy platform for discreet conversations between known parties. Whether you're looking to keep a conversation private or just need a secure space to communicate, MessageMoment is the solution you've been searching for.`} />
 
       <div className="relative mt-10 lg:mt-[60px]">
         <div className="px-[15px] flex flex-col items-center justify-center ">
