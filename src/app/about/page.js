@@ -56,8 +56,8 @@ const page = () => {
             </div>
           </div>
           <div className="flex flex-col justify-center items-center pb-[50px] lg:pb-[70px] relative z-10 -mt-[90px] lg:-mt-[113px] ">
-            <Image src={bg1} className="rounded-[20px] max-w-[90%] max-lg:hidden" alt="Bg" />
-            <Image src={bg2} className="lg:hidden rounded-[20px] h-[180px] object-cover max-w-[90%] max-lg:visible" alt="Bg" />
+            <Image src={bg1} className="rounded-[20px] max-w-[90%] h-[242px] object-cover max-lg:hidden" alt="Bg" />
+            <Image src={bg1} className="lg:hidden rounded-[20px] h-[180px] object-cover max-w-[90%] max-lg:visible" alt="Bg" />
             <p className="text-center font-jetBrain text-[13px] lg:text-[17px] font-medium my-10 lg:mt-[70px] lg:mb-[30px] px-4 max-w-[950px]">Our team has developed a platform that is not only simple and easy to use, but also guarantees your conversation will be history. With no account registration necessary and a mobile- responsive design, you can chat on the go, without leaving a trace. It never happened! Our unique security features include the option to "Make Secure," by sharing a token password, ensuring that only those you invite can enter the chat.</p>
             <button className={`flex justify-center text-sm lg:text-[15px] items-center rounded-md h-[46px] w-[300px] px-5 bg-blue hover:bg-opacity-80 text-white font-jetBrain font-bold`}>Try MessageMoment</button>
           </div>
