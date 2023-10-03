@@ -46,13 +46,13 @@ const Slider = () => {
         className="mySwiper w-full flex justify-between items-center lg:hidden"
       >
         <SwiperSlide className="flex justify-end items-end text-center -ml-[26px] fst">
-          <Image src={bg1} className="object-cover w-[240px] h-[200px] md:h-[270px] rounded-[20px] " alt="Image" />
+          <Image src={bg1} className="object-cover w-[240px] h-[200px] sm:h-[270px] rounded-[20px] " alt="Image" />
         </SwiperSlide>
         <SwiperSlide className="flex justify-center items-center text-center min-w-[80%] snd">
-          <Image src={bg2} className="object-cover w-[540px] h-[200px] md:h-[270px] rounded-[20px] " alt="Image" />
+          <Image src={bg2} className="object-cover w-[540px] h-[200px] sm:h-[270px] rounded-[20px] " alt="Image" />
         </SwiperSlide>
         <SwiperSlide className="flex justify-center items-center text-center trd">
-          <Image src={bg3} className="object-cover w-[240px] h-[200px] md:h-[270px] rounded-[20px] transform -scale-x-100" alt="Image" />
+          <Image src={bg3} className="object-cover w-[240px] h-[200px] sm:h-[270px] rounded-[20px] transform -scale-x-100" alt="Image" />
         </SwiperSlide>
       </Swiper>
     </>
