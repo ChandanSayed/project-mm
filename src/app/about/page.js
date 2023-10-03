@@ -76,8 +76,9 @@ const page = () => {
               If you have any questions, concerns, feedback or would like to advertise with MessageMoment, please do not hesitate to{' '}
               <Link href="/contact" className="font-medium underline">
                 {' '}
-                Contact Us.
+                Contact Us
               </Link>
+              .
             </p>
           </div>
         </div>

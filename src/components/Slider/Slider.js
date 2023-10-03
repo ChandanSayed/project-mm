@@ -52,7 +52,7 @@ const Slider = () => {
           <Image src={bg2} className="object-cover w-[540px] h-[200px]  rounded-[20px] " alt="Image" />
         </SwiperSlide>
         <SwiperSlide className="flex justify-center items-center text-center trd">
-          <Image src={bg3} className="object-cover w-[240px] h-[200px]  rounded-[20px] " alt="Image" />
+          <Image src={bg3} className="object-cover w-[240px] h-[200px]  rounded-[20px] transform -scale-x-100" alt="Image" />
         </SwiperSlide>
       </Swiper>
     </>
