@@ -1,10 +1,17 @@
+'use client';
 import DateButton from '@/components/DateButton';
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
+import { useAppContext } from '@/context/AppContext';
 import parse from 'html-react-parser';
 import Link from 'next/link';
+import { useEffect } from 'react';
 
 const page = () => {
+  const { setMobileNav } = useAppContext();
+  useEffect(() => {
+    setMobileNav(false);
+  }, []);
   const data = [
     {
       id: 1,
@@ -34,7 +41,7 @@ const page = () => {
     {
       id: 6,
       question: '6. Contact Us',
-      answere: 'If you have any questions regarding this Privacy Policy, please <a href="#" style="color: blue;">Contact Us.</a>'
+      answere: 'If you have any questions regarding this Privacy Policy, please <a href="/contact" style="color: blue;">Contact Us.</a>'
     }
   ];
 
@@ -42,7 +49,7 @@ const page = () => {
     if (node.type === 'tag' && node.name === 'a' && node.attribs.href) {
       const href = node.attribs.href;
       return (
-        <Link href="/" key={href} className="text-blue">
+        <Link href={href} key={href} className="text-blue">
           {parse(node.children[0].data)}
         </Link>
       );

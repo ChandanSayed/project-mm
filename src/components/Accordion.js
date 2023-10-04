@@ -23,7 +23,7 @@ function Accordion({ items, setAccordions, accordions }) {
     if (node.type === 'tag' && node.name === 'a' && node.attribs.href) {
       const href = node.attribs.href;
       return (
-        <Link href="/" key={href} className="text-blue">
+        <Link href={href} key={href} className="text-blue">
           {parse(node.children[0].data)}
         </Link>
       );
