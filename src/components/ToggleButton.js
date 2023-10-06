@@ -10,7 +10,7 @@ const ToggleButton = () => {
   };
 
   return (
-    <button className={`cursor-pointer relative inline-block min-w-[56px] h-6 rounded-full p-[3px] first-of-type:disabled ${isActive ? 'bg-blue' : ' bg-darkGrey'}`} onClick={toggleButton}>
+    <button className={`cursor-pointer relative inline-block min-w-[56px] h-6 rounded-full p-[3px] first-of-type:disabled ${isActive ? 'bg-blue' : ' bg-dark'}`} onClick={toggleButton}>
       <div className="flex justify-between items-center p-[2px] text-white">
         <div>
           <FiCheck size={14} />
