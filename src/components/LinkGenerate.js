@@ -18,7 +18,7 @@ const LinkGenerate = () => {
   const [secure, setSecure] = useState(false);
   return (
     <>
-      <div className="bg-blue max-w-[1096px] rounded-[20px] absolute -bottom-[112px] left-1/2 transform -translate-x-1/2 w-full mx-auto">
+      <div className="bg-blue max-w-[1096px] rounded-[20px] absolute -bottom-[110px] left-1/2 transform -translate-x-1/2 w-full mx-auto">
         <p className="py-7 font-medium text-sm lg:text-[17px] max-w-[261px] lg:max-w-none text-white text-center">Click the button below to receive your random link that you can share with your friends any way you like!</p>
         <div className="link bg-black bg-opacity-20 rounded-[0_0_20px_20px] pt-[18px] px-[15px]  lg:px-[30px] lg:pt-[35px] lg:pb-[25px] pb-5">
           <div className="flex overflow-hidden">
