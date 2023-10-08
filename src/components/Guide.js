@@ -13,6 +13,7 @@ const Guide = () => {
           <div className="absolute w-[396px] h-[396px] blur-[50px] -z-0 rounded-full bg-black bg-opacity-20 top-0 left-1/2 transform -translate-x-1/2"></div>
         </div>
         <Steps />
+        <p className="max-w-[328px] lg:max-w-[930px] mx-auto text-white font-jetBrain font-medium text-[13px] lg:text-lg pt-10 text-center">Start a chat session by clicking the "Open Chat" button on our site and receive a link. Optionally, make the chat secure by generating a token password.</p>
       </div>
     </div>
   );
