@@ -5,13 +5,13 @@ import SiteLogo from './SiteLogo';
 import FooterBottom from './FooterBottom';
 import FooterNavItems from './FooterNavItems';
 
-const Footer = () => {
+const Footer = ({ classes = 'mt-[25px] lg:mt-10' }) => {
   function ToTOp() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }
   return (
-    <footer className="mt-[25px] lg:mt-10 bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-70% to-white">
+    <footer className={`${classes} bg-gradient-to-b from-blue-10 from-0% via-blue-0 via-70% to-white`}>
       <div className="container max-w-[1440px] mx-auto px-4 text-center flex flex-col gap-[30px] md:gap-[50px] items-center justify-center pt-10 pb-9 lg:pb-[50px] relative">
         <SiteLogo width="w-[196px]" />
         <FooterNavItems />

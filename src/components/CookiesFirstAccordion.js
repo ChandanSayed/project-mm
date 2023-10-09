@@ -25,7 +25,7 @@ const CookiesFirstAccordion = () => {
             Strictly necessary cookies
           </h3>
         </div>
-        <button className={`cursor-pointer relative inline-block min-w-[56px] h-6 rounded-full p-1 first-of-type:disabled bg-lightGrey }`}>
+        <button className={`cursor-pointer relative inline-block min-w-[56px] h-6 rounded-full p-1 first-of-type:disabled bg-blue bg-opacity-20 }`}>
           <div className="flex justify-between items-center p-[2px] text-white">
             <div>
               <FiCheck size={14} />
