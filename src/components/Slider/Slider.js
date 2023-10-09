@@ -43,7 +43,7 @@ const Slider = () => {
           clickable: true
         }}
         modules={[Pagination]}
-        className="mySwiper w-full flex justify-between items-center lg:hidden"
+        className="mySwiper w-full flex justify-between items-center lg:hidden about-slider"
       >
         <SwiperSlide className="flex justify-end items-end text-center -ml-[26px] sm:-ml-11 fst">
           <Image src={bg1} className="object-cover w-[240px] h-[170px] sm:h-[270px] rounded-[20px] " alt="Image" />
