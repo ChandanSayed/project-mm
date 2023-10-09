@@ -4,7 +4,7 @@ import SiteLogo from './SiteLogo';
 import FooterBottom from './FooterBottom';
 import Image from 'next/image';
 import Vector from '/public/icons/Vector.png';
-import locked2 from '/public/icons/locked2.png';
+import tokenImage from '/public/icons/locked2.png';
 import error from '/public/icons/error.png';
 import SidebarComponents from './ChatComponents';
 import SidebarComponents2 from './ChatComponents2';
@@ -45,6 +45,79 @@ const users = [
   }
 ];
 
+const chats = [
+  {
+    errorMessage: [
+      {
+        id: 1,
+        img: 'error',
+        errorHEading: '[MessageMoment.com]',
+        errorText: 'The token you entered is incorrect! Please try again.'
+      },
+      {
+        id: 2,
+        img: 'error',
+        errorHEading: '[MessageMoment.com]',
+        errorText: 'The chat session is full! There are currently 10/10 users joined.'
+      }
+    ]
+  },
+  {
+    ' joinedMessage': [
+      {
+        id: 1,
+        name: '[Richard]',
+        text: 'Joined'
+      },
+      {
+        id: 2,
+        name: '[Aron]',
+        text: 'Left'
+      },
+      {
+        id: 3,
+        name: '[catalina]',
+        text: 'Joined'
+      }
+    ]
+  },
+  {
+    token: [
+      {
+        id: 1,
+        image: 'tokenImage',
+        text1: 'This chat session is protected using a secure token.',
+        text2: '...',
+        text3: '> Please enter the Token you received with your chat link:'
+      }
+    ]
+  },
+  {
+    verify: [
+      {
+        id: 1,
+        text: 'Verifying'
+      }
+    ]
+  },
+  {
+    textMessage: [
+      {
+        id: 1,
+        name: '[Laura]',
+        message: 'hello everybody'
+      },
+      {
+        id: 1,
+        name: '[Theresa]',
+        message: 'hi richard 👋🏻'
+      }
+    ]
+  }
+];
+
+console.log(chats);
+
 const Sidebar = ({ children }) => {
   return (
     <>
@@ -63,11 +136,18 @@ const Sidebar = ({ children }) => {
               </div>
 
               <SidebarComponents3 contentLeft="Advertisement" contentRight="Big Sale on at Flight Centre! Don’t miss out. Visit" linkContent="www.flightcentre.com" href="/https://www.flightcentre.com" contentRight2="now and book your trip!" />
+
+              {chats.map(chat => (
+                <div key={chat.id}>
+                  <SidebarComponents contentLeft={chat.name} text />
+                </div>
+              ))}
+
               <div className=" bg-midGray p-4 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">
                 <div className="col-span-1 md:col-span-1"></div>
                 <div className="col-span-4 md:col-span-4 flex  ">
                   <div className="pt-[3px]">
-                    <Image src={locked2} alt="" className="w-[10.667px] h-[14px]  " />
+                    <Image src={tokenImage} alt="" className="w-[10.667px] h-[14px]  " />
                   </div>
                   <p className="text-dark flex items-start justify-start text-[14px] font-jetBrain  font-normal pl-[12px]">
                     This chat session is protected using a secure token. <br /> ... <br /> {`> Please enter the Token you received with your chat link:`}
