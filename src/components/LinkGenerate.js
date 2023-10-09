@@ -21,8 +21,8 @@ const LinkGenerate = () => {
       <div className="bg-blue max-w-[1096px] rounded-[20px] absolute -bottom-[110px] left-1/2 transform -translate-x-1/2 w-full mx-auto">
         <p className="py-7 font-medium text-sm lg:text-[17px] max-w-[261px] lg:max-w-none text-white text-center">Click the button below to receive your random link that you can share with your friends any way you like!</p>
         <div className="link bg-black bg-opacity-20 rounded-[0_0_20px_20px] pt-[18px] px-[15px]  lg:px-[30px] lg:pt-[35px] lg:pb-[25px] pb-5">
-          <div className="flex overflow-hidden">
-            <div className="flex items-center cursor-pointer rounded-[5px_0_0_5px] bg-white h-[50px]">
+          <div className="flex">
+            <div className="flex items-center cursor-pointer rounded-[5px_0_0_5px] bg-white h-[50px] relative">
               {secure ? (
                 <>
                   <Image src={lock} alt="Lock" className="ml-3" /> <p className="mx-[10px] text-dark">Secure</p>
@@ -34,9 +34,17 @@ const LinkGenerate = () => {
                   <Image src={down} alt="down" className="mr-[22px]" />
                 </>
               )}
+              <div className="select absolute top-full left-0 w-full bg-black z-10">
+                <div className="flex items-center bg-[#151515] py-2 text-[13px] lg:text-[15px] font-jetBrain">
+                  <Image src={lock} alt="Lock" className="ml-3" /> <p className="mx-5 text-white">Secure</p>
+                </div>
+                <div className="flex items-center bg-[#151515] py-2 text-[13px] lg:text-[15px] font-jetBrain">
+                  <Image src={standard} alt="Lock" className="ml-3" /> <p className="mx-5 text-white">Standard</p>
+                </div>
+              </div>
             </div>
 
-            <p className="flex-1 flex items-center font-jetBrain text-sm lg:text-[15px] rounded-[0_5px_5px_0] bg-white font-bold h-[50px]">https://messagemoment.com/sqjgcf9</p>
+            <p className="flex-1 flex items-center font-jetBrain text-sm lg:text-[15px] border-l border-[#ddd] pl-5 rounded-[0_5px_5px_0] bg-white font-bold h-[50px]">https://messagemoment.com/sqjgcf9</p>
             <div className="buttons pl-[6px] flex gap-[5px]">
               <button disabled className="cursor-pointer h-[50px] flex items-center justify-center border-[1.5px] border-white border-opacity-20 rounded-[5px] px-[15px] " title="reload">
                 <Image src={reload} alt="reload" />

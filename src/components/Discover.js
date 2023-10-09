@@ -17,23 +17,23 @@ const Discover = () => {
         </p>
         <div className="flex justify-center gap-6 lg:gap-12 pb-10 lg:pb-[58px]">
           <div className="device text-center">
-            <Image src={phone} className="w-[36px] h-[36px] mb-5 lg:h-[48px] lg:w-[48px]" alt="Device" />
+            <Image src={phone} className="w-[36px] h-[36px] mb-5 lg:h-[48px] lg:w-[48px] mx-auto" alt="Device" />
             <p className="text-white">Phone</p>
           </div>
           <div className="device text-center">
-            <Image src={laptop} className="w-[36px] h-[36px] mb-5 lg:h-[48px] lg:w-[48px]" alt="Device" />
+            <Image src={laptop} className="w-[36px] h-[36px] mb-5 lg:h-[48px] lg:w-[48px] mx-auto" alt="Device" />
             <p className="text-white">Desktop</p>
           </div>
           <div className="device text-center">
-            <Image src={tablet} className="w-[36px] h-[36px] mb-5 lg:h-[48px] lg:w-[48px]" alt="Device" />
+            <Image src={tablet} className="w-[36px] h-[36px] mb-5 lg:h-[48px] lg:w-[48px] mx-auto" alt="Device" />
             <p className="text-white">Tablet</p>
           </div>
           <div className="device text-center">
-            <Image src={television} className="w-[36px] h-[36px] mb-5 lg:h-[48px] lg:w-[48px]" alt="Device" />
+            <Image src={television} className="w-[36px] h-[36px] mb-5 lg:h-[48px] lg:w-[48px] mx-auto" alt="Device" />
             <p className="text-white">Smart Tv</p>
           </div>
           <div className="device text-center">
-            <Image src={controller} className="w-[36px] h-[36px] mb-5 lg:h-[48px] lg:w-[48px]" alt="Device" />
+            <Image src={controller} className="w-[36px] h-[36px] mb-5 lg:h-[48px] lg:w-[48px] mx-auto" alt="Device" />
             <p className="text-white">Consoles</p>
           </div>
         </div>
