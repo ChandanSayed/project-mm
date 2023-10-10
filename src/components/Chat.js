@@ -13,6 +13,10 @@ import icon from '/public/icons/inputIcon.png';
 import ad from '/public/icons/ad.png';
 import adIcon from '/public/icons/adIcon.png';
 import blueError from '../../public/icons/blueError.png';
+import { useState } from 'react';
+import AutoComplete from './AutoComplete';
+
+const options = ['Apple', 'Banana', 'Cherry', 'Date', 'Grape', 'Lemon', 'Orange', 'Peach', 'Strawberry'];
 
 const users = [
   {
@@ -119,6 +123,12 @@ const chats = [
 console.log(chats);
 
 const Sidebar = ({ children }) => {
+  const [selectedOption, setSelectedOption] = useState('');
+
+  const handleSelect = options => {
+    setSelectedOption(options);
+  };
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-5 px-20 max-w-[1440px] mx-auto bg-[#f5f5f5] ">
@@ -230,17 +240,19 @@ const Sidebar = ({ children }) => {
           </footer>
         </div>
       </div>
-      <div className=" h-20% bg-red-800">
+      <div className=" h-20% w-[80%] bg-red-800">
         {/* <input type="text" placeholder="> " className="w-[75%] h-12 text-base outline-none pl-5 absolute bottom-3 left-6 border " /> */}
         {/* <SidebarInput /> */}
         <div className=" mt-2 ml-5 rounded-md shadow-sm fixed bottom-3 w-[75%]">
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+          {/* <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
             <span className="text-gray-500 sm:text-sm"> {`>`} </span>
           </div>
           <input type="text" name="text" id="text" className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6" placeholder="" />
           <div className="absolute inset-y-0 right-0 flex items-center">
             <Image src={icon} alt="" />
-          </div>
+          </div> */}
+          <AutoComplete options={options} onSelect={handleSelect} />
+          {/* <p>Selected Option: {selectedOption}</p> */}
         </div>
       </div>
     </>

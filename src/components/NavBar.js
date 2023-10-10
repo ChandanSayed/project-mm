@@ -23,7 +23,7 @@ const NavBar = () => {
           <NavItems classes={` text-black`} />
           <div className="right lg:flex items-center">
             <SocialIcons />
-            <HeaderButton classes={`bg-blue text-white`} />
+            <HeaderButton classes={`bg-blue text-white`} name="Start" />
           </div>
         </div>
         <button className="mobile-menu lg:hidden ml-auto mr-[7px] bg-blue rounded-md h-[46px] w-[46px] text-center" onClick={() => setMobileNav(!mobileNav)}>
