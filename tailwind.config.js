@@ -23,7 +23,16 @@ module.exports = {
       },
       gridTemplateRows: {
         header: '64px auto' // 👈 for the navbar layout. adds grid-rows-header class
-      }
+      },
+      animation: {
+        fade: 'fadeOut 3s ease-in-out'
+      },
+      keyframes: theme => ({
+        fadeOut: {
+          '0%': { opacity: 1 },
+          '100%': { opacity: 0 }
+        }
+      })
     },
     screens: {
       vvs: '200px',
