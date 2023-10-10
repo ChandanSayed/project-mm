@@ -31,10 +31,10 @@ const ChatHeader = () => {
               <p>https://messagemoment.com/*********</p>
             </div>
             <div className="right lg:flex items-center">
-              <HeaderButton classes="bg-midGray mr-[10px] font-bold w-[66px] text-lightGrey mr-[15px]" name="30" />
+              <HeaderButton classes="bg-midGray mr-[10px] font-bold w-[66px] !text-[14px] text-lightGrey mr-[15px]" name="30" />
               <div className="border h-[40px] border-lightGray" />
-              <HeaderButton classes="border mr-[10px] font-bold ml-[15px]" data-modal-target="defaultModal" data-modal-toggle="defaultModal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" name="Disconnected" />
-              <button className="flex items-center justify-evenly rounded-md h-[46px] w-[150px] px-5 bg-blue text-white hover:bg-opacity-80 text-base font-jetBrain font-extrabold">
+              <HeaderButton classes="border mr-[10px] font-bold ml-[15px] !text-[14px]" data-modal-target="defaultModal" data-modal-toggle="defaultModal" name="Disconnected" />
+              <button className="flex items-center justify-evenly rounded-md h-[46px] w-[150px] px-5 bg-blue text-white hover:bg-opacity-80 text-[14px] font-jetBrain font-bold">
                 <Image src={share} alt="" />
                 Share
               </button>
