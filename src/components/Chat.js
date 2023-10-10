@@ -4,7 +4,7 @@ import SiteLogo from './SiteLogo';
 import FooterBottom from './FooterBottom';
 import Image from 'next/image';
 import Vector from '/public/icons/Vector.png';
-import locked2 from '/public/icons/locked2.png';
+import tokenImage from '/public/icons/locked2.png';
 import error from '/public/icons/error.png';
 import SidebarComponents from './ChatComponents';
 import SidebarComponents2 from './ChatComponents2';
@@ -13,6 +13,10 @@ import icon from '/public/icons/inputIcon.png';
 import ad from '/public/icons/ad.png';
 import adIcon from '/public/icons/adIcon.png';
 import blueError from '../../public/icons/blueError.png';
+import { useState } from 'react';
+import AutoComplete from './AutoComplete';
+
+const options = ['Apple', 'Banana', 'Cherry', 'Date', 'Grape', 'Lemon', 'Orange', 'Peach', 'Strawberry'];
 
 const users = [
   {
@@ -45,7 +49,86 @@ const users = [
   }
 ];
 
+const chats = [
+  {
+    errorMessage: [
+      {
+        id: 1,
+        img: 'error',
+        errorHEading: '[MessageMoment.com]',
+        errorText: 'The token you entered is incorrect! Please try again.'
+      },
+      {
+        id: 2,
+        img: 'error',
+        errorHEading: '[MessageMoment.com]',
+        errorText: 'The chat session is full! There are currently 10/10 users joined.'
+      }
+    ]
+  },
+  {
+    ' joinedMessage': [
+      {
+        id: 1,
+        name: '[Richard]',
+        text: 'Joined'
+      },
+      {
+        id: 2,
+        name: '[Aron]',
+        text: 'Left'
+      },
+      {
+        id: 3,
+        name: '[catalina]',
+        text: 'Joined'
+      }
+    ]
+  },
+  {
+    token: [
+      {
+        id: 1,
+        image: 'tokenImage',
+        text1: 'This chat session is protected using a secure token.',
+        text2: '...',
+        text3: '> Please enter the Token you received with your chat link:'
+      }
+    ]
+  },
+  {
+    verify: [
+      {
+        id: 1,
+        text: 'Verifying'
+      }
+    ]
+  },
+  {
+    textMessage: [
+      {
+        id: 1,
+        name: '[Laura]',
+        message: 'hello everybody'
+      },
+      {
+        id: 1,
+        name: '[Theresa]',
+        message: 'hi richard 👋🏻'
+      }
+    ]
+  }
+];
+
+console.log(chats);
+
 const Sidebar = ({ children }) => {
+  const [selectedOption, setSelectedOption] = useState('');
+
+  const handleSelect = options => {
+    setSelectedOption(options);
+  };
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-5 px-20 max-w-[1440px] mx-auto bg-[#f5f5f5] ">
@@ -63,11 +146,18 @@ const Sidebar = ({ children }) => {
               </div>
 
               <SidebarComponents3 contentLeft="Advertisement" contentRight="Big Sale on at Flight Centre! Don’t miss out. Visit" linkContent="www.flightcentre.com" href="/https://www.flightcentre.com" contentRight2="now and book your trip!" />
+
+              {chats.map(chat => (
+                <div key={chat.id}>
+                  <SidebarComponents contentLeft={chat.name} text />
+                </div>
+              ))}
+
               <div className=" bg-midGray p-4 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">
                 <div className="col-span-1 md:col-span-1"></div>
                 <div className="col-span-4 md:col-span-4 flex  ">
                   <div className="pt-[3px]">
-                    <Image src={locked2} alt="" className="w-[10.667px] h-[14px]  " />
+                    <Image src={tokenImage} alt="" className="w-[10.667px] h-[14px]  " />
                   </div>
                   <p className="text-dark flex items-start justify-start text-[14px] font-jetBrain  font-normal pl-[12px]">
                     This chat session is protected using a secure token. <br /> ... <br /> {`> Please enter the Token you received with your chat link:`}
@@ -150,17 +240,19 @@ const Sidebar = ({ children }) => {
           </footer>
         </div>
       </div>
-      <div className=" h-20% bg-red-800">
+      <div className=" h-20% w-[80%] bg-red-800">
         {/* <input type="text" placeholder="> " className="w-[75%] h-12 text-base outline-none pl-5 absolute bottom-3 left-6 border " /> */}
         {/* <SidebarInput /> */}
         <div className=" mt-2 ml-5 rounded-md shadow-sm fixed bottom-3 w-[75%]">
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+          {/* <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
             <span className="text-gray-500 sm:text-sm"> {`>`} </span>
           </div>
           <input type="text" name="text" id="text" className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  sm:text-sm sm:leading-6" placeholder="" />
           <div className="absolute inset-y-0 right-0 flex items-center">
             <Image src={icon} alt="" />
-          </div>
+          </div> */}
+          <AutoComplete options={options} onSelect={handleSelect} />
+          {/* <p>Selected Option: {selectedOption}</p> */}
         </div>
       </div>
     </>
