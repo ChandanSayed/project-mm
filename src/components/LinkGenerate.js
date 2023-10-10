@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import QRCode from 'react-qr-code';
@@ -25,6 +25,7 @@ const LinkGenerate = () => {
   const [showGenerate, setShowGenerate] = useState(false);
   const [showCopy, setShowCopy] = useState(false);
   const [openChat, setOpenChat] = useState(false);
+  const [activeButton, setActiveButton] = useState(false);
 
   function handleSelect() {
     setSelectList(prev => !prev);
@@ -82,6 +83,16 @@ const LinkGenerate = () => {
     generateLink();
     generateLinkSecure();
   }
+
+  function handleChatApply() {
+    console.log('Please wait till the CloudflareTurnstile completes!');
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      setActiveButton(true);
+    }, 4000);
+  }, []);
 
   return (
     <>
@@ -144,30 +155,29 @@ const LinkGenerate = () => {
 
             <div className="buttons pl-[6px] flex gap-[5px]">
               <div className="relative">
-                <div className={`qr-code bg-black p-[10px] rounded-[10px] overflow-hidden absolute left-1/2 transform -translate-x-1/2 bottom-[70px] ${!showGenerate && 'hidden'}`}>
+                <div className={`qr-code bg-black p-[10px] rounded-[10px] overflow-hidden absolute left-1/2 transform -translate-x-1/2 bottom-[66px] ${!showGenerate && 'animate-fade opacity-0'}`}>
                   <p className="text-white font-medium text-sm font-jetBrain">Regenerate</p>
                 </div>
                 {openChat ? (
-                  <button onMouseEnter={handleGenerateTip} onMouseLeave={handleGenerateTip} onClick={secure ? generateLinkSecure : generateLink} className="cursor-pointer h-[50px] flex items-center justify-center border-[1.5px] border-white border-opacity-20 rounded-[5px] px-[15px] hover:bg-dark hover:bg-opacity-10">
+                  <button onMouseEnter={handleGenerateTip} onMouseLeave={handleGenerateTip} onClick={secure ? generateLinkSecure : generateLink} className="cursor-pointer h-[50px] w-[50px] flex items-center justify-center border-[1.5px] border-white border-opacity-20 rounded-[5px] hover:bg-dark hover:bg-opacity-10">
                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22" fill="none">
                       <path d="M21.0374 9.74766C20.7312 7.54382 19.7088 5.50181 18.1278 3.93618C16.5468 2.37055 14.4949 1.36816 12.2882 1.08342C10.0814 0.79868 7.84231 1.24739 5.91568 2.36042C3.98906 3.47345 2.48183 5.18907 1.62617 7.24298M1 2.23363V7.24298H6.00936M1 12.2523C1.30627 14.4562 2.32865 16.4982 3.90964 18.0638C5.49063 19.6295 7.54252 20.6318 9.74925 20.9166C11.956 21.2013 14.1951 20.7526 16.1217 19.6396C18.0484 18.5265 19.5556 16.8109 20.4113 14.757M21.0374 19.7664V14.757H16.0281" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </button>
                 ) : (
                   <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
-                    <rect width="50" height="50" rx="5" fill="white" fill-opacity="0.1" />
+                    <rect width="50" height="50" rx="5" fill="white" fillOpacity="0.1" />
                     <rect x="0.75" y="0.75" width="48.5" height="48.5" rx="4.25" stroke="white" strokeOpacity="0.1" strokeWidth="1.5" />
                     <path d="M35.0374 23.7477C34.7312 21.5438 33.7088 19.5018 32.1278 17.9362C30.5468 16.3705 28.4949 15.3682 26.2882 15.0834C24.0814 14.7987 21.8423 15.2474 19.9157 16.3604C17.9891 17.4735 16.4818 19.1891 15.6262 21.243M15 16.2336V21.243H20.0094M15 26.2523C15.3063 28.4562 16.3286 30.4982 17.9096 32.0638C19.4906 33.6295 21.5425 34.6318 23.7493 34.9166C25.956 35.2013 28.1951 34.7526 30.1217 33.6396C32.0484 32.5265 33.5556 30.8109 34.4113 28.757M35.0374 33.7664V28.757H30.0281" stroke="white" strokeOpacity="0.2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 )}
               </div>
               <div className="relative">
-                <div className={`qr-code bg-black p-[10px] rounded-[10px] w-[280px] overflow-hidden absolute left-1/2 transform -translate-x-1/2 bottom-[70px] ${!showQr && 'hidden'}`}>
-                  <Image className="absolute -bottom-1" src={downBlack} alt="Down" />
+                <div className={`qr-code bg-black p-[10px] rounded-[10px] w-[280px] overflow-hidden absolute left-1/2 transform -translate-x-1/2 bottom-[66px] ${!showQr && 'hidden'}`}>
                   <QRCode className="bg-white rounded-[10px] p-5 w-[260px] h-[260px]" value={generatedLink} />
                 </div>
                 {openChat ? (
-                  <button onClick={handleQr} className="cursor-pointer h-[50px] flex items-center justify-center border-[1.5px] border-white border-opacity-20 rounded-[5px] px-[15px] bg-white hover:bg-opacity-90">
+                  <button onClick={handleQr} className="cursor-pointer w-[50px] h-[50px] flex items-center justify-center border-[1.5px] border-white border-opacity-20 rounded-[5px] bg-white hover:bg-opacity-90">
                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
                       <path d="M3.83333 3.83333H9.58333V9.58333H3.83333V3.83333ZM19.1667 3.83333V9.58333H13.4167V3.83333H19.1667ZM13.4167 14.375H15.3333V12.4583H13.4167V10.5417H15.3333V12.4583H17.25V10.5417H19.1667V12.4583H17.25V14.375H19.1667V17.25H17.25V19.1667H15.3333V17.25H12.4583V19.1667H10.5417V15.3333H13.4167V14.375ZM15.3333 14.375V17.25H17.25V14.375H15.3333ZM3.83333 19.1667V13.4167H9.58333V19.1667H3.83333ZM5.75 5.75V7.66667H7.66667V5.75H5.75ZM15.3333 5.75V7.66667H17.25V5.75H15.3333ZM5.75 15.3333V17.25H7.66667V15.3333H5.75ZM3.83333 10.5417H5.75V12.4583H3.83333V10.5417ZM8.625 10.5417H12.4583V14.375H10.5417V12.4583H8.625V10.5417ZM10.5417 5.75H12.4583V9.58333H10.5417V5.75ZM1.91667 1.91667V5.75H0V1.91667C0 1.40833 0.201934 0.920823 0.561379 0.561379C0.920823 0.201934 1.40833 0 1.91667 0L5.75 0V1.91667H1.91667ZM21.0833 0C21.5917 0 22.0792 0.201934 22.4386 0.561379C22.7981 0.920823 23 1.40833 23 1.91667V5.75H21.0833V1.91667H17.25V0H21.0833ZM1.91667 17.25V21.0833H5.75V23H1.91667C1.40833 23 0.920823 22.7981 0.561379 22.4386C0.201934 22.0792 0 21.5917 0 21.0833V17.25H1.91667ZM21.0833 21.0833V17.25H23V21.0833C23 21.5917 22.7981 22.0792 22.4386 22.4386C22.0792 22.7981 21.5917 23 21.0833 23H17.25V21.0833H21.0833Z" fill="#494AF8" />
                     </svg>
@@ -182,20 +192,17 @@ const LinkGenerate = () => {
                 )}
               </div>
               <div className="relative">
-                <div className={`qr-code bg-black p-[10px] w-max rounded-[10px] overflow-hidden absolute left-1/2 transform -translate-x-1/2 bottom-[70px] ${!showCopy && 'hidden'}`}>
+                <div className={`qr-code bg-black p-[10px] w-max rounded-[10px] overflow-hidden absolute left-1/2 transform -translate-x-1/2 bottom-[66px] ${!showCopy && 'animate-fade opacity-0'}`}>
                   <p className="text-white font-medium text-sm font-jetBrain">Copy URL</p>
                 </div>
+
                 {openChat && (
-                  <button onMouseEnter={handleCopy} onMouseLeave={handleCopy} onClick={secure ? copyTOClipSecure : copyTOClip} className="cursor-pointer h-[50px] flex items-center justify-center border-[1.5px] border-white border-opacity-20 rounded-[5px] px-[15px] bg-white hover:bg-opacity-90">
+                  <button onMouseEnter={handleCopy} onMouseLeave={handleCopy} onClick={secure ? copyTOClipSecure : copyTOClip} className="cursor-pointer h-[50px] w-[50px] mr-[5px] flex items-center justify-center border-[1.5px] border-white border-opacity-20 rounded-[5px] bg-white hover:bg-opacity-90">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none">
                       <path d="M15.4545 18.1818H5.45455V5.45455H15.4545M15.4545 3.63636H5.45455C4.97233 3.63636 4.50987 3.82792 4.1689 4.1689C3.82792 4.50987 3.63636 4.97233 3.63636 5.45455V18.1818C3.63636 18.664 3.82792 19.1265 4.1689 19.4675C4.50987 19.8084 4.97233 20 5.45455 20H15.4545C15.9368 20 16.3992 19.8084 16.7402 19.4675C17.0812 19.1265 17.2727 18.664 17.2727 18.1818V5.45455C17.2727 4.97233 17.0812 4.50987 16.7402 4.1689C16.3992 3.82792 15.9368 3.63636 15.4545 3.63636ZM12.7273 0H1.81818C1.33597 0 0.873508 0.191558 0.532533 0.532533C0.191558 0.873508 0 1.33597 0 1.81818V14.5455H1.81818V1.81818H12.7273V0Z" fill="#494AF8" />
                     </svg>
                   </button>
                 )}
-
-                {/* <button onClick={copyTOClip} className="cursor-pointer h-[50px] flex items-center justify-center border-[1.5px] border-white border-opacity-20 rounded-[5px] px-[15px] bg-white">
-                    <Image src={copy} alt="copy" />
-                  </button> */}
               </div>
             </div>
           </div>
@@ -206,7 +213,7 @@ const LinkGenerate = () => {
             {openChat ? (
               <button className="bg-white h-[65px] text-blue hover:text-opacity-80 grow font-jetBrain font-bold text-[14px] rounded-md lg:text-[15px] flex items-center justify-center">Open Chat</button>
             ) : (
-              <button onClick={handleChat} className="bg-white h-[65px] text-blue hover:text-opacity-80 grow font-jetBrain font-bold text-[14px] rounded-md lg:text-[15px] flex items-center justify-center">
+              <button onClick={activeButton ? handleChat : handleChatApply} className={`bg-white h-[65px] ${activeButton ? 'text-blue' : 'text-[#ccc]'} hover:text-opacity-80 grow font-jetBrain font-bold text-[14px] rounded-md lg:text-[15px] flex items-center justify-center`}>
                 Generate Link
               </button>
             )}
