@@ -3,11 +3,10 @@
 import { useRef } from 'react';
 import { SwiperSlide, Swiper } from 'swiper/react';
 import Image from 'next/image';
-import discover1 from '/public/home/discover1.png';
-import discover2 from '/public/home/discover2.png';
-import discover3 from '/public/home/discover3.png';
-import discover4 from '/public/home/discover4.png';
-import discoverPlus from '/public/home/discover-plus.png';
+import discover1 from '/public/home/discover1.svg';
+import discover2 from '/public/home/discover2.svg';
+import discover3 from '/public/home/discover3.svg';
+import discover4 from '/public/home/discover4.svg';
 
 import 'swiper/css';
 

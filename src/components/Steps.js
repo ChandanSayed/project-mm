@@ -1,9 +1,9 @@
 'use client';
 import Image from 'next/image';
-import one from '/public/home/1.png';
-import two from '/public/home/2.png';
-import three from '/public/home/3.png';
-import four from '/public/home/4.png';
+import one from '/public/home/1.svg';
+import two from '/public/home/2.svg';
+import three from '/public/home/3.svg';
+import four from '/public/home/4.svg';
 import { useState } from 'react';
 
 const Steps = () => {

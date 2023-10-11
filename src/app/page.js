@@ -1,12 +1,14 @@
 'use client';
+
+import { useEffect } from 'react';
+import { useAppContext } from '@/context/AppContext';
+
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import CookiesContainer from '@/components/CookiesContainer';
 import AboutTwoColumnSection from '@/components/AboutTwoColumnSection';
-import chat from '/public/home/chat.png';
-import clock from '/public/home/clock.png';
-import { useAppContext } from '@/context/AppContext';
-import { useEffect } from 'react';
+import chat from '/public/home/chat.svg';
+import clock from '/public/home/clock.svg';
 import Hero from '@/components/Hero';
 import Guide from '@/components/Guide';
 import Discover from '@/components/Discover';

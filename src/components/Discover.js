@@ -1,9 +1,5 @@
-import phone from '/public/home/cellphone.png';
-import laptop from '/public/home/laptop.png';
-import tablet from '/public/home/tablet.png';
-import television from '/public/home/television.png';
-import controller from '/public/home/controller.png';
-import Image from 'next/image';
+'use client';
+
 import DiscoverSlider from './DiscoverSlider';
 
 const Discover = () => {

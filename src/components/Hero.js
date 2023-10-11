@@ -1,6 +1,5 @@
 import LinkGenerate from './LinkGenerate';
-import hero from '/public/home/hero.jpeg';
-import Image from 'next/image';
+import hero from '/public/home/hero.svg';
 
 const Hero = () => {
   return (
