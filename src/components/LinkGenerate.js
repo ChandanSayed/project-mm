@@ -5,6 +5,7 @@ import Link from 'next/link';
 import QRCode from 'react-qr-code';
 
 import CloudflareTurnstile from './CloudflareTurnstile';
+import tooltip from '/public/home/tooltip.svg';
 
 const LinkGenerate = () => {
   const [secure, setSecure] = useState(false);
@@ -177,7 +178,7 @@ const LinkGenerate = () => {
 
             <div className="buttons pl-[6px] flex gap-[5px]">
               <div className="relative">
-                <div className={`qr-code bg-black p-[10px] rounded-[10px] overflow-hidden absolute left-1/2 transform -translate-x-1/2 bottom-[66px] ${showGenerate ? 'animate-fade' : 'opacity-0'}`}>
+                <div style={{ backgroundImage: `url(${tooltip.src})` }} className={`qr-code p-[10px] rounded-[8px_8px_14px_14px] overflow-hidden absolute left-1/2 transform -translate-x-1/2 bottom-[66px] bg-no-repeat bg-cover bg-center pb-4 ${showGenerate ? 'animate-fade' : 'opacity-0'}`}>
                   <p className="text-white font-medium text-sm font-jetBrain">Regenerate</p>
                 </div>
                 {openChat ? (
@@ -213,7 +214,7 @@ const LinkGenerate = () => {
                 )}
               </div>
               <div className="relative">
-                <div className={`qr-code bg-black p-[10px] w-max rounded-[10px] overflow-hidden absolute left-1/2 transform -translate-x-1/2 bottom-[66px] ${showCopy ? 'animate-fade' : 'opacity-0'}`}>
+                <div style={{ backgroundImage: `url(${tooltip.src})` }} className={`qr-code p-[10px] w-max rounded-[8px_8px_14px_14px] overflow-hidden absolute left-1/2 transform -translate-x-1/2 bottom-[66px] bg-no-repeat bg-cover bg-center pb-4 ${showCopy ? 'animate-fade' : 'opacity-0'}`}>
                   <p className="text-white font-medium text-sm font-jetBrain">Copy URL</p>
                 </div>
 
