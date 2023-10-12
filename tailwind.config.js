@@ -26,7 +26,7 @@ module.exports = {
       },
       animation: {
         fade: 'fadeOut 3s ease-in-out',
-        fade2: 'fadeOut .5s ease-in-out'
+        fade2: 'fadeOut .2s ease-in-out'
       },
       keyframes: theme => ({
         fadeOut: {

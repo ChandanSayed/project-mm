@@ -200,7 +200,7 @@ const LinkGenerate = () => {
                 )}
               </div>
               <div className="relative">
-                <div style={{ backgroundImage: `url(${qrBg.src})` }} className={`qr-code bg-cover bg-no-repeat p-[10px] pb-3 rounded-[8px_8px_14px_14px] w-[280px] overflow-hidden absolute left-1/2 transform -translate-x-1/2 bottom-[66px] ${!showQr && 'hidden'}`}>
+                <div style={{ backgroundImage: `url(${qrBg.src})` }} className={`qr-code bg-cover bg-no-repeat p-[10px] pb-3 rounded-[8px_8px_14px_14px] w-[280px] overflow-hidden absolute left-1/2 transform -translate-x-1/2 bottom-[58px] ${!showQr && 'hidden'}`}>
                   <QRCode className="bg-white rounded-[10px] p-5 w-[260px] h-[260px]" value={generatedLink} />
                 </div>
                 {openChat ? (
