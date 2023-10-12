@@ -6,6 +6,7 @@ import QRCode from 'react-qr-code';
 
 import CloudflareTurnstile from './CloudflareTurnstile';
 import Tooltip from './Tooltip';
+import qrBg from '/public/home/qr-bg.svg';
 
 const LinkGenerate = () => {
   const [secure, setSecure] = useState(false);
@@ -89,7 +90,7 @@ const LinkGenerate = () => {
     setShowCopy(true);
     setTimeout(() => {
       setShowCopy(false);
-    }, 1000);
+    }, 500);
   }
 
   function handleQr() {
@@ -199,7 +200,7 @@ const LinkGenerate = () => {
                 )}
               </div>
               <div className="relative">
-                <div className={`qr-code bg-black p-[10px] rounded-[10px] w-[280px] overflow-hidden absolute left-1/2 transform -translate-x-1/2 bottom-[66px] ${!showQr && 'hidden'}`}>
+                <div style={{ backgroundImage: `url(${qrBg.src})` }} className={`qr-code bg-cover bg-no-repeat p-[10px] pb-3 rounded-[8px_8px_14px_14px] w-[280px] overflow-hidden absolute left-1/2 transform -translate-x-1/2 bottom-[66px] ${!showQr && 'hidden'}`}>
                   <QRCode className="bg-white rounded-[10px] p-5 w-[260px] h-[260px]" value={generatedLink} />
                 </div>
                 {openChat ? (
@@ -217,7 +218,7 @@ const LinkGenerate = () => {
                 )}
               </div>
               <div className="relative">
-                <Tooltip showCopy={showCopy} message={`Copy URL`} />
+                <Tooltip showCopy={showCopy} classes="animation-fade1" message={`Copied`} />
 
                 {openChat ? (
                   <button onClick={secure ? copyTOClipSecure : copyTOClip} className="cursor-pointer h-[50px] w-[50px] flex items-center justify-center border-[1.5px] border-white border-opacity-20 rounded-[5px] bg-white hover:bg-opacity-60">

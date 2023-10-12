@@ -25,7 +25,8 @@ module.exports = {
         header: '64px auto' // 👈 for the navbar layout. adds grid-rows-header class
       },
       animation: {
-        fade: 'fadeOut 3s ease-in-out'
+        fade: 'fadeOut 3s ease-in-out',
+        fade2: 'fadeOut .5s ease-in-out'
       },
       keyframes: theme => ({
         fadeOut: {
