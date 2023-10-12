@@ -218,7 +218,7 @@ const LinkGenerate = () => {
                 )}
               </div>
               <div className="relative">
-                <Tooltip showCopy={showCopy} classes="animate-fade2" message={`Copied`} />
+                <Tooltip showCopy={showCopy} classes="" message={`Copied`} />
 
                 {openChat ? (
                   <button onClick={secure ? copyTOClipSecure : copyTOClip} className="cursor-pointer h-[50px] w-[50px] flex items-center justify-center border-[1.5px] border-white border-opacity-20 rounded-[5px] bg-white hover:bg-opacity-60">
