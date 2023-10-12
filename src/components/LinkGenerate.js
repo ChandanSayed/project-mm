@@ -79,9 +79,17 @@ const LinkGenerate = () => {
   };
   function copyTOClip() {
     navigator.clipboard.writeText(generatedLink);
+    setShowCopy(true);
+    setTimeout(() => {
+      setShowCopy(false);
+    }, 1000);
   }
   function copyTOClipSecure() {
     navigator.clipboard.writeText(generatedLink + ' ' + code);
+    setShowCopy(true);
+    setTimeout(() => {
+      setShowCopy(false);
+    }, 1000);
   }
 
   function handleQr() {
@@ -212,7 +220,7 @@ const LinkGenerate = () => {
                 <Tooltip showCopy={showCopy} message={`Copy URL`} />
 
                 {openChat ? (
-                  <button onMouseEnter={handleCopy} onMouseLeave={handleCopyLeave} onClick={secure ? copyTOClipSecure : copyTOClip} className="cursor-pointer h-[50px] w-[50px] flex items-center justify-center border-[1.5px] border-white border-opacity-20 rounded-[5px] bg-white hover:bg-opacity-60">
+                  <button onClick={secure ? copyTOClipSecure : copyTOClip} className="cursor-pointer h-[50px] w-[50px] flex items-center justify-center border-[1.5px] border-white border-opacity-20 rounded-[5px] bg-white hover:bg-opacity-60">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none">
                       <path d="M15.4545 18.1818H5.45455V5.45455H15.4545M15.4545 3.63636H5.45455C4.97233 3.63636 4.50987 3.82792 4.1689 4.1689C3.82792 4.50987 3.63636 4.97233 3.63636 5.45455V18.1818C3.63636 18.664 3.82792 19.1265 4.1689 19.4675C4.50987 19.8084 4.97233 20 5.45455 20H15.4545C15.9368 20 16.3992 19.8084 16.7402 19.4675C17.0812 19.1265 17.2727 18.664 17.2727 18.1818V5.45455C17.2727 4.97233 17.0812 4.50987 16.7402 4.1689C16.3992 3.82792 15.9368 3.63636 15.4545 3.63636ZM12.7273 0H1.81818C1.33597 0 0.873508 0.191558 0.532533 0.532533C0.191558 0.873508 0 1.33597 0 1.81818V14.5455H1.81818V1.81818H12.7273V0Z" fill="#494AF8" />
                     </svg>
