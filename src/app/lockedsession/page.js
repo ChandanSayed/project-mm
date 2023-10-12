@@ -1,6 +1,4 @@
-import locked from '../../../public/icons/locked.png';
-import ReturnToHomepage from '@/components/ReturnToHomepage';
-import Image from 'next/image';
+import locked from '/public/icons/locked.svg';
 import LogoHeader from '@/components/LogoHeader';
 import BlurSection from '@/components/BlurSection';
 import NavLessPageFooter from '@/components/NavLessPageFooter';

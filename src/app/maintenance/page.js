@@ -1,10 +1,6 @@
-import ReturnToHomepage from '@/components/ReturnToHomepage';
-import SiteLogo from '@/components/SiteLogo';
 import Image from 'next/image';
-import React from 'react';
-import maintenance from '../../../public/icons/maintenance.png';
+import maintenance from '/public/icons/maintenance.svg';
 import LogoHeader from '@/components/LogoHeader';
-import BlurSection from '@/components/BlurSection';
 import NavLessPageFooter from '@/components/NavLessPageFooter';
 
 const page = () => {
