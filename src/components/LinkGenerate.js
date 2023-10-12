@@ -83,14 +83,14 @@ const LinkGenerate = () => {
     setShowCopy(true);
     setTimeout(() => {
       setShowCopy(false);
-    }, 1000);
+    }, 400);
   }
   function copyTOClipSecure() {
     navigator.clipboard.writeText(generatedLink + ' ' + code);
     setShowCopy(true);
     setTimeout(() => {
       setShowCopy(false);
-    }, 500);
+    }, 400);
   }
 
   function handleQr() {
@@ -200,7 +200,7 @@ const LinkGenerate = () => {
                 )}
               </div>
               <div className="relative">
-                <div style={{ backgroundImage: `url(${qrBg.src})` }} className={`qr-code bg-cover bg-no-repeat p-[10px] pb-3 rounded-[8px_8px_14px_14px] w-[280px] overflow-hidden absolute left-1/2 transform -translate-x-1/2 bottom-[58px] ${!showQr && 'hidden'}`}>
+                <div style={{ backgroundImage: `url(${qrBg.src})` }} className={`qr-code bg-cover bg-no-repeat p-[10px] py-4 rounded-[8px_8px_14px_14px] w-[280px] overflow-hidden absolute left-1/2 transform -translate-x-1/2 bottom-[58px] ${!showQr && 'hidden'}`}>
                   <QRCode className="bg-white rounded-[10px] p-5 w-[260px] h-[260px]" value={generatedLink} />
                 </div>
                 {openChat ? (
@@ -218,7 +218,7 @@ const LinkGenerate = () => {
                 )}
               </div>
               <div className="relative">
-                <Tooltip showCopy={showCopy} classes="animation-fade1" message={`Copied`} />
+                <Tooltip showCopy={showCopy} classes="animate-fade2" message={`Copied`} />
 
                 {openChat ? (
                   <button onClick={secure ? copyTOClipSecure : copyTOClip} className="cursor-pointer h-[50px] w-[50px] flex items-center justify-center border-[1.5px] border-white border-opacity-20 rounded-[5px] bg-white hover:bg-opacity-60">
