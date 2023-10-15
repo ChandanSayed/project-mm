@@ -1,12 +1,10 @@
-'use client';
-
 import DiscoverSlider from './DiscoverSlider';
 
 const Discover = () => {
   return (
     <div className="bg-dark px-[15px]">
       <div className="max-w-[1320px] mx-auto">
-        <h2 className="font-bold text-[34px] text-center lg:text-[60px] tracking-[-.5px] lg:tracking-normal sm:max-w-[450px] lg:max-w-[934px] mx-auto text-white lg:pt-[70px] lg:pb-10">Discover more from MessageMoment</h2>
+        <h2 className="font-bold text-[34px] text-center lg:text-[60px] tracking-[-.5px] lg:tracking-normal sm:max-w-[450px] lg:max-w-[934px] mx-auto text-white pt-14 pb-8 lg:pt-[70px] lg:pb-10">Discover more from MessageMoment</h2>
         <DiscoverSlider />
         <p className="text-white text-[26px] text-center mt-10 lg:mt-[60px] mb-10">
           Use MessageMoment on any device via Browser<sup className="text-[60%]">1</sup>
