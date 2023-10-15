@@ -5,13 +5,14 @@ import television from '/public/home/television.png';
 import controller from '/public/home/controller.png';
 import Image from 'next/image';
 import DiscoverSlider from './DiscoverSlider';
+import DiscoverSlide2 from './DiscoverSlide2';
 
 const Discover = () => {
   return (
     <div className="bg-dark px-[15px]">
       <div className="max-w-[1320px] mx-auto">
         <h2 className="font-bold text-[34px] text-center lg:text-[60px] tracking-[-.5px] lg:tracking-normal sm:max-w-[450px] lg:max-w-[934px] mx-auto text-white lg:pt-[70px] lg:pb-10">Discover more from MessageMoment</h2>
-        <DiscoverSlider />
+        <DiscoverSlide2 />
         <p className="text-white text-[26px] text-center mt-10 lg:mt-[60px] mb-10">
           Use MessageMoment on any device via Browser<sup className="text-[60%]">1</sup>
         </p>
