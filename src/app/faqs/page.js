@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
-import faqs from '../../../public/icons/faqs.png';
-import searchIcon from '../../../public/icons/icon_search.png';
+import faqs from '/public/icons/faqs.svg';
+import searchIcon from '/public/icons/icon_search.svg';
 import Accordion from '@/components/Accordion';
 import { accordionList } from '../../components/AccordionList';
-import email2 from '../../../public/icons/email.png';
+import email2 from '/public/icons/email.svg';
 import ReturnToHomepage from '@/components/ReturnToHomepage';
 import { useAppContext } from '@/context/AppContext';
 

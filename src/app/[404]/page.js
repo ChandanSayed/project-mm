@@ -1,4 +1,4 @@
-import error from '../../../public/icons/error-404.png';
+import error from '/public/icons/error-404.svg';
 import LogoHeader from '@/components/LogoHeader';
 import BlurSection from '@/components/BlurSection';
 import NavLessPageFooter from '@/components/NavLessPageFooter';

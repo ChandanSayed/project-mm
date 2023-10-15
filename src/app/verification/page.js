@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import verification from '../../../public/icons/verification.png';
+import verification from '/public/icons/verification.svg';
 import CloudflareTurnstile from '@/components/CloudflareTurnstile';
 import LogoHeader from '@/components/LogoHeader';
 import NavLessPageFooter from '@/components/NavLessPageFooter';

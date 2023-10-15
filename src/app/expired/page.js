@@ -1,5 +1,5 @@
 import React from 'react';
-import error from '../../../public/icons/error-404.png';
+import error from '/public/icons/error-404.svg';
 import LogoHeader from '@/components/LogoHeader';
 import NavLessPageFooter from '@/components/NavLessPageFooter';
 import BlurSection from '@/components/BlurSection';

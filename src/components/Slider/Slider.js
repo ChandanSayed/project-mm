@@ -1,9 +1,9 @@
 'use client';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import bg1 from '/public/about/slider1.png';
-import bg2 from '/public/about/slider2.png';
-import bg3 from '/public/about/slider3.png';
+import bg1 from '/public/about/dedicated1.svg';
+import bg2 from '/public/about/dedicated2.svg';
+import bg3 from '/public/about/dedicated3.svg';
 import Image from 'next/image';
 import { Pagination } from 'swiper/modules';
 
