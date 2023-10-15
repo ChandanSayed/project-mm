@@ -13,7 +13,8 @@ const Hero = () => {
         </div>
       </div>
       <LinkGenerate />
-      <LinkGenerateMobile />
+
+      {/* <LinkGenerateMobile /> */}
     </div>
   );
 };

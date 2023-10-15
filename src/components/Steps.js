@@ -20,7 +20,7 @@ const Steps = () => {
     <div className="steps-desktop hidden lg:flex gap-5">
       {steps.map((step, i) => {
         return (
-          <div className={`step bg-white rounded-[20px] relative p-[30px] cursor-pointer ${index === i ? 'sm:w-[220px] lg:flex-1' : 'sm:w-[220px] lg:w-[260px] bg-opacity-20 text-center'}`} key={step.id} onMouseEnter={() => setIndex(i)}>
+          <div className={`step bg-white rounded-[20px] relative p-[30px] cursor-pointer ${index === i ? 'sm:w-[220px] lg:w-[260px] xl:flex-1' : 'sm:w-[220px] lg:w-[260px] bg-opacity-20 text-center'}`} key={step.id} onMouseEnter={() => setIndex(i)}>
             <h2 className={`font-bold text-[34px] lg:text-[60px] absolute left-[30px] top-4 ${index === i ? 'text-blue' : 'text-white opacity-20'}`}>{step.id}</h2>
             <Image src={step.img} alt="step" className={`w-[60px] h-[60px] lg:w-[80px] lg:h-[80px] mt-[30px] ${index === i ? 'sm:ml-[45px] lg:ml-[60px]' : 'mx-auto'} mb-5`} />
             <span className={`font-jetBrain text-[13px]  ${index === i ? 'text-darkGrey' : 'text-white'}`}>{step.step}</span>
