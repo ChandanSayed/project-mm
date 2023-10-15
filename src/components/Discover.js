@@ -1,4 +1,5 @@
 import DiscoverSlider from './DiscoverSlider';
+import DiscoverSlide2 from './DiscoverSlide2';
 
 const Discover = () => {
   return (

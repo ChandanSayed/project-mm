@@ -67,21 +67,24 @@ const chats = [
     ]
   },
   {
-    ' joinedMessage': [
+    joinedMessage: [
       {
         id: 1,
         name: '[Richard]',
-        text: 'Joined'
+        text: 'Joined',
+        color: 'red'
       },
       {
         id: 2,
         name: '[Aron]',
-        text: 'Left'
+        text: 'Left',
+        color: '#CCCCCC'
       },
       {
         id: 3,
         name: '[catalina]',
-        text: 'Joined'
+        text: 'Joined',
+        color: 'red'
       }
     ]
   },
@@ -120,7 +123,9 @@ const chats = [
   }
 ];
 
-console.log(chats);
+// for (let i = 0; i < chats[1].length; i++) {
+//   console.log(chats[1].joinedMessage[i]);
+// }
 
 const Sidebar = ({ children }) => {
   const [selectedOption, setSelectedOption] = useState('');
@@ -147,9 +152,9 @@ const Sidebar = ({ children }) => {
 
               <SidebarComponents3 contentLeft="Advertisement" contentRight="Big Sale on at Flight Centre! Don’t miss out. Visit" linkContent="www.flightcentre.com" href="/https://www.flightcentre.com" contentRight2="now and book your trip!" />
 
-              {chats.map(chat => (
+              {chats[1].joinedMessage.map(chat => (
                 <div key={chat.id}>
-                  <SidebarComponents contentLeft={chat.name} text />
+                  <SidebarComponents color={chat.color} contentLeft={chat.name} text />
                 </div>
               ))}
 
