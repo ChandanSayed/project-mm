@@ -17,7 +17,7 @@ const Steps = () => {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="steps-desktop flex gap-5">
+    <div className="steps-desktop hidden lg:flex gap-5">
       {steps.map((step, i) => {
         return (
           <div className={`step bg-white rounded-[20px] relative p-[30px] cursor-pointer ${index === i ? 'sm:w-[220px] lg:flex-1' : 'sm:w-[220px] lg:w-[260px] bg-opacity-20 text-center'}`} key={step.id} onMouseEnter={() => setIndex(i)}>

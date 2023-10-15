@@ -10,6 +10,8 @@ import discover4 from '/public/home/discover4.svg';
 
 import 'swiper/css';
 
+import './DiscoverSlider.css';
+
 const DiscoverSlider = () => {
   const swiperRef = useRef();
   return (
@@ -57,7 +59,7 @@ const DiscoverSlider = () => {
         modules={[]}
         loop={true}
         // autoplay={true}
-        className="mySwiper max-w-[1100px]"
+        className="mySwiper max-w-[1100px] discover"
       >
         <SwiperSlide className="bg-white rounded-[20px] w-1/4 pt-[70px] pb-[30px]">
           <Image src={discover1} className="mx-auto lg:h-20 lg:w-20" alt="Image" />
@@ -104,12 +106,12 @@ const DiscoverSlider = () => {
         </SwiperSlide>
       </Swiper>
 
-      <div className="left absolute top-1/2 transform -translate-y-1/2 left-0">
+      <div className="hidden xl:block left absolute top-1/2 transform -translate-y-1/2 left-0">
         <svg className="cursor-pointer" onClick={() => swiperRef.current.swiper.slidePrev()} xmlns="http://www.w3.org/2000/svg" width="20" height="36" viewBox="0 0 20 36" fill="none">
           <path d="M19.2265 30.84C19.722 31.3404 20 32.0162 20 32.7204C20 33.4246 19.722 34.1004 19.2265 34.6008C18.9832 34.8479 18.6932 35.0441 18.3733 35.178C18.0535 35.312 17.7102 35.3809 17.3634 35.3809C17.0167 35.3809 16.6734 35.312 16.3535 35.178C16.0336 35.0441 15.7436 34.8479 15.5003 34.6008L0.772227 19.5728C0.277419 19.0713 -8.04072e-07 18.395 -7.73275e-07 17.6905C-7.42478e-07 16.9859 0.277419 16.3097 0.772228 15.8081L15.5003 0.780099C15.7436 0.533029 16.0336 0.336822 16.3535 0.202895C16.6734 0.0689692 17.0167 -1.30406e-07 17.3634 -1.15248e-07C17.7102 -1.00091e-07 18.0535 0.0689692 18.3734 0.202896C18.6932 0.336822 18.9832 0.533029 19.2265 0.780099C19.722 1.28052 20 1.9563 20 2.66053C20 3.36476 19.722 4.04053 19.2265 4.54095L7.14799 17.6962L19.2265 30.84Z" fill="white" />
         </svg>
       </div>
-      <div className="left absolute top-1/2 transform -translate-y-1/2 right-0">
+      <div className="hidden xl:block left absolute top-1/2 transform -translate-y-1/2 right-0">
         <svg className="cursor-pointer" onClick={() => swiperRef.current.swiper.slideNext()} xmlns="http://www.w3.org/2000/svg" width="26" height="42" viewBox="0 0 26 42" fill="none">
           <g filter="url(#filter0_d_988_8811)">
             <path d="M3.77345 8.16001C3.27795 7.65958 3 6.98381 3 6.27958C3 5.57535 3.27795 4.89958 3.77345 4.39915C4.01676 4.15209 4.30679 3.95588 4.62665 3.82195C4.94651 3.68803 5.28981 3.61906 5.63657 3.61906C5.98333 3.61906 6.32663 3.68803 6.64649 3.82195C6.96635 3.95588 7.25638 4.15209 7.49969 4.39915L22.2278 19.4272C22.7226 19.9287 23 20.605 23 21.3095C23 22.0141 22.7226 22.6903 22.2278 23.1919L7.49969 38.2199C7.25638 38.467 6.96635 38.6632 6.64649 38.7971C6.32663 38.931 5.98334 39 5.63657 39C5.28981 39 4.94651 38.931 4.62665 38.7971C4.30679 38.6632 4.01676 38.467 3.77345 38.2199C3.27796 37.7195 3 37.0437 3 36.3395C3 35.6352 3.27796 34.9595 3.77345 34.459L15.852 21.3038L3.77345 8.16001Z" fill="white" />

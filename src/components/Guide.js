@@ -12,7 +12,7 @@ const Guide = () => {
           <Image src={img} alt="Image" className="mx-auto relative z-10" />
           <div className="absolute w-[300px] h-[300px] lg:w-[396px] lg:h-[396px] blur-[50px] -z-0 rounded-full bg-black bg-opacity-20 top-0 left-1/2 transform -translate-x-1/2"></div>
         </div>
-        {/* <Steps /> */}
+        <Steps />
         <p className="max-w-[328px] lg:max-w-[930px] mx-auto text-white font-jetBrain font-medium text-[13px] lg:text-lg pt-10 text-center">Start a chat session by clicking the "Open Chat" button on our site and receive a link. Optionally, make the chat secure by generating a token password.</p>
       </div>
     </div>
