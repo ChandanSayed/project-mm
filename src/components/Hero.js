@@ -1,8 +1,5 @@
 'use client';
 import LinkGenerate from './LinkGenerate';
-import LinkGenerateMobile from './LinkGenerateMobile';
-import hero from '/public/home/hero.svg';
-import heroMobile from '/public/home/hero-mobile.svg';
 
 const Hero = () => {
   return (
@@ -11,12 +8,10 @@ const Hero = () => {
         <div className="overlay bg-black bg-opacity-10 absolute inset-0"></div>
         <div className="hero-des text-center relative">
           <h1 className="text-[50px] lg:text-[80px] text-white -tracking-[1px] leading-none font-bold mb-[10px] lg:mb-5 px-6 max-w-[647px] mx-auto max-lg:text-[50px]">The real meaning to personal.</h1>
-          <p className="font-medium font-jetBrain max-w-[562px] mx-auto text-[15px] lg:text-xl mb-14 text-white">A reliable and trustworthy platform for discreet conversations between known parties.</p>
+          <p className="font-medium px-2 font-jetBrain max-w-[562px] mx-auto text-[15px] lg:text-xl mb-14 text-white">A reliable and trustworthy platform for discreet conversations between known parties.</p>
         </div>
       </div>
       <LinkGenerate />
-
-      {/* <LinkGenerateMobile /> */}
     </div>
   );
 };
