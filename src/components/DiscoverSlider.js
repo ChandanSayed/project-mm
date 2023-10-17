@@ -45,10 +45,25 @@ const DiscoverSlider = () => {
     });
   }
 
+  function handleScroll() {
+    // if (carousel.current.scrollLeft < 180) {
+    //   setIndex(0);
+    // }
+    // if (carousel.current.scrollLeft > 180) {
+    //   setIndex(1);
+    //   if (carousel.current.scrollLeft > 340) {
+    //     setIndex(2);
+    //     if (carousel.current.scrollLeft > 450) {
+    //       setIndex(3);
+    //     }
+    //   }
+    // }
+  }
+
   return (
     <div className="relative max-w-[1200px] mx-auto">
       <div className="slider-container max-w-[1200px] mx-auto relative -mr-[15px] -ml-[15px] sm:mx-auto lg:mx-0 sm:hidden">
-        <div ref={carousel} className="sliders flex gap-[10px] max-w-[1100px] px-11 mx-auto overflow-x-scroll scroll-smooth pb-10">
+        <div onScroll={handleScroll} ref={carousel} className="sliders flex gap-[10px] max-w-[1100px] px-11 mx-auto overflow-x-scroll scroll-smooth pb-10">
           {dis.map((item, i) => {
             return (
               <div key={i} className="bg-white rounded-[20px] min-w-[180px] sm:min-w-[250px] pt-[38px] pb-[34px] relative">
