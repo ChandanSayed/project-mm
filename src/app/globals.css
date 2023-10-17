@@ -58,6 +58,7 @@ button {
 
 .sliders::-webkit-scrollbar {
   height: 0px;
+  width: 0;
 }
 
 /* Track */
@@ -68,7 +69,7 @@ button {
 
 /* Handle */
 .sliders::-webkit-scrollbar-thumb {
-  background: #fff;
+  background: transparent;
   height: 0px;
   border-radius: 20px;
 }

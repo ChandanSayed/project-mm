@@ -38,7 +38,7 @@ const NavBar = () => {
       <div className={`lg:hidden ${mobileNav ? 'flex flex-col items-center justify-between p-5 pt-0' : 'hidden'}`} style={{ height: 'calc(100vh - 190px)' }}>
         <FooterNavItems color="text-white" classes={`text-center py-[50px] pl-[0px] w-full border-b border-b-white border-opacity-10`} />
         <div className="grow w-full">
-          <HeaderButton classes="text-blue bg-white w-full mt-10" />
+          <HeaderButton classes="text-blue bg-white w-full mt-10" name="Start" />
         </div>
         <FooterBottom classes="pt-[30px] border-t border-t-white border-opacity-10 text-white" textColor="text-white" />
       </div>

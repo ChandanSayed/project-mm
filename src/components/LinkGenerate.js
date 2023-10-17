@@ -4,8 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 
 import CloudflareTurnstile from './CloudflareTurnstile';
-
-import qrBg from '/public/home/qr-bg.svg';
 import LinkGenerateButtons from './LinkGenerateButtons';
 import SecureTypeSelectionMobile from './SecureTypeSelectionMobile';
 import SecurityCode from './SecurityCode';
@@ -49,6 +47,7 @@ const LinkGenerate = () => {
     const link = 'https://messagemoment.com/sqjgcf' + randIdx;
     setGeneratedLink(link);
   };
+
   const generateLinkSecure = function () {
     let randIdx = Math.floor(1000 + Math.random() * 9000);
     const link = 'https://messagemoment.com/sqjgcf' + randIdx;
@@ -79,9 +78,9 @@ const LinkGenerate = () => {
 
   const generateCodes = function () {
     let randIdx = Math.floor(1000 + Math.random() * 9000);
-
     setCode(randIdx);
   };
+
   function copyTOClip() {
     navigator.clipboard.writeText(generatedLink);
     setShowCopy(true);
@@ -220,7 +219,7 @@ const LinkGenerate = () => {
               <CloudflareTurnstile />
             </div>
             <div className="grow w-full flex gap-[10px]">
-              <LinkGenerateButtons classes="lg:hidden" showGenerate={showGenerate} openChat={openChat} showQr={showQr} generatedLink={generatedLink} showCopy={showCopy} handleGenerateTip={handleGenerateTip} handleGenerateTipLeave={handleGenerateTipLeave} secure={secure} generateLink={generateLink} handleQr={handleQr} copyTOClip={copyTOClip} copyTOClipSecure={copyTOClipSecure} />
+              <LinkGenerateButtons classes="lg:hidden" showGenerate={showGenerate} openChat={openChat} showQr={showQr} generatedLink={generatedLink} showCopy={showCopy} handleGenerateTip={handleGenerateTip} handleGenerateTipLeave={handleGenerateTipLeave} secure={secure} generateLink={generateLink} handleQr={handleQr} copyTOClip={copyTOClip} copyTOClipSecure={copyTOClipSecure} generateLinkSecure={generateLinkSecure} />
               {openChatButton ? (
                 <button className="bg-white h-[50px] lg:h-[65px] text-blue hover:text-opacity-80 grow font-jetBrain font-bold text-[14px] rounded-md lg:text-[15px] flex items-center justify-center w-full">Open Chat</button>
               ) : (
