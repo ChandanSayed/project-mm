@@ -16,7 +16,7 @@ import blueError from '../../public/icons/blueError.png';
 import { useState } from 'react';
 import AutoComplete from './AutoComplete';
 
-const options = ['Apple', 'Banana', 'Cherry', 'Date', 'Grape', 'Lemon', 'Orange', 'Peach', 'Strawberry'];
+const options = [];
 
 const users = [
   {
@@ -140,73 +140,77 @@ const Sidebar = ({ children }) => {
         <div>
           <div className="col-span-4 md:col-span-4 fixed w-[80%] max-lg:w-full h-[75%] left-0 bg-white">
             <div className="  p-4 h-full overflow-y-auto custom-scrollbar">
-              <div className="bg-midGray border p-4 rounded-t-lg  grid grid-cols-1 lg:grid-cols-5">
-                <div className="col-span-1 md:col-span-1">
-                  <p className="text-blue text-[14px] font-jetBrain ">[MessageMoment.com]</p>
+              <div className="sticky-0 w-full left-0 right-0 bg-white">
+                <div className="bg-midGray border p-4 rounded-t-lg  grid grid-cols-1 lg:grid-cols-5">
+                  <div className="col-span-1 md:col-span-1">
+                    <p className="text-blue text-[14px] font-jetBrain ">[MessageMoment.com]</p>
+                  </div>
+                  <div className="col-span-4 md:col-span-4 flex justify-between items-center">
+                    <p className="text-[14px] text-dark font-jetBrain">Welcome to MessageMoment.com, where your message only lasts a moment!</p>
+                    <Image src={Vector} alt="" />
+                  </div>
                 </div>
-                <div className="col-span-4 md:col-span-4 flex justify-between items-center">
-                  <p className="text-[14px] text-dark font-jetBrain">Welcome to MessageMoment.com, where your message only lasts a moment!</p>
-                  <Image src={Vector} alt="" />
-                </div>
+
+                <SidebarComponents3 contentLeft="Advertisement" contentRight="Big Sale on at Flight Centre! Don’t miss out. Visit" linkContent="www.flightcentre.com" href="/https://www.flightcentre.com" contentRight2="now and book your trip!" />
               </div>
 
-              <SidebarComponents3 contentLeft="Advertisement" contentRight="Big Sale on at Flight Centre! Don’t miss out. Visit" linkContent="www.flightcentre.com" href="/https://www.flightcentre.com" contentRight2="now and book your trip!" />
-
-              {chats[1].joinedMessage.map(chat => (
+              {/* {chats[1].joinedMessage.map(chat => (
                 <div key={chat.id}>
                   <SidebarComponents color={chat.color} contentLeft={chat.name} text />
                 </div>
-              ))}
+              ))} */}
 
-              <div className=" bg-midGray p-4 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">
-                <div className="col-span-1 md:col-span-1"></div>
-                <div className="col-span-4 md:col-span-4 flex  ">
-                  <div className="pt-[3px]">
-                    <Image src={tokenImage} alt="" className="w-[10.667px] h-[14px]  " />
+              <div className="">
+                <div className=" bg-midGray p-4 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">
+                  <div className="col-span-1 md:col-span-1"></div>
+                  <div className="col-span-4 md:col-span-4 flex  ">
+                    <div className="pt-[3px]">
+                      <Image src={tokenImage} alt="" className="w-[10.667px] h-[14px]  " />
+                    </div>
+                    <p className="text-dark flex items-start justify-start text-[14px] font-jetBrain  font-normal pl-[12px]">
+                      This chat session is protected using a secure token. <br /> ... <br /> {`> Please enter the Token you received with your chat link:`}
+                    </p>
                   </div>
-                  <p className="text-dark flex items-start justify-start text-[14px] font-jetBrain  font-normal pl-[12px]">
-                    This chat session is protected using a secure token. <br /> ... <br /> {`> Please enter the Token you received with your chat link:`}
-                  </p>
                 </div>
-              </div>
-              <SidebarComponents contentRight="Verifying..." textRight="font-normal" />
+                <SidebarComponents contentRight="Verifying..." textRight="font-normal" />
 
-              <SidebarComponents2 img={error} contentLeft="[MessageMoment.com]" contentRight="The chat session is full! There are currently 10/10 users joined." />
-              <SidebarComponents2 img={error} contentLeft="[MessageMoment.com]" contentRight="The token you entered is incorrect! Please try again." />
+                <SidebarComponents2 img={error} contentLeft="[MessageMoment.com]" contentRight="The chat session is full! There are currently 10/10 users joined." />
+                <SidebarComponents2 img={error} contentLeft="[MessageMoment.com]" contentRight="The token you entered is incorrect! Please try again." />
 
-              <SidebarComponents contentLeft="[MessageMoment.com]" textLeft="text-blue" contentRight="Verifying..." text=" text-errorColor" />
-              <div className=" bg-midGray p-4 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">
-                <div className="col-span-1 md:col-span-1"></div>
-                <div className="col-span-4 md:col-span-4 flex flex-col gap-2  ">
-                  <p className="text-dark  text-[14px] font-jetBrain font-normal">Thank you!</p>
-                  <p className="text-[14px] leading-5 font-normal font-jetBrain">...</p>
-                  <p className="text-dark  text-[14px] font-jetBrain font-normal">{`> Please enter your Display Name to proceed:`}</p>
-                  <p className="text-[10px] text-[#777] font-jetBrain font-normal">By proceeding, you agree that you are solely responsible for your actions and any content that you post or share during the chat session. MessageMoment does not assume any liability for the content posted by users or for any damages that may result from using this service.</p>
+                <SidebarComponents contentLeft="[MessageMoment.com]" textLeft="text-blue" contentRight="Verifying..." text=" text-errorColor" />
+                <div className=" bg-midGray p-4 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">
+                  <div className="col-span-1 md:col-span-1"></div>
+                  <div className="col-span-4 md:col-span-4 flex flex-col gap-2  ">
+                    <p className="text-dark  text-[14px] font-jetBrain font-normal">Thank you!</p>
+                    <p className="text-[14px] leading-5 font-normal font-jetBrain">...</p>
+                    <p className="text-dark  text-[14px] font-jetBrain font-normal">{`> Please enter your Display Name to proceed:`}</p>
+                    <p className="text-[10px] text-[#777] font-jetBrain font-normal">By proceeding, you agree that you are solely responsible for your actions and any content that you post or share during the chat session. MessageMoment does not assume any liability for the content posted by users or for any damages that may result from using this service.</p>
+                  </div>
                 </div>
+                <SidebarComponents contentLeft="[Richard]" textLeft="text-[#56CCF2]" contentRight="joined" text=" text-errorColor" />
+                <SidebarComponents contentLeft="[Laura]" rounded="bg-white border-b" textLeft="text-[#219653]" contentRight="hello everybody" text=" text-errorColor" />
+                <SidebarComponents contentLeft="[Theresa]" rounded="bg-white" textLeft="text-[#EE5353]" contentRight="hi richard 👋🏻" text=" text-errorColor" />
+                <div className=" bg-midGray p-4 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">
+                  <div className="col-span-1 md:col-span-1">
+                    <p className="text-blue text-[14px] font-jetBrain ">[MessageMoment.com]</p>
+                  </div>
+                  <div className="col-span-4 md:col-span-4 flex flex-col gap-2  ">
+                    <p className="text-dark  text-[14px] font-jetBrain font-normal">{`> Please enter the Message Expiration Time (in seconds) between 3 and 300. This can only be set once for all users, by any user, at any time. If this value is is not defined, the default will be 30 seconds.`}</p>
+                    <p className="text-[14px] leading-5 font-normal font-jetBrain">...</p>
+                    <p className="text-dark  text-[14px] font-jetBrain font-normal">
+                      * Set it with the command <span className="text-blue">/timer [seconds]</span> *
+                    </p>
+                  </div>
+                </div>
+                <SidebarComponents contentLeft="[joannah]" rounded="bg-white border-b" textLeft="text-[#5F27CD]" contentRight="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor felis nulla, eget pellentesque nulla blandit eu. Pellentesque porta ipsum orci, sit amet." text=" text-errorColor" />
+                <SidebarComponents contentLeft="[Nina]" rounded="bg-white" textLeft="text-[#F368E0]" contentRight="Quisque posuere magna id lorem consectetur, a dapibus eros lobortis. Duis porttitor felis nulla, eget pellentesque nulla blandit eu. Pellentesque porta ipsum orci, sit amet." text=" text-errorColor" />
+                <SidebarComponents contentLeft="[Marcus]" rounded="bg-[#F7F7F7] rounded-lg" textLeft="text-[#704F2C]" contentRight="Left" text=" text-errorColor" />
+                <SidebarComponents2 img={blueError} contentLeft="[MessageMoment.com]" contentRight="Message Expiry Time must be a value between 3 and 300." textRight=" !font-normal" bg="border-t-blue" />
+                <SidebarComponents contentLeft="[Richard]" rounded="!bg-blue rounded-lg" textLeft="text-white" textRight="text-white font-semibold" contentRight="* Message Expiration Time set for 120 secs *" text=" text-errorColor" />
+                <SidebarComponents rounded="bg-white" contentLeft="[william]" contentRight="Quisque posuere magna id lorem consectetur, a dapibus eros lobortis " textLeft="text-[#6FCF97]" />
+                <SidebarComponents contentLeft="[Aron]" contentRight="Joined " textLeft="text-[#704F2C]" />
+                <SidebarComponents contentLeft="[catalina]" contentRight="Joined " textLeft="text-[#EDC447]" />
               </div>
-              <SidebarComponents contentLeft="[Richard]" textLeft="text-[#56CCF2]" contentRight="joined" text=" text-errorColor" />
-              <SidebarComponents contentLeft="[Laura]" rounded="bg-white border-b" textLeft="text-[#219653]" contentRight="hello everybody" text=" text-errorColor" />
-              <SidebarComponents contentLeft="[Theresa]" rounded="bg-white" textLeft="text-[#EE5353]" contentRight="hi richard 👋🏻" text=" text-errorColor" />
-              <div className=" bg-midGray p-4 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">
-                <div className="col-span-1 md:col-span-1">
-                  <p className="text-blue text-[14px] font-jetBrain ">[MessageMoment.com]</p>
-                </div>
-                <div className="col-span-4 md:col-span-4 flex flex-col gap-2  ">
-                  <p className="text-dark  text-[14px] font-jetBrain font-normal">{`> Please enter the Message Expiration Time (in seconds) between 3 and 300. This can only be set once for all users, by any user, at any time. If this value is is not defined, the default will be 30 seconds.`}</p>
-                  <p className="text-[14px] leading-5 font-normal font-jetBrain">...</p>
-                  <p className="text-dark  text-[14px] font-jetBrain font-normal">
-                    * Set it with the command <span className="text-blue">/timer [seconds]</span> *
-                  </p>
-                </div>
-              </div>
-              <SidebarComponents contentLeft="[joannah]" rounded="bg-white border-b" textLeft="text-[#5F27CD]" contentRight="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor felis nulla, eget pellentesque nulla blandit eu. Pellentesque porta ipsum orci, sit amet." text=" text-errorColor" />
-              <SidebarComponents contentLeft="[Nina]" rounded="bg-white" textLeft="text-[#F368E0]" contentRight="Quisque posuere magna id lorem consectetur, a dapibus eros lobortis. Duis porttitor felis nulla, eget pellentesque nulla blandit eu. Pellentesque porta ipsum orci, sit amet." text=" text-errorColor" />
-              <SidebarComponents contentLeft="[Marcus]" rounded="bg-[#F7F7F7] rounded-lg" textLeft="text-[#704F2C]" contentRight="Left" text=" text-errorColor" />
-              <SidebarComponents2 img={blueError} contentLeft="[MessageMoment.com]" contentRight="Message Expiry Time must be a value between 3 and 300." textRight=" !font-normal" bg="border-t-blue" />
-              <SidebarComponents contentLeft="[Richard]" rounded="!bg-blue rounded-lg" textLeft="text-white" textRight="text-white font-semibold" contentRight="* Message Expiration Time set for 120 secs *" text=" text-errorColor" />
-              <SidebarComponents rounded="bg-white" contentLeft="[william]" contentRight="Quisque posuere magna id lorem consectetur, a dapibus eros lobortis " textLeft="text-[#6FCF97]" />
-              <SidebarComponents contentLeft="[Aron]" contentRight="Joined " textLeft="text-[#704F2C]" />
-              <SidebarComponents contentLeft="[catalina]" contentRight="Joined " textLeft="text-[#EDC447]" />
             </div>
           </div>
         </div>
