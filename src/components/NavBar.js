@@ -8,14 +8,11 @@ import FooterBottom from './FooterBottom';
 import SocialIcons from './SocialIcons';
 import HeaderButton from './HeaderButton';
 import FooterNavItems from './FooterNavItems';
-import Image from 'next/image';
-import X from '/public/images/x.png';
-import Bar from '/public/images/ham.png';
 
 const NavBar = () => {
   const { mobileNav, setMobileNav } = useAppContext();
   return (
-    <header className={`lg:static lg:h-auto lg:bg-white border-t-[5px] border-t-blue ${mobileNav ? 'bg-blue border-b border-b-white h-screen fixed z-50 w-full' : 'bg-white'}`}>
+    <header className={`lg:static lg:h-auto lg:bg-white border-t-[5px] border-t-blue ${mobileNav ? 'bg-blue border-b border-b-white h-screen fixed z-[100] w-full' : 'bg-white'}`}>
       <nav className={`flex items-center w-full max-w-[1440px] mx-auto px-[17px] py-[20px] md:px-[60px] md:py-[17px] ${mobileNav ? 'pb-[19px] border-b border-b-white border-opacity-10' : ''}`}>
         <SiteLogo width="w-[150px]" />
         <SiteLogoWhite />
