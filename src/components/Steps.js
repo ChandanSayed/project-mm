@@ -51,7 +51,7 @@ const Steps = () => {
           );
         })}
       </div>
-      <div className="progress relative sm:hidden">
+      <div className="progress relative mx-[5px] sm:hidden">
         <div className={`line h-1 bg-white rounded-full absolute w-1/4 transition-all`} style={{ left: `${index * 25}%` }}></div>
       </div>
       <div className="left absolute top-1/2 transform -translate-y-1/2 left-0 sm:hidden">
