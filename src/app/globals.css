@@ -55,3 +55,26 @@ button {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.2);
 }
+
+.sliders::-webkit-scrollbar {
+  height: 4px;
+}
+
+/* Track */
+.sliders::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 20px;
+}
+
+/* Handle */
+.sliders::-webkit-scrollbar-thumb {
+  background: #fff;
+  height: 4px;
+  border-radius: 20px;
+  max-width: 96%;
+}
+
+/* Handle on hover */
+.sliders::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
