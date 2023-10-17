@@ -1,6 +1,6 @@
 const SecureTypeSelectionMobile = ({ selectList, handleStandard, handleSecure, hideSelect }) => {
   return (
-    <div className={`select fixed bottom-6 left-0 right-0 w-full z-[60] lg:hidden ${selectList ? 'block' : 'hidden'}`}>
+    <div className={`select fixed bottom-0 left-0 right-0 w-full z-[60] lg:hidden ${selectList ? 'block' : 'hidden'}`}>
       <div className="flex justify-between items-center px-3 pt-[13px] pb-[14px] bg-[#000] rounded-t-lg">
         <p className="text-white">Select Chat Type</p>
         <svg onClick={hideSelect} className="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">

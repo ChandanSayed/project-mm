@@ -21,8 +21,6 @@ const DiscoverSlider = () => {
   ];
 
   const [index, setIndex] = useState(0);
-  const [hideFirst, setHideFirst] = useState(false);
-  const [hideLast, setHideLast] = useState(false);
   const swiperRef = useRef();
   const carousel = useRef();
 
@@ -63,13 +61,14 @@ const DiscoverSlider = () => {
                     <path d="M0 26.28V23.498H4.888V19H7.722V23.498H12.584V26.28H7.722V30.778H4.888V26.28H0Z" fill="#4DB5FF" />
                   </svg>
                 )}
+                {i === index && <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-10 h-1 rounded-full w-10 bg-white"></div>}
               </div>
             );
           })}
         </div>
-        <div className="progress relative mx-5 sm:hidden">
+        {/* <div className="progress relative mx-5 sm:hidden">
           <div className={`line h-1 bg-white rounded-full absolute w-1/4 transition-all`} style={{ left: `${index * 25}%` }}></div>
-        </div>
+        </div> */}
         <div className="left absolute top-1/2 transform -translate-y-1/2 left-2 xl:hidden">
           <svg className={`cursor-pointer mb-10 ${index === 0 ? 'block' : 'hidden'}`} xmlns="http://www.w3.org/2000/svg" width="22" height="33" viewBox="0 0 22 33" fill="none">
             <g opacity="0.2" filter="url(#filter0_d_10_3063)">
