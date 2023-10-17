@@ -10,7 +10,7 @@ const Discover = () => {
         <p className="text-white text-[26px] text-center mt-10 lg:mt-[60px] mb-10">
           Use MessageMoment on any device via Browser<sup className="text-[60%]">1</sup>
         </p>
-        <div className="flex justify-center gap-6 lg:gap-12 pb-10 lg:pb-[58px]">
+        <div className="flex justify-center gap-5 lg:gap-12 pb-10 lg:pb-[58px]">
           <div className="device text-center">
             <svg className="w-[36px] h-[36px] mb-5 lg:h-[48px] lg:w-[28px] mx-auto" xmlns="http://www.w3.org/2000/svg" width="28" height="44" viewBox="0 0 28 44" fill="none">
               <path d="M24 36H4V8H24M24 0H4C1.78 0 0 1.78 0 4V40C0 41.0609 0.421427 42.0783 1.17157 42.8284C1.92172 43.5786 2.93913 44 4 44H24C25.0609 44 26.0783 43.5786 26.8284 42.8284C27.5786 42.0783 28 41.0609 28 40V4C28 1.78 26.2 0 24 0Z" fill="white" />
