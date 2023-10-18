@@ -127,7 +127,7 @@ const LinkGenerate = () => {
 
   return (
     <>
-      <div className="bg-blue max-w-[1096px] rounded-[20px] absolute z-50 -bottom-[400px] lg:-bottom-[110px] left-[15px] right-[15px] lg:right-auto lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:w-full mx-auto">
+      <div className="bg-blue max-w-[1096px] rounded-[20px] absolute z-50 -bottom-[400px] lg:-bottom-[110px] left-[15px] right-[15px] lg:right-auto lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:w-full mx-auto" id="linkGenerate">
         <p className="py-7 font-medium text-sm lg:text-[17px] max-w-[261px] mx-auto lg:max-w-none text-white text-center">Click the button below to receive your random link that you can share with your friends any way you like!</p>
         <div className="link bg-black bg-opacity-20 rounded-[0_0_20px_20px] pt-[18px] px-[15px]  lg:px-[30px] lg:pt-[35px] lg:pb-[25px] pb-5">
           <div className="bg-white rounded-[5px] overflow-hidden lg:overflow-visible lg:bg-transparent lg:rounded-none">

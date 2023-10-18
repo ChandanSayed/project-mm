@@ -5,7 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import CloudflareTurnstile from './CloudflareTurnstile';
 import icon from '/public/icons/email.svg';
-import DownArrow from '/public/images/down-arrow.png';
+import messageImg from '/public/images/message.svg';
+import BlurSection from './BlurSection';
 
 const ContactForm = () => {
   const [userInputs, setUserInputs] = useState({
@@ -27,6 +28,7 @@ const ContactForm = () => {
   const [character, setCharacter] = useState(1500);
   const [activeBtn, setActiveBtn] = useState(false);
   const [validate, setValidate] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const { fName, lName, email, option, message } = userInputs;
   let valid;
@@ -76,6 +78,10 @@ const ContactForm = () => {
       setActiveBtn(false);
     }
   }, [fName, lName, email, option, message]);
+
+  useEffect(() => {
+    setShowPopup(false);
+  }, []);
 
   return (
     <>
@@ -171,12 +177,15 @@ const ContactForm = () => {
           <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row items-center justify-between">
             <CloudflareTurnstile />
             <div className="w-full lg:w-auto">
-              <button disabled={!activeBtn} className={`shadow lg:w-[236px] h-[46px] focus:shadow-outline focus:outline-none text-white font-bold font-jetBrain text-[15px] py-2 px-4 rounded-md w-full ${activeBtn ? 'bg-blue' : 'bg-lightGrey'}`} type="button">
+              <button onClick={() => setShowPopup(true)} disabled={!activeBtn} className={`shadow lg:w-[236px] h-[46px] focus:shadow-outline focus:outline-none text-white font-bold font-jetBrain text-[15px] py-2 px-4 rounded-md w-full ${activeBtn ? 'bg-blue' : 'bg-lightGrey'}`} type="button">
                 Send
               </button>
             </div>
           </div>
         </form>
+      </div>
+      <div className={`popup fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 ${showPopup ? 'block' : 'hidden'}`}>
+        <BlurSection img={messageImg} pt="pt-[138px]" buttonText={'Ok'} top="-top-[50px] lg:-top-[43px]" heading="Message Sent" returnHome={true} description={`We’ve received your message. A MessageMoment team member will be in contact with you soon. Thank you.`} />
       </div>
     </>
   );
