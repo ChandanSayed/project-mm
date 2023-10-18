@@ -18,10 +18,9 @@ export default function Home() {
 
   useEffect(() => {
     setMobileNav(false);
-    if (reloadHome) {
-      location.reload();
-    }
-    console.log(reloadHome);
+    // if (reloadHome) {
+    //   location.reload();
+    // }
   }, []);
 
   return (
