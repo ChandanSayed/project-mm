@@ -11,12 +11,13 @@ import FooterNavItems from './FooterNavItems';
 import { useRouter } from 'next/navigation';
 
 const NavBar = () => {
-  const { mobileNav, setMobileNav } = useAppContext();
+  const { mobileNav, setMobileNav, setReloadHome } = useAppContext();
   const router = useRouter();
 
   const handleScroll = () => {
     router.push(`/#linkGenerate`);
     setMobileNav(false);
+    setReloadHome(true);
   };
 
   return (
@@ -28,7 +29,7 @@ const NavBar = () => {
           <NavItems classes={` text-black`} />
           <div className="right lg:flex items-center">
             <SocialIcons />
-            <HeaderButton event={() => router.push(`/#linkGenerate`)} classes={`bg-blue text-white`} name="Start" />
+            <HeaderButton event={handleScroll} classes={`bg-blue text-white`} name="Start" />
           </div>
         </div>
         <button className="mobile-menu lg:hidden ml-auto mr-[7px] bg-blue rounded-md h-[46px] w-[46px] text-center" onClick={() => setMobileNav(!mobileNav)}>

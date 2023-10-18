@@ -14,9 +14,14 @@ import Guide from '@/components/Guide';
 import Discover from '@/components/Discover';
 
 export default function Home() {
-  const { setMobileNav } = useAppContext();
+  const { setMobileNav, reloadHome } = useAppContext();
+
   useEffect(() => {
     setMobileNav(false);
+    if (reloadHome) {
+      location.reload();
+    }
+    console.log(reloadHome);
   }, []);
 
   return (
