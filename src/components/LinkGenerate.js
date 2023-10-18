@@ -201,7 +201,7 @@ const LinkGenerate = () => {
               </div>
               <div onClick={hideSelect} className={`select-overlay fixed inset-0 z-10 bg-white opacity-[0.01] ${selectList ? 'block' : 'hidden'}`}></div>
               <div className="flex-1 flex">
-                <p className={`flex-1 flex items-center font-jetBrain text-dark text-[10px] lg:text-[15px] border-l border-[#ddd] px-5 bg-white font-bold h-[50px] ${!secure && 'lg:rounded-[0_5px_5px_0]'}`}>{generatedLink}</p>
+                <p className={`flex-1 flex items-center font-jetBrain text-dark text-[10px] sm:text-sm lg:text-[15px] border-l border-[#ddd] px-5 bg-white font-bold h-[50px] ${!secure && 'lg:rounded-[0_5px_5px_0]'}`}>{generatedLink}</p>
                 {secure && <SecurityCode code={code} classes={`w-[220px] hidden lg:flex items-center px-5 rounded-[0_5px_5px_0] font-jetBrain bg-white font-bold text-sm lg:text-[15px] border-l border-[#ddd]`} />}
               </div>
 
