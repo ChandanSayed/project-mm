@@ -15,6 +15,7 @@ import adIcon from '/public/icons/adIcon.png';
 import blueError from '../../public/icons/blueError.png';
 import { useState } from 'react';
 import AutoComplete from './AutoComplete';
+import FileUploadPopup from './FileUploadPopup';
 
 const options = [];
 
@@ -210,6 +211,7 @@ const Sidebar = ({ children }) => {
                 <SidebarComponents rounded="bg-white" contentLeft="[william]" contentRight="Quisque posuere magna id lorem consectetur, a dapibus eros lobortis " textLeft="text-[#6FCF97]" />
                 <SidebarComponents contentLeft="[Aron]" contentRight="Joined " textLeft="text-[#704F2C]" />
                 <SidebarComponents contentLeft="[catalina]" contentRight="Joined " textLeft="text-[#EDC447]" />
+                <FileUploadPopup />
               </div>
             </div>
           </div>
@@ -249,6 +251,7 @@ const Sidebar = ({ children }) => {
           </footer>
         </div>
       </div>
+
       <div className=" h-20% w-[80%] bg-red-800">
         {/* <input type="text" placeholder="> " className="w-[75%] h-12 text-base outline-none pl-5 absolute bottom-3 left-6 border " /> */}
         {/* <SidebarInput /> */}
