@@ -18,7 +18,7 @@ const Steps = () => {
   const carousel = useRef();
 
   function handleSlidePrev() {
-    carousel.current.scrollLeft -= 190;
+    carousel.current.scrollLeft -= 185;
     setIndex(prev => {
       if (prev === 0) {
         return 0;
@@ -29,7 +29,7 @@ const Steps = () => {
 
   function handleSlideNext() {
     console.log(carousel.current.scrollLeft);
-    carousel.current.scrollLeft += 190;
+    carousel.current.scrollLeft += 185;
     setIndex(prev => {
       if (prev === steps.length - 1) {
         return steps.length - 1;
@@ -38,24 +38,9 @@ const Steps = () => {
     });
   }
 
-  function handleScroll() {
-    // if (carousel.current.scrollLeft < 180) {
-    //   setIndex(0);
-    // }
-    // if (carousel.current.scrollLeft > 191) {
-    //   setIndex(1);
-    //   if (carousel.current.scrollLeft > 382) {
-    //     setIndex(2);
-    //     if (carousel.current.scrollRight > 40) {
-    //       setIndex(3);
-    //     }
-    //   }
-    // }
-  }
-
   return (
     <div className="relative">
-      <div onScroll={handleScroll} ref={carousel} className="steps-desktop sliders flex gap-[10px] sm:gap-5 overflow-x-scroll scroll-smooth px-11 sm:px-0 sm:overflow-x-hidden -mx-[15px] sm:mx-auto pb-10">
+      <div ref={carousel} className="steps-desktop sliders flex gap-[10px] sm:gap-5 overflow-x-scroll scroll-smooth px-[90px] sm:px-0 sm:overflow-x-hidden -mx-[15px] sm:mx-auto pb-10">
         {steps.map((step, i) => {
           return (
             <div className={`step bg-white rounded-[20px] min-w-[180px] sm:min-w-0 relative p-5 sm:p-[30px] cursor-pointer ${index === i ? 'sm:w-[220px] lg:w-[260px] xl:flex-1' : 'sm:w-[220px] lg:w-[260px] bg-opacity-20 text-center'}`} key={step.id} onMouseEnter={() => setIndex(i)}>
