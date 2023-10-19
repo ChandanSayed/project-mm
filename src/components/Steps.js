@@ -53,7 +53,7 @@ const Steps = () => {
               <Image src={step.img} alt="step" className={`w-[60px] h-[60px] lg:w-[80px] lg:h-[80px] mt-[20px] object-cover ${index === i ? 'mx-auto sm:ml-[45px] lg:ml-[60px]' : 'mx-auto'} mb-[17px] sm:mb-5`} />
               <span className={`font-jetBrain text-[13px]  ${index === i ? 'text-darkGrey' : 'text-white'}`}>{step.step}</span>
               <p className={`font-bold text-[17px] lg:text-[26px] ${index === i ? 'text-dark' : 'text-white'}`}>{step.stepName}</p>
-              {i === index && <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-10 h-1 rounded-full w-10 bg-white"></div>}
+              {i === index && <div className="absolute sm:hidden left-1/2 transform -translate-x-1/2 -bottom-10 h-1 rounded-full w-10 bg-white"></div>}
             </div>
           );
         })}
