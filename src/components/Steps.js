@@ -38,12 +38,17 @@ const Steps = () => {
     });
   }
 
+  function handleHoverFunction(i) {
+    setIndex(i);
+    carousel.current.scrollLeft = i * 185;
+  }
+
   return (
     <div className="relative">
       <div ref={carousel} className="steps-desktop sliders flex gap-[10px] sm:gap-5 overflow-x-scroll scroll-smooth px-[90px] sm:px-0 sm:overflow-x-hidden -mx-[15px] sm:mx-auto pb-10">
         {steps.map((step, i) => {
           return (
-            <div className={`step bg-white rounded-[20px] min-w-[180px] sm:min-w-0 relative p-5 sm:p-[30px] cursor-pointer ${index === i ? 'sm:w-[220px] lg:w-[260px] xl:flex-1' : 'sm:w-[220px] lg:w-[260px] bg-opacity-20 text-center'}`} key={step.id} onMouseEnter={() => setIndex(i)}>
+            <div className={`step bg-white rounded-[20px] min-w-[180px] sm:min-w-0 relative p-5 sm:p-[30px] cursor-pointer ${index === i ? 'sm:w-[220px] lg:w-[260px] xl:flex-1' : 'sm:w-[220px] lg:w-[260px] bg-opacity-20 text-center'}`} key={step.id} onMouseEnter={() => handleHoverFunction(i)}>
               <h2 className={`font-bold text-[34px] lg:text-[60px] absolute left-[30px] top-4 ${index === i ? 'text-blue' : 'text-white opacity-20'}`}>{step.id}</h2>
               <Image src={step.img} alt="step" className={`w-[60px] h-[60px] lg:w-[80px] lg:h-[80px] mt-[20px] object-cover ${index === i ? 'mx-auto sm:ml-[45px] lg:ml-[60px]' : 'mx-auto'} mb-[17px] sm:mb-5`} />
               <span className={`font-jetBrain text-[13px]  ${index === i ? 'text-darkGrey' : 'text-white'}`}>{step.step}</span>
