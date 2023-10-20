@@ -45,13 +45,18 @@ const DiscoverSlider = () => {
     });
   }
 
+  function handleHoverFunction(i) {
+    setIndex(i);
+    carousel.current.scrollLeft = i * 185;
+  }
+
   return (
     <div className="relative max-w-[1200px] mx-auto">
       <div className="slider-container max-w-[1200px] mx-auto relative -mr-[15px] -ml-[15px] sm:mx-auto lg:mx-0 sm:hidden">
         <div ref={carousel} className="sliders flex gap-[10px] max-w-[1100px] px-[90px] mx-auto overflow-x-scroll scroll-smooth pb-10">
           {dis.map((item, i) => {
             return (
-              <div key={i} className="bg-white rounded-[20px] min-w-[180px] sm:min-w-[250px] pt-[38px] pb-[34px] relative">
+              <div key={i} className="bg-white rounded-[20px] min-w-[180px] sm:min-w-[250px] pt-[38px] pb-[34px] relative" onMouseEnter={() => handleHoverFunction(i)}>
                 <Image src={item.img} className="mx-auto w-16" alt="Image" />
                 <p className="text-dark text-[17px] mt-[22px] text-center font-bold">{item.name}</p>
                 {item.extraIcon && (
