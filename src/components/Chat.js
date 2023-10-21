@@ -272,7 +272,7 @@ const Sidebar = ({ children }) => {
                   </div>
                 </div>
               </div>
-              {show ? <ReportModal /> : null}
+              {show ? <ReportModal handleClose={handleClose} /> : null}
               {/* <FileUploadPopup /> */}
             </div>
             <div className="mt-2 rounded-md shadow-sm sticky bottom-0 bg-[#f5f5f5] px-6 py-5">
