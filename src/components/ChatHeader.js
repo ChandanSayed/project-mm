@@ -1,18 +1,12 @@
 'use client';
 import { useAppContext } from '@/context/AppContext';
 import React, { Fragment, useState } from 'react';
-import FooterBottom from './FooterBottom';
 import HeaderButton from './HeaderButton';
-import FooterNavItems from './FooterNavItems';
 import Image from 'next/image';
-import X from '/public/images/x.png';
-import Bar from '/public/images/ham.png';
-import share from '/public/icons/share.png';
-import locked2 from '/public/icons/locked3.png';
 import LogoMini from '/public/images/chat-mini-logo.svg';
 import { Dialog, Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
-import chat2 from '/public/home/chat2.png';
+import chat2 from '/public/home/chat2.svg';
 
 const link = 'https://mm.me/5qjjc37f9sn';
 
@@ -42,16 +36,15 @@ const ChatHeader = () => {
           <div className="border h-[40px] border-lightGray mx-5" />
           <div className="hidden lg:flex items-center justify-between grow">
             <div className="flex items-center justify-center">
-              <Image src={locked2} alt="" className="mr-[15px] " />
+              <svg className="mr-[15px] " xmlns="http://www.w3.org/2000/svg" width="13" height="16" viewBox="0 0 13 16" fill="none">
+                <path d="M2.05115 16C1.63211 16 1.27325 15.8507 0.974583 15.552C0.675916 15.2533 0.526837 14.8947 0.527345 14.4762V6.85714C0.527345 6.4381 0.676678 6.07924 0.975345 5.78057C1.27401 5.4819 1.63261 5.33283 2.05115 5.33333H2.81306V3.80952C2.81306 2.75556 3.18462 1.85702 3.92773 1.11391C4.67084 0.370794 5.56912 -0.000507416 6.62258 5.20427e-07C7.67655 5.20427e-07 8.57509 0.371556 9.3182 1.11467C10.0613 1.85778 10.4326 2.75606 10.4321 3.80952V5.33333H11.194C11.6131 5.33333 11.9719 5.48267 12.2706 5.78133C12.5692 6.08 12.7183 6.4386 12.7178 6.85714V14.4762C12.7178 14.8952 12.5685 15.2541 12.2698 15.5528C11.9712 15.8514 11.6126 16.0005 11.194 16H2.05115ZM6.62258 12.1905C7.04163 12.1905 7.40049 12.0411 7.69915 11.7425C7.99782 11.4438 8.1469 11.0852 8.14639 10.6667C8.14639 10.2476 7.99706 9.88876 7.69839 9.5901C7.39973 9.29143 7.04112 9.14235 6.62258 9.14286C6.20354 9.14286 5.84468 9.29219 5.54601 9.59086C5.24734 9.88952 5.09827 10.2481 5.09877 10.6667C5.09877 11.0857 5.24811 11.4446 5.54677 11.7432C5.84544 12.0419 6.20404 12.191 6.62258 12.1905ZM4.33687 5.33333H8.9083V3.80952C8.9083 3.1746 8.68608 2.63492 8.24163 2.19048C7.79719 1.74603 7.2575 1.52381 6.62258 1.52381C5.98766 1.52381 5.44798 1.74603 5.00354 2.19048C4.55909 2.63492 4.33687 3.1746 4.33687 3.80952V5.33333Z" fill="#92959D" />
+              </svg>
               <p>https://messagemoment.com/*********</p>
             </div>
             <div className="right lg:flex items-center">
               <HeaderButton classes="bg-midGray mr-[10px] font-bold w-[66px] !text-[14px] text-lightGrey mr-[15px]" name="30" />
               <div className="border h-[40px] border-lightGray" />
-              {/* <HeaderButton onClick={handleModal} classes="border mr-[10px] font-bold ml-[15px] !text-[14px] hover:bg-errorColor hover:text-white" name="Disconnected" /> */}
-              {/* <button onClick={openModal} className="rounded-md h-[46px] w-[150px] px-5 border mr-[10px] font-bold ml-[15px] !text-[14px] hover:bg-errorColor hover:text-white">
-                Disconnected
-              </button> */}
+
               <Menu as="div" className="relative inline-block text-left">
                 <div>
                   <Menu.Button className="rounded-md h-[46px] w-[150px] px-5 border mr-[10px] font-bold ml-[15px] !text-[14px] hover:bg-errorColor hover:text-white">Disconnected</Menu.Button>
@@ -59,27 +52,31 @@ const ChatHeader = () => {
 
                 <Transition as={Fragment} enter="transition ease-out duration-100" enterFrom="transform opacity-0 scale-95" enterTo="transform opacity-100 scale-100" leave="transition ease-in duration-75" leaveFrom="transform opacity-100 scale-100" leaveTo="transform opacity-0 scale-95">
                   <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-white">
-                    {/* <span className="bg-black absolute top-0 right-0 w-2"></span> */}
+                    <svg className="absolute left-1/2 -top-[4px]" xmlns="http://www.w3.org/2000/svg" width="6" height="5" viewBox="0 0 6 5" fill="none">
+                      <path d="M2.10826 0.403961C2.50807 -0.134653 3.31435 -0.134654 3.71417 0.40396L5.62357 2.97622C6.11338 3.63606 5.64239 4.57226 4.82062 4.57226L1.0018 4.57226C0.180033 4.57226 -0.290958 3.63606 0.19885 2.97622L2.10826 0.403961Z" fill="black" />
+                    </svg>
                     <button onClick={openModal} className=" w-full pt-[13px] pb-[14px] bg-[#000] border-b text-[14px] font-medium border-dark rounded-xl text-center">
                       Leave Chat
                     </button>
                   </Menu.Items>
                 </Transition>
               </Menu>
-              {/* <button className="flex items-center justify-evenly rounded-md h-[46px] w-[150px] px-5 bg-blue text-white hover:bg-opacity-80 text-[14px] font-jetBrain font-bold">
-                <Image src={share} alt="" />
-                Share
-              </button> */}
+
               <Menu as="div" className="relative inline-block text-left">
                 <div>
                   <Menu.Button className="flex items-center justify-evenly rounded-md h-[46px] w-[150px] px-5 bg-blue text-white hover:bg-opacity-80 text-[14px] font-jetBrain font-bold">
-                    <Image src={share} alt="" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
+                      <path d="M6.54545 0L3.27273 3.27273H5.72727V10.6364H7.36364V3.27273H9.81818M11.4545 18H1.63636C0.728182 18 0 17.2636 0 16.3636V6.54545C0 6.11146 0.172402 5.69525 0.47928 5.38837C0.786157 5.08149 1.20237 4.90909 1.63636 4.90909H4.09091V6.54545H1.63636V16.3636H11.4545V6.54545H9V4.90909H11.4545C11.8885 4.90909 12.3048 5.08149 12.6116 5.38837C12.9185 5.69525 13.0909 6.11146 13.0909 6.54545V16.3636C13.0909 16.7976 12.9185 17.2138 12.6116 17.5207C12.3048 17.8276 11.8885 18 11.4545 18Z" fill="white" />
+                    </svg>
                     Share
                   </Menu.Button>
                 </div>
 
                 <Transition as={Fragment} enter="transition ease-out duration-100" enterFrom="transform opacity-0 scale-95" enterTo="transform opacity-100 scale-100" leave="transition ease-in duration-75" leaveFrom="transform opacity-100 scale-100" leaveTo="transform opacity-0 scale-95">
                   <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-white">
+                    <svg className="absolute right-[25px] -top-[4px]" xmlns="http://www.w3.org/2000/svg" width="6" height="5" viewBox="0 0 6 5" fill="none">
+                      <path d="M2.10826 0.403961C2.50807 -0.134653 3.31435 -0.134654 3.71417 0.40396L5.62357 2.97622C6.11338 3.63606 5.64239 4.57226 4.82062 4.57226L1.0018 4.57226C0.180033 4.57226 -0.290958 3.63606 0.19885 2.97622L2.10826 0.403961Z" fill="black" />
+                    </svg>
                     {/* <span className="bg-black absolute top-0 right-0 w-2"></span> */}
                     <div className="pt-[13px] pb-[14px] pl-[22px] bg-[#000] border-b text-[14px] font-medium border-dark rounded-t-xl">Share this Channel</div>
                     <Menu.Item>
