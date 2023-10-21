@@ -1,19 +1,15 @@
 'use client';
 import { useAppContext } from '@/context/AppContext';
 import React, { Fragment, useState } from 'react';
-import SiteLogo from './SiteLogo';
-import SiteLogoWhite from './SiteLogoWhite';
 import FooterBottom from './FooterBottom';
-import SocialIcons from './SocialIcons';
 import HeaderButton from './HeaderButton';
 import FooterNavItems from './FooterNavItems';
 import Image from 'next/image';
 import X from '/public/images/x.png';
 import Bar from '/public/images/ham.png';
-import NavItems from './NavItems';
 import share from '/public/icons/share.png';
 import locked2 from '/public/icons/locked3.png';
-import Logo from '/public/images/logo2.png';
+import LogoMini from '/public/images/chat-mini-logo.svg';
 import { Dialog, Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
 import chat2 from '/public/home/chat2.png';
@@ -38,13 +34,12 @@ const ChatHeader = () => {
   };
 
   return (
-    <div>
-      <header className={`lg:static lg:h-auto lg:bg-white border-t-[5px] border-t-blue ${mobileChatNav ? 'bg-blue border-b border-b-white h-screen fixed z-50 w-full' : 'bg-white'}`}>
-        <nav className={`flex items-center w-full max-w-[1440px] mx-auto px-[17px] py-[20px] md:px-[60px] md:py-[17px] ${mobileChatNav ? 'pb-[19px] border-b border-b-white border-opacity-10' : ''}`}>
+    <>
+      <header className={`lg:bg-white border-t-[5px] border-t-blue ${mobileChatNav ? 'bg-blue border-b border-b-white h-screen fixed z-50 w-full' : 'bg-white'}`}>
+        <nav className={`flex items-center w-full max-w-[1440px] mx-auto px-5 py-4 ${mobileChatNav ? 'pb-[19px] border-b border-b-white border-opacity-10' : ''}`}>
           {/* <SiteLogo width="w-[150px]" /> */}
-          <Image className="lg:w-[50px] pr-4" src={Logo} alt="Logo" />
-          <div className="border h-[] border-lightGray" />
-
+          <Image src={LogoMini} alt="Mini Logo" />
+          <div className="border h-[40px] border-lightGray mx-5" />
           <div className="hidden lg:flex items-center justify-between grow">
             <div className="flex items-center justify-center">
               <Image src={locked2} alt="" className="mr-[15px] " />
@@ -170,17 +165,8 @@ const ChatHeader = () => {
               </Menu>
             </div>
           </div>
-          <button className="mobile-menu lg:hidden ml-auto mr-[7px] bg-blue rounded-md h-[46px] w-[46px] text-center" onClick={() => setMobileChatNav(!mobileChatNav)}>
-            {mobileChatNav ? <Image src={X} alt="X" className="mx-auto w-[14px]" /> : <Image src={Bar} alt="Bar" className="mx-auto w-[14px]" />}
-          </button>
         </nav>
-        <div className={`lg:hidden ${mobileChatNav ? 'flex flex-col items-center justify-between p-5 pt-0' : 'hidden'}`} style={{ height: 'calc(100vh - 190px)' }}>
-          <FooterNavItems color="text-white" classes={`text-center py-[50px] pl-[0px] w-full border-b border-b-white border-opacity-10`} />
-          <div className="grow w-full">
-            <HeaderButton classes="text-blue bg-white w-full mt-10" />
-          </div>
-          <FooterBottom classes="pt-[30px] border-t border-t-white border-opacity-10 text-white" textColor="text-white" />
-        </div>
+
         <hr />
       </header>
 
@@ -252,7 +238,7 @@ const ChatHeader = () => {
           </div>
         </div>
       </div> */}
-    </div>
+    </>
   );
 };
 
