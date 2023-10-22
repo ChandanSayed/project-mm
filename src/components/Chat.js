@@ -15,7 +15,10 @@ const options = [];
 const users = [
   {
     id: 1,
-    name: '[Laura]'
+    name: '[Laura]',
+    color: '#219653',
+    message: 'Quisque eros massa!',
+    joinedMessage: true
   },
   {
     id: 2,
