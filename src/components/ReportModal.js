@@ -46,15 +46,12 @@ const ReportModal = ({ handleClose }) => {
   const [selected, setSelected] = useState();
   const [disable, setDisable] = useState(false);
   const [showPopUp, setShowPopUp] = useState(false);
-  const [showReportOption, setShowReportOption] = useState();
   // function handleButton() {
   //   setIsOpen(prev => !prev);
   // }
 
   const handleChange = event => {
     setSelected(event.target.value);
-    console.log(event.target.value);
-    setShowReportOption(event.target.value);
   };
 
   function handleButton() {
@@ -100,9 +97,9 @@ const ReportModal = ({ handleClose }) => {
                             <h5 className="text-blue text-[17px] leading-6 font-medium pb-[10px]">Welcome to our File Report Center</h5>
 
                             <div className="accordion-lists">
-                              <div className="accordion-lists">
-                                <div className="accordion-item border border-light-gray border-solid rounded-md my-[10px]" onClick={() => setIsOpen(prev => !prev)}>
-                                  <ReportModalAccordion showReportOption={showReportOption} handleButton={handleButton} show={show} options={options} handleChange={handleChange} selected={selected} />
+                              <div className="accordion-lists ">
+                                <div className="accordion-item border border-light-gray border-solid rounded-md my-[10px] " onClick={() => setIsOpen(prev => !prev)}>
+                                  <ReportModalAccordion handleButton={handleButton} show={show} options={options} handleChange={handleChange} selected={selected} />
                                 </div>
                               </div>
                             </div>

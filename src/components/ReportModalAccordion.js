@@ -1,19 +1,17 @@
 'use client';
-import { RadioGroup, Transition } from '@headlessui/react';
-import { useState } from 'react';
-import { FiCheck } from 'react-icons/fi';
+import { Transition } from '@headlessui/react';
 
-const ReportModalAccordion = ({ handleButton, show, options, handleChange, selected, showReportOption }) => {
+const ReportModalAccordion = ({ handleButton, show, options, handleChange, selected }) => {
   return (
     <>
-      <div className="flex items-center justify-between px-4">
-        {!showReportOption ? (
+      <div className={!selected ? `flex items-center justify-between px-4` : `flex items-center justify-between px-4 border-b`}>
+        {!selected ? (
           <h3 onClick={handleButton} className="text-[15px] max-lg:text-[13px] font-normal cursor-pointer font-jetBrain py-4 ">
             Strictly necessary cookies
           </h3>
         ) : (
           <h3 onClick={handleButton} className="text-[15px] max-lg:text-[13px] font-normal cursor-pointer font-jetBrain py-4 ">
-            {showReportOption}
+            {selected}
           </h3>
         )}
         {show ? (
@@ -26,16 +24,20 @@ const ReportModalAccordion = ({ handleButton, show, options, handleChange, selec
           </svg>
         )}
       </div>
-      <p className="text-[13px] px-4 max-md:text-[11px] font-normal leading-normal pb-4 font-jetBrain border-b">These cookies are essential for the proper functioning of this website. Without these cookies, the website would not work properly.</p>
+      {!selected ? <p className="text-[13px] px-4 max-md:text-[11px] font-normal leading-normal pb-4 font-jetBrain border-b">These cookies are essential for the proper functioning of this website. Without these cookies, the website would not work properly.</p> : ''}
 
       <Transition show={show} enter="transition ease-out duration-100 transform" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="transition ease-in duration-75 transform" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">
         {options.map(option => (
-          <div key={option.id} className="py-[10px] border-b px-4">
-            <input type="radio" id={option.id} value={option.option} checked={selected === option.option} onChange={handleChange} />
-            <label htmlFor={option.id} className="ml-[10px]">
-              {option.option}
-            </label>
-            <p className="ml-[20px] text-[#777] font-jetBrain text-[13px] font-normal">{option.details}</p>
+          <div key={option.id} className="py-[10px] border-b px-4 flex items-start">
+            <input className="mt-2 mr-[10px]" type="radio" id={option.id} value={option.option} checked={selected === option.option} onChange={handleChange} />
+            <div className="flex flex-col cursor-pointer">
+              <label htmlFor={option.id} className="font-jetBrain text-[15px] font-normal leading-[23px] cursor-pointer">
+                {option.option}
+              </label>{' '}
+              <label htmlFor={option.id} className=" text-[#777] font-jetBrain text-[13px] font-normal cursor-pointer">
+                {option.details}
+              </label>
+            </div>
           </div>
         ))}
       </Transition>
