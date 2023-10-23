@@ -2,7 +2,7 @@ import React from 'react';
 
 const ReportButton = ({ selected, disable, handleReport, handleClose }) => {
   return (
-    <div className="flex justify-end items-center gap-[10px] py-3 mr-5 border-t">
+    <div className="flex justify-end items-center gap-[10px] py-3 px-4 lg:pr-8 border-t">
       <button className="bg-lightGrey font-jetBrain text-[15px] w-full lg:w-[180px] h-[46px] rounded-md text-white ease-linear transition-all duration-150 hover:bg-opacity-80" type="button" onClick={handleClose}>
         Cancel
       </button>
