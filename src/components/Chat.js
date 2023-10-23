@@ -124,12 +124,13 @@ const chats = [
 //   console.log(chats[1].joinedMessage[i]);
 // }
 
-const Sidebar = ({ children }) => {
+const Sidebar = ({ children, showMenu }) => {
   const [selectedOption, setSelectedOption] = useState('');
   const [show, setShow] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [accordions, setAccordions] = useState(accordionCookiesList);
   const [disable, setDisable] = useState(true);
+
   const handleOpen = () => {
     setShow(true);
   };
@@ -145,31 +146,30 @@ const Sidebar = ({ children }) => {
   };
   return (
     <>
-      <div className="grid grid-cols-1 xl:grid-cols-[1fr_220px] gap-[30px] mt-6 max-w-[1440px] mx-auto bg-white">
-        <div className="bg-white h-[calc(100vh-110px)]">
-          <div className="px-4 pt-4 h-full overflow-y-auto custom-scrollbar">
+      <div className="grid grid-cols-1 xl:grid-cols-[1fr_220px] gap-[30px] mt-6 max-w-[1440px] mx-auto bg-white pb-5">
+        <div className="bg-white h-[calc(100vh-136px)]">
+          <div className="px-4 h-full overflow-y-auto custom-scrollbar">
             {/* {chats[1].joinedMessage.map(chat => (
                 <div key={chat.id}>
                   <SidebarComponents color={chat.color} contentLeft={chat.name} text />
                 </div>
               ))} */}
-
-            <div className="">
-              <div className="sticky-0 w-full top-0 bg-white">
-                <div className="bg-midGray border p-4 rounded-t-lg  grid grid-cols-1 lg:grid-cols-5">
-                  <div className="col-span-1 md:col-span-1">
-                    <p className="text-blue text-[14px] font-jetBrain ">[MessageMoment.com]</p>
-                  </div>
-                  <div className="col-span-4 md:col-span-4 flex justify-between items-center">
-                    <p className="text-[14px] text-dark font-jetBrain">Welcome to MessageMoment.com, where your message only lasts a moment!</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <path d="M17.5951 7.61476L12.9676 12.2578C13.3623 13.3543 13.5258 15.1908 11.8261 17.4504C11.7072 17.6093 11.5555 17.7407 11.3812 17.8355C11.2069 17.9304 11.0141 17.9865 10.8162 18H10.7184C10.5364 18 10.3562 17.9642 10.1881 17.8946C10.02 17.8249 9.86731 17.7228 9.73869 17.5941L5.56209 13.4132L1.87274 17.1051C1.74283 17.2351 1.56663 17.308 1.3829 17.308C1.19918 17.308 1.02298 17.2351 0.893065 17.1051C0.763152 16.9752 0.690168 16.799 0.690168 16.6153C0.690168 16.4316 0.763152 16.2554 0.893065 16.1255L4.58502 12.4361L0.404959 8.25605C0.267561 8.11848 0.160675 7.95352 0.0912589 7.77191C0.0218424 7.59029 -0.00854864 7.39609 0.0020646 7.20195C0.0126778 7.00781 0.0640572 6.81808 0.152858 6.64511C0.241659 6.47214 0.36589 6.31982 0.517465 6.19805C2.7174 4.42304 4.82301 4.77181 5.7447 5.06086L10.3834 0.405681C10.512 0.277066 10.6647 0.175041 10.8327 0.105434C11.0007 0.0358268 11.1808 0 11.3627 0C11.5445 0 11.7246 0.0358268 11.8927 0.105434C12.0607 0.175041 12.2133 0.277066 12.3419 0.405681L17.5943 5.65715C17.8539 5.91669 17.9998 6.26869 17.9999 6.63578C18.0001 7.00286 17.8545 7.35499 17.5951 7.61476Z" fill="#CCCCCC" />
-                    </svg>
-                  </div>
+            <div className="sticky top-0 w-full bg-white pt-4">
+              <div className="bg-midGray border p-4 rounded-t-lg  grid grid-cols-1 lg:grid-cols-5">
+                <div className="col-span-1 md:col-span-1">
+                  <p className="text-blue text-[14px] font-jetBrain ">[MessageMoment.com]</p>
                 </div>
-
-                <SidebarComponents3 contentLeft="Advertisement" contentRight="Big Sale on at Flight Centre! Don’t miss out. Visit" linkContent="www.flightcentre.com" href="/https://www.flightcentre.com" contentRight2="now and book your trip!" />
+                <div className="col-span-4 md:col-span-4 flex justify-between items-center">
+                  <p className="text-[14px] text-dark font-jetBrain">Welcome to MessageMoment.com, where your message only lasts a moment!</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M17.5951 7.61476L12.9676 12.2578C13.3623 13.3543 13.5258 15.1908 11.8261 17.4504C11.7072 17.6093 11.5555 17.7407 11.3812 17.8355C11.2069 17.9304 11.0141 17.9865 10.8162 18H10.7184C10.5364 18 10.3562 17.9642 10.1881 17.8946C10.02 17.8249 9.86731 17.7228 9.73869 17.5941L5.56209 13.4132L1.87274 17.1051C1.74283 17.2351 1.56663 17.308 1.3829 17.308C1.19918 17.308 1.02298 17.2351 0.893065 17.1051C0.763152 16.9752 0.690168 16.799 0.690168 16.6153C0.690168 16.4316 0.763152 16.2554 0.893065 16.1255L4.58502 12.4361L0.404959 8.25605C0.267561 8.11848 0.160675 7.95352 0.0912589 7.77191C0.0218424 7.59029 -0.00854864 7.39609 0.0020646 7.20195C0.0126778 7.00781 0.0640572 6.81808 0.152858 6.64511C0.241659 6.47214 0.36589 6.31982 0.517465 6.19805C2.7174 4.42304 4.82301 4.77181 5.7447 5.06086L10.3834 0.405681C10.512 0.277066 10.6647 0.175041 10.8327 0.105434C11.0007 0.0358268 11.1808 0 11.3627 0C11.5445 0 11.7246 0.0358268 11.8927 0.105434C12.0607 0.175041 12.2133 0.277066 12.3419 0.405681L17.5943 5.65715C17.8539 5.91669 17.9998 6.26869 17.9999 6.63578C18.0001 7.00286 17.8545 7.35499 17.5951 7.61476Z" fill="#CCCCCC" />
+                  </svg>
+                </div>
               </div>
+
+              <SidebarComponents3 contentLeft="Advertisement" contentRight="Big Sale on at Flight Centre! Don’t miss out. Visit" linkContent="www.flightcentre.com" href="/https://www.flightcentre.com" contentRight2="now and book your trip!" />
+            </div>
+            <div className="">
               <div className=" bg-midGray p-4 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">
                 <div className="col-span-1 md:col-span-1"></div>
                 <div className="col-span-4 md:col-span-4 flex  ">
@@ -254,8 +254,8 @@ const Sidebar = ({ children }) => {
                   <div className="flex items-center justify-between mt-[11px]">
                     <div className="flex items-center">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M6.88173 10.7453L4.18164 8.04457L5.08146 7.14476L6.88173 8.94439L10.481 5.34448L11.3815 6.24494L6.88173 10.744V10.7453Z" fill="#CCCCCC" stroke="#CCCCCC" stroke-width="0.2" stroke-linejoin="round" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1 8C1 4.13409 4.13409 1 8 1C11.8659 1 15 4.13409 15 8C15 11.8659 11.8659 15 8 15C4.13409 15 1 11.8659 1 8ZM8 13.7273C7.24788 13.7273 6.50313 13.5791 5.80827 13.2913C5.1134 13.0035 4.48203 12.5816 3.95021 12.0498C3.41838 11.518 2.99651 10.8866 2.70869 10.1917C2.42087 9.49687 2.27273 8.75212 2.27273 8C2.27273 7.24788 2.42087 6.50313 2.70869 5.80827C2.99651 5.1134 3.41838 4.48203 3.95021 3.95021C4.48203 3.41838 5.1134 2.99651 5.80827 2.70869C6.50313 2.42087 7.24788 2.27273 8 2.27273C9.51897 2.27273 10.9757 2.87613 12.0498 3.95021C13.1239 5.02428 13.7273 6.48103 13.7273 8C13.7273 9.51897 13.1239 10.9757 12.0498 12.0498C10.9757 13.1239 9.51897 13.7273 8 13.7273Z" fill="#CCCCCC" stroke="#CCCCCC" stroke-width="0.2" stroke-linejoin="round" />
+                        <path d="M6.88173 10.7453L4.18164 8.04457L5.08146 7.14476L6.88173 8.94439L10.481 5.34448L11.3815 6.24494L6.88173 10.744V10.7453Z" fill="#CCCCCC" stroke="#CCCCCC" strokeWidth="0.2" strokeLinejoin="round" />
+                        <path fillRule="evenodd" clipRule="evenodd" d="M1 8C1 4.13409 4.13409 1 8 1C11.8659 1 15 4.13409 15 8C15 11.8659 11.8659 15 8 15C4.13409 15 1 11.8659 1 8ZM8 13.7273C7.24788 13.7273 6.50313 13.5791 5.80827 13.2913C5.1134 13.0035 4.48203 12.5816 3.95021 12.0498C3.41838 11.518 2.99651 10.8866 2.70869 10.1917C2.42087 9.49687 2.27273 8.75212 2.27273 8C2.27273 7.24788 2.42087 6.50313 2.70869 5.80827C2.99651 5.1134 3.41838 4.48203 3.95021 3.95021C4.48203 3.41838 5.1134 2.99651 5.80827 2.70869C6.50313 2.42087 7.24788 2.27273 8 2.27273C9.51897 2.27273 10.9757 2.87613 12.0498 3.95021C13.1239 5.02428 13.7273 6.48103 13.7273 8C13.7273 9.51897 13.1239 10.9757 12.0498 12.0498C10.9757 13.1239 9.51897 13.7273 8 13.7273Z" fill="#CCCCCC" stroke="#CCCCCC" strokeWidth="0.2" strokeLinejoin="round" />
                       </svg>
                       <p className="text-[10px] text-[#777] font-jetBrain ml-[6px]">
                         Securely checked and hosted by FileMomment. Visit{' '}
@@ -284,12 +284,12 @@ const Sidebar = ({ children }) => {
             </div>
           </div>
         </div>
-        <div className="hidden xl:block bg-black h-[calc(100vh-110px)] overflow-y-auto overflow-x-hidden rounded-[10px] custom-scrollbar">
+        <div className={`${showMenu ? 'max-lg:fixed max-lg:h-[calc(100vh-104px)] bottom-3 left-0 right-0' : 'hidden'} xl:block bg-black h-[calc(100vh-136px)] overflow-y-auto overflow-x-hidden lg:rounded-[10px] custom-scrollbar-white`}>
           <div className="flex justify-between items-center p-4">
             <h3 className="text-[14px] font-medium text-white ">Chat Group</h3>
             <p className="text-white opacity-40 text-[13px] font-jetBrain"> {users.length} /10</p>
           </div>
-          <hr />
+          <hr className="border-white border-opacity-10" />
 
           {users.map(user => (
             <div key={user.id} className="">
@@ -298,17 +298,17 @@ const Sidebar = ({ children }) => {
               </a>
             </div>
           ))}
-          <div className="relative mt-20">
-            <h4 className="text-[11px] font-jetBrain font-bold leading-normal text-white text-center bg-[#fff] bg-opacity-20 mx-2 py-[10px] rounded-t-lg">Advertisement</h4>
+          <div className="relative mt-20 px-3">
+            <h4 className="text-[11px] font-jetBrain font-bold leading-normal text-white text-center bg-[#fff] bg-opacity-20 py-[10px] rounded-t-lg">Advertisement</h4>
             <div className="flex justify-center items-center">
-              <Image src={ad} alt="" />
+              <Image src={ad} alt="" className="w-full" />
               <svg className="absolute top-1/2 left-[40%]" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                 <g filter="url(#filter0_d_337_700)">
                   <path d="M16 15.72V24.28C16 24.8933 16.28 25.36 16.84 25.68C17.4 26 17.9467 25.9733 18.48 25.6L25.12 21.36C25.6267 21.04 25.88 20.5867 25.88 20C25.88 19.4133 25.6267 18.96 25.12 18.64L18.48 14.4C17.9467 14.0267 17.4 14 16.84 14.32C16.28 14.64 16 15.1067 16 15.72ZM20 36C17.7867 36 15.7067 35.5797 13.76 34.7392C11.8133 33.8997 10.12 32.76 8.68 31.32C7.24 29.88 6.10027 28.1867 5.2608 26.24C4.42027 24.2933 4 22.2133 4 20C4 17.7867 4.42027 15.7067 5.2608 13.76C6.10027 11.8133 7.24 10.12 8.68 8.68C10.12 7.24 11.8133 6.09973 13.76 5.2592C15.7067 4.41973 17.7867 4 20 4C22.2133 4 24.2933 4.41973 26.24 5.2592C28.1867 6.09973 29.88 7.24 31.32 8.68C32.76 10.12 33.8997 11.8133 34.7392 13.76C35.5797 15.7067 36 17.7867 36 20C36 22.2133 35.5797 24.2933 34.7392 26.24C33.8997 28.1867 32.76 29.88 31.32 31.32C29.88 32.76 28.1867 33.8997 26.24 34.7392C24.2933 35.5797 22.2133 36 20 36Z" fill="white" />
                 </g>
                 <defs>
-                  <filter id="filter0_d_337_700" x="0" y="0" width="40" height="40" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <filter id="filter0_d_337_700" x="0" y="0" width="40" height="40" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                     <feOffset />
                     <feGaussianBlur stdDeviation="2" />
