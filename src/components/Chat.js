@@ -146,8 +146,8 @@ const Sidebar = ({ children, showMenu }) => {
   };
   return (
     <>
-      <div className="grid grid-cols-1 xl:grid-cols-[1fr_220px] gap-[30px] mt-6 max-w-[1440px] mx-auto bg-white pb-5">
-        <div className="bg-white h-[calc(100vh-136px)]">
+      <div className="grid grid-cols-1 xl:grid-cols-[1fr_220px] gap-[30px] lg:mt-6 max-w-[1440px] mx-auto bg-white pb-5">
+        <div className="bg-white h-[calc(100vh-136px)] max-lg:h-[calc(100vh-114px)]">
           <div className="px-4 h-full overflow-y-auto custom-scrollbar">
             {/* {chats[1].joinedMessage.map(chat => (
                 <div key={chat.id}>
@@ -238,7 +238,7 @@ const Sidebar = ({ children, showMenu }) => {
                 </div>
                 <div className="col-span-4 md:col-span-4">
                   <p className="text-dark text-[14px] font-jetBrain leading-5 ">Richard, please check this image. I guess you know what’s about!</p>
-                  <p className="text-blue text-[14px] font-jetBrain mt-[15px] mb-[18px]">https://filemoment.com/sqjgcf9o2s5narz8k</p>
+                  <p className="text-blue text-[14px] font-jetBrain mt-[15px] mb-[18px] break-words">https://filemoment.com/sqjgcf9o2s5narz8k</p>
                   <div className="flex justify-between items-center bg-midGray pl-[11px] pr-[20px] rounded-xl">
                     <div className="flex items-center">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -284,7 +284,7 @@ const Sidebar = ({ children, showMenu }) => {
             </div>
           </div>
         </div>
-        <div className={`${showMenu ? 'max-lg:fixed max-lg:h-[calc(100vh-104px)] bottom-3 left-0 right-0' : 'hidden'} xl:block bg-black h-[calc(100vh-136px)] overflow-y-auto overflow-x-hidden lg:rounded-[10px] custom-scrollbar-white`}>
+        <div className={`${showMenu ? 'max-lg:fixed max-lg:h-[calc(100vh-104px)] top-[91px] left-0 right-0' : 'hidden'} max-lg:border-t max-lg:border-t-white border-opacity-10 xl:block bg-black h-[calc(100vh-136px)] overflow-y-auto overflow-x-hidden lg:rounded-[10px] custom-scrollbar-white`}>
           <div className="flex justify-between items-center p-4">
             <h3 className="text-[14px] font-medium text-white ">Chat Group</h3>
             <p className="text-white opacity-40 text-[13px] font-jetBrain"> {users.length} /10</p>
