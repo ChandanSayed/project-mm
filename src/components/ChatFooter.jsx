@@ -6,16 +6,16 @@ const ChatFooter = () => {
     <div className="mt-3 border-t border-white border-opacity-10">
       <Image src={grayLogo} alt="Logo" className="mx-auto my-[15px]" />
       <ul className="text-center font-medium text-[11px] text-white mb-[15px]">
-        <li>
+        <li className="leading-6">
           <a href="/">About MessageMoment</a>
         </li>
-        <li>
+        <li className="leading-6">
           <a href="/">FAQs</a>
         </li>
-        <li>
+        <li className="leading-6">
           <a href="/">Privacy</a>
         </li>
-        <li>
+        <li className="leading-6">
           <a href="/">Terms of Use</a>
         </li>
       </ul>
