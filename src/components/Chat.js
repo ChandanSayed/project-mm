@@ -285,20 +285,22 @@ const Sidebar = ({ children, showMenu }) => {
           </div>
         </div>
         <div className={`${showMenu ? 'max-lg:fixed z-10 top-[90px] left-0 right-0 max-lg:h-[calc(100vh-240px)] max-lg:pb-10' : 'hidden'} max-lg:border-t max-lg:border-t-white max-lg:border-opacity-10 xl:block bg-black h-[calc(100vh-136px)] overflow-y-auto overflow-x-hidden lg:rounded-[10px] custom-scrollbar-white`}>
-          <div className="flex justify-between items-center p-4">
-            <h3 className="text-[14px] font-medium text-white ">Chat Group</h3>
-            <p className="text-white opacity-40 text-[13px] font-jetBrain"> {users.length} /10</p>
-          </div>
-          <hr className="border-white border-opacity-10" />
-
-          {users.map(user => (
-            <div key={user.id} className="">
-              <a href="#" className="block w-full pl-5 py-[6px] cursor-pointer text-white opacity-40 dark:focus:opacity-100 border-b border-darkGrey dark:hover:text-white dark:focus:text-white">
-                {user.name}
-              </a>
+          <div className="h-[440px] pb-20">
+            <div className="flex justify-between items-center p-4">
+              <h3 className="text-[14px] font-medium text-white ">Chat Group</h3>
+              <p className="text-white opacity-40 text-[13px] font-jetBrain"> {users.length} /10</p>
             </div>
-          ))}
-          <div className="relative mt-20 px-3">
+            <hr className="border-white border-opacity-10" />
+
+            {users.map(user => (
+              <div key={user.id} className="">
+                <a href="#" className="block w-full pl-5 py-[6px] cursor-pointer text-white opacity-40 dark:focus:opacity-100 border-b border-darkGrey dark:hover:text-white dark:focus:text-white">
+                  {user.name}
+                </a>
+              </div>
+            ))}
+          </div>
+          <div className="relative px-3">
             <h4 className="text-[11px] font-jetBrain font-bold leading-normal text-white text-center bg-[#fff] bg-opacity-20 py-[10px] rounded-t-lg">Advertisement</h4>
             <div className="flex justify-center items-center">
               <Image src={ad} alt="" className="w-full" />
