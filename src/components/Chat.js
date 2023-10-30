@@ -147,7 +147,7 @@ const Sidebar = ({ children, showMenu }) => {
   return (
     <>
       <div className="grid grid-cols-1 xl:grid-cols-[1fr_220px] gap-[30px] lg:mt-6 max-w-[1440px] mx-auto bg-white pb-5">
-        <div className="bg-white max-lg:h-[calc(100vh-120px)] max-lg:pb-20 h-[calc(100vh-136px)]">
+        <div className="bg-white max-lg:h-[calc(100vh-126px)] max-lg:pb-10 h-[calc(100vh-136px)]">
           <div className="px-4 h-full overflow-y-auto custom-scrollbar">
             {/* {chats[1].joinedMessage.map(chat => (
                 <div key={chat.id}>
@@ -284,7 +284,7 @@ const Sidebar = ({ children, showMenu }) => {
             </div>
           </div>
         </div>
-        <div className={`${showMenu ? 'max-lg:fixed z-10 top-[90px] left-0 right-0 max-lg:h-[calc(100vh-120px)] max-lg:pb-20' : 'hidden'} max-lg:border-t max-lg:border-t-white max-lg:border-opacity-10 xl:block bg-black h-[calc(100vh-136px)] overflow-y-auto overflow-x-hidden lg:rounded-[10px] custom-scrollbar-white`}>
+        <div className={`${showMenu ? 'max-lg:fixed z-10 top-[90px] left-0 right-0 max-lg:h-[calc(100vh-160px)] max-lg:pb-10' : 'hidden'} max-lg:border-t max-lg:border-t-white max-lg:border-opacity-10 xl:block bg-black h-[calc(100vh-136px)] overflow-y-auto overflow-x-hidden lg:rounded-[10px] custom-scrollbar-white`}>
           <div className="flex justify-between items-center p-4">
             <h3 className="text-[14px] font-medium text-white ">Chat Group</h3>
             <p className="text-white opacity-40 text-[13px] font-jetBrain"> {users.length} /10</p>
