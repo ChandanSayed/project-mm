@@ -4,7 +4,7 @@ import grayLogo from '/public/images/gray-logo.svg';
 const ChatFooter = () => {
   return (
     <div className="mt-3 border-t border-white border-opacity-10">
-      <Image src={grayLogo} alt="Logo" className="mx-auto my-[15px]" />
+      <Image src={grayLogo} alt="Logo" className="mx-auto my-[15px] opacity-20" />
       <ul className="text-center font-medium text-[11px] text-white mb-[15px]">
         <li className="leading-6">
           <a href="/">About MessageMoment</a>

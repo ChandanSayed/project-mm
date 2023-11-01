@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Chat from '@/components/Chat';
+import Chat from '@/components/Chat1';
 import ChatHeader from '@/components/ChatHeader';
 
 const page = () => {
