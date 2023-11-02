@@ -77,7 +77,7 @@ const ChatHeader = ({ setShowMenu, showMenu }) => {
                 </div>
               </div>
               <div className="border lg:mx-[5px] h-[40px] border-lightGray" />
-              <ShareButtonChat link={link} bg="border" display={'block lg:hidden'} />
+              <ShareButtonChat onCopy={onCopy} link={link} bg="border" display={'block lg:hidden'} />
               <Menu as="div" className="relative inline-block text-left">
                 <Menu.Button className="rounded-md h-[46px] w-[46px] lg:w-[150px] lg:px-5 border font-bold text-sm hover:bg-errorColor hover:text-white">
                   <svg className="block lg:hidden mx-auto" xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15" fill="none">
@@ -98,7 +98,7 @@ const ChatHeader = ({ setShowMenu, showMenu }) => {
                 </Transition>
               </Menu>
 
-              <ShareButtonChat link={link} bg="bg-blue text-white" display={'hidden lg:block'} />
+              <ShareButtonChat onCopy={onCopy} link={link} bg="bg-blue text-white" display={'hidden lg:block'} />
 
               <button onClick={() => setShowMenu(prev => !prev)} className={`${showMenu ? 'bg-white bg-opacity-10 opacity-90' : 'bg-blue hover:bg-opacity-80'} lg:hidden mx-auto flex items-center rounded-md w-[46px] h-[46px]`}>
                 {!showMenu ? (
