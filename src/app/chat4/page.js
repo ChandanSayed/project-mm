@@ -1,17 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import Chat from '@/components/Chat1';
 import ChatHeader from '@/components/ChatHeader';
-import CookiesContainer from '@/components/CookiesContainer';
+import Chat4 from '@/components/Chat4';
 
 const page = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <>
       <ChatHeader setShowMenu={setShowMenu} showMenu={showMenu} />
-      <Chat showMenu={showMenu} />
-      <CookiesContainer />
+      <Chat4 showMenu={showMenu} />
     </>
   );
 };
