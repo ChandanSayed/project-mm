@@ -12,7 +12,7 @@ import ShareButtonChat from './ShareButtonChat';
 
 const link = 'https://mm.me/5qjjc37f9sn';
 
-const ChatHeader = ({ setShowMenu, showMenu }) => {
+const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false }) => {
   const { mobileChatNav, setMobileChatNav } = useAppContext();
   const [copyTooltip, setCopyTooltip] = useState(false);
   const [showTimerTooltip, setShowTimerTooltip] = useState(false);
@@ -66,7 +66,7 @@ const ChatHeader = ({ setShowMenu, showMenu }) => {
             </div>
             <div className="right flex items-center gap-[10px]">
               <div className="relative" onMouseEnter={timerHover}>
-                <HeaderButton classes={`${showMenu ? 'bg-white bg-opacity-10' : 'bg-midGray'} font-bold text-lightGrey`} WidthFont="w-[66px] text-sm " name="40" />
+                <HeaderButton classes={`${showMenu ? 'bg-white bg-opacity-10' : 'bg-midGray'} font-bold ${darkText ? 'text-dark' : 'text-lightGrey'}`} WidthFont="w-[66px] text-sm " name={timer} />
                 <div className={` ${showTimerTooltip ? `animate-fade opacity-100 block` : 'opacity-0 hidden'} w-[150px] absolute left-1/2 transform -bottom-16 text-center -translate-x-1/2 bg-black py-2 px-2 rounded-md z-20`}>
                   <p className="text-white text-[12px] font-medium">
                     Message Expiration <br /> Time (seconds)

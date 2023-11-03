@@ -120,7 +120,7 @@ const chats = [
 //   console.log(chats[1].joinedMessage[i]);
 // }
 
-const Chat7 = ({ children, showMenu, handleChatInput }) => {
+const Chat7 = ({ children, showMenu, handleChatInput, inputField }) => {
   const [selectedOption, setSelectedOption] = useState('');
   const [show, setShow] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -213,7 +213,7 @@ const Chat7 = ({ children, showMenu, handleChatInput }) => {
               </div>
             </div>
             <div className="mt-2 rounded-md shadow-sm sticky bottom-0 bg-[#f5f5f5] px-6 py-5">
-              <AutoComplete handleChatInput={handleChatInput} textColor="text-blue" activeIcon={true} value="/timer 120" options={options} onSelect={handleSelect} />
+              <AutoComplete handleChatInput={handleChatInput} inputField={inputField} textColor="text-blue" activeIcon={true} value="/timer 120" options={options} onSelect={handleSelect} />
             </div>
           </div>
         </div>
