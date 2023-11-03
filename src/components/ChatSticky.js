@@ -5,7 +5,7 @@ const ChatSticky = () => {
     <div className="sticky top-0 w-full bg-white pt-4">
       <div className="bg-midGray border px-4 py-5 rounded-t-lg  grid grid-cols-1 lg:grid-cols-5 relative">
         <div className="col-span-1 md:col-span-1">
-          <p className="text-blue text-sm font-jetBrain max-lg:mb-[5px]">[MessageMoment.com]</p>
+          <p className="text-blue text-sm font-jetBrain font-semibold max-lg:mb-[5px]">[MessageMoment.com]</p>
         </div>
         <div className="col-span-4 md:col-span-4 flex justify-between items-center">
           <p className="text-sm text-dark font-jetBrain">Welcome to MessageMoment.com, where your message only lasts a moment!</p>
@@ -15,7 +15,7 @@ const ChatSticky = () => {
         </div>
       </div>
 
-      <SidebarComponents3 contentLeft="Advertisement" contentRight="Big Sale on at Flight Centre! Don’t miss out. Visit" linkContent="www.flightcentre.com" href="/https://www.flightcentre.com" contentRight2="now and book your trip!" />
+      <SidebarComponents3 grid={'!py-2.5'} contentLeft="Advertisement" contentRight="Big Sale on at Flight Centre! Don’t miss out. Visit" linkContent="www.flightcentre.com" href="/https://www.flightcentre.com" contentRight2="now and book your trip!" />
     </div>
   );
 };

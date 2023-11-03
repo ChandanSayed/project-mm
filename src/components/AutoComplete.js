@@ -1,5 +1,6 @@
 'use client';
 
+import { useAppContext } from '@/context/AppContext';
 import { useState } from 'react';
 const options = ['leave', 'unlock', 'timer'];
 
@@ -8,6 +9,8 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
   const [filteredOptions, setFilteredOptions] = useState([]);
   const [showList, setShowList] = useState(false);
   const [showActiveIcon, setShowActiveIcon] = useState(activeIcon);
+
+  const { setIsOpen } = useAppContext();
 
   const handleInputChange = e => {
     const value = e.target.value;
@@ -35,6 +38,13 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
     setFilteredOptions([]);
     setShowList(false);
   };
+  const handleLeaveOption = option => {
+    setInputValue(option);
+    // onSelect(option);
+    setFilteredOptions([]);
+    setShowList(false);
+    setIsOpen(true);
+  };
 
   const handleOnBlur = () => {
     // setInputValue('');
@@ -47,12 +57,24 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
       <div className="relative">
         <ul className={`autocomplete-options w-[220px] bg-[#000] text-white rounded-xl absolute overflow-hidden bottom-full ${!showList && 'hidden'}`}>
           <h3 className="py-[14px] pl-[22px] leading-[23px] font-medium border-b border-dark">Commands</h3>
-          {filteredOptions.map((option, index) => (
+          {/* {filteredOptions.map((option, index) => (
             <li key={index} className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleSelectOption(option)}>
               <span className="text-white">/</span>
               {option}
             </li>
-          ))}
+          ))} */}
+          <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleLeaveOption('leave')}>
+            <span className="text-white">/</span>
+            leave
+          </li>
+          <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleSelectOption('unlock')}>
+            <span className="text-white">/</span>
+            unlock
+          </li>
+          <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleSelectOption('timer')}>
+            <span className="text-white">/</span>
+            timer
+          </li>
         </ul>
 
         <div className="pointer-events-none flex items-center pl-3 absolute left-3 top-1/2 transform -translate-y-1/2">

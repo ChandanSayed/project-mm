@@ -4,7 +4,7 @@ import ChatFooter from './ChatFooter';
 const ChatSidebar = ({ allUsers, showMenu, ad = '' }) => {
   return (
     <div className={`${showMenu ? 'max-lg:fixed z-10 top-[90px] left-0 right-0 max-lg:h-[calc(100vh-240px)] max-lg:pb-10' : 'hidden'} max-lg:border-t max-lg:border-t-white max-lg:border-opacity-10 xl:block bg-black h-[calc(100vh-136px)] overflow-y-auto overflow-x-hidden lg:rounded-[10px] custom-scrollbar-white`}>
-      <div className="h-[440px] pb-20">
+      <div className="h-[492px] pb-20">
         <div className="flex justify-between items-center p-4">
           <h3 className="text-sm font-medium text-white ">Chat Group</h3>
           <p className="text-white opacity-40 text-[13px] leading-[23px] font-jetBrain font-semibold">{allUsers.length === 0 ? '' : `${allUsers.length} / 10`}</p>

@@ -159,7 +159,7 @@ const Chat = ({ children, showMenu }) => {
                 </div>
               ))} */}
             <ChatSticky />
-            <div className="">
+            <div className="pb-8">
               <div className=" bg-midGray px-4 py-5 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">
                 <div className="col-span-1 md:col-span-1"></div>
                 <div className="col-span-4 md:col-span-4 flex  ">
@@ -178,7 +178,7 @@ const Chat = ({ children, showMenu }) => {
               <SidebarComponents2 contentLeft="[MessageMoment.com]" contentRight="The token you entered is incorrect! Please try again." />
 
               <SidebarComponents contentLeft="[MessageMoment.com]" textLeft="text-blue" contentRight="Verifying..." text=" text-errorColor" />
-              <div className=" bg-midGray px-4 py-5 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">
+              <div className="bg-midGray px-4 py-5 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">
                 <div className="col-span-1 md:col-span-1"></div>
                 <div className="col-span-4 md:col-span-4 flex flex-col gap-2  ">
                   <p className="text-dark  text-[13px] leading-5 lg:text-sm font-jetBrain font-normal">Thank you!</p>
@@ -188,7 +188,7 @@ const Chat = ({ children, showMenu }) => {
                 </div>
               </div>
               <SidebarComponents contentLeft="[Richard]" textLeft="text-[#56CCF2]" contentRight="joined" text=" text-errorColor" />
-              <SidebarComponents contentLeft="[Laura]" rounded="bg-white border-b !mt-0 !py-4" textLeft="text-[#219653]" contentRight="hello everybody" text=" text-errorColor" />
+              <SidebarComponents contentLeft="[Laura]" rounded="bg-white border-b !mt-0 !py-4 !rounded-b-none" textLeft="text-[#219653]" contentRight="hello everybody" text=" text-errorColor" />
               <SidebarComponents contentLeft="[Theresa]" rounded="bg-white !mt-0 !py-4" textLeft="text-[#EE5353]" contentRight="hi richard 👋🏻" text=" text-errorColor" />
               <div className=" bg-midGray px-4 py-5 rounded-lg grid grid-cols-1 lg:grid-cols-5">
                 <div className="col-span-1 md:col-span-1">
@@ -202,11 +202,11 @@ const Chat = ({ children, showMenu }) => {
                   </p>
                 </div>
               </div>
-              <SidebarComponents contentLeft="[joannah]" rounded="bg-white border-b !mt-0 !py-4" textLeft="text-[#5F27CD]" contentRight="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor felis nulla, eget pellentesque nulla blandit eu. Pellentesque porta ipsum orci, sit amet." text=" text-errorColor" />
+              <SidebarComponents contentLeft="[joannah]" rounded="bg-white border-b !mt-0 !py-4 !rounded-b-none" textLeft="text-[#5F27CD]" contentRight="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor felis nulla, eget pellentesque nulla blandit eu. Pellentesque porta ipsum orci, sit amet." text=" text-errorColor" />
               <SidebarComponents contentLeft="[Nina]" rounded="bg-white !mt-0 !py-4" textLeft="text-[#F368E0]" contentRight="Quisque posuere magna id lorem consectetur, a dapibus eros lobortis. Duis porttitor felis nulla, eget pellentesque nulla blandit eu. Pellentesque porta ipsum orci, sit amet." text=" text-errorColor" />
               <SidebarComponents contentLeft="[Marcus]" rounded="bg-[#F7F7F7] rounded-lg" textLeft="text-[#704F2C]" contentRight="Left" text=" text-errorColor" />
               <div className="bg-blue bg-opacity-5 px-4 py-5 rounded-b-xl mt-[15px] border-t-[3px] border-t-blue grid grid-cols-1 lg:grid-cols-5">
-                <div className="col-span-1 md:col-span-1 flex items-center">
+                <div className="col-span-1 md:col-span-1 flex items-center max-lg:mb-[5px]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M1.55556 0H12.4444C12.857 0 13.2527 0.163888 13.5444 0.455612C13.8361 0.747335 14 1.143 14 1.55556V12.4444C14 12.857 13.8361 13.2527 13.5444 13.5444C13.2527 13.8361 12.857 14 12.4444 14H1.55556C1.143 14 0.747335 13.8361 0.455612 13.5444C0.163888 13.2527 0 12.857 0 12.4444V1.55556C0 1.143 0.163888 0.747335 0.455612 0.455612C0.747335 0.163888 1.143 0 1.55556 0ZM7.77778 7.77778V3.11111H6.22222V7.77778H7.77778ZM7.77778 10.8889V9.33333H6.22222V10.8889H7.77778Z" fill="#494AF8" />
                   </svg>
@@ -221,7 +221,7 @@ const Chat = ({ children, showMenu }) => {
               <SidebarComponents rounded="bg-white !mt-0 !py-4" contentLeft="[william]" contentRight="Quisque posuere magna id lorem consectetur, a dapibus eros lobortis " textLeft="text-[#6FCF97]" />
               <SidebarComponents contentLeft="[Aron]" rounded={'!mt-0'} contentRight="Joined " textLeft="text-[#704F2C]" />
               <SidebarComponents contentLeft="[catalina]" contentRight="Joined " textLeft="text-[#EDC447]" />
-              <div className=" p-4 rounded-t-lg grid grid-cols-1 lg:grid-cols-5">
+              <div className="p-4 rounded-t-lg grid grid-cols-1 lg:grid-cols-5">
                 <div className="col-span-1 md:col-span-1">
                   <p className="text-[13px] leading-5 lg:text-sm font-semibold font-jetBrain max-lg:mb-[5px] text-[#5F27CD]">[joannah]</p>
                 </div>

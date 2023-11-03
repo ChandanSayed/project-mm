@@ -39,6 +39,18 @@ const users = [
   {
     id: 7,
     name: '[theresa]'
+  },
+  {
+    id: 8,
+    name: '[Aron]'
+  },
+  {
+    id: 9,
+    name: '[catalina]'
+  },
+  {
+    id: 10,
+    name: '[Robert]'
   }
 ];
 
@@ -120,7 +132,7 @@ const chats = [
 //   console.log(chats[1].joinedMessage[i]);
 // }
 
-const Chat7 = ({ children, showMenu, handleChatInput, inputField }) => {
+const Chat8 = ({ children, showMenu, handleChatInput, inputField }) => {
   const [selectedOption, setSelectedOption] = useState('');
   const [show, setShow] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -184,7 +196,7 @@ const Chat7 = ({ children, showMenu, handleChatInput, inputField }) => {
                 </div>
               </div>
               <SidebarComponents contentLeft="[Richard]" textLeft="text-[#56CCF2]" contentRight="joined" text=" text-errorColor" />
-              <SidebarComponents contentLeft="[Laura]" rounded="bg-white border-b !mt-0 !py-4" textLeft="text-[#219653]" contentRight="hello everybody" text=" text-errorColor" />
+              <SidebarComponents contentLeft="[Laura]" rounded="bg-white border-b !mt-0 !py-4 !rounded-b-none" textLeft="text-[#219653]" contentRight="hello everybody" text=" text-errorColor" />
               <SidebarComponents contentLeft="[Theresa]" rounded="bg-white !mt-0 !py-4" textLeft="text-[#EE5353]" contentRight="hi richard 👋🏻" text=" text-errorColor" />
               <div className=" bg-midGray px-4 py-5 rounded-lg grid grid-cols-1 lg:grid-cols-5">
                 <div className="col-span-1 md:col-span-1">
@@ -198,22 +210,31 @@ const Chat7 = ({ children, showMenu, handleChatInput, inputField }) => {
                   </p>
                 </div>
               </div>
-              <SidebarComponents contentLeft="[joannah]" rounded="bg-white border-b !mt-0 !py-4" textLeft="text-[#5F27CD]" contentRight="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor felis nulla, eget pellentesque nulla blandit eu. Pellentesque porta ipsum orci, sit amet." text=" text-errorColor" />
+              <SidebarComponents contentLeft="[joannah]" rounded="bg-white border-b !mt-0 !py-4 !rounded-b-none" textLeft="text-[#5F27CD]" contentRight="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor felis nulla, eget pellentesque nulla blandit eu. Pellentesque porta ipsum orci, sit amet." text=" text-errorColor" />
               <SidebarComponents contentLeft="[Nina]" rounded="bg-white !mt-0 !py-4" textLeft="text-[#F368E0]" contentRight="Quisque posuere magna id lorem consectetur, a dapibus eros lobortis. Duis porttitor felis nulla, eget pellentesque nulla blandit eu. Pellentesque porta ipsum orci, sit amet." text=" text-errorColor" />
-              <div className="bg-blue bg-opacity-5 px-4 py-5 rounded-b-xl border-t-[3px] border-t-blue grid grid-cols-1 lg:grid-cols-5">
-                <div className="col-span-1 md:col-span-1 flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M1.55556 0H12.4444C12.857 0 13.2527 0.163888 13.5444 0.455612C13.8361 0.747335 14 1.143 14 1.55556V12.4444C14 12.857 13.8361 13.2527 13.5444 13.5444C13.2527 13.8361 12.857 14 12.4444 14H1.55556C1.143 14 0.747335 13.8361 0.455612 13.5444C0.163888 13.2527 0 12.857 0 12.4444V1.55556C0 1.143 0.163888 0.747335 0.455612 0.455612C0.747335 0.163888 1.143 0 1.55556 0ZM7.77778 7.77778V3.11111H6.22222V7.77778H7.77778ZM7.77778 10.8889V9.33333H6.22222V10.8889H7.77778Z" fill="#494AF8" />
-                  </svg>
-                  <p className="text-blue  text-[13px] leading-5 lg:text-sm font-jetBrain pl-[10px]">[MessageMoment]</p>
+              <SidebarComponents contentLeft="[Nina]" rounded="bg-white !mt-0 !py-4" textLeft="text-[#F368E0]" contentRight="Quisque posuere magna id lorem consectetur, a dapibus eros lobortis " text=" text-errorColor" />
+              <SidebarComponents contentLeft="[Marcus]" rounded="bg-[#F7F7F7] rounded-lg !mt-0" textLeft="text-[#704F2C]" contentRight="Left" text=" text-errorColor" />
+              <SidebarComponents contentLeft="[Richard]" rounded="!bg-blue rounded-lg" textLeft="text-white" textRight="text-white font-semibold" contentRight="* Message Expiration Time set for 120 secs *" text=" text-errorColor" />
+              <SidebarComponents rounded="bg-white !mt-0 !py-4" contentLeft="[william]" contentRight="Quisque posuere magna id lorem consectetur, a dapibus eros lobortis " textLeft="text-[#6FCF97]" />
+              <SidebarComponents contentLeft="[Aron]" rounded={'!mt-0'} contentRight="Joined " textLeft="text-[#704F2C]" />
+              <SidebarComponents contentLeft="[catalina]" contentRight="Joined " textLeft="text-[#EDC447]" />
+              <SidebarComponents contentLeft="[Theresa]" rounded="bg-white border-b !mt-0 !py-4 !rounded-b-none" textLeft="text-[#EE5353]" contentRight="Sed fringilla nisl diam, ac congue quam fermentum sit amet?" text=" text-errorColor" />
+              <SidebarComponents contentLeft="[Laura]" rounded="bg-white !mt-0 !py-4 !rounded-b-none" textLeft="text-[#219653]" contentRight="Quisque eros massa!" text=" text-errorColor" />
+              <SidebarComponents contentLeft="[Robert]" contentRight="Joined " textLeft="text-[#BB6BD9]" />
+
+              <div className={`px-4 rounded-[10px] bg-white border-b border-[#eee] !mt-0 !py-4 !rounded-b-none grid grid-cols-1 lg:grid-cols-5 `}>
+                <div className="col-span-1 md:col-span-1">
+                  <p className={`text-[#5F27CD] lg:text-sm text-[13px] leading-5 font-jetBrain font-semibold max-lg:mb-[5px] `}>[joannah]</p>
                 </div>
                 <div className="col-span-4 md:col-span-4 flex justify-between items-center">
-                  <p className="text-dark  text-[13px] leading-5 lg:text-sm font-jetBrain font-normal">Message Expiry Time must be a value between 3 and 300.</p>
+                  <p className={`text-dark text-[13px] leading-5 lg:text-sm font-jetBrain`}>
+                    Aliquam ac justo et sapien porta mollis. Aliquam erat volutpat. Ut consequat, ipsum non mollis efficitur, nunc magna aliquam lacus, ut vestibulum diam massa in nibh. <br /> Sed fringilla nisl diam, ac congue quam fermentum sit amet. Vivamus tempor molestie elit ut maximus. Donec tortor odio, sollicitudin eu felis quis, pharetra dignissim dui.
+                  </p>
                 </div>
               </div>
             </div>
             <div className="mt-2 rounded-md shadow-sm sticky bottom-0 bg-[#f5f5f5] px-6 py-5">
-              <AutoComplete handleChatInput={handleChatInput} inputField={inputField} textColor="text-blue" activeIcon={true} value="/timer 120" options={options} onSelect={handleSelect} />
+              <AutoComplete handleChatInput={handleChatInput} inputField={inputField} options={options} onSelect={handleSelect} />
             </div>
           </div>
         </div>
@@ -223,4 +244,4 @@ const Chat7 = ({ children, showMenu, handleChatInput, inputField }) => {
   );
 };
 
-export default Chat7;
+export default Chat8;
