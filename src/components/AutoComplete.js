@@ -43,7 +43,7 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
   };
 
   return (
-    <div className="autocomplete-input">
+    <div className="autocomplete-input px-4">
       <div className="relative">
         {showList && (
           <ul className="autocomplete-options w-[220px] bg-[#000] text-white rounded-xl absolute overflow-hidden bottom-full">
