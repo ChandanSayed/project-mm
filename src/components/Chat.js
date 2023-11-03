@@ -311,7 +311,7 @@ const Chat = ({ children, showMenu }) => {
               {show ? <ReportModal handleClose={handleClose} /> : null}
               {/* <FileUploadPopup /> */}
             </div>
-            <div className="mt-2 rounded-md shadow-sm sticky bottom-0 left-4 right-4 bg-[#f5f5f5] px-6 py-5">
+            <div className="mt-2 rounded-md shadow-sm bg-[#f5f5f5] px-6 py-5">
               <AutoComplete options={options} onSelect={handleSelect} />
             </div>
           </div>
