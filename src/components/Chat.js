@@ -221,7 +221,7 @@ const Chat = ({ children, showMenu }) => {
               <SidebarComponents rounded="bg-white" contentLeft="[william]" contentRight="Quisque posuere magna id lorem consectetur, a dapibus eros lobortis " textLeft="text-[#6FCF97]" />
               <SidebarComponents contentLeft="[Aron]" contentRight="Joined " textLeft="text-[#704F2C]" />
               <SidebarComponents contentLeft="[catalina]" contentRight="Joined " textLeft="text-[#EDC447]" />
-              <div className=" p-4 rounded-t-lg grid grid-cols-1 lg:grid-cols-5 mt-[15px]">
+              <div className=" p-4 rounded-t-lg grid grid-cols-1 lg:grid-cols-5">
                 <div className="col-span-1 md:col-span-1">
                   <p className="text-[13px] leading-5 lg:text-sm font-semibold font-jetBrain max-lg:mb-[5px] text-[#5F27CD]">[joannah]</p>
                 </div>
@@ -311,7 +311,7 @@ const Chat = ({ children, showMenu }) => {
               {show ? <ReportModal handleClose={handleClose} /> : null}
               {/* <FileUploadPopup /> */}
             </div>
-            <div className="mt-2 rounded-md shadow-sm bg-[#f5f5f5] px-6 py-5">
+            <div className="mt-2 rounded-md shadow-sm sticky bottom-0 left-4 right-4 bg-[#f5f5f5] px-6 py-5">
               <AutoComplete options={options} onSelect={handleSelect} />
             </div>
           </div>

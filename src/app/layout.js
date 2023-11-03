@@ -24,7 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="text-dark scroll-smooth">
+      <body className="text-dark scroll-smooth overflow-x-hidden">
         <AppContextProvider>{children}</AppContextProvider>
       </body>
     </html>
