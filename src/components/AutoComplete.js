@@ -58,8 +58,8 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
         <div className="pointer-events-none flex items-center pl-3 absolute left-3 top-1/2 transform -translate-y-1/2">
           <span className="text-gray-500 sm:text-sm"> {`>`} </span>
         </div>
-
-        <input value={inputValue} ref={inputField} onChange={handleInputChange} onBlur={handleOnBlur} type="text" name="text" id="text" className={`block w-full h-[50px] rounded-md border-0 py-1.5 pl-10 pr-20 ${textColor} outline-none sm:text-sm sm:leading-6 font-jetBrain text-[13px] leading-6 lg:text-sm`} placeholder="" />
+        <input type="text" className="block w-full text-dark" placeholder="Test Zoom" />
+        {/* <input value={inputValue} ref={inputField} onChange={handleInputChange} onBlur={handleOnBlur} type="text" name="text" id="text" className={`block w-full h-[50px] rounded-md border-0 py-1.5 pl-10 pr-20 ${textColor} outline-none sm:text-sm sm:leading-6 font-jetBrain text-[13px] leading-6 lg:text-sm`} placeholder="" /> */}
         {showActiveIcon ? (
           <svg className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={handleChatInput} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
             <circle cx="14" cy="14" r="14" fill="#363C4F" />
