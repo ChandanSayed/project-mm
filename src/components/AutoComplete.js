@@ -45,7 +45,7 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
   return (
     <div className="autocomplete-input">
       <div className="relative">
-        <ul className={`autocomplete-options w-[220px] hidden bg-[#000] text-white rounded-xl absolute overflow-hidden bottom-full ${!showList && 'hidden'}`}>
+        <ul className={`autocomplete-options w-[220px] bg-[#000] text-white rounded-xl absolute overflow-hidden bottom-full ${!showList && 'hidden'}`}>
           <h3 className="py-[14px] pl-[22px] leading-[23px] font-medium border-b border-dark">Commands</h3>
           {filteredOptions.map((option, index) => (
             <li key={index} className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleSelectOption(option)}>
@@ -59,7 +59,7 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
           <span className="text-gray-500 sm:text-sm"> {`>`} </span>
         </div>
         {/* <input type="text" className="block w-full text-dark" placeholder="Test Zoom" /> */}
-        <input value={inputValue} ref={inputField} onChange={handleInputChange} onBlur={handleOnBlur} type="text" name="text" id="text" className={`block w-full h-[50px] rounded-md border-none py-1.5 pl-10 pr-20 ${textColor} font-jetBrain`} placeholder="" />
+        <input value={inputValue} ref={inputField} onChange={handleInputChange} onBlur={handleOnBlur} type="text" className={`block w-full h-[50px] rounded-md border-none py-1.5 pl-10 pr-20 ${textColor} font-jetBrain text-sm`} placeholder="" />
         {showActiveIcon ? (
           <svg className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={handleChatInput} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
             <circle cx="14" cy="14" r="14" fill="#363C4F" />
