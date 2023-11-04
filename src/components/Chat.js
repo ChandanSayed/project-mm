@@ -4,11 +4,9 @@ import { useState } from 'react';
 import Image from 'next/image';
 import SidebarComponents from './ChatComponents';
 import SidebarComponents2 from './ChatComponents2';
-import SidebarComponents3 from './ChatComponents3';
 import ad from '/public/icons/ad.svg';
 import AutoComplete from './AutoComplete';
 import { accordionCookiesList } from './AccordionList';
-import ChatFooter from './ChatFooter';
 import ReportModal from './ReportModal';
 import ChatSidebar from './ChatSidebar';
 import ChatSticky from './ChatSticky';
@@ -151,7 +149,7 @@ const Chat = ({ children, showMenu }) => {
   return (
     <>
       <div className="grid grid-cols-1 xl:grid-cols-[1fr_220px] gap-[30px] lg:mt-6 max-w-[1440px] mx-auto bg-white pb-5">
-        <div className="bg-white max-lg:h-[calc(100vh-240px)] max-lg:pb-10 h-[calc(100vh-136px)]">
+        <div className="bg-white max-lg:h-[calc(100vh-220px)] max-lg:pb-10 h-[calc(100vh-136px)]">
           <div className="px-4 h-full overflow-y-auto custom-scrollbar">
             {/* {chats[1].joinedMessage.map(chat => (
                 <div key={chat.id}>

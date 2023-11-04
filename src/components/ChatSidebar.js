@@ -22,10 +22,10 @@ const ChatSidebar = ({ allUsers, showMenu, ad = '' }) => {
       </div>
       <div>
         <div className="relative px-3">
-          <div className="advertisement bg-white bg-opacity-[.15] min-h-[198px] rounded-md">
+          <div className="advertisement bg-white bg-opacity-[.15] h-[198px] rounded-md">
             <h4 className="text-[11px] font-jetBrain font-bold leading-normal text-white text-center py-[11px] rounded-t-lg">Advertisement</h4>
             <div className="flex justify-center items-center">
-              {ad && <Image src={ad} alt="" className="w-full" />}
+              {ad && <Image src={ad} alt="" className="w-full h-full object-cover" />}
               {ad != false && (
                 <svg className="absolute top-1/2 left-[40%]" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                   <g filter="url(#filter0_d_337_700)">
