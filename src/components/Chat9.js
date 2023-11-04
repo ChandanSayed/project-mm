@@ -178,7 +178,7 @@ const Chat9 = ({ children, showMenu, handleChatInput, inputField }) => {
                       </span>
                       This chat session is protected using a secure token.
                     </span>
-                    <span className="leading-5">...</span> <span className="flex"> {`> Please enter the Token you received with your chat link:`}</span>
+                    <span className="inline-block my-2">...</span> <span className="flex"> {`> Please enter the Token you received with your chat link:`}</span>
                   </p>
                 </div>
               </div>

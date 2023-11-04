@@ -47,7 +47,7 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false }) =
       <header className={`${showMenu ? 'bg-black border-t-black fixed left-0 right-0 top-0 z-10' : 'bg-white border-t-blue'}  border-t-[5px]`}>
         <nav className={`flex items-center w-full max-w-[1440px] mx-auto px-4 lg:px-6 py-5`}>
           <Link href={`/`}>{showMenu ? <Image src={LogoMiniWhite} alt="Mini Logo" className="h-10 min-w-[48px]" /> : <Image src={LogoMini} alt="Mini Logo" className="h-10 min-w-[48px]" />}</Link>
-          <div className="border-l h-[86px] -my-6 border-lightGray mx-4 lg:mx-6" />
+          <div className={`border-l h-[86px] -my-6 border-lightGray mx-4 lg:mx-6 ${showMenu && 'hidden'}`} />
           <div className="flex items-center justify-end lg:justify-between grow relative">
             <div className="flex items-center justify-center max-lg:hidden">
               <svg className="mr-[15px] " xmlns="http://www.w3.org/2000/svg" width="13" height="16" viewBox="0 0 13 16" fill="none">
@@ -75,14 +75,15 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false }) =
                   </svg>
                 </div>
               </div>
-              <div className="border-l lg:mx-[5px] h-[46px] border-lightGray" />
-              <ShareButtonChat onCopy={onCopy} link={link} bg="border" display={'block lg:hidden'} />
+              <div className={`border-l lg:mx-[5px] h-[46px] border-lightGray ${showMenu && 'hidden'}`} />
+
+              <ShareButtonChat setShowMenu={setShowMenu} onCopy={onCopy} link={link} bg="border" display={'block lg:hidden'} />
               <Menu as="div" className="relative inline-block text-left">
-                <Menu.Button className="rounded-md h-[46px] w-[46px] lg:w-[150px] lg:px-5 border font-bold text-sm hover:bg-errorColor hover:text-white">
+                <Menu.Button onClick={() => setShowMenu(false)} className="rounded-md h-[46px] w-[46px] lg:w-[150px] lg:px-5 border font-bold text-sm hover:bg-errorColor hover:text-white">
                   <svg className="block lg:hidden mx-auto" xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15" fill="none">
                     <path d="M20 7.27273L16.3636 3.63636L16.3636 6.36364L8.18182 6.36364L8.18182 8.18182L16.3636 8.18182L16.3636 10.9091M-5.56327e-07 12.7273L-7.94752e-08 1.81818C-3.53665e-08 0.80909 0.818182 -8.38464e-07 1.81818 -7.94753e-07L12.7273 -3.17901e-07C13.2095 -2.96823e-07 13.6719 0.191558 14.0129 0.532533C14.3539 0.873508 14.5455 1.33597 14.5455 1.81818L14.5455 4.54545L12.7273 4.54545L12.7273 1.81818L1.81818 1.81818L1.81818 12.7273L12.7273 12.7273L12.7273 10L14.5455 10L14.5455 12.7273C14.5455 13.2095 14.3539 13.6719 14.0129 14.0129C13.6719 14.3539 13.2095 14.5455 12.7273 14.5455L1.81818 14.5455C1.33597 14.5455 0.873508 14.3539 0.532533 14.0129C0.191556 13.6719 -5.77405e-07 13.2095 -5.56327e-07 12.7273Z" fill="#CCCCCC" />
                   </svg>
-                  <span className="hidden lg:block">Disconnected</span>
+                  <span className="hidden lg:block">Disconnect</span>
                 </Menu.Button>
 
                 <Transition as={Fragment} enter="transition ease-out duration-100" enterFrom="transform opacity-0 scale-95" enterTo="transform opacity-100 scale-100" leave="transition ease-in duration-75" leaveFrom="transform opacity-100 scale-100" leaveTo="transform opacity-0 scale-95">
@@ -97,7 +98,7 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false }) =
                 </Transition>
               </Menu>
 
-              <ShareButtonChat onCopy={onCopy} link={link} bg="bg-blue text-white" display={'hidden lg:block'} />
+              <ShareButtonChat setShowMenu={setShowMenu} onCopy={onCopy} link={link} bg="bg-blue text-white" display={'hidden lg:block'} />
 
               <button onClick={() => setShowMenu(prev => !prev)} className={`${showMenu ? 'bg-white bg-opacity-10 opacity-90' : 'bg-blue hover:bg-opacity-80'} lg:hidden mx-auto flex items-center rounded-md w-[46px] h-[46px]`}>
                 {!showMenu ? (

@@ -83,6 +83,7 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
         {/* <input type="text" className="block w-full text-dark" placeholder="Test Zoom" /> */}
         <input value={inputValue} ref={inputField} onChange={handleInputChange} onBlur={handleOnBlur} type="text" className={`block lg:hidden w-full h-[50px] rounded-md border-none py-1.5 pl-10 pr-20 ${textColor} font-jetBrain`} />
         <input value={inputValue} ref={inputField} onChange={handleInputChange} onBlur={handleOnBlur} type="text" className={`lg:block w-full h-[50px] rounded-md border-none py-1.5 pl-10 pr-20 ${textColor} font-jetBrain hidden text-sm`} />
+
         {showActiveIcon ? (
           <svg className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={handleChatInput} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
             <circle cx="14" cy="14" r="14" fill="#363C4F" />
@@ -95,6 +96,7 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
           </svg>
         )}
       </div>
+      <p className="text-center text-[#676D74] text-[11px] font-jetBrain mt-[15px]">MessageMoment Feb 13 Version. Free Research Preview. Our goal is to make AI systems more natural and safe to interact with. Your feedback will help us improve.</p>
     </div>
   );
 };
