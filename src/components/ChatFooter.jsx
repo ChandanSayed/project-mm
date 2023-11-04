@@ -19,7 +19,7 @@ const ChatFooter = () => {
           <a href="/">Terms of Use</a>
         </li>
       </ul>
-      <p className="text-center text-[9px] font-medium mb-5 px-7">Copyright © 2023 MessageMoment. All rights reserved.</p>
+      <p className="text-center text-white opacity-50 text-[9px] font-medium mb-5 px-7">Copyright © 2023 MessageMoment. All rights reserved.</p>
     </div>
   );
 };
