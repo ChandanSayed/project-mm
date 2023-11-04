@@ -3,7 +3,7 @@ import ChatFooter from './ChatFooter';
 
 const ChatSidebar = ({ allUsers, showMenu, ad = '' }) => {
   return (
-    <div className={`${showMenu ? 'max-lg:fixed z-10 top-[90px] left-0 right-0 max-lg:h-[calc(100vh-240px)] max-lg:pb-10' : 'opacity-0 h-0 overflow-hidden'} lg:opacity-100 max-lg:border-t max-lg:border-t-white max-lg:border-opacity-10 flex flex-col justify-between bg-black h-[calc(100vh-136px)] overflow-y-auto overflow-x-hidden lg:rounded-[10px] custom-scrollbar-white`}>
+    <div className={`${showMenu ? 'max-lg:fixed z-10 top-[90px] left-0 right-0 max-lg:h-[calc(100vh-240px)] max-lg:pb-10' : 'max-lg:opacity-0 max-lg:h-0 max-lg:overflow-hidden'} lg:opacity-100 max-lg:border-t max-lg:border-t-white max-lg:border-opacity-10 flex flex-col justify-between bg-black h-[calc(100vh-136px)] overflow-y-auto overflow-x-hidden lg:rounded-[10px] custom-scrollbar-white`}>
       <div className="h-[472px] lg:h-[492px] pb-10 lg:pb-20">
         <div className="flex justify-between items-center p-4">
           <h3 className="text-sm font-medium text-white ">Chat Group</h3>
