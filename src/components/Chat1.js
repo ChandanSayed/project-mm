@@ -111,28 +111,29 @@ const Chat1 = ({ children, showMenu }) => {
   };
   return (
     <>
-      <div className="grid grid-cols-1 xl:grid-cols-[1fr_220px] gap-[30px] lg:mt-6 max-w-[1440px] mx-auto bg-white pb-5">
-        <div className="bg-white max-lg:h-[calc(100vh-200px)] max-lg:pb-10 h-[calc(100vh-136px)]">
-          <div className="px-4 h-full overflow-y-auto custom-scrollbar relative">
+      <div className="grid grid-cols-1 xl:grid-cols-[1fr_220px] gap-3 lg:mt-6 max-w-[1440px] mx-auto bg-white pb-5">
+        <div className="bg-white max-lg:h-[calc(100vh-160px)] max-lg:pb-10 h-[calc(100vh-136px)]">
+          <div className="h-full overflow-y-auto custom-scrollbar flex flex-col justify-between">
             {/* {chats[1].joinedMessage.map(chat => (
                 <div key={chat.id}>
                   <SidebarComponents color={chat.color} contentLeft={chat.name} text />
                 </div>
               ))} */}
-            <ChatSticky />
-            <div className="">
-              <div className=" bg-midGray px-4 py-5 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">
-                <div className="col-span-1 md:col-span-1"></div>
-                <div className="col-span-4 md:col-span-4 flex flex-col gap-2  ">
-                  <p className="text-dark  text-sm font-jetBrain font-normal">{`> Please enter your Display Name to proceed:`}</p>
-                  <p className="text-sm leading-5 font-normal font-jetBrain">---</p>
-                  <p className="text-[10px] text-[#777] font-jetBrain font-normal">By proceeding, you agree that you are solely responsible for your actions and any content that you post or share during the chat session. MessageMoment does not assume any liability for the content posted by users or for any damages that may result from using this service.</p>
+            <div className="h-[calc(100%-144px)] overflow-y-auto custom-scrollbar">
+              <ChatSticky />
+              <div className="pb-8 px-3 lg:px-4">
+                <div className=" bg-midGray px-4 py-5 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">
+                  <div className="col-span-1 md:col-span-1"></div>
+                  <div className="col-span-4 md:col-span-4 flex flex-col gap-2  ">
+                    <p className="text-dark  text-sm font-jetBrain font-normal">{`> Please enter your Display Name to proceed:`}</p>
+                    <p className="text-sm leading-5 font-normal font-jetBrain">---</p>
+                    <p className="text-[10px] text-[#777] font-jetBrain font-normal">By proceeding, you agree that you are solely responsible for your actions and any content that you post or share during the chat session. MessageMoment does not assume any liability for the content posted by users or for any damages that may result from using this service.</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="mt-2 rounded-md shadow-sm absolute left-0 right-0 bottom-0 bg-[#f5f5f5] px-6 py-5">
-              <AutoComplete options={options} onSelect={handleSelect} />
-            </div>
+
+            <AutoComplete options={options} onSelect={handleSelect} />
           </div>
         </div>
         <ChatSidebar allUsers={allUsers} showMenu={showMenu} />

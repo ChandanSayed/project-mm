@@ -155,21 +155,21 @@ const Chat10 = ({ children, showMenu, handleChatInput, inputField }) => {
   };
   return (
     <>
-      <div className="grid grid-cols-1 xl:grid-cols-[1fr_220px] gap-[30px] lg:mt-6 max-w-[1440px] mx-auto bg-white pb-5">
-        <div className="bg-white max-lg:h-[calc(100vh-200px)] max-lg:pb-10 h-[calc(100vh-136px)]">
-          <div className="px-4 h-full overflow-y-auto custom-scrollbar relative">
+      <div className="grid grid-cols-1 xl:grid-cols-[1fr_220px] gap-3 lg:mt-6 max-w-[1440px] mx-auto bg-white pb-5">
+        <div className="bg-white max-lg:h-[calc(100vh-160px)] max-lg:pb-10 h-[calc(100vh-136px)]">
+          <div className="h-full overflow-y-auto custom-scrollbar flex flex-col justify-between">
             {/* {chats[1].joinedMessage.map(chat => (
                 <div key={chat.id}>
                   <SidebarComponents color={chat.color} contentLeft={chat.name} text />
                 </div>
               ))} */}
-            <ChatSticky />
-            <div className="pb-10">
-              <SidebarComponents contentLeft="[Richard]" rounded="!bg-white border-b !mt-0 !py-4 !rounded-b-none" textLeft="text-[#56ccf2]" contentRight="enean tempor nisl ut nulla sollicitudin, bibendum ultricies mi tempus. Nulla id euismod augue, fringilla mollis metus. Nulla facilisi." text=" text-errorColor" />
+            <div className="h-[calc(100%-144px)] overflow-y-auto custom-scrollbar">
+              <ChatSticky />
+              <div className="pb-8 px-3 lg:px-4">
+                <SidebarComponents contentLeft="[Richard]" rounded="!bg-white border-b !mt-0 !py-4 !rounded-b-none" textLeft="text-[#56ccf2]" contentRight="enean tempor nisl ut nulla sollicitudin, bibendum ultricies mi tempus. Nulla id euismod augue, fringilla mollis metus. Nulla facilisi." text=" text-errorColor" />
+              </div>
             </div>
-            <div className="mt-2 rounded-md shadow-sm absolute left-0 right-0 bottom-0 bg-[#f5f5f5] px-6 py-5">
-              <AutoComplete handleChatInput={handleChatInput} inputField={inputField} options={options} onSelect={handleSelect} />
-            </div>
+            <AutoComplete handleChatInput={handleChatInput} inputField={inputField} options={options} onSelect={handleSelect} />
           </div>
         </div>
         <ChatSidebar allUsers={allUsers} showMenu={showMenu} />

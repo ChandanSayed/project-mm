@@ -158,7 +158,7 @@ const Chat = ({ children, showMenu }) => {
               ))} */}
             <div className="h-[calc(100%-144px)] overflow-y-auto custom-scrollbar">
               <ChatSticky />
-              <div className="pb-8 px-4">
+              <div className="pb-8 px-3 lg:px-4">
                 <div className=" bg-midGray px-4 py-5 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">
                   <div className="col-span-1 md:col-span-1"></div>
                   <div className="col-span-4 md:col-span-4 flex  ">
