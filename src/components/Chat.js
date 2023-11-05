@@ -316,9 +316,8 @@ const Chat = ({ children, showMenu }) => {
                 {/* <FileUploadPopup /> */}
               </div>
             </div>
-            <div className="mt-2 rounded-b-md border-t border-black border-opacity-10 shadow-sm bg-[#f5f5f5] px-2.5 lg:px-6 py-5">
-              <AutoComplete options={options} onSelect={handleSelect} />
-            </div>
+
+            <AutoComplete options={options} onSelect={handleSelect} />
           </div>
         </div>
         <ChatSidebar ad={ad} allUsers={allUsers} showMenu={showMenu} />

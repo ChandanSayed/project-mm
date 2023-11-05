@@ -2,7 +2,7 @@ import SidebarComponents3 from './ChatComponents3';
 
 const ChatSticky = () => {
   return (
-    <div className="sticky top-0 w-full bg-white max-lg:pt-3.5 mx-4">
+    <div className="sticky top-0 w-[calc(100%-32px)] mx-auto bg-white max-lg:pt-3.5">
       <div className="bg-midGray border px-4 py-5 rounded-t-lg  grid grid-cols-1 lg:grid-cols-5 relative">
         <div className="col-span-1 md:col-span-1">
           <p className="text-blue text-sm font-jetBrain font-semibold max-lg:mb-[5px]">[MessageMoment.com]</p>
