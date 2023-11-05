@@ -9,13 +9,25 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
   const [filteredOptions, setFilteredOptions] = useState([]);
   const [showList, setShowList] = useState(false);
   const [showActiveIcon, setShowActiveIcon] = useState(activeIcon);
+  const [colorChange, setColorChange] = useState(false);
 
   const { setIsOpen } = useAppContext();
 
   const handleInputChange = e => {
     const value = e.target.value;
 
-    setInputValue(value);
+    const values = value.split(' ');
+    const command = values[0];
+    // console.log(command);
+
+    if (command.includes('/')) {
+      const desireValue = command.toLowerCase() + value.replace(command, '');
+      setInputValue(desireValue);
+      setColorChange(true);
+    } else {
+      setInputValue(value);
+      setColorChange(false);
+    }
 
     // Filter the options based on the input value
     const filtered = options.filter(option => option.toLowerCase().includes(value.replace('/', '').toLowerCase()));
@@ -82,8 +94,8 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
             <span className="text-gray-500 sm:text-sm"> {`>`} </span>
           </div>
           {/* <input type="text" className="block w-full text-dark" placeholder="Test Zoom" /> */}
-          <input value={inputValue} ref={inputField} onChange={handleInputChange} onBlur={handleOnBlur} type="text" className={`block lg:hidden w-full h-[50px] rounded-md border-none py-1.5 pl-10 pr-20 ${textColor} font-jetBrain`} />
-          <input value={inputValue} ref={inputField} onChange={handleInputChange} onBlur={handleOnBlur} type="text" className={`lg:block w-full h-[50px] rounded-md border-none py-1.5 pl-10 pr-20 ${textColor} font-jetBrain hidden text-sm`} />
+          <input value={inputValue} ref={inputField} onChange={handleInputChange} onBlur={handleOnBlur} type="text" className={`block lg:hidden w-full h-[50px] rounded-md border-none py-1.5 pl-10 pr-20 ${colorChange ? 'text-blue' : textColor} font-jetBrain custom-input`} />
+          <input value={inputValue} ref={inputField} onChange={handleInputChange} onBlur={handleOnBlur} type="text" className={`lg:block w-full h-[50px] rounded-md border-none py-1.5 pl-10 pr-20 ${colorChange ? 'text-blue' : textColor} font-jetBrain custom-input hidden text-sm`} />
 
           {showActiveIcon ? (
             <svg className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={handleChatInput} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -97,7 +109,7 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
             </svg>
           )}
         </div>
-        <p className="text-center text-[#676D74] text-[11px] font-jetBrain mt-[15px]">MessageMoment Feb 13 Version. Free Research Preview. Our goal is to make AI systems more natural and safe to interact with. Your feedback will help us improve.</p>
+        {/* <p className="text-center text-[#676D74] text-[11px] font-jetBrain mt-[15px]">MessageMoment Feb 13 Version. Free Research Preview. Our goal is to make AI systems more natural and safe to interact with. Your feedback will help us improve.</p> */}
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import grayLogo from '/public/images/gray-logo.svg';
+import Link from 'next/link';
 
 const ChatFooter = () => {
   return (
@@ -7,16 +8,16 @@ const ChatFooter = () => {
       <Image src={grayLogo} alt="Logo" className="mx-auto my-[15px] opacity-20" />
       <ul className="text-center font-medium text-[11px] text-white mb-[15px]">
         <li className="leading-6">
-          <a href="/">About MessageMoment</a>
+          <Link href="/about">About MessageMoment</Link>
         </li>
         <li className="leading-6">
-          <a href="/">FAQs</a>
+          <Link href="/faq">FAQs</Link>
         </li>
         <li className="leading-6">
-          <a href="/">Privacy</a>
+          <Link href="/privacy">Privacy</Link>
         </li>
         <li className="leading-6">
-          <a href="/">Terms of Use</a>
+          <Link href="/terms">Terms of Use</Link>
         </li>
       </ul>
       <p className="text-center text-white opacity-50 text-[9px] font-medium mb-5 px-7">Copyright © 2023 MessageMoment. All rights reserved.</p>
