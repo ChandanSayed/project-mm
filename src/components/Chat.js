@@ -149,7 +149,7 @@ const Chat = ({ children, showMenu }) => {
   return (
     <>
       <div className="grid grid-cols-1 xl:grid-cols-[1fr_220px] gap-3 lg:mt-6 max-w-[1440px] mx-auto bg-white pb-5">
-        <div className="bg-white max-lg:h-[calc(100vh-200px)] max-lg:pb-10 h-[calc(100vh-136px)]">
+        <div className="bg-white max-lg:h-[calc(100vh-160px)] max-lg:pb-10 h-[calc(100vh-136px)]">
           <div className="h-full overflow-y-auto custom-scrollbar flex flex-col justify-between">
             {/* {chats[1].joinedMessage.map(chat => (
                 <div key={chat.id}>
