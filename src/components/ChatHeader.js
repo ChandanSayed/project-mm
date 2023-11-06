@@ -10,12 +10,11 @@ import Link from 'next/link';
 import ShareButtonChat from './ShareButtonChat';
 import LeaveChatModal from './LeaveChatModal';
 
-const link = 'https://mm.me/5qjjc37f9sn';
-
 const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false }) => {
-  const { isOpen, setIsOpen } = useAppContext();
+  const { isOpen, setIsOpen, setChatScroll } = useAppContext();
   const [copyTooltip, setCopyTooltip] = useState(false);
   const [showTimerTooltip, setShowTimerTooltip] = useState(false);
+  const [showShare, setShowShare] = useState(false);
   const topLink = useRef();
 
   function closeModal() {
@@ -26,9 +25,6 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false }) =
     setIsOpen(true);
   }
 
-  const onCopy = () => {
-    navigator.clipboard.writeText(link);
-  };
   const onCopyTopLink = () => {
     navigator.clipboard.writeText(topLink.current.innerText);
   };
@@ -44,6 +40,11 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false }) =
     setTimeout(() => {
       setShowTimerTooltip(false);
     }, 3000);
+  }
+
+  function handleChatMenu() {
+    setShowMenu(prev => !prev);
+    setShowShare(false);
   }
 
   return (
@@ -81,7 +82,7 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false }) =
               </div>
               <div className={`border-l lg:mx-[5px] h-[46px] border-lightGray ${showMenu && 'hidden'}`} />
 
-              <ShareButtonChat setShowMenu={setShowMenu} onCopy={onCopy} link={link} bg="border" display={'block lg:hidden'} />
+              <ShareButtonChat showShare={showShare} setShowShare={setShowShare} setShowMenu={setShowMenu} bg="border" display={'block lg:hidden'} />
               <Menu as="div" className="relative inline-block text-left">
                 <Menu.Button onClick={() => setShowMenu(false)} className="rounded-md h-[46px] w-[46px] lg:w-[150px] lg:px-5 border font-bold text-sm hover:bg-errorColor hover:text-white">
                   <svg className="block lg:hidden mx-auto" xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15" fill="none">
@@ -102,9 +103,9 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false }) =
                 </Transition>
               </Menu>
 
-              <ShareButtonChat setShowMenu={setShowMenu} onCopy={onCopy} link={link} bg="bg-blue text-white" display={'hidden lg:block'} />
+              <ShareButtonChat showShare={showShare} setShowShare={setShowShare} setShowMenu={setShowMenu} bg="bg-blue text-white" display={'hidden lg:block'} />
 
-              <button onClick={() => setShowMenu(prev => !prev)} className={`${showMenu ? 'bg-white bg-opacity-10 opacity-90' : 'bg-blue hover:bg-opacity-80'} lg:hidden mx-auto flex items-center rounded-md w-[46px] h-[46px]`}>
+              <button onClick={handleChatMenu} className={`${showMenu ? 'bg-white bg-opacity-10 opacity-90' : 'bg-blue hover:bg-opacity-80'} lg:hidden mx-auto flex items-center rounded-md w-[46px] h-[46px]`}>
                 {!showMenu ? (
                   <svg className="mx-auto" xmlns="http://www.w3.org/2000/svg" width="15" height="10" viewBox="0 0 15 10" fill="none">
                     <path d="M0.833333 10H14.1667C14.625 10 15 9.625 15 9.16667C15 8.70833 14.625 8.33333 14.1667 8.33333H0.833333C0.375 8.33333 0 8.70833 0 9.16667C0 9.625 0.375 10 0.833333 10ZM0.833333 5.83333H14.1667C14.625 5.83333 15 5.45833 15 5C15 4.54167 14.625 4.16667 14.1667 4.16667H0.833333C0.375 4.16667 0 4.54167 0 5C0 5.45833 0.375 5.83333 0.833333 5.83333ZM0 0.833333C0 1.29167 0.375 1.66667 0.833333 1.66667H14.1667C14.625 1.66667 15 1.29167 15 0.833333C15 0.375 14.625 0 14.1667 0H0.833333C0.375 0 0 0.375 0 0.833333Z" fill="white" />

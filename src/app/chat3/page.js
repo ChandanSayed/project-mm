@@ -11,7 +11,6 @@ const page = () => {
     <>
       <ChatHeader setShowMenu={setShowMenu} showMenu={showMenu} />
       <Chat3 showMenu={showMenu} />
-      <CookiesContainer />
     </>
   );
 };

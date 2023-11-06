@@ -8,95 +8,19 @@ import ChatSidebar from './ChatSidebar';
 import SidebarComponents2 from './ChatComponents2';
 import ChatSticky from './ChatSticky';
 import SidebarComponents from './ChatComponents';
+import { useAppContext } from '@/context/AppContext';
 const options = [];
 
 const users = [];
 
-const chats = [
-  {
-    errorMessage: [
-      {
-        id: 1,
-        img: 'error',
-        errorHEading: '[MessageMoment.com]',
-        errorText: 'The token you entered is incorrect! Please try again.'
-      },
-      {
-        id: 2,
-        img: 'error',
-        errorHEading: '[MessageMoment.com]',
-        errorText: 'The chat session is full! There are currently 10/10 users joined.'
-      }
-    ]
-  },
-  {
-    joinedMessage: [
-      {
-        id: 1,
-        name: '[Richard]',
-        text: 'Joined',
-        color: 'red'
-      },
-      {
-        id: 2,
-        name: '[Aron]',
-        text: 'Left',
-        color: '#CCCCCC'
-      },
-      {
-        id: 3,
-        name: '[catalina]',
-        text: 'Joined',
-        color: 'red'
-      }
-    ]
-  },
-  {
-    token: [
-      {
-        id: 1,
-        image: 'tokenImage',
-        text1: 'This chat session is protected using a secure token.',
-        text2: '...',
-        text3: '> Please enter the Token you received with your chat link:'
-      }
-    ]
-  },
-  {
-    verify: [
-      {
-        id: 1,
-        text: 'Verifying'
-      }
-    ]
-  },
-  {
-    textMessage: [
-      {
-        id: 1,
-        name: '[Laura]',
-        message: 'hello everybody'
-      },
-      {
-        id: 1,
-        name: '[Theresa]',
-        message: 'hi richard 👋🏻'
-      }
-    ]
-  }
-];
-
-// for (let i = 0; i < chats[1].length; i++) {
-//   console.log(chats[1].joinedMessage[i]);
-// }
-
-const Chat5 = ({ children, showMenu }) => {
+const Chat5 = ({ showMenu }) => {
   const [selectedOption, setSelectedOption] = useState('');
   const [show, setShow] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [accordions, setAccordions] = useState(accordionCookiesList);
   const [disable, setDisable] = useState(true);
   const [allUsers, setAllUsers] = useState(users);
+  const { chatScroll } = useAppContext();
 
   const handleOpen = () => {
     setShow(true);
@@ -115,13 +39,8 @@ const Chat5 = ({ children, showMenu }) => {
     <>
       <div className="grid grid-cols-1 xl:grid-cols-[1fr_220px] gap-3 lg:mt-6 max-w-[1440px] mx-auto bg-white pb-5">
         <div className="bg-white max-lg:h-[calc(100vh-160px)] max-lg:pb-10 h-[calc(100vh-136px)]">
-          <div className="h-full overflow-y-auto custom-scrollbar flex flex-col justify-between">
-            {/* {chats[1].joinedMessage.map(chat => (
-                <div key={chat.id}>
-                  <SidebarComponents color={chat.color} contentLeft={chat.name} text />
-                </div>
-              ))} */}
-            <div className="h-[calc(100%-144px)] overflow-y-auto custom-scrollbar">
+          <div className={`h-full ${chatScroll ? 'overflow-y-auto' : 'overflow-hidden'} custom-scrollbar flex flex-col justify-between`}>
+            <div className={`h-[calc(100%-144px)] ${chatScroll ? 'overflow-y-auto' : 'overflow-hidden pr-1.5'} custom-scrollbar`}>
               <ChatSticky />
               <div className="pb-8 px-3 lg:px-4">
                 <div className=" bg-midGray px-4 py-5 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">

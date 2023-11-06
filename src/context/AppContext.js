@@ -11,8 +11,9 @@ export default function AppContextProvider({ children }) {
   const [showCookiesModal, setShowCookiesModal] = useState(false);
   const [reloadHome, setReloadHome] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [chatScroll, setChatScroll] = useState(true);
 
-  return <AppContext.Provider value={{ isOpen, setIsOpen, mobileNav, setMobileNav, mobileChatNav, setMobileChatNav, showCookies, setShowCookies, showCookiesModal, setShowCookiesModal, reloadHome, setReloadHome }}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{ chatScroll, setChatScroll, isOpen, setIsOpen, mobileNav, setMobileNav, mobileChatNav, setMobileChatNav, showCookies, setShowCookies, showCookiesModal, setShowCookiesModal, reloadHome, setReloadHome }}>{children}</AppContext.Provider>;
 }
 
 export function useAppContext() {
