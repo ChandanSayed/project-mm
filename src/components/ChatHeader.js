@@ -11,10 +11,11 @@ import ShareButtonChat from './ShareButtonChat';
 import LeaveChatModal from './LeaveChatModal';
 
 const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false }) => {
-  const { isOpen, setIsOpen, setChatScroll } = useAppContext();
+  const { isOpen, setIsOpen } = useAppContext();
   const [copyTooltip, setCopyTooltip] = useState(false);
   const [showTimerTooltip, setShowTimerTooltip] = useState(false);
   const [showShare, setShowShare] = useState(false);
+  const [copiedTooltip, setCopiedTooltip] = useState(false);
   const topLink = useRef();
 
   function closeModal() {
@@ -27,9 +28,15 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false }) =
 
   const onCopyTopLink = () => {
     navigator.clipboard.writeText(topLink.current.innerText);
+    setCopyTooltip(false);
+    setCopiedTooltip(true);
+    setTimeout(() => {
+      setCopiedTooltip(false);
+    }, 3000);
   };
 
   function handleCopyHover() {
+    setCopiedTooltip(false);
     setCopyTooltip(true);
     setTimeout(() => {
       setCopyTooltip(false);
@@ -44,6 +51,11 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false }) =
 
   function handleChatMenu() {
     setShowMenu(prev => !prev);
+    setShowShare(false);
+  }
+
+  function handleDisconnect() {
+    setShowMenu(false);
     setShowShare(false);
   }
 
@@ -67,6 +79,12 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false }) =
                   <path d="M2.10826 0.403961C2.50807 -0.134653 3.31435 -0.134654 3.71417 0.40396L5.62357 2.97622C6.11338 3.63606 5.64239 4.57226 4.82062 4.57226L1.0018 4.57226C0.180033 4.57226 -0.290958 3.63606 0.19885 2.97622L2.10826 0.403961Z" fill="black" />
                 </svg>
               </div>
+              <div className={` ${copiedTooltip ? `animate-fade opacity-100` : 'opacity-0'} absolute top-full bg-black py-2 px-8 rounded-md z-10`}>
+                <p className="text-white text-[12px] font-medium">Link copied to the clipboard</p>
+                <svg className="absolute left-1/2 -top-[3px] transform -translate-x-1/2" xmlns="http://www.w3.org/2000/svg" width="6" height="5" viewBox="0 0 6 5" fill="none">
+                  <path d="M2.10826 0.403961C2.50807 -0.134653 3.31435 -0.134654 3.71417 0.40396L5.62357 2.97622C6.11338 3.63606 5.64239 4.57226 4.82062 4.57226L1.0018 4.57226C0.180033 4.57226 -0.290958 3.63606 0.19885 2.97622L2.10826 0.403961Z" fill="black" />
+                </svg>
+              </div>
             </div>
             <div className="right flex items-center gap-[10px]">
               <div className="relative" onMouseEnter={timerHover}>
@@ -84,7 +102,7 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false }) =
 
               <ShareButtonChat showShare={showShare} setShowShare={setShowShare} setShowMenu={setShowMenu} bg="border" display={'block lg:hidden'} />
               <Menu as="div" className="relative inline-block text-left">
-                <Menu.Button onClick={() => setShowMenu(false)} className="rounded-md h-[46px] w-[46px] lg:w-[150px] lg:px-5 border font-bold text-sm hover:bg-errorColor hover:text-white">
+                <Menu.Button onClick={handleDisconnect} className="rounded-md h-[46px] w-[46px] lg:w-[150px] lg:px-5 border font-bold text-sm hover:bg-errorColor hover:text-white">
                   <svg className="block lg:hidden mx-auto" xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15" fill="none">
                     <path d="M20 7.27273L16.3636 3.63636L16.3636 6.36364L8.18182 6.36364L8.18182 8.18182L16.3636 8.18182L16.3636 10.9091M-5.56327e-07 12.7273L-7.94752e-08 1.81818C-3.53665e-08 0.80909 0.818182 -8.38464e-07 1.81818 -7.94753e-07L12.7273 -3.17901e-07C13.2095 -2.96823e-07 13.6719 0.191558 14.0129 0.532533C14.3539 0.873508 14.5455 1.33597 14.5455 1.81818L14.5455 4.54545L12.7273 4.54545L12.7273 1.81818L1.81818 1.81818L1.81818 12.7273L12.7273 12.7273L12.7273 10L14.5455 10L14.5455 12.7273C14.5455 13.2095 14.3539 13.6719 14.0129 14.0129C13.6719 14.3539 13.2095 14.5455 12.7273 14.5455L1.81818 14.5455C1.33597 14.5455 0.873508 14.3539 0.532533 14.0129C0.191556 13.6719 -5.77405e-07 13.2095 -5.56327e-07 12.7273Z" fill="#CCCCCC" />
                   </svg>

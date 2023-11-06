@@ -5,6 +5,10 @@ import chat2 from '/public/home/chat2.svg';
 import { Fragment } from 'react';
 
 const LeaveChatModal = ({ isOpen, closeModal }) => {
+  function handleLeave() {
+    window.close();
+  }
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -18,7 +22,7 @@ const LeaveChatModal = ({ isOpen, closeModal }) => {
                     <div className=" relative bg-white border border-black border-opacity-10 flex justify-center flex-col items-center max-w-[720px] z-20 rounded-[10px] w-full px-4 lg:px-7">
                       <Image src={chat2} className="w-[100px] -top-[50px] lg:w-[128px] absolute lg:-top-[62px]" alt="image" />
                       <div className=" pb-[60px]">
-                        <h1 className="text-blue sm:mx-[29px] lg:mx-[125px] lg:text-[26px] font-bold leading-none text-[20px] mb-5 lg:mb-0 tracking-[-1px] lg:tracking-[-2px] pt-20 ">Are you sure that you want to leave this chat conversation?</h1>
+                        <h2 className="text-blue sm:mx-[29px] lg:mx-[125px] lg:text-[26px] font-bold leading-none text-[20px] mb-5 lg:mb-0 tracking-[-1px] lg:tracking-[-2px] pt-20 ">Are you sure that you want to leave this chat conversation?</h2>
                         <h3 className="text-blue text-[17px] lg:text-[26px] text-center max-w-[324px] lg:max-w-[470px]"></h3>
                         <p className="font-jetBrain text-[16px] lg:mx-[50px] sm:mx-[29px] font-normal lg:text-[16px] text-center -mb-[9px] mt-[21px] lg:mt-[30px]">Once all users have disconnected from this chat session, it will no longer be accessible by anyone using this link.</p>
                         <p className="text-dark mt-[21px] mb-8 lg:mt-[30px] my-[30px] font-jetBrain font-medium text-[13px] lg:text-[15px] text-center max-w-[324px] lg:max-w-[540px]">{}</p>
@@ -26,7 +30,7 @@ const LeaveChatModal = ({ isOpen, closeModal }) => {
                           <button type="button" className="font-jetBrain rounded-md h-[46px] w-[140px] lg:w-[150px] px-5 border mr-[10px] font-semibold !text-[16px] " onClick={closeModal}>
                             Cancel
                           </button>
-                          <button type="button" className="font-jetBrain rounded-md bg-blue h-[46px] w-[140px] lg:w-[150px] px-5 border mr-[10px] font-semibold !text-[14px] text-white" onClick={closeModal}>
+                          <button type="button" className="font-jetBrain rounded-md bg-blue h-[46px] w-[140px] lg:w-[150px] px-5 border mr-[10px] font-semibold !text-[14px] text-white" onClick={handleLeave}>
                             Leave
                           </button>
                         </div>

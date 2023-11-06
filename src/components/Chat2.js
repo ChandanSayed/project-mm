@@ -122,7 +122,7 @@ const Chat2 = ({ children, showMenu }) => {
                   <SidebarComponents color={chat.color} contentLeft={chat.name} text />
                 </div>
               ))} */}
-            <div className={`h-[calc(100%-144px)] ${chatScroll ? 'overflow-y-auto' : 'overflow-hidden pr-1.5'} custom-scrollbar`}>
+            <div className={`h-[calc(100%-144px)] ${chatScroll ? 'overflow-y-auto' : 'overflow-hidden lg:pr-1.5'} custom-scrollbar`}>
               <ChatSticky />
               <div className="pb-8 px-3 lg:px-4">
                 <div className="bg-midGray px-4 py-5 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">

@@ -87,7 +87,7 @@ const Chat10 = ({ showMenu, handleChatInput, inputField }) => {
                   <SidebarComponents color={chat.color} contentLeft={chat.name} text />
                 </div>
               ))} */}
-            <div className={`h-[calc(100%-144px)]  ${chatScroll ? 'overflow-y-auto' : 'overflow-hidden pr-1.5'} custom-scrollbar`}>
+            <div className={`h-[calc(100%-144px)]  ${chatScroll ? 'overflow-y-auto' : 'overflow-hidden lg:pr-1.5'} custom-scrollbar`}>
               <ChatSticky />
               <div className="pb-8 px-3 lg:px-4">
                 <SidebarComponents contentLeft="[Richard]" rounded="!bg-white border-b !mt-0 !py-4 !rounded-b-none" textLeft="text-[#56ccf2]" contentRight="enean tempor nisl ut nulla sollicitudin, bibendum ultricies mi tempus. Nulla id euismod augue, fringilla mollis metus. Nulla facilisi." text=" text-errorColor" />

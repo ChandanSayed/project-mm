@@ -6,7 +6,7 @@ const ReportModalAccordion = ({ handleButton, show, options, handleChange, selec
     <>
       <div onClick={handleButton} className="cursor-pointer px-4 border-b">
         <div className="flex justify-between items-center">
-          {!selected ? <h3 className="text-[15px] max-lg:text-[13px] font-normal cursor-pointer font-jetBrain py-4 ">Strictly necessary cookies</h3> : <h3 className="text-[15px] max-lg:text-[13px] font-normal cursor-pointer font-jetBrain py-4 ">{selected}</h3>}
+          {!selected ? <h3 className="text-[15px] max-lg:text-[13px] font-normal cursor-pointer font-jetBrain py-4 ">Select a reason</h3> : <h3 className="text-[15px] max-lg:text-[13px] font-normal cursor-pointer font-jetBrain py-4 ">{selected}</h3>}
           {show ? (
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" fill="none">
               <path fillRule="evenodd" clipRule="evenodd" d="M0.21967 0.21967C0.512563 -0.0732233 0.987437 -0.0732233 1.28033 0.21967L5.25 4.18934L9.21967 0.21967C9.51256 -0.0732233 9.98744 -0.0732233 10.2803 0.21967C10.5732 0.512563 10.5732 0.987437 10.2803 1.28033L5.78033 5.78033C5.48744 6.07322 5.01256 6.07322 4.71967 5.78033L0.21967 1.28033C-0.0732233 0.987437 -0.0732233 0.512563 0.21967 0.21967Z" fill="#292F52" />
@@ -17,13 +17,13 @@ const ReportModalAccordion = ({ handleButton, show, options, handleChange, selec
             </svg>
           )}
         </div>
-        {!selected ? <p className="text-[13px]  max-md:text-[11px] font-normal leading-normal pb-4 font-jetBrain">These cookies are essential for the proper functioning of this website. Without these cookies, the website would not work properly.</p> : ''}
+        {!selected ? <p className="text-[13px]  max-md:text-[11px] font-normal leading-normal pb-4 font-jetBrain">Help us maintain a safe and respectful community by choosing a motive that best describes your concern about the file.</p> : ''}
       </div>
 
       <Transition show={show} enter="transition ease-out duration-100 transform" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="transition ease-in duration-75 transform" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">
         {options.map(option => (
-          <div key={option.id} className="py-[10px] border-b px-4 flex items-start">
-            <input className="mt-2 mr-[10px]" type="radio" id={option.id} value={option.option} checked={selected === option.option} onChange={handleChange} />
+          <div key={option.id} className="py-[10px] border-b px-4 flex items-start bg-[#fafafa] hover:bg-white hover:cursor-pointer">
+            <input className="mt-2 mr-[10px]" type="radio" id={option.id} value={option.option} checked={selected === option.option} onChange={handleChange} style={{ accentColor: '#363C4F' }} />
             <div className="flex flex-col cursor-pointer">
               <label htmlFor={option.id} className="font-jetBrain text-[15px] font-normal leading-[23px] cursor-pointer">
                 {option.option}
