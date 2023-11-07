@@ -215,7 +215,7 @@ const Chat = ({ showMenu }) => {
                         </svg>
                         <p className="text-[10px] text-[#777] font-jetBrain ml-[6px]">
                           Securely checked and hosted by FileMomment. Visit{' '}
-                          <a href="#" className="underline">
+                          <a href="http://www.filemoment.com/" target="_blank" className="underline">
                             www.filemoment.com
                           </a>
                           !
