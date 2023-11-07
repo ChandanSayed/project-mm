@@ -30,6 +30,7 @@ const ShareButtonChat = ({ bg, display, setShowMenu, showShare, setShowShare }) 
     setTimeout(() => {
       setShareButtonTooltip(false);
     }, 3000);
+    setChatScroll(true);
   };
   const onCopyMobile = () => {
     navigator.clipboard.writeText(link);
@@ -38,6 +39,7 @@ const ShareButtonChat = ({ bg, display, setShowMenu, showShare, setShowShare }) 
       setShareButtonTooltip(false);
     }, 3000);
     setShowShare(false);
+    setChatScroll(true);
   };
 
   return (
