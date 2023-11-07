@@ -12,8 +12,9 @@ export default function AppContextProvider({ children }) {
   const [reloadHome, setReloadHome] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [chatScroll, setChatScroll] = useState(true);
+  const [shareButtonTooltip, setShareButtonTooltip] = useState(false);
 
-  return <AppContext.Provider value={{ chatScroll, setChatScroll, isOpen, setIsOpen, mobileNav, setMobileNav, mobileChatNav, setMobileChatNav, showCookies, setShowCookies, showCookiesModal, setShowCookiesModal, reloadHome, setReloadHome }}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{ shareButtonTooltip, setShareButtonTooltip, chatScroll, setChatScroll, isOpen, setIsOpen, mobileNav, setMobileNav, mobileChatNav, setMobileChatNav, showCookies, setShowCookies, showCookiesModal, setShowCookiesModal, reloadHome, setReloadHome }}>{children}</AppContext.Provider>;
 }
 
 export function useAppContext() {
