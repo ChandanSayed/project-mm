@@ -9,9 +9,9 @@ const SidebarComponents3 = ({ grid, textLeft, textRight, linkText, href, content
       <div className="col-span-4 md:col-span-4 flex justify-between items-center">
         <p className={`text-dark text-[12px] ${textRight} font-jetBrain leading-5 font-normal`}>
           {contentRight}{' '}
-          <Link className={`text-blue underline ${linkText}`} href={href}>
+          <a className={`text-blue underline ${linkText}`} href={href} target="_blank">
             {linkContent}
-          </Link>{' '}
+          </a>{' '}
           {contentRight2}
         </p>
       </div>

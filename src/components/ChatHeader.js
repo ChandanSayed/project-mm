@@ -63,7 +63,9 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false }) =
     <>
       <header className={`${showMenu ? 'bg-black border-t-black fixed left-0 right-0 top-0 z-10' : 'bg-white border-t-blue'}  border-t-[5px]`}>
         <nav className={`flex items-center w-full max-w-[1440px] mx-auto px-4 lg:px-6 py-5`}>
-          <Link href={`/`}>{showMenu ? <Image src={LogoMiniWhite} alt="Mini Logo" className="h-10 min-w-[48px]" /> : <Image src={LogoMini} alt="Mini Logo" className="h-10 min-w-[48px]" />}</Link>
+          <a href={`/`} target="_blank">
+            {showMenu ? <Image src={LogoMiniWhite} alt="Mini Logo" className="h-10 min-w-[48px]" /> : <Image src={LogoMini} alt="Mini Logo" className="h-10 min-w-[48px]" />}
+          </a>
           <div className={`border-l h-[86px] -my-6 border-lightGray mx-4 lg:mx-6 ${showMenu && 'hidden'}`} />
           <div className="flex items-center justify-end lg:justify-between grow relative">
             <div className="flex items-center justify-center max-lg:hidden">
