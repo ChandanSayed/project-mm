@@ -11,6 +11,13 @@ const ShareButtonChat = ({ bg, display, setShowMenu, showShare, setShowShare }) 
     setShowMenu(false);
     setShowShare(prev => !prev);
     setChatScroll(prev => !prev);
+    document.body.style.overflow = 'hidden';
+    // if ((document.body.style.overflow = 'hidden')) {
+    //   document.body.style.overflow = 'unset';
+    // }
+    // else{
+
+    // }
   }
 
   const onCopy = () => {
