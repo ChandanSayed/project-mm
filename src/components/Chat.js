@@ -151,7 +151,11 @@ const Chat = ({ showMenu }) => {
                   </div>
                   <div className="col-span-4 md:col-span-4">
                     <p className="text-dark text-[13px] leading-5 lg:text-sm font-jetBrain">Richard, please check this image. I guess you know what’s about!</p>
-                    <p className="text-blue text-[13px] leading-5 lg:text-sm font-jetBrain mt-[15px] mb-[18px] break-words">https://filemoment.com/sqjgcf9o2s5narz8k</p>
+                    <p className="text-blue text-[13px] leading-5 lg:text-sm font-jetBrain mt-[15px] mb-[18px] break-words">
+                      <a href="https://filemoment.com/sqjgcf9o2s5narz8k" target="_blank">
+                        https://filemoment.com/sqjgcf9o2s5narz8k
+                      </a>
+                    </p>
                     <div className="flex justify-between items-center bg-midGray pl-[11px] pr-[20px] rounded-xl max-lg:hidden">
                       <div className="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
