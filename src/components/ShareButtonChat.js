@@ -21,6 +21,7 @@ const ShareButtonChat = ({ bg, display, setShowMenu, showShare, setShowShare }) 
   function closeShare() {
     document.body.style.overflow = 'unset';
     setShowShare(false);
+    setChatScroll(true);
   }
 
   const onCopy = () => {
