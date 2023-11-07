@@ -23,7 +23,7 @@ const ReportModalAccordion = ({ handleButton, show, options, handleChange, selec
       <Transition show={show} enter="transition ease-out duration-100 transform" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="transition ease-in duration-75 transform" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">
         {options.map(option => (
           <div key={option.id} className="py-[10px] border-b px-4 flex items-start bg-[#fafafa] hover:bg-white hover:cursor-pointer">
-            <input className="mt-2 mr-[10px]" type="radio" id={option.id} value={option.option} checked={selected === option.option} onChange={handleChange} style={{ accentColor: '#363C4F' }} />
+            <input className="mt-2 mr-[10px] w-3.5 h-3.5" type="radio" id={option.id} value={option.option} checked={selected === option.option} onChange={handleChange} style={{ accentColor: '#363C4F' }} />
             <div className="flex flex-col cursor-pointer">
               <label htmlFor={option.id} className="font-jetBrain text-[15px] font-normal leading-[23px] cursor-pointer">
                 {option.option}
