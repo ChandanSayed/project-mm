@@ -21,7 +21,7 @@ const ChatSticky = () => {
         </div>
       </div>
 
-      <SidebarComponents3 grid={'!py-2.5'} contentLeft="Advertisement" contentRight="Big Sale on at Flight Centre! Don’t miss out. Visit" linkContent="www.flightcentre.com" href="/https://www.flightcentre.com" contentRight2="now and book your trip!" />
+      <SidebarComponents3 grid={'!py-2.5'} contentLeft="Advertisement" contentRight="Big Sale on at Flight Centre! Don’t miss out. Visit" linkContent="www.flightcentre.com" href="https://www.flightcentre.com" contentRight2="now and book your trip!" />
     </div>
   );
 };
