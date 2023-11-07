@@ -6,6 +6,7 @@ import { Fragment } from 'react';
 
 const LeaveChatModal = ({ isOpen, closeModal }) => {
   function handleLeave() {
+    window.open('', '_self');
     window.close();
   }
 
@@ -30,7 +31,7 @@ const LeaveChatModal = ({ isOpen, closeModal }) => {
                           <button type="button" className="font-jetBrain rounded-md h-[46px] w-[140px] lg:w-[150px] px-5 border mr-[10px] font-semibold !text-[16px] " onClick={closeModal}>
                             Cancel
                           </button>
-                          <button type="button" className="font-jetBrain rounded-md bg-blue h-[46px] w-[140px] lg:w-[150px] px-5 border mr-[10px] font-semibold !text-[14px] text-white" onClick={handleLeave}>
+                          <button type="button" className="font-jetBrain rounded-md bg-blue hover:bg-opacity-80 h-[46px] w-[140px] lg:w-[150px] px-5 border mr-[10px] font-semibold !text-[14px] text-white" onClick={handleLeave}>
                             Leave
                           </button>
                         </div>
