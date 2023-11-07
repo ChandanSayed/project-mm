@@ -11,7 +11,7 @@ const ChatFooter = () => {
           <Link href="/about">About MessageMoment</Link>
         </li>
         <li className="leading-6">
-          <Link href="/faq">FAQs</Link>
+          <Link href="/faqs">FAQs</Link>
         </li>
         <li className="leading-6">
           <Link href="/privacy">Privacy</Link>
