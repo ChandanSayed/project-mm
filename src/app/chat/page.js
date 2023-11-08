@@ -9,10 +9,8 @@ const page = () => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <>
-      {/* <div> */}
       <ChatHeader setShowMenu={setShowMenu} showMenu={showMenu} />
       <Chat showMenu={showMenu} />
-      {/* </div> */}
       <ChatLandscape />
     </>
   );

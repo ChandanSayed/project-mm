@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react';
 import ChatHeader from '@/components/ChatHeader';
 import Chat9 from '@/components/Chat9';
+import ChatLandscape from '@/components/ChatLandscape';
 
 const page = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -19,6 +20,7 @@ const page = () => {
     <>
       <ChatHeader timer={timer} darkText={darkText} setShowMenu={setShowMenu} showMenu={showMenu} />
       <Chat9 showMenu={showMenu} inputField={inputField} handleChatInput={handleChatInput} />
+      <ChatLandscape />
     </>
   );
 };
