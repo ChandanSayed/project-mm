@@ -11,7 +11,7 @@ const ReportButton = ({ selected, disable, handleReport, handleClose }) => {
           Report File
         </button>
       ) : (
-        <button className={disable ? `bg-blue font-jetBrain text-[15px] w-full lg:w-[180px] h-[46px] rounded-md text-white ease-linear transition-all duration-150 hover:bg-opacity-80` : `bg-lightGrey font-jetBrain text-[15px] w-full lg:w-[180px] h-[46px] rounded-md text-white ease-linear transition-all duration-150 hover:bg-opacity-80`} type="button" onClick={handleReport}>
+        <button className={`bg-lightGrey font-jetBrain text-[15px] w-full lg:w-[180px] h-[46px] rounded-md text-white ease-linear transition-all duration-150 hover:bg-opacity-80`} type="button">
           Report File
         </button>
       )}
