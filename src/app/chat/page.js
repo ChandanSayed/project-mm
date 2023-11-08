@@ -9,8 +9,8 @@ const page = () => {
   const [showMenu, setShowMenu] = useState(false);
   function handleLeave() {
     window.close();
-    let win = window.open('about:blank', '_self');
-    win.close();
+    // let win = window.open('about:blank', '_self');
+    // win.close();
   }
   return (
     <>

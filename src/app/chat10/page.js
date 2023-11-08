@@ -16,10 +16,15 @@ const page = () => {
     setTimer(inputField.current.value.replace('/timer', ''));
     setDarkText(true);
   }
+  function handleLeave() {
+    window.close();
+    // let win = window.open('about:blank', '_self');
+    // win.close();
+  }
 
   return (
     <>
-      <ChatHeader timer={timer} darkText={darkText} setShowMenu={setShowMenu} showMenu={showMenu} />
+      <ChatHeader timer={timer} darkText={darkText} setShowMenu={setShowMenu} showMenu={showMenu} handleLeave={handleLeave} />
       <Chat10 showMenu={showMenu} inputField={inputField} handleChatInput={handleChatInput} />
       <ChatLandscape />
     </>
