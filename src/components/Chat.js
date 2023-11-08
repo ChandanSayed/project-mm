@@ -244,7 +244,7 @@ const Chat = ({ showMenu }) => {
             <AutoComplete options={options} onSelect={handleSelect} />
           </div>
         </div>
-        <ChatSidebar ad={ad} allUsers={allUsers} showMenu={showMenu} />
+        <ChatSidebar ad={ad} video={true} allUsers={allUsers} showMenu={showMenu} />
       </div>
     </>
   );
