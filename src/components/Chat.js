@@ -48,7 +48,7 @@ const users = [
   }
 ];
 
-const Chat = ({ showMenu }) => {
+const Chat = ({ showMenu, handleLeave }) => {
   const [selectedOption, setSelectedOption] = useState('');
   const [show, setShow] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
