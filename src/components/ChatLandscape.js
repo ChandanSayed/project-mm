@@ -2,8 +2,8 @@ import React from 'react';
 
 const ChatLandscape = () => {
   return (
-    <div className="max-sm:hidden lg:hidden fixed inset-0 z-50 px-4 py-6 flex items-center justify-center bg-white bg-opacity-90">
-      <div className="max-w-[760px] mx-auto text-center rounded-lg border border-black border-opacity-10 flex-1">
+    <div className="max-sm:hidden lg:hidden fixed inset-0 z-50 px-4 flex items-center justify-center bg-white bg-opacity-90">
+      <div className="max-w-[760px] mx-auto text-center rounded-lg border border-black border-opacity-10 flex-1 my-6">
         <h2 className="text-blue text-2xl font-bold mb-[60px] pt-10">Please rotate your device to Portrait mode</h2>
         <svg className="mx-auto" xmlns="http://www.w3.org/2000/svg" width="119" height="119" viewBox="0 0 119 119" fill="none">
           <path d="M5.69142e-07 71.2727L1.3551e-07 107.636C9.95705e-08 110.65 1.19724 113.541 3.32833 115.672C5.45943 117.803 8.34981 119 11.3636 119L88.6364 119C91.6502 119 94.5406 117.803 96.6717 115.672C98.8028 113.541 100 110.65 100 107.636L100 71.2727C100 68.2589 98.8028 65.3685 96.6717 63.2374C94.5406 61.1063 91.6502 59.9091 88.6364 59.9091L11.3636 59.9091C8.34981 59.9091 5.45943 61.1063 3.32833 63.2374C1.19724 65.3685 6.05081e-07 68.2589 5.69142e-07 71.2727ZM95.4545 89.4545C95.4545 93.2273 92.4091 96.2727 88.6364 96.2727C84.8636 96.2727 81.8182 93.2273 81.8182 89.4545C81.8182 85.6818 84.8636 82.6364 88.6364 82.6364C92.4091 82.6364 95.4545 85.6818 95.4545 89.4545ZM77.2727 69L77.2727 109.909L13.6364 109.909L13.6364 69L77.2727 69Z" fill="#DDDDDD" />
