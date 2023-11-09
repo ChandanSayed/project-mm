@@ -119,10 +119,10 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false, han
               </div>
               <div className={`relative ${showTimer ? 'hidden' : ''}`}>
                 <div className="flex gap-1">
-                  <button onClick={openFileModal} className={`flex items-center justify-evenly rounded-md h-[46px] w-[46px] lg:px-5 ${showMenu ? '' : 'bg-[#ededed]'} border border-[#ededed] hover:bg-opacity-80`}>
+                  <button onClick={openFileModal} className={`flex items-center justify-evenly rounded-md h-[46px] w-[46px] ${showMenu ? '' : 'bg-[#ededed]'} border border-[#ededed] hover:bg-opacity-80`}>
                     <Image src={fileShare} alt="Share" />
                   </button>
-                  <button className={`flex items-center justify-evenly rounded-md h-[46px] w-[46px] lg:px-5 ${showMenu ? '' : 'bg-[#f7f7f7]'} border border-[#f7f7f7] hover:bg-opacity-80 `}>
+                  <button className={`flex items-center justify-evenly rounded-md h-[46px] w-[46px] ${showMenu ? '' : 'bg-[#f7f7f7]'} border border-[#f7f7f7] hover:bg-opacity-80 `}>
                     <Image src={filePause} alt="Pause" />
                   </button>
                 </div>
