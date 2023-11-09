@@ -4,6 +4,8 @@ import React, { Fragment, useRef, useState } from 'react';
 import HeaderButton from './HeaderButton';
 import Image from 'next/image';
 import LogoMini from '/public/images/chat-mini-logo.svg';
+import fileShare from '/public/icons/file-share.svg';
+import filePause from '/public/icons/file-pause.svg';
 import LogoMiniWhite from '/public/images/chat-mini-logo-white.svg';
 import { Dialog, Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
@@ -69,6 +71,11 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false, han
     setFileModal(false);
   }
 
+  function openFileModal() {
+    setFileModal(true);
+    setShowMenu(false);
+  }
+
   return (
     <>
       <header className={`${showMenu ? 'bg-black border-t-black fixed left-0 right-0 top-0 z-10' : 'bg-white border-t-blue'}  border-t-[5px]`}>
@@ -111,15 +118,14 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false, han
                 </div>
               </div>
               <div className={`relative ${showTimer ? 'hidden' : ''}`}>
-                <svg onClick={() => setFileModal(true)} className="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="93" height="54" viewBox="0 0 93 54" fill="none">
-                  <rect x="47" y="4" width="46" height="46" rx="6" fill="#F7F7F7" />
-                  <path d="M66 34C67.1 34 68 33.1 68 32V22C68 20.9 67.1 20 66 20C64.9 20 64 20.9 64 22V32C64 33.1 64.9 34 66 34ZM72 22V32C72 33.1 72.9 34 74 34C75.1 34 76 33.1 76 32V22C76 20.9 75.1 20 74 20C72.9 20 72 20.9 72 22Z" fill="#CCCCCC" />
-                  <rect x="2" y="2" width="50" height="50" rx="8" fill="#EDEDFE" stroke="white" strokeWidth="4" />
-                  <path d="M25.59 19.59C25.21 19.21 24.7 19 24.17 19H19C17.9 19 17.01 19.9 17.01 21L17 33C17 34.1 17.9 35 19 35H35C36.1 35 37 34.1 37 33V23C37 21.9 36.1 21 35 21H27L25.59 19.59Z" fill="#494AF8" />
-                  <circle cx="19" cy="33" r="7" fill="#EDEDFE" />
-                  <circle cx="19" cy="33" r="5" fill="#494AF8" />
-                  <path fillRule="evenodd" clipRule="evenodd" d="M21.1093 32.0924C21.1684 32.1515 21.2016 32.2317 21.2016 32.3153C21.2016 32.3989 21.1684 32.4791 21.1093 32.5382L18.7461 34.9015C18.7148 34.9327 18.6778 34.9575 18.637 34.9744C18.5962 34.9913 18.5524 35 18.5082 35C18.4641 35 18.4203 34.9913 18.3795 34.9744C18.3387 34.9575 18.3016 34.9327 18.2704 34.9015L17.0963 33.7275C17.0661 33.6984 17.0421 33.6637 17.0256 33.6252C17.0091 33.5867 17.0004 33.5453 17 33.5035C16.9996 33.4616 17.0076 33.4201 17.0235 33.3814C17.0393 33.3426 17.0627 33.3074 17.0923 33.2778C17.122 33.2482 17.1572 33.2248 17.1959 33.2089C17.2347 33.1931 17.2762 33.1851 17.318 33.1855C17.3599 33.1858 17.4013 33.1945 17.4397 33.211C17.4782 33.2276 17.513 33.2516 17.5421 33.2817L18.5081 34.2478L20.6633 32.0924C20.6926 32.0631 20.7273 32.0399 20.7656 32.024C20.8038 32.0082 20.8449 32 20.8863 32C20.9277 32 20.9687 32.0082 21.007 32.024C21.0453 32.0399 21.08 32.0631 21.1093 32.0924Z" fill="#EDEDFE" stroke="#EDEDFE" strokeWidth="0.7" />
-                </svg>
+                <div className="flex gap-1">
+                  <button onClick={openFileModal} className={`flex items-center justify-evenly rounded-md h-[46px] w-[46px] lg:px-5 ${showMenu ? '' : 'bg-[#ededed]'} border border-[#ededed] hover:bg-opacity-80`}>
+                    <Image src={fileShare} alt="Share" />
+                  </button>
+                  <button className={`flex items-center justify-evenly rounded-md h-[46px] w-[46px] lg:px-5 ${showMenu ? '' : 'bg-[#f7f7f7]'} border border-[#f7f7f7] hover:bg-opacity-80 `}>
+                    <Image src={filePause} alt="Pause" />
+                  </button>
+                </div>
                 <div className={`bg-[#000] rounded-[10px] lg:w-[428px] fixed z-20 max-lg:bottom-0 mt-2 max-xl:left-0 lg:absolute right-0 ${fileModal ? '' : 'hidden'} `}>
                   <div className="flex items-center justify-between p-[14px_20px_14px_30px]">
                     <h4 className="text-white text-sm font-medium">Project Mode Active</h4>
@@ -127,7 +133,7 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false, han
                       Read More
                     </a>
                     <div className="lg:hidden">
-                      <svg onClick={closeFileModal} xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <svg className="cursor-pointer" onClick={closeFileModal} xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <path d="M11.7342 0.274897C11.65 0.190519 11.55 0.123576 11.4399 0.0779014C11.3298 0.0322267 11.2117 0.00871629 11.0925 0.00871629C10.9733 0.00871629 10.8553 0.0322267 10.7452 0.0779014C10.6351 0.123576 10.535 0.190519 10.4508 0.274897L6 4.71663L1.54916 0.265794C1.4649 0.181527 1.36486 0.114683 1.25476 0.0690775C1.14466 0.0234724 1.02665 8.879e-10 0.90748 0C0.788308 -8.879e-10 0.670302 0.0234724 0.560202 0.0690775C0.450101 0.114683 0.350062 0.181527 0.265794 0.265794C0.181527 0.350062 0.114683 0.450101 0.0690775 0.560202C0.0234724 0.670302 -8.879e-10 0.788308 0 0.90748C8.879e-10 1.02665 0.0234724 1.14466 0.0690775 1.25476C0.114683 1.36486 0.181527 1.4649 0.265794 1.54916L4.71663 6L0.265794 10.4508C0.181527 10.5351 0.114683 10.6351 0.0690775 10.7452C0.0234724 10.8553 0 10.9733 0 11.0925C0 11.2117 0.0234724 11.3297 0.0690775 11.4398C0.114683 11.5499 0.181527 11.6499 0.265794 11.7342C0.350062 11.8185 0.450101 11.8853 0.560202 11.9309C0.670302 11.9765 0.788308 12 0.90748 12C1.02665 12 1.14466 11.9765 1.25476 11.9309C1.36486 11.8853 1.4649 11.8185 1.54916 11.7342L6 7.28337L10.4508 11.7342C10.5351 11.8185 10.6351 11.8853 10.7452 11.9309C10.8553 11.9765 10.9733 12 11.0925 12C11.2117 12 11.3297 11.9765 11.4398 11.9309C11.5499 11.8853 11.6499 11.8185 11.7342 11.7342C11.8185 11.6499 11.8853 11.5499 11.9309 11.4398C11.9765 11.3297 12 11.2117 12 11.0925C12 10.9733 11.9765 10.8553 11.9309 10.7452C11.8853 10.6351 11.8185 10.5351 11.7342 10.4508L7.28337 6L11.7342 1.54916C12.0801 1.20329 12.0801 0.620769 11.7342 0.274897Z" fill="white" />
                       </svg>
                     </div>
@@ -179,7 +185,8 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false, han
                 </div>
                 <div className={`fixed inset-0 bg-white opacity-5 z-10 ${fileModal ? '' : 'hidden'}`} onClick={closeFileModal}></div>
               </div>
-              <div className={`border-l lg:mx-[5px] h-[46px] border-lightGray ${showMenu && 'hidden'}`} />
+
+              <div className={`border-l lg:mx-[5px] h-[46px] ${showMenu ? 'border-white border-opacity-10' : 'border-lightGray'}`} />
 
               <ShareButtonChat showShare={showShare} setShowShare={setShowShare} setShowMenu={setShowMenu} bg="border" display={'block lg:hidden'} />
               <Menu as="div" className="relative inline-block text-left">
