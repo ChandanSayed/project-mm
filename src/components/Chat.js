@@ -11,7 +11,6 @@ import ReportModal from './ReportModal';
 import ChatSidebar from './ChatSidebar';
 import ChatSticky from './ChatSticky';
 import { useAppContext } from '@/context/AppContext';
-const options = [];
 
 const users = [
   {
@@ -49,6 +48,7 @@ const users = [
 ];
 
 const Chat = ({ showMenu, handleLeave }) => {
+  const options = ['leave', 'unlock', 'timer'];
   const [selectedOption, setSelectedOption] = useState('');
   const [show, setShow] = useState(false);
   const [isOpen, setIsOpen] = useState(false);

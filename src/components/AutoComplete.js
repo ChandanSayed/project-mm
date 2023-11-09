@@ -2,15 +2,13 @@
 
 import { useAppContext } from '@/context/AppContext';
 import { useState } from 'react';
-const options = ['leave', 'unlock', 'timer'];
 
-const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark', handleChatInput = () => console.log(), inputField }) => {
+const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark', handleChatInput = () => console.log(), inputField, options = ['leave', 'unlock', 'timer'], projectOff, timer = true }) => {
   const [inputValue, setInputValue] = useState(value);
   const [filteredOptions, setFilteredOptions] = useState([]);
   const [showList, setShowList] = useState(false);
   const [showActiveIcon, setShowActiveIcon] = useState(activeIcon);
   const [colorChange, setColorChange] = useState(false);
-
   const { setIsOpen, shareButtonTooltip } = useAppContext();
 
   const handleInputChange = e => {
@@ -58,6 +56,19 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
     setIsOpen(true);
   };
 
+  const handleProjectOff = option => {
+    setInputValue(option);
+    // onSelect(option);
+    setFilteredOptions([]);
+    setShowList(false);
+  };
+  const handleProjectOn = option => {
+    setInputValue(option);
+    // onSelect(option);
+    setFilteredOptions([]);
+    setShowList(false);
+  };
+
   const handleOnBlur = () => {
     // setInputValue('');
     // setFilteredOptions([]);
@@ -76,26 +87,51 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
               {option}
             </li>
           ))} */}
-            <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleLeaveOption('leave')}>
-              <span className="text-white">/</span>
-              leave
-            </li>
-            <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleSelectOption('unlock')}>
-              <span className="text-white">/</span>
-              unlock
-            </li>
-            <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleSelectOption('timer')}>
-              <span className="text-white">/</span>
-              timer
-            </li>
+            {projectOff && !timer && (
+              <>
+                <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleProjectOn('project on')}>
+                  <span className="text-white">/</span>
+                  project on
+                </li>
+              </>
+            )}
+            {!projectOff && !timer && (
+              <>
+                <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleProjectOff('project off')}>
+                  <span className="text-white">/</span>
+                  project off
+                </li>
+                <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer">
+                  <span className="text-white">/</span>
+                  download
+                </li>
+              </>
+            )}
+
+            {timer && (
+              <>
+                <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleLeaveOption('leave')}>
+                  <span className="text-white">/</span>
+                  leave
+                </li>
+                <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleSelectOption('unlock')}>
+                  <span className="text-white">/</span>
+                  unlock
+                </li>
+                <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleSelectOption('timer')}>
+                  <span className="text-white">/</span>
+                  timer
+                </li>
+              </>
+            )}
           </ul>
 
           <div className="pointer-events-none flex items-center pl-3 absolute left-3 top-1/2 transform -translate-y-1/2">
             <span className="text-gray-500 sm:text-sm"> {`>`} </span>
           </div>
           {/* <input type="text" className="block w-full text-dark" placeholder="Test Zoom" /> */}
-          <input value={inputValue} ref={inputField} onChange={handleInputChange} onBlur={handleOnBlur} type="text" className={`block lg:hidden w-full h-[50px] rounded-md border-none py-1.5 pl-10 pr-20 ${colorChange ? 'text-blue' : textColor} font-jetBrain custom-input`} />
-          <input value={inputValue} ref={inputField} onChange={handleInputChange} onBlur={handleOnBlur} type="text" className={`lg:block w-full h-[50px] rounded-md border-none py-1.5 pl-10 pr-20 ${colorChange ? 'text-blue' : textColor} font-jetBrain custom-input hidden text-sm`} />
+          <input value={inputValue} ref={inputField} onChange={handleInputChange} onBlur={handleOnBlur} type="text" className={`block lg:hidden w-full h-[50px] rounded-md border-none py-1.5 pl-10 pr-20 ${colorChange ? 'text-blue' : 'text-dark'} font-jetBrain custom-input`} />
+          <input value={inputValue} ref={inputField} onChange={handleInputChange} onBlur={handleOnBlur} type="text" className={`lg:block w-full h-[50px] rounded-md border-none py-1.5 pl-10 pr-20 ${colorChange ? 'text-blue' : 'text-dark'} font-jetBrain custom-input hidden text-sm`} />
 
           {showActiveIcon ? (
             <svg className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer" onClick={handleChatInput} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">

@@ -11,7 +11,6 @@ import ChatSticky from './ChatSticky';
 import SidebarComponents from './ChatComponents';
 import { useAppContext } from '@/context/AppContext';
 import Image from 'next/image';
-const options = [];
 
 const users = [
   {
@@ -65,6 +64,7 @@ const Chat11 = ({ showMenu, handleChatInput, inputField }) => {
   const [disable, setDisable] = useState(true);
   const [allUsers, setAllUsers] = useState(users);
   const { chatScroll } = useAppContext();
+  const options = ['leave', 'unlock', 'timer'];
 
   const handleOpen = () => {
     setShow(true);
