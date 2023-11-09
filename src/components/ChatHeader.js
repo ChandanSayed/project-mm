@@ -119,7 +119,7 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false, han
               </div>
               <div className={`relative ${showTimer ? 'hidden' : ''}`}>
                 <div className="flex gap-1">
-                  <button onClick={openFileModal} className={`flex items-center justify-evenly rounded-md h-[46px] w-[46px] ${showMenu ? '' : 'bg-[#ededed]'} border border-[#ededed] hover:bg-opacity-80`}>
+                  <button onClick={openFileModal} className={`flex items-center justify-evenly rounded-md h-[46px] w-[46px] ${showMenu ? '' : 'bg-[#ededed]'} border border-[rgb(237,237,237)] hover:bg-opacity-80`}>
                     <Image src={fileShare} alt="Share" />
                   </button>
                   <button className={`flex items-center justify-evenly rounded-md h-[46px] w-[46px] ${showMenu ? '' : 'bg-[#f7f7f7]'} border border-[#f7f7f7] hover:bg-opacity-80 `}>
@@ -189,7 +189,7 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false, han
               <div className={`border-l lg:mx-[5px] h-[46px] ${showMenu ? 'border-white border-opacity-10' : 'border-lightGray'}`} />
 
               <ShareButtonChat showShare={showShare} setShowShare={setShowShare} setShowMenu={setShowMenu} bg="border" display={'block lg:hidden'} />
-              <Menu as="div" className="relative inline-block text-left">
+              <Menu as="div" className="relative inline-block">
                 <Menu.Button onClick={handleDisconnect} className="rounded-md h-[46px] w-[46px] lg:w-[150px] lg:px-5 border font-bold text-sm hover:bg-errorColor hover:text-white">
                   <svg className="block lg:hidden mx-auto" xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15" fill="none">
                     <path d="M20 7.27273L16.3636 3.63636L16.3636 6.36364L8.18182 6.36364L8.18182 8.18182L16.3636 8.18182L16.3636 10.9091M-5.56327e-07 12.7273L-7.94752e-08 1.81818C-3.53665e-08 0.80909 0.818182 -8.38464e-07 1.81818 -7.94753e-07L12.7273 -3.17901e-07C13.2095 -2.96823e-07 13.6719 0.191558 14.0129 0.532533C14.3539 0.873508 14.5455 1.33597 14.5455 1.81818L14.5455 4.54545L12.7273 4.54545L12.7273 1.81818L1.81818 1.81818L1.81818 12.7273L12.7273 12.7273L12.7273 10L14.5455 10L14.5455 12.7273C14.5455 13.2095 14.3539 13.6719 14.0129 14.0129C13.6719 14.3539 13.2095 14.5455 12.7273 14.5455L1.81818 14.5455C1.33597 14.5455 0.873508 14.3539 0.532533 14.0129C0.191556 13.6719 -5.77405e-07 13.2095 -5.56327e-07 12.7273Z" fill="#CCCCCC" />
@@ -198,8 +198,8 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false, han
                 </Menu.Button>
 
                 <Transition as={Fragment} enter="transition ease-out duration-100" enterFrom="transform opacity-0 scale-95" enterTo="transform opacity-100 scale-100" leave="transition ease-in duration-75" leaveFrom="transform opacity-100 scale-100" leaveTo="transform opacity-0 scale-95">
-                  <Menu.Items className="absolute z-10 max-lg:-left-16 mt-2 w-40 origin-center shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-white">
-                    <svg className="absolute left-1/2 -top-[3px]" xmlns="http://www.w3.org/2000/svg" width="6" height="5" viewBox="0 0 6 5" fill="none">
+                  <Menu.Items className="absolute z-10 left-1/2 transform -translate-x-1/2 mt-2 w-[150px] shadow-lg focus:outline-none text-white">
+                    <svg className="absolute left-1/2 transform -translate-x-1/2 -top-[3px]" xmlns="http://www.w3.org/2000/svg" width="6" height="5" viewBox="0 0 6 5" fill="none">
                       <path d="M2.10826 0.403961C2.50807 -0.134653 3.31435 -0.134654 3.71417 0.40396L5.62357 2.97622C6.11338 3.63606 5.64239 4.57226 4.82062 4.57226L1.0018 4.57226C0.180033 4.57226 -0.290958 3.63606 0.19885 2.97622L2.10826 0.403961Z" fill="black" />
                     </svg>
                     <button onClick={openModal} className=" w-full pt-[13px] pb-[14px] bg-[#000] border-b text-[14px] font-medium border-dark rounded-xl text-center">
