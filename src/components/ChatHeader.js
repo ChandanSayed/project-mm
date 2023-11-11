@@ -118,7 +118,7 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false, han
                 <HeaderButton classes={`${showMenu ? 'bg-white bg-opacity-10' : 'bg-midGray'} font-bold ${darkText ? 'text-dark' : 'text-lightGrey'}`} WidthFont="w-[66px] text-sm " name={timer} />
                 <div className={` ${showTimerTooltip ? `animate-fade opacity-100 block` : 'opacity-0 hidden'} w-[150px] absolute left-1/2 transform -bottom-16 text-center -translate-x-1/2 bg-black py-2 px-2 rounded-md z-20`}>
                   <p className="text-white text-[12px] font-medium">
-                    Message Expiration <br /> Time (seconds)
+                    Message Expiry <br /> Time (seconds)
                   </p>
                   <svg className="absolute left-1/2 -top-[3px] transform -translate-x-1/2" xmlns="http://www.w3.org/2000/svg" width="6" height="5" viewBox="0 0 6 5" fill="none">
                     <path d="M2.10826 0.403961C2.50807 -0.134653 3.31435 -0.134654 3.71417 0.40396L5.62357 2.97622C6.11338 3.63606 5.64239 4.57226 4.82062 4.57226L1.0018 4.57226C0.180033 4.57226 -0.290958 3.63606 0.19885 2.97622L2.10826 0.403961Z" fill="black" />
@@ -196,7 +196,7 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false, han
 
                     <div className={` ${showPauseTimerTooltip ? `animate-fade opacity-100 block` : 'opacity-0 hidden'} w-[150px] absolute left-1/2 transform -bottom-16 text-center -translate-x-1/2 bg-black py-2 px-2 rounded-md z-20`}>
                       <p className="text-white text-[12px] font-medium">
-                        Message Expiry <br /> Disabled
+                        Message Expiry <br /> Time Disabled
                       </p>
                       <svg className="absolute left-1/2 -top-[3px] transform -translate-x-1/2" xmlns="http://www.w3.org/2000/svg" width="6" height="5" viewBox="0 0 6 5" fill="none">
                         <path d="M2.10826 0.403961C2.50807 -0.134653 3.31435 -0.134654 3.71417 0.40396L5.62357 2.97622C6.11338 3.63606 5.64239 4.57226 4.82062 4.57226L1.0018 4.57226C0.180033 4.57226 -0.290958 3.63606 0.19885 2.97622L2.10826 0.403961Z" fill="black" />
