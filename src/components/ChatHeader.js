@@ -16,6 +16,7 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false, han
   const { isOpen, setIsOpen } = useAppContext();
   const [copyTooltip, setCopyTooltip] = useState(false);
   const [showTimerTooltip, setShowTimerTooltip] = useState(false);
+  const [showPauseTimerTooltip, setShowPauseTimerTooltip] = useState(false);
   const [showShare, setShowShare] = useState(false);
   const [copiedTooltip, setCopiedTooltip] = useState(false);
   const [showFileShare, setShowFileShare] = useState(false);
@@ -53,6 +54,13 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false, han
     }, 3000);
   }
 
+  function pauseTimerHover() {
+    setShowPauseTimerTooltip(true);
+    setTimeout(() => {
+      setShowPauseTimerTooltip(false);
+    }, 3000);
+  }
+
   function handleChatMenu() {
     setShowMenu(prev => !prev);
     setShowShare(false);
@@ -83,7 +91,7 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false, han
           <a href={`/`} target="_blank">
             {showMenu ? <Image src={LogoMiniWhite} alt="Mini Logo" className="h-10 min-w-[48px]" /> : <Image src={LogoMini} alt="Mini Logo" className="h-10 min-w-[48px]" />}
           </a>
-          <div className={`border-l h-[86px] -my-6 border-lightGray mx-4 lg:mx-6 ${showMenu && 'hidden'}`} />
+          <div className={`border-l h-[86px] -my-6 border-lightGray mx-4 lg:mx-6 ${showMenu && 'opacity-0'}`} />
           <div className="flex items-center justify-end lg:justify-between grow relative">
             <div className="flex items-center justify-center max-lg:hidden">
               <svg className="mr-[15px] " xmlns="http://www.w3.org/2000/svg" width="13" height="16" viewBox="0 0 13 16" fill="none">
@@ -119,70 +127,84 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false, han
               </div>
               <div className={`relative ${showTimer ? 'hidden' : ''}`}>
                 <div className="flex gap-1">
-                  <button onClick={openFileModal} className={`flex items-center justify-evenly rounded-md h-[46px] w-[46px] ${showMenu ? '' : 'bg-[#ededed]'} border border-[rgb(237,237,237)] hover:bg-opacity-80`}>
-                    <Image src={fileShare} alt="Share" />
-                  </button>
-                  <button className={`flex items-center justify-evenly rounded-md h-[46px] w-[46px] ${showMenu ? '' : 'bg-[#f7f7f7]'} border border-[#f7f7f7] hover:bg-opacity-80 `}>
-                    <Image src={filePause} alt="Pause" />
-                  </button>
-                </div>
-                <div className={`bg-[#000] rounded-[10px] lg:w-[428px] fixed z-20 max-lg:bottom-0 mt-2 max-xl:left-0 lg:absolute right-0 ${fileModal ? '' : 'hidden'} `}>
-                  <div className="flex items-center justify-between p-[14px_20px_14px_30px]">
-                    <h4 className="text-white text-sm font-medium">Project Mode Active</h4>
-                    <a href="#" className="font-jetBrain text-[10px] leading-none text-white max-lg:hidden">
-                      Read More
-                    </a>
-                    <div className="lg:hidden">
-                      <svg className="cursor-pointer" onClick={closeFileModal} xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                        <path d="M11.7342 0.274897C11.65 0.190519 11.55 0.123576 11.4399 0.0779014C11.3298 0.0322267 11.2117 0.00871629 11.0925 0.00871629C10.9733 0.00871629 10.8553 0.0322267 10.7452 0.0779014C10.6351 0.123576 10.535 0.190519 10.4508 0.274897L6 4.71663L1.54916 0.265794C1.4649 0.181527 1.36486 0.114683 1.25476 0.0690775C1.14466 0.0234724 1.02665 8.879e-10 0.90748 0C0.788308 -8.879e-10 0.670302 0.0234724 0.560202 0.0690775C0.450101 0.114683 0.350062 0.181527 0.265794 0.265794C0.181527 0.350062 0.114683 0.450101 0.0690775 0.560202C0.0234724 0.670302 -8.879e-10 0.788308 0 0.90748C8.879e-10 1.02665 0.0234724 1.14466 0.0690775 1.25476C0.114683 1.36486 0.181527 1.4649 0.265794 1.54916L4.71663 6L0.265794 10.4508C0.181527 10.5351 0.114683 10.6351 0.0690775 10.7452C0.0234724 10.8553 0 10.9733 0 11.0925C0 11.2117 0.0234724 11.3297 0.0690775 11.4398C0.114683 11.5499 0.181527 11.6499 0.265794 11.7342C0.350062 11.8185 0.450101 11.8853 0.560202 11.9309C0.670302 11.9765 0.788308 12 0.90748 12C1.02665 12 1.14466 11.9765 1.25476 11.9309C1.36486 11.8853 1.4649 11.8185 1.54916 11.7342L6 7.28337L10.4508 11.7342C10.5351 11.8185 10.6351 11.8853 10.7452 11.9309C10.8553 11.9765 10.9733 12 11.0925 12C11.2117 12 11.3297 11.9765 11.4398 11.9309C11.5499 11.8853 11.6499 11.8185 11.7342 11.7342C11.8185 11.6499 11.8853 11.5499 11.9309 11.4398C11.9765 11.3297 12 11.2117 12 11.0925C12 10.9733 11.9765 10.8553 11.9309 10.7452C11.8853 10.6351 11.8185 10.5351 11.7342 10.4508L7.28337 6L11.7342 1.54916C12.0801 1.20329 12.0801 0.620769 11.7342 0.274897Z" fill="white" />
+                  <div className="relative">
+                    <button onClick={openFileModal} className={`flex items-center justify-evenly rounded-md h-[46px] w-[46px] ${showMenu ? '' : 'bg-[#ededed]'} border border-[rgb(237,237,237)] hover:bg-opacity-80`}>
+                      <Image src={fileShare} alt="Share" />
+                    </button>
+                    <div className={`bg-[#000] rounded-[10px] lg:w-[428px] fixed z-20 max-lg:bottom-0 mt-2 max-xl:left-0 lg:absolute right-0 lg:-right-[22px] ${fileModal ? '' : 'hidden'} `}>
+                      <div className="flex items-center justify-between p-[14px_20px_14px_30px]">
+                        <h4 className="text-white text-sm font-medium">Project Mode Active</h4>
+                        <a href="#" className="font-jetBrain text-[10px] leading-none text-white max-lg:hidden">
+                          Read More
+                        </a>
+                        <div className="lg:hidden">
+                          <svg className="cursor-pointer" onClick={closeFileModal} xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M11.7342 0.274897C11.65 0.190519 11.55 0.123576 11.4399 0.0779014C11.3298 0.0322267 11.2117 0.00871629 11.0925 0.00871629C10.9733 0.00871629 10.8553 0.0322267 10.7452 0.0779014C10.6351 0.123576 10.535 0.190519 10.4508 0.274897L6 4.71663L1.54916 0.265794C1.4649 0.181527 1.36486 0.114683 1.25476 0.0690775C1.14466 0.0234724 1.02665 8.879e-10 0.90748 0C0.788308 -8.879e-10 0.670302 0.0234724 0.560202 0.0690775C0.450101 0.114683 0.350062 0.181527 0.265794 0.265794C0.181527 0.350062 0.114683 0.450101 0.0690775 0.560202C0.0234724 0.670302 -8.879e-10 0.788308 0 0.90748C8.879e-10 1.02665 0.0234724 1.14466 0.0690775 1.25476C0.114683 1.36486 0.181527 1.4649 0.265794 1.54916L4.71663 6L0.265794 10.4508C0.181527 10.5351 0.114683 10.6351 0.0690775 10.7452C0.0234724 10.8553 0 10.9733 0 11.0925C0 11.2117 0.0234724 11.3297 0.0690775 11.4398C0.114683 11.5499 0.181527 11.6499 0.265794 11.7342C0.350062 11.8185 0.450101 11.8853 0.560202 11.9309C0.670302 11.9765 0.788308 12 0.90748 12C1.02665 12 1.14466 11.9765 1.25476 11.9309C1.36486 11.8853 1.4649 11.8185 1.54916 11.7342L6 7.28337L10.4508 11.7342C10.5351 11.8185 10.6351 11.8853 10.7452 11.9309C10.8553 11.9765 10.9733 12 11.0925 12C11.2117 12 11.3297 11.9765 11.4398 11.9309C11.5499 11.8853 11.6499 11.8185 11.7342 11.7342C11.8185 11.6499 11.8853 11.5499 11.9309 11.4398C11.9765 11.3297 12 11.2117 12 11.0925C12 10.9733 11.9765 10.8553 11.9309 10.7452C11.8853 10.6351 11.8185 10.5351 11.7342 10.4508L7.28337 6L11.7342 1.54916C12.0801 1.20329 12.0801 0.620769 11.7342 0.274897Z" fill="white" />
+                          </svg>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center py-4 pl-[30px] pr-10 bg-[#151515] lg:rounded-b-[10px]">
+                        <div>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="72" height="60" viewBox="0 0 72 60" fill="none">
+                            <g opacity="0.2">
+                              <path d="M38.8285 1.68571C37.7428 0.6 36.2856 0 34.7714 0H19.9999C16.8571 0 14.3142 2.57143 14.3142 5.71429L14.2856 40C14.2856 43.1429 16.8571 45.7143 19.9999 45.7143H65.7142C68.8571 45.7143 71.4285 43.1429 71.4285 40V11.4286C71.4285 8.28571 68.8571 5.71429 65.7142 5.71429H42.8571L38.8285 1.68571Z" fill="white" />
+                              <circle cx="20" cy="40" r="20" fill="#151515" />
+                              <ellipse cx="20.0001" cy="40.0001" rx="14.2857" ry="14.2857" fill="white" />
+                              <path fillRule="evenodd" clipRule="evenodd" d="M26.0265 37.4069C26.1954 37.5758 26.2903 37.8049 26.2903 38.0438C26.2903 38.2826 26.1954 38.5117 26.0265 38.6807L19.2744 45.4327C19.1852 45.522 19.0793 45.5928 18.9627 45.6411C18.8461 45.6894 18.7211 45.7143 18.5949 45.7143C18.4687 45.7143 18.3437 45.6894 18.2271 45.6411C18.1105 45.5928 18.0046 45.522 17.9154 45.4327L14.5607 42.0786C14.4746 41.9955 14.406 41.8961 14.3588 41.7862C14.3116 41.6763 14.2867 41.5581 14.2857 41.4385C14.2846 41.3189 14.3074 41.2002 14.3527 41.0895C14.398 40.9788 14.4649 40.8782 14.5495 40.7937C14.6341 40.7091 14.7347 40.6422 14.8454 40.5969C14.9561 40.5516 15.0747 40.5288 15.1943 40.5299C15.3139 40.5309 15.4321 40.5557 15.542 40.603C15.6519 40.6502 15.7513 40.7188 15.8344 40.8048L18.5946 43.565L24.7521 37.4069C24.8358 37.3232 24.9351 37.2568 25.0445 37.2114C25.1538 37.1661 25.271 37.1428 25.3893 37.1428C25.5077 37.1428 25.6249 37.1661 25.7342 37.2114C25.8435 37.2568 25.9429 37.3232 26.0265 37.4069Z" fill="#151515" stroke="#151515" strokeWidth="0.7" />
+                            </g>
+                          </svg>
+                        </div>
+                        <div className="border-l border-white border-opacity-20 h-20"></div>
+                        <div>
+                          <p className="text-white text-[13px] leading-[19px] font-medium font-jetBrain">
+                            <svg className="inline-block mr-2.5" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                              <circle cx="5.42871" cy="5" r="5" fill="white" />
+                              <path fillRule="evenodd" clipRule="evenodd" d="M7.49461 3.43618C7.56028 3.50188 7.59718 3.59097 7.59718 3.68386C7.59718 3.77676 7.56028 3.86585 7.49461 3.93154L4.8688 6.55735C4.8341 6.59206 4.7929 6.61959 4.74756 6.63838C4.70221 6.65716 4.65362 6.66683 4.60454 6.66683C4.55546 6.66683 4.50686 6.65716 4.46151 6.63838C4.41617 6.61959 4.37497 6.59206 4.34027 6.55735L3.03566 5.25297C3.0022 5.22066 2.97551 5.182 2.95715 5.13926C2.93879 5.09652 2.92913 5.05055 2.92872 5.00403C2.92832 4.95751 2.93718 4.91138 2.9548 4.86833C2.97241 4.82528 2.99843 4.78616 3.03132 4.75327C3.06421 4.72038 3.10333 4.69436 3.14638 4.67675C3.18943 4.65913 3.23556 4.65027 3.28208 4.65067C3.3286 4.65108 3.37457 4.66074 3.41731 4.6791C3.46005 4.69746 3.49871 4.72415 3.53102 4.75761L4.60442 5.83101L6.99901 3.43618C7.03154 3.40363 7.07017 3.3778 7.11269 3.36018C7.15521 3.34256 7.20078 3.3335 7.24681 3.3335C7.29283 3.3335 7.33841 3.34256 7.38092 3.36018C7.42344 3.3778 7.46207 3.40363 7.49461 3.43618Z" fill="#151515" stroke="#151515" strokeWidth="0.7" />
+                            </svg>
+                            ChatGPT Integration
+                          </p>
+                          <p className="text-white text-[13px] leading-[19px] font-medium font-jetBrain">
+                            <svg className="inline-block mr-2.5" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                              <circle cx="5.42871" cy="5" r="5" fill="white" />
+                              <path fillRule="evenodd" clipRule="evenodd" d="M7.49461 3.43618C7.56028 3.50188 7.59718 3.59097 7.59718 3.68386C7.59718 3.77676 7.56028 3.86585 7.49461 3.93154L4.8688 6.55735C4.8341 6.59206 4.7929 6.61959 4.74756 6.63838C4.70221 6.65716 4.65362 6.66683 4.60454 6.66683C4.55546 6.66683 4.50686 6.65716 4.46151 6.63838C4.41617 6.61959 4.37497 6.59206 4.34027 6.55735L3.03566 5.25297C3.0022 5.22066 2.97551 5.182 2.95715 5.13926C2.93879 5.09652 2.92913 5.05055 2.92872 5.00403C2.92832 4.95751 2.93718 4.91138 2.9548 4.86833C2.97241 4.82528 2.99843 4.78616 3.03132 4.75327C3.06421 4.72038 3.10333 4.69436 3.14638 4.67675C3.18943 4.65913 3.23556 4.65027 3.28208 4.65067C3.3286 4.65108 3.37457 4.66074 3.41731 4.6791C3.46005 4.69746 3.49871 4.72415 3.53102 4.75761L4.60442 5.83101L6.99901 3.43618C7.03154 3.40363 7.07017 3.3778 7.11269 3.36018C7.15521 3.34256 7.20078 3.3335 7.24681 3.3335C7.29283 3.3335 7.33841 3.34256 7.38092 3.36018C7.42344 3.3778 7.46207 3.40363 7.49461 3.43618Z" fill="#151515" stroke="#151515" strokeWidth="0.7" />
+                            </svg>
+                            Download Transcript
+                          </p>
+                          <p className="text-white text-[13px] leading-[19px] font-medium font-jetBrain">
+                            <svg className="inline-block mr-2.5" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
+                              <circle cx="5.42871" cy="5" r="5" fill="white" />
+                              <path fillRule="evenodd" clipRule="evenodd" d="M7.49461 3.43618C7.56028 3.50188 7.59718 3.59097 7.59718 3.68386C7.59718 3.77676 7.56028 3.86585 7.49461 3.93154L4.8688 6.55735C4.8341 6.59206 4.7929 6.61959 4.74756 6.63838C4.70221 6.65716 4.65362 6.66683 4.60454 6.66683C4.55546 6.66683 4.50686 6.65716 4.46151 6.63838C4.41617 6.61959 4.37497 6.59206 4.34027 6.55735L3.03566 5.25297C3.0022 5.22066 2.97551 5.182 2.95715 5.13926C2.93879 5.09652 2.92913 5.05055 2.92872 5.00403C2.92832 4.95751 2.93718 4.91138 2.9548 4.86833C2.97241 4.82528 2.99843 4.78616 3.03132 4.75327C3.06421 4.72038 3.10333 4.69436 3.14638 4.67675C3.18943 4.65913 3.23556 4.65027 3.28208 4.65067C3.3286 4.65108 3.37457 4.66074 3.41731 4.6791C3.46005 4.69746 3.49871 4.72415 3.53102 4.75761L4.60442 5.83101L6.99901 3.43618C7.03154 3.40363 7.07017 3.3778 7.11269 3.36018C7.15521 3.34256 7.20078 3.3335 7.24681 3.3335C7.29283 3.3335 7.33841 3.34256 7.38092 3.36018C7.42344 3.3778 7.46207 3.40363 7.49461 3.43618Z" fill="#151515" stroke="#151515" strokeWidth="0.7" />
+                            </svg>
+                            No Message Expiry Time
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex justify-end px-[15px] border-t border-white border-opacity-10 pt-3 pb-4 bg-[#151515] lg:hidden">
+                        <a href="#" className="font-jetBrain text-[10px] leading-none text-white">
+                          Read More
+                        </a>
+                      </div>
+                      <svg className="absolute -top-[2px] right-10 max-lg:hidden" xmlns="http://www.w3.org/2000/svg" width="6" height="5" viewBox="0 0 6 5" fill="none">
+                        <path d="M2.10826 0.403961C2.50807 -0.134653 3.31435 -0.134654 3.71417 0.40396L5.62357 2.97622C6.11338 3.63606 5.64239 4.57226 4.82062 4.57226L1.0018 4.57226C0.180033 4.57226 -0.290958 3.63606 0.19885 2.97622L2.10826 0.403961Z" fill="black" />
                       </svg>
                     </div>
                   </div>
-                  <div className="flex justify-between items-center py-4 pl-[30px] pr-10 bg-[#151515] lg:rounded-b-[10px]">
-                    <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="72" height="60" viewBox="0 0 72 60" fill="none">
-                        <g opacity="0.2">
-                          <path d="M38.8285 1.68571C37.7428 0.6 36.2856 0 34.7714 0H19.9999C16.8571 0 14.3142 2.57143 14.3142 5.71429L14.2856 40C14.2856 43.1429 16.8571 45.7143 19.9999 45.7143H65.7142C68.8571 45.7143 71.4285 43.1429 71.4285 40V11.4286C71.4285 8.28571 68.8571 5.71429 65.7142 5.71429H42.8571L38.8285 1.68571Z" fill="white" />
-                          <circle cx="20" cy="40" r="20" fill="#151515" />
-                          <ellipse cx="20.0001" cy="40.0001" rx="14.2857" ry="14.2857" fill="white" />
-                          <path fillRule="evenodd" clipRule="evenodd" d="M26.0265 37.4069C26.1954 37.5758 26.2903 37.8049 26.2903 38.0438C26.2903 38.2826 26.1954 38.5117 26.0265 38.6807L19.2744 45.4327C19.1852 45.522 19.0793 45.5928 18.9627 45.6411C18.8461 45.6894 18.7211 45.7143 18.5949 45.7143C18.4687 45.7143 18.3437 45.6894 18.2271 45.6411C18.1105 45.5928 18.0046 45.522 17.9154 45.4327L14.5607 42.0786C14.4746 41.9955 14.406 41.8961 14.3588 41.7862C14.3116 41.6763 14.2867 41.5581 14.2857 41.4385C14.2846 41.3189 14.3074 41.2002 14.3527 41.0895C14.398 40.9788 14.4649 40.8782 14.5495 40.7937C14.6341 40.7091 14.7347 40.6422 14.8454 40.5969C14.9561 40.5516 15.0747 40.5288 15.1943 40.5299C15.3139 40.5309 15.4321 40.5557 15.542 40.603C15.6519 40.6502 15.7513 40.7188 15.8344 40.8048L18.5946 43.565L24.7521 37.4069C24.8358 37.3232 24.9351 37.2568 25.0445 37.2114C25.1538 37.1661 25.271 37.1428 25.3893 37.1428C25.5077 37.1428 25.6249 37.1661 25.7342 37.2114C25.8435 37.2568 25.9429 37.3232 26.0265 37.4069Z" fill="#151515" stroke="#151515" strokeWidth="0.7" />
-                        </g>
+                  <div className="relative">
+                    <button onMouseEnter={pauseTimerHover} className={`flex items-center justify-evenly rounded-md h-[46px] w-[46px] ${showMenu ? '' : 'bg-[#f7f7f7]'} border border-[#f7f7f7] hover:bg-opacity-80 `}>
+                      <Image src={filePause} alt="Pause" />
+                    </button>
+
+                    <div className={` ${showPauseTimerTooltip ? `animate-fade opacity-100 block` : 'opacity-0 hidden'} w-[150px] absolute left-1/2 transform -bottom-16 text-center -translate-x-1/2 bg-black py-2 px-2 rounded-md z-20`}>
+                      <p className="text-white text-[12px] font-medium">
+                        Message Expiry <br /> Disabled
+                      </p>
+                      <svg className="absolute left-1/2 -top-[3px] transform -translate-x-1/2" xmlns="http://www.w3.org/2000/svg" width="6" height="5" viewBox="0 0 6 5" fill="none">
+                        <path d="M2.10826 0.403961C2.50807 -0.134653 3.31435 -0.134654 3.71417 0.40396L5.62357 2.97622C6.11338 3.63606 5.64239 4.57226 4.82062 4.57226L1.0018 4.57226C0.180033 4.57226 -0.290958 3.63606 0.19885 2.97622L2.10826 0.403961Z" fill="black" />
                       </svg>
                     </div>
-                    <div className="border-l border-white border-opacity-20 h-20"></div>
-                    <div>
-                      <p className="text-white text-[13px] leading-[19px] font-medium font-jetBrain">
-                        <svg className="inline-block mr-2.5" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
-                          <circle cx="5.42871" cy="5" r="5" fill="white" />
-                          <path fillRule="evenodd" clipRule="evenodd" d="M7.49461 3.43618C7.56028 3.50188 7.59718 3.59097 7.59718 3.68386C7.59718 3.77676 7.56028 3.86585 7.49461 3.93154L4.8688 6.55735C4.8341 6.59206 4.7929 6.61959 4.74756 6.63838C4.70221 6.65716 4.65362 6.66683 4.60454 6.66683C4.55546 6.66683 4.50686 6.65716 4.46151 6.63838C4.41617 6.61959 4.37497 6.59206 4.34027 6.55735L3.03566 5.25297C3.0022 5.22066 2.97551 5.182 2.95715 5.13926C2.93879 5.09652 2.92913 5.05055 2.92872 5.00403C2.92832 4.95751 2.93718 4.91138 2.9548 4.86833C2.97241 4.82528 2.99843 4.78616 3.03132 4.75327C3.06421 4.72038 3.10333 4.69436 3.14638 4.67675C3.18943 4.65913 3.23556 4.65027 3.28208 4.65067C3.3286 4.65108 3.37457 4.66074 3.41731 4.6791C3.46005 4.69746 3.49871 4.72415 3.53102 4.75761L4.60442 5.83101L6.99901 3.43618C7.03154 3.40363 7.07017 3.3778 7.11269 3.36018C7.15521 3.34256 7.20078 3.3335 7.24681 3.3335C7.29283 3.3335 7.33841 3.34256 7.38092 3.36018C7.42344 3.3778 7.46207 3.40363 7.49461 3.43618Z" fill="#151515" stroke="#151515" strokeWidth="0.7" />
-                        </svg>
-                        ChatGPT Integration
-                      </p>
-                      <p className="text-white text-[13px] leading-[19px] font-medium font-jetBrain">
-                        <svg className="inline-block mr-2.5" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
-                          <circle cx="5.42871" cy="5" r="5" fill="white" />
-                          <path fillRule="evenodd" clipRule="evenodd" d="M7.49461 3.43618C7.56028 3.50188 7.59718 3.59097 7.59718 3.68386C7.59718 3.77676 7.56028 3.86585 7.49461 3.93154L4.8688 6.55735C4.8341 6.59206 4.7929 6.61959 4.74756 6.63838C4.70221 6.65716 4.65362 6.66683 4.60454 6.66683C4.55546 6.66683 4.50686 6.65716 4.46151 6.63838C4.41617 6.61959 4.37497 6.59206 4.34027 6.55735L3.03566 5.25297C3.0022 5.22066 2.97551 5.182 2.95715 5.13926C2.93879 5.09652 2.92913 5.05055 2.92872 5.00403C2.92832 4.95751 2.93718 4.91138 2.9548 4.86833C2.97241 4.82528 2.99843 4.78616 3.03132 4.75327C3.06421 4.72038 3.10333 4.69436 3.14638 4.67675C3.18943 4.65913 3.23556 4.65027 3.28208 4.65067C3.3286 4.65108 3.37457 4.66074 3.41731 4.6791C3.46005 4.69746 3.49871 4.72415 3.53102 4.75761L4.60442 5.83101L6.99901 3.43618C7.03154 3.40363 7.07017 3.3778 7.11269 3.36018C7.15521 3.34256 7.20078 3.3335 7.24681 3.3335C7.29283 3.3335 7.33841 3.34256 7.38092 3.36018C7.42344 3.3778 7.46207 3.40363 7.49461 3.43618Z" fill="#151515" stroke="#151515" strokeWidth="0.7" />
-                        </svg>
-                        Download Transcript
-                      </p>
-                      <p className="text-white text-[13px] leading-[19px] font-medium font-jetBrain">
-                        <svg className="inline-block mr-2.5" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
-                          <circle cx="5.42871" cy="5" r="5" fill="white" />
-                          <path fillRule="evenodd" clipRule="evenodd" d="M7.49461 3.43618C7.56028 3.50188 7.59718 3.59097 7.59718 3.68386C7.59718 3.77676 7.56028 3.86585 7.49461 3.93154L4.8688 6.55735C4.8341 6.59206 4.7929 6.61959 4.74756 6.63838C4.70221 6.65716 4.65362 6.66683 4.60454 6.66683C4.55546 6.66683 4.50686 6.65716 4.46151 6.63838C4.41617 6.61959 4.37497 6.59206 4.34027 6.55735L3.03566 5.25297C3.0022 5.22066 2.97551 5.182 2.95715 5.13926C2.93879 5.09652 2.92913 5.05055 2.92872 5.00403C2.92832 4.95751 2.93718 4.91138 2.9548 4.86833C2.97241 4.82528 2.99843 4.78616 3.03132 4.75327C3.06421 4.72038 3.10333 4.69436 3.14638 4.67675C3.18943 4.65913 3.23556 4.65027 3.28208 4.65067C3.3286 4.65108 3.37457 4.66074 3.41731 4.6791C3.46005 4.69746 3.49871 4.72415 3.53102 4.75761L4.60442 5.83101L6.99901 3.43618C7.03154 3.40363 7.07017 3.3778 7.11269 3.36018C7.15521 3.34256 7.20078 3.3335 7.24681 3.3335C7.29283 3.3335 7.33841 3.34256 7.38092 3.36018C7.42344 3.3778 7.46207 3.40363 7.49461 3.43618Z" fill="#151515" stroke="#151515" strokeWidth="0.7" />
-                        </svg>
-                        No Message Expiry Time
-                      </p>
-                    </div>
                   </div>
-                  <div className="flex justify-end px-[15px] border-t border-white border-opacity-10 pt-3 pb-4 bg-[#151515] lg:hidden">
-                    <a href="#" className="font-jetBrain text-[10px] leading-none text-white">
-                      Read More
-                    </a>
-                  </div>
-                  <svg className="absolute -top-[2px] right-10 max-lg:hidden" xmlns="http://www.w3.org/2000/svg" width="6" height="5" viewBox="0 0 6 5" fill="none">
-                    <path d="M2.10826 0.403961C2.50807 -0.134653 3.31435 -0.134654 3.71417 0.40396L5.62357 2.97622C6.11338 3.63606 5.64239 4.57226 4.82062 4.57226L1.0018 4.57226C0.180033 4.57226 -0.290958 3.63606 0.19885 2.97622L2.10826 0.403961Z" fill="black" />
-                  </svg>
                 </div>
+
                 <div className={`fixed inset-0 bg-white opacity-5 z-10 ${fileModal ? '' : 'hidden'}`} onClick={closeFileModal}></div>
               </div>
 
