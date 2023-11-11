@@ -131,7 +131,7 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false, han
                     <button onClick={openFileModal} className={`flex items-center justify-evenly rounded-md h-[46px] w-[46px] ${showMenu ? '' : 'bg-[#ededed]'} border border-[rgb(237,237,237)] hover:bg-opacity-80`}>
                       <Image src={fileShare} alt="Share" />
                     </button>
-                    <div className={`bg-[#000] rounded-[10px] lg:w-[428px] fixed z-20 max-lg:bottom-0 mt-2 max-xl:left-0 lg:absolute right-0 lg:-right-[22px] ${fileModal ? '' : 'hidden'} `}>
+                    <div className={`bg-[#000] rounded-[10px] lg:w-[428px] fixed z-20 max-lg:bottom-0 mt-3 max-xl:left-0 lg:absolute right-0 lg:-right-[22px] ${fileModal ? '' : 'hidden'} `}>
                       <div className="flex items-center justify-between p-[14px_20px_14px_30px]">
                         <h4 className="text-white text-sm font-medium">Project Mode Active</h4>
                         <a target="_blank" href="/faqs" className="font-jetBrain text-[10px] leading-none text-white max-lg:hidden">
@@ -180,7 +180,7 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false, han
                         </div>
                       </div>
                       <div className="flex justify-end px-[15px] border-t border-white border-opacity-10 pt-3 pb-4 bg-[#151515] lg:hidden">
-                        <a href="#" className="font-jetBrain text-[10px] leading-none text-white">
+                        <a href="/faqs" target="_blank" className="font-jetBrain text-[10px] leading-none text-white">
                           Read More
                         </a>
                       </div>
@@ -220,7 +220,7 @@ const ChatHeader = ({ setShowMenu, showMenu, timer = '30', darkText = false, han
                 </Menu.Button>
 
                 <Transition as={Fragment} enter="transition ease-out duration-100" enterFrom="transform opacity-0 scale-95" enterTo="transform opacity-100 scale-100" leave="transition ease-in duration-75" leaveFrom="transform opacity-100 scale-100" leaveTo="transform opacity-0 scale-95">
-                  <Menu.Items className="absolute z-10 left-1/2 transform -translate-x-1/2 mt-2 w-[150px] shadow-lg focus:outline-none text-white">
+                  <Menu.Items className="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 w-[150px] shadow-lg focus:outline-none text-white">
                     <svg className="absolute left-1/2 transform -translate-x-1/2 -top-[3px]" xmlns="http://www.w3.org/2000/svg" width="6" height="5" viewBox="0 0 6 5" fill="none">
                       <path d="M2.10826 0.403961C2.50807 -0.134653 3.31435 -0.134654 3.71417 0.40396L5.62357 2.97622C6.11338 3.63606 5.64239 4.57226 4.82062 4.57226L1.0018 4.57226C0.180033 4.57226 -0.290958 3.63606 0.19885 2.97622L2.10826 0.403961Z" fill="black" />
                     </svg>
