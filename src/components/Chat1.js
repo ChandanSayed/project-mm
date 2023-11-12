@@ -7,7 +7,6 @@ import { accordionCookiesList } from './AccordionList';
 import ChatSidebar from './ChatSidebar';
 import ChatSticky from './ChatSticky';
 import { useAppContext } from '@/context/AppContext';
-const options = [];
 
 const users = [];
 
@@ -90,6 +89,7 @@ const chats = [
 // }
 
 const Chat1 = ({ children, showMenu }) => {
+  const options = ['/leave', '/unlock', '/timer'];
   const [selectedOption, setSelectedOption] = useState('');
   const [show, setShow] = useState(false);
   const [isOpen, setIsOpen] = useState(false);

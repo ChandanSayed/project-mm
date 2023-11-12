@@ -3,7 +3,7 @@
 import { useAppContext } from '@/context/AppContext';
 import { useState } from 'react';
 
-const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark', handleChatInput = () => console.log(), inputField, options = ['leave', 'unlock', 'timer'], projectOff, timer = true }) => {
+const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark', handleChatInput = () => console.log(), inputField, options = ['/leave', '/unlock', '/timer'], projectOff, timer = true }) => {
   const [inputValue, setInputValue] = useState(value);
   const [filteredOptions, setFilteredOptions] = useState([]);
   const [showList, setShowList] = useState(false);
@@ -26,15 +26,18 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
       setInputValue(value);
       setColorChange(false);
     }
-
-    // Filter the options based on the input value
-    const filtered = options.filter(option => option.toLowerCase().includes(value.replace('/', '').toLowerCase()));
-    setFilteredOptions(filtered);
+    let filtered = [];
+    if (value.includes('/')) {
+      // Filter the options based on the input value
+      filtered = options.filter(option => option.toLowerCase().includes(value.toLowerCase()));
+      setFilteredOptions(filtered);
+      console.log(filtered);
+    }
 
     if (value.trim()) {
       setShowList(true);
       setShowActiveIcon(true);
-      if (filtered.length == 0) setShowList(false);
+      if (filtered.length === 0) setShowList(false);
       return;
     }
 
@@ -94,7 +97,7 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
           ))} */}
             {projectOff && !timer && (
               <>
-                <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleProjectOn('project on')}>
+                <li className={`py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer ${filteredOptions.length > 1 ? `max-lg:block lg:block` : ``} ${filteredOptions.length === 1 && filteredOptions[0] === '/project on' ? '' : 'hidden'}`} onClick={() => handleProjectOn('project on')}>
                   <span className="text-white">/</span>
                   project on
                 </li>
@@ -102,11 +105,11 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
             )}
             {!projectOff && !timer && (
               <>
-                <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleProjectOff('project off')}>
+                <li className={`py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer ${filteredOptions.length > 1 ? `max-lg:block lg:block` : ``} ${filteredOptions.length === 1 && filteredOptions[0] === '/project off' ? '' : 'hidden'}`} onClick={() => handleProjectOff('/project off')}>
                   <span className="text-white">/</span>
                   project off
                 </li>
-                <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer">
+                <li className={`py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer ${filteredOptions.length > 1 ? `max-lg:block lg:block` : ``} ${filteredOptions.length === 1 && filteredOptions[0] === '/download' ? '' : 'hidden'}`}>
                   <span className="text-white">/</span>
                   download
                 </li>
@@ -115,15 +118,15 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
 
             {timer && (
               <>
-                <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleLeaveOption('leave')}>
+                <li className={`py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer ${filteredOptions.length > 1 ? `max-lg:block lg:block` : ``} ${filteredOptions.length === 1 && filteredOptions[0] === '/leave' ? '' : 'hidden'}`} onClick={() => handleLeaveOption('leave')}>
                   <span className="text-white">/</span>
                   leave
                 </li>
-                <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleSelectOption('unlock')}>
+                <li className={`py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer ${filteredOptions.length > 1 ? `max-lg:block lg:block` : ``} ${filteredOptions.length === 1 && filteredOptions[0] === '/unlock' ? '' : 'hidden'}`} onClick={() => handleSelectOption('unlock')}>
                   <span className="text-white">/</span>
                   unlock
                 </li>
-                <li className="py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer" onClick={() => handleSelectOption('timer')}>
+                <li className={`py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer ${filteredOptions.length > 1 ? `max-lg:block lg:block` : ``} ${filteredOptions.length === 1 && filteredOptions[0] === '/timer' ? '' : 'hidden'}`} onClick={() => handleSelectOption('timer')}>
                   <span className="text-white">/</span>
                   timer
                 </li>

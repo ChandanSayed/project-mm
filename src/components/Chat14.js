@@ -64,7 +64,7 @@ const Chat14 = ({ showMenu, handleChatInput, inputField }) => {
   const [disable, setDisable] = useState(true);
   const [allUsers, setAllUsers] = useState(users);
   const { chatScroll } = useAppContext();
-  const options = ['project off', 'download'];
+  const options = ['/project off', '/download'];
 
   const handleOpen = () => {
     setShow(true);

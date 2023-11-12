@@ -48,7 +48,7 @@ const users = [
 ];
 
 const Chat = ({ showMenu, handleLeave }) => {
-  const options = ['leave', 'unlock', 'timer'];
+  const options = ['/leave', '/unlock', '/timer'];
   const [selectedOption, setSelectedOption] = useState('');
   const [show, setShow] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
