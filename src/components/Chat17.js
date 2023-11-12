@@ -10,7 +10,6 @@ import SidebarComponents2 from './ChatComponents2';
 import ChatSticky from './ChatSticky';
 import SidebarComponents from './ChatComponents';
 import { useAppContext } from '@/context/AppContext';
-import FileUploadPopup from './FileUploadPopup';
 
 const users = [
   {
@@ -56,7 +55,7 @@ const users = [
   }
 ];
 
-const Chat16 = ({ showMenu, handleChatInput, inputField }) => {
+const Chat17 = ({ showMenu, handleChatInput, inputField }) => {
   const [selectedOption, setSelectedOption] = useState('');
   const [show, setShow] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -154,10 +153,9 @@ const Chat16 = ({ showMenu, handleChatInput, inputField }) => {
                 <SidebarComponents contentLeft="[Laura]" rounded="bg-white !mt-0 !py-4 !rounded-b-none" textLeft="text-[#219653]" contentRight="Quisque eros massa!" text=" text-errorColor" />
 
                 <SidebarComponents contentLeft="[Robert]" contentRight="Joined " textLeft="text-[#BB6BD9]" />
-                <FileUploadPopup />
               </div>
             </div>
-            <AutoComplete timer={false} projectOff={false} transfer={true} handleChatInput={handleChatInput} inputField={inputField} options={options} onSelect={handleSelect} />
+            <AutoComplete showUpload={true} timer={false} projectOff={false} transfer={true} handleChatInput={handleChatInput} inputField={inputField} options={options} onSelect={handleSelect} />
           </div>
         </div>
         <ChatSidebar ad={ad} allUsers={allUsers} showMenu={showMenu} />
@@ -166,4 +164,4 @@ const Chat16 = ({ showMenu, handleChatInput, inputField }) => {
   );
 };
 
-export default Chat16;
+export default Chat17;
