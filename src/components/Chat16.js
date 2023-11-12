@@ -10,6 +10,7 @@ import SidebarComponents2 from './ChatComponents2';
 import ChatSticky from './ChatSticky';
 import SidebarComponents from './ChatComponents';
 import { useAppContext } from '@/context/AppContext';
+import FileUploadPopup from './FileUploadPopup';
 
 const users = [
   {
@@ -55,7 +56,7 @@ const users = [
   }
 ];
 
-const Chat12 = ({ showMenu, handleChatInput, inputField }) => {
+const Chat16 = ({ showMenu, handleChatInput, inputField }) => {
   const [selectedOption, setSelectedOption] = useState('');
   const [show, setShow] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -63,7 +64,7 @@ const Chat12 = ({ showMenu, handleChatInput, inputField }) => {
   const [disable, setDisable] = useState(true);
   const [allUsers, setAllUsers] = useState(users);
   const { chatScroll } = useAppContext();
-  const options = ['/project on'];
+  const options = ['/transfer'];
 
   const handleOpen = () => {
     setShow(true);
@@ -85,7 +86,7 @@ const Chat12 = ({ showMenu, handleChatInput, inputField }) => {
           <div className={`h-full ${chatScroll ? 'overflow-y-auto' : 'overflow-hidden'} custom-scrollbar flex flex-col justify-between`}>
             <div className={`h-[calc(100%-120px)] ${chatScroll ? 'overflow-y-auto' : 'overflow-hidden lg:pr-1.5'} custom-scrollbar`}>
               <ChatSticky />
-              <div className="pb-8 px-3 lg:px-4">
+              <div className="pb-8 px-3 lg:px-4 relative">
                 <div className=" bg-midGray px-4 py-5 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">
                   <div className="col-span-1 md:col-span-1"></div>
                   <div className="col-span-4 md:col-span-4 flex  ">
@@ -153,20 +154,10 @@ const Chat12 = ({ showMenu, handleChatInput, inputField }) => {
                 <SidebarComponents contentLeft="[Laura]" rounded="bg-white !mt-0 !py-4 !rounded-b-none" textLeft="text-[#219653]" contentRight="Quisque eros massa!" text=" text-errorColor" />
 
                 <SidebarComponents contentLeft="[Robert]" contentRight="Joined " textLeft="text-[#BB6BD9]" />
-
-                <div className={`px-4 rounded-[10px] bg-white border-b border-[#eee] !mt-0 !py-4 !rounded-b-none grid grid-cols-1 lg:grid-cols-5 `}>
-                  <div className="col-span-1 md:col-span-1">
-                    <p className={`text-[#5F27CD] lg:text-sm text-[13px] leading-5 font-jetBrain font-semibold max-lg:mb-[5px] `}>[joannah]</p>
-                  </div>
-                  <div className="col-span-4 md:col-span-4 flex justify-between items-center">
-                    <p className={`text-dark text-[13px] leading-5 lg:text-sm font-jetBrain`}>
-                      Aliquam ac justo et sapien porta mollis. Aliquam erat volutpat. Ut consequat, ipsum non mollis efficitur, nunc magna aliquam lacus, ut vestibulum diam massa in nibh. <br /> Sed fringilla nisl diam, ac congue quam fermentum sit amet. Vivamus tempor molestie elit ut maximus. Donec tortor odio, sollicitudin eu felis quis, pharetra dignissim dui.
-                    </p>
-                  </div>
-                </div>
+                <FileUploadPopup />
               </div>
             </div>
-            <AutoComplete timer={false} projectOff={true} handleChatInput={handleChatInput} inputField={inputField} options={options} onSelect={handleSelect} />
+            <AutoComplete timer={false} projectOff={false} transfer={true} handleChatInput={handleChatInput} inputField={inputField} options={options} onSelect={handleSelect} />
           </div>
         </div>
         <ChatSidebar ad={ad} allUsers={allUsers} showMenu={showMenu} />
@@ -175,4 +166,4 @@ const Chat12 = ({ showMenu, handleChatInput, inputField }) => {
   );
 };
 
-export default Chat12;
+export default Chat16;

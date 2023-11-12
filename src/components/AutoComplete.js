@@ -3,7 +3,7 @@
 import { useAppContext } from '@/context/AppContext';
 import { useState } from 'react';
 
-const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark', handleChatInput = () => console.log(), inputField, options = ['/leave', '/unlock', '/timer'], projectOff, timer = true }) => {
+const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark', handleChatInput = () => console.log(), inputField, options = ['/leave', '/unlock', '/timer'], projectOff, timer = true, transfer = false }) => {
   const [inputValue, setInputValue] = useState(value);
   const [filteredOptions, setFilteredOptions] = useState([]);
   const [showList, setShowList] = useState(false);
@@ -104,7 +104,7 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
           ))} */}
             {projectOff && !timer && (
               <>
-                <li className={`py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer ${filteredOptions.length > 1 ? `max-lg:block lg:block` : ``} ${filteredOptions.length === 1 && filteredOptions[0] === '/project on' ? '' : 'hidden'}`} onClick={() => handleProjectOn('project on')}>
+                <li className={`py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer ${filteredOptions.length >= 1 ? `max-lg:block lg:block` : ``} ${filteredOptions.length === 1 && filteredOptions[0] === '/project on' ? '' : 'hidden'}`} onClick={() => handleProjectOn('project on')}>
                   <span className="text-white">{commandValue === '/' ? '/' : commandValue}</span>
                   {commandValue === '/' ? 'project on' : commandLastValue}
                 </li>
@@ -123,7 +123,7 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
               </>
             )}
 
-            {timer && (
+            {timer && !transfer && (
               <>
                 <li className={`py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer ${filteredOptions.length > 1 ? `max-lg:block lg:block` : ``} ${filteredOptions.length === 1 && filteredOptions[0] === '/leave' ? '' : 'hidden'}`} onClick={() => handleLeaveOption('/leave')}>
                   <span className="text-white">{commandValue === '/' ? '/' : commandValue}</span>
@@ -138,6 +138,12 @@ const AutoComplete = ({ value = '', activeIcon = false, textColor = 'text-dark',
                   {commandValue === '/' ? 'timer' : commandLastValue}
                 </li>
               </>
+            )}
+            {transfer && (
+              <li className={`py-[6px] pl-[22px] text-[#5e6372] hover:text-white leading-[23px] border-b border-dark bg-black cursor-pointer ${filteredOptions.length >= 1 ? `max-lg:block lg:block` : ``} ${filteredOptions.length === 1 && filteredOptions[0] === '/leave' ? '' : 'hidden'}`} onClick={() => handleLeaveOption('/leave')}>
+                <span className="text-white">{commandValue === '/' ? '/' : commandValue}</span>
+                {commandValue === '/' ? 'transfer' : commandLastValue}
+              </li>
             )}
           </ul>
 

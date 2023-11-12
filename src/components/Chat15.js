@@ -55,7 +55,7 @@ const users = [
   }
 ];
 
-const Chat12 = ({ showMenu, handleChatInput, inputField }) => {
+const Chat15 = ({ showMenu, handleChatInput, inputField }) => {
   const [selectedOption, setSelectedOption] = useState('');
   const [show, setShow] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -63,7 +63,7 @@ const Chat12 = ({ showMenu, handleChatInput, inputField }) => {
   const [disable, setDisable] = useState(true);
   const [allUsers, setAllUsers] = useState(users);
   const { chatScroll } = useAppContext();
-  const options = ['/project on'];
+  const options = ['/transfer'];
 
   const handleOpen = () => {
     setShow(true);
@@ -166,7 +166,7 @@ const Chat12 = ({ showMenu, handleChatInput, inputField }) => {
                 </div>
               </div>
             </div>
-            <AutoComplete timer={false} projectOff={true} handleChatInput={handleChatInput} inputField={inputField} options={options} onSelect={handleSelect} />
+            <AutoComplete timer={false} projectOff={false} transfer={true} handleChatInput={handleChatInput} inputField={inputField} options={options} onSelect={handleSelect} />
           </div>
         </div>
         <ChatSidebar ad={ad} allUsers={allUsers} showMenu={showMenu} />
@@ -175,4 +175,4 @@ const Chat12 = ({ showMenu, handleChatInput, inputField }) => {
   );
 };
 
-export default Chat12;
+export default Chat15;
