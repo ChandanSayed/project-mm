@@ -8,7 +8,7 @@ import ChatSidebar from './ChatSidebar';
 import SidebarComponents2 from './ChatComponents2';
 import ChatSticky from './ChatSticky';
 import { useAppContext } from '@/context/AppContext';
-const options = [];
+const options = ['/leave', '/unlock', '/timer'];
 
 const users = [];
 
