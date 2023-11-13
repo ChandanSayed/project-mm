@@ -2,14 +2,14 @@ import { useState } from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-const FileUploadPopup = () => {
-  const [transferError, setTransferError] = useState(false);
+const FileUploadPopup = ({ error = false }) => {
+  const [transferError, setTransferError] = useState(error);
   const [percentage, setPercentage] = useState(37);
   const [showUploadModal, setShowUploadModal] = useState(true);
 
   return (
     <div className={`max-w-[1220px] mx-auto h-0 flex flex-col fixed z-10 bottom-[111px] left-0 right-0 lg:left-auto lg:right-auto w-full ${showUploadModal ? '' : 'hidden'}`}>
-      <div className="w-full lg:w-[360px] ml-auto -mt-[120px] lg:-mt-[128px] pb-5 mr-12 border rounded-t-[10px] border-[#E6E6E6]">
+      <div className="w-full lg:w-[360px] ml-auto -mt-[120px] lg:-mt-[128px] pb-5 mr-12 border rounded-t-[10px] border-[#E6E6E6] bg-white">
         <div className="flex justify-between items-center rounded-t-[10px] bg-blue">
           <div className="flex py-3">
             <svg className="ml-[15px]" xmlns="http://www.w3.org/2000/svg" width="14" height="17" viewBox="0 0 14 17" fill="none">
