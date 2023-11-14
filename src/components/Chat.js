@@ -134,7 +134,7 @@ const Chat = ({ showMenu, handleLeave }) => {
                     <svg className="" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
                       <path d="M1.55556 0H12.4444C12.857 0 13.2527 0.163888 13.5444 0.455612C13.8361 0.747335 14 1.143 14 1.55556V12.4444C14 12.857 13.8361 13.2527 13.5444 13.5444C13.2527 13.8361 12.857 14 12.4444 14H1.55556C1.143 14 0.747335 13.8361 0.455612 13.5444C0.163888 13.2527 0 12.857 0 12.4444V1.55556C0 1.143 0.163888 0.747335 0.455612 0.455612C0.747335 0.163888 1.143 0 1.55556 0ZM7.77778 7.77778V3.11111H6.22222V7.77778H7.77778ZM7.77778 10.8889V9.33333H6.22222V10.8889H7.77778Z" fill="#494AF8" />
                     </svg>
-                    <p className="text-blue text-[13px] leading-normal mt-[1.7px] lg:text-sm font-jetBrain pl-[10px]">[MessageMoment]</p>
+                    <p className="text-blue text-[13px] leading-normal mt-[.25px] lg:text-sm font-jetBrain pl-[10px]">[MessageMoment]</p>
                   </div>
                   <div className="col-span-4 md:col-span-4 flex justify-between items-center">
                     <p className="text-dark  text-[13px] leading-5 lg:text-sm font-jetBrain font-normal">Message Expiry Time must be a value between 3 and 300.</p>
