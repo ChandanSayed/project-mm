@@ -3,7 +3,7 @@ import { Menu, Transition } from '@headlessui/react';
 import { Fragment, useRef } from 'react';
 
 const ShareButtonChat = ({ bg, display, setShowMenu, showShare, setShowShare }) => {
-  const link = 'https://mm.me/5qjjc37f9sn';
+  const link = 'https://messagemoment.com/sqjgcf8482';
   const shareButton = useRef();
   const { setChatScroll, setShareButtonTooltip } = useAppContext();
 
@@ -115,7 +115,7 @@ const ShareButtonChat = ({ bg, display, setShowMenu, showShare, setShowShare }) 
           </li>
           <li>
             <div className="bg-black py-[6px] px-[24px] pb-[22px] lg:rounded-b-xl border-dark ">
-              <p className="bg-white mt-[10px] rounded-lg bg-opacity-10 text-[9px] font-semibold font-jetBrain px-5 py-[17px] max-lg:hidden">{link}</p>
+              <p className="bg-white mt-[10px] rounded-lg bg-opacity-10 text-[9px] font-semibold font-jetBrain px-5 py-[17px] max-lg:hidden break-words">{link}</p>
               <div className="flex items-center cursor-pointer mt-[5px] max-lg:hidden" onClick={onCopy}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <g clipPath="url(#clip0_531_114)">
