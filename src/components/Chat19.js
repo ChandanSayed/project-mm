@@ -117,7 +117,7 @@ const Chat19 = ({ showMenu, handleLeave }) => {
                     <p className={`text-blue text-sm pl-2.5 leading-normal mt-[.25px] lg:text-sm font-jetBrain font-semibold`}>[MessageMoment.com]</p>
                   </div>
                   <div className="col-span-4 md:col-span-4 flex justify-between items-center">
-                    <p className={`text-dark  text-sm pl-2.5 leading-5 lg:text-sm font-jetBrain font-semibold`}>The token you entered is incorrect! Please try again.</p>
+                    <p className={`text-dark  text-sm pl-2.5 leading-5 lg:text-sm font-jetBrain font-semibold`}>The chat session is full! There are currently 10/10 users joined.</p>
                   </div>
                 </div>
 
