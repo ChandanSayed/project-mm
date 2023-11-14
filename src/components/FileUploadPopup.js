@@ -11,7 +11,7 @@ const FileUploadPopup = ({ error = false }) => {
     <div className={`max-w-[1220px] mx-auto h-0 flex flex-col fixed z-10 bottom-[111px] left-0 right-0 lg:left-auto lg:right-auto w-full ${showUploadModal ? '' : 'hidden'}`}>
       <div className="w-full lg:w-[360px] ml-auto -mt-[120px] lg:-mt-[128px] pb-5 mr-12 border rounded-t-[10px] border-[#E6E6E6] bg-white">
         <div className="flex justify-between items-center rounded-t-[10px] bg-blue">
-          <div className="flex py-3">
+          <div className="flex py-3 items-center">
             <svg className="ml-[15px]" xmlns="http://www.w3.org/2000/svg" width="14" height="17" viewBox="0 0 14 17" fill="none">
               <path opacity="0.2" d="M5 12.5924H9C9.55 12.5924 10 12.1424 10 11.5924V6.59244H11.59C12.48 6.59244 12.93 5.51244 12.3 4.88244L7.71 0.292444C7.61749 0.19974 7.5076 0.126193 7.38662 0.0760114C7.26565 0.02583 7.13597 0 7.005 0C6.87403 0 6.74435 0.02583 6.62338 0.0760114C6.5024 0.126193 6.39251 0.19974 6.3 0.292444L1.71 4.88244C1.08 5.51244 1.52 6.59244 2.41 6.59244H4V11.5924C4 12.1424 4.45 12.5924 5 12.5924ZM1 14.5924H13C13.55 14.5924 14 15.0424 14 15.5924C14 16.1424 13.55 16.5924 13 16.5924H1C0.45 16.5924 0 16.1424 0 15.5924C0 15.0424 0.45 14.5924 1 14.5924Z" fill="white" />
             </svg>
