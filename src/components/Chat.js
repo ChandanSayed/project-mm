@@ -99,7 +99,8 @@ const Chat = ({ showMenu, handleLeave }) => {
                 <SidebarComponents contentRight="Verifying..." textRight="font-normal" />
 
                 <SidebarComponents2 contentLeft="[MessageMoment.com]" contentRight="The chat session is full! There are currently 10/10 users joined." />
-                <SidebarComponents2 contentLeft="[MessageMoment.com]" contentRight="The token you entered is incorrect! Please try again." />
+                <SidebarComponents2 contentLeft="[MessageMoment.com]" contentRight="The chat session is full! There are currently 10/10 users joined." />
+                {/* <SidebarComponents2 contentLeft="[MessageMoment.com]" contentRight="The token you entered is incorrect! Please try again." /> */}
 
                 <SidebarComponents contentLeft="[MessageMoment.com]" textLeft="text-blue" contentRight="Verifying..." text=" text-errorColor" />
                 <div className="bg-midGray px-4 py-5 rounded-lg mt-[15px] grid grid-cols-1 lg:grid-cols-5">
