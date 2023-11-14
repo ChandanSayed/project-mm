@@ -39,7 +39,7 @@ const FileUploadPopup = ({ error = false }) => {
                 </>
               ) : (
                 <>
-                  {percentage}% <br /> <span className='className="text-xs font-medium text-dark opacity-40 font-jetBrain"'>90KB/sec</span>
+                  {percentage}% <br /> <span className="text-xs font-medium text-dark opacity-40 font-jetBrain">90KB/sec</span>
                 </>
               )}
             </p>
