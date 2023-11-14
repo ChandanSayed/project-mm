@@ -23,26 +23,29 @@ const FileUploadPopup = ({ error = false }) => {
         </div>
         <div className="flex justify-between items-center bg-white">
           <div className="flex mt-[18px]">
-            <svg className="ml-[15px] mt-[5px]" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <svg className="ml-[15px] mt-[2px]" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M14 12.4444V1.55556C14 0.7 13.3 0 12.4444 0H1.55556C0.7 0 0 0.7 0 1.55556V12.4444C0 13.3 0.7 14 1.55556 14H12.4444C13.3 14 14 13.3 14 12.4444ZM4.58889 8.54L6.22222 10.5078L8.63333 7.40444C8.78889 7.20222 9.1 7.20222 9.25556 7.41222L11.9856 11.0522C12.0289 11.11 12.0553 11.1787 12.0618 11.2506C12.0682 11.3226 12.0546 11.3949 12.0223 11.4595C11.99 11.5241 11.9403 11.5784 11.8789 11.6164C11.8175 11.6543 11.7467 11.6744 11.6744 11.6744H2.34889C2.02222 11.6744 1.84333 11.3011 2.04556 11.0444L3.98222 8.55556C4.13 8.35333 4.42556 8.34556 4.58889 8.54Z" fill="#CCCCCC" />
             </svg>
-            <p className="ml-[15px] text-sm font-jetBrain">
-              img_12839_03.jpg <br /> <span className="text-xs text-dark opacity-40 font-medium font-jetBrain">7.5mb</span>{' '}
-            </p>
+            <div className="ml-[15px]">
+              <p className="text-sm font-medium text-dark font-jetBrain">img_12839_03.jpg</p>
+              <p className="text-xs text-dark opacity-40 font-medium font-jetBrain">7.5mb</p>
+            </div>
           </div>
           <div className="flex mt-[18px] items-center">
-            <p className="text-end mr-[20px] text-[14px] font-jetBrain">
-              {transferError ? (
-                <>
-                  <span className='className="text-xs font-medium text-errorColor font-jetBrain"'>Transfer Error</span>
-                  <br /> <span className='className="text-xs font-medium text-dark opacity-40 font-jetBrain"'>90KB/sec</span>
-                </>
-              ) : (
-                <>
-                  {percentage}% <br /> <span className="text-xs font-medium text-dark opacity-40 font-jetBrain">90KB/sec</span>
-                </>
-              )}
-            </p>
+            {transferError ? (
+              <div className="mr-[20px]">
+                <p className="text-end text-sm font-medium text-errorColor font-jetBrain">
+                  <span className="">Transfer Error</span>
+                </p>
+                <p className="text-xs font-medium text-dark opacity-40 font-jetBrain">0KB/sec</p>
+              </div>
+            ) : (
+              <div className="mr-[20px]">
+                <p className="text-end text-sm font-medium text-dark font-jetBrain">{percentage}%</p>
+                <p className="text-xs font-medium text-dark opacity-40 font-jetBrain">90KB/sec</p>
+              </div>
+            )}
+
             <div className={`relative mr-[15px] group ${transferError ? 'hidden' : ''}`}>
               <CircularProgressbar value={percentage} className="!w-[24px]" />
               <svg onClick={() => setTransferError(true)} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer lg:hidden group-hover:lg:block" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
