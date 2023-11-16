@@ -1,4 +1,4 @@
-const SidebarComponents = ({ textLeft, textRight, contentLeft, contentRight, rounded, color }) => {
+const SidebarComponents = ({ textLeft = '', textRight = '', contentLeft = '', contentRight = '', rounded = '' }) => {
   // console.log(color);
   return (
     <div className={`bg-midGray border-[#eee] px-4 py-5 rounded-[10px] ${rounded} grid grid-cols-1 lg:grid-cols-5 mt-[15px]`}>

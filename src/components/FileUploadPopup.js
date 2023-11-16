@@ -34,9 +34,7 @@ const FileUploadPopup = ({ error = false }) => {
           <div className="flex mt-[18px] items-center">
             {transferError ? (
               <div className="mr-[20px]">
-                <p className="text-end text-sm font-medium text-errorColor font-jetBrain">
-                  <span className="">Transfer Error</span>
-                </p>
+                <p className="text-end text-sm font-medium text-errorColor font-jetBrain">Transfer Error</p>
                 <p className="text-xs font-medium text-dark opacity-40 font-jetBrain">0KB/sec</p>
               </div>
             ) : (

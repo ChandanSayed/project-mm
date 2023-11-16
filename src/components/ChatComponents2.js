@@ -1,4 +1,4 @@
-const SidebarComponents2 = ({ bg, textLeft, textRight, contentLeft, contentRight }) => {
+const SidebarComponents2 = ({ bg = '', textLeft = '', textRight = '', contentLeft = '', contentRight = '' }) => {
   return (
     <div className={`bg-errorColor ${bg} bg-opacity-5 px-4 py-5 rounded-b-xl mt-[15px] border-t-[3px] border-t-[#EB5757] grid grid-cols-1 lg:grid-cols-5`}>
       <div className="col-span-1 md:col-span-1 flex items-center max-lg:mb-[5px]">
