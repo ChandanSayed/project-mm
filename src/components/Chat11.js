@@ -102,7 +102,7 @@ const Chat11 = ({ showMenu, handleChatInput, inputField }) => {
                     <p className="text-blue lg:text-sm text-[13px] leading-5 font-jetBrain font-semibold max-lg:mb-[5px]">[MessageMoment.com]</p>
                   </div>
                   <div className="col-span-4 md:col-span-4 flex flex-col gap-2">
-                    <p className={`text-dark text-[13px] leading-5 lg:text-sm font-jetBrain`}>
+                    <p className={`text-dark text-[13px] leading-5 lg:text-sm font-jetBrain flex items-center`}>
                       <Image className="inline-block mr-1" src={clip} alt="Clip" /> Today is March 10, 2023. So there are 19 days until March 29, 2023.
                     </p>
                   </div>
