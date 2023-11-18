@@ -103,7 +103,7 @@ const Chat11 = ({ showMenu, handleChatInput, inputField }) => {
                   </div>
                   <div className="col-span-4 md:col-span-4 flex flex-col gap-2">
                     <p className={`text-dark text-[13px] leading-5 lg:text-sm font-jetBrain flex items-center gap-2`}>
-                      <Image className="inline-block mr-1 mb-[1px]" src={clip} alt="Clip" /> Today is March 10, 2023. So there are 19 days until March 29, 2023.
+                      <Image className="inline-block mr-1 mb-[3px]" src={clip} alt="Clip" /> Today is March 10, 2023. So there are 19 days until March 29, 2023.
                     </p>
                   </div>
                 </div>
