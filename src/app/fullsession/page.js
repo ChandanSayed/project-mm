@@ -2,6 +2,7 @@ import session from '/public/icons/session.svg';
 import LogoHeader from '@/components/LogoHeader';
 import BlurSection from '@/components/BlurSection';
 import NavLessPageFooter from '@/components/NavLessPageFooter';
+import CookiesContainer from '@/components/CookiesContainer';
 
 const page = () => {
   return (
@@ -13,6 +14,7 @@ const page = () => {
         </div>
       </div>
       <NavLessPageFooter />
+      <CookiesContainer />
     </>
   );
 };

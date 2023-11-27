@@ -3,6 +3,7 @@ import error from '/public/icons/error-404.svg';
 import LogoHeader from '@/components/LogoHeader';
 import NavLessPageFooter from '@/components/NavLessPageFooter';
 import BlurSection from '@/components/BlurSection';
+import CookiesContainer from '@/components/CookiesContainer';
 
 const page = () => {
   return (
@@ -14,6 +15,7 @@ const page = () => {
         </div>
       </div>
       <NavLessPageFooter />
+      <CookiesContainer />
     </>
   );
 };
